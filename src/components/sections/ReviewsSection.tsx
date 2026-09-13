@@ -1,4 +1,4 @@
-﻿import Container from '@/components/ui/Container';
+import Container from '@/components/ui/Container';
 import { Star, Quote, CheckCircle } from 'lucide-react';
 
 const testimonios = [
@@ -30,17 +30,17 @@ const testimonios = [
 
 export default function ReviewsSection() {
   return (
-    <section id="testimonios" className="py-20 bg-slate-950 text-white border-t border-slate-800">
+    <section id="testimonios" className="py-20 bg-slate-50 text-slate-900 border-t border-slate-200">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-bold uppercase tracking-wider">
-            <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider">
+            <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
             Opiniones Reales de Clientes
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
-            La tranquilidad de trabajar con <span className="text-amber-400">gente de palabra</span>.
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            La tranquilidad de trabajar con <span className="text-amber-600">gente de palabra</span>.
           </h2>
-          <p className="text-slate-300 text-base leading-relaxed">
+          <p className="text-slate-600 text-base leading-relaxed">
             Nuestros clientes no buscan el presupuesto más chapucero ni promesas en el aire; buscan plazos que se cumplen, números claros y cero quebraderos de cabeza.
           </p>
         </div>
@@ -50,31 +50,31 @@ export default function ReviewsSection() {
           {testimonios.map((t, idx) => (
             <div
               key={idx}
-              className="bg-slate-900 p-8 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-6 shadow-xl relative"
+              className="bg-white p-8 rounded-2xl border border-slate-200 flex flex-col justify-between space-y-6 shadow-md relative"
             >
               <Quote className="w-8 h-8 text-amber-400/20 absolute top-6 right-6" />
 
               <div className="space-y-4">
-                <div className="flex items-center gap-1 text-amber-400">
+                <div className="flex items-center gap-1 text-amber-500">
                   {[...Array(t.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
 
-                <p className="text-sm text-slate-300 leading-relaxed italic">
+                <p className="text-sm text-slate-700 leading-relaxed italic">
                   &ldquo;{t.texto}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-800 space-y-1">
+              <div className="pt-4 border-t border-slate-100 space-y-1">
                 <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-white text-sm">{t.nombre}</h3>
-                  <span className="flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/50 border border-emerald-800/40 px-1.5 py-0.5 rounded">
-                    <CheckCircle className="w-2.5 h-2.5" /> Verificado
+                  <h3 className="font-bold text-slate-900 text-sm">{t.nombre}</h3>
+                  <span className="flex items-center gap-1 text-[10px] text-emerald-800 bg-emerald-100 border border-emerald-300 px-1.5 py-0.5 rounded font-bold">
+                    <CheckCircle className="w-2.5 h-2.5 text-emerald-600" /> Verificado
                   </span>
                 </div>
-                <p className="text-xs text-amber-400/90 font-medium">{t.rol}</p>
-                <p className="text-[11px] text-slate-400">{t.obra}</p>
+                <p className="text-xs text-amber-700 font-semibold">{t.rol}</p>
+                <p className="text-[11px] text-slate-500">{t.obra}</p>
               </div>
             </div>
           ))}

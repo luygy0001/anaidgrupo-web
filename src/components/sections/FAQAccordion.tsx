@@ -14,7 +14,7 @@ interface FAQAccordionProps {
 
 export default function FAQAccordion({
   items,
-  title = 'Preguntas frecuentes',
+  title = 'Preguntas frecuentes sobre reformas en Madrid',
   withSchema = true,
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -37,43 +37,57 @@ export default function FAQAccordion({
   };
 
   return (
-    <section className="section-padding">
-      <div className="container-narrow">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-          {title}
-        </h2>
+    <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12 space-y-3">
+          <span className="inline-block text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
+            Dudas resueltas
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            {title}
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
+            Resolvemos con total transparencia las dudas más habituales sobre plazos, presupuestos cerrados y seguimiento de obra.
+          </p>
+        </div>
 
         <div className="space-y-3">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="border border-border rounded-lg overflow-hidden"
-            >
-              <button
-                onClick={() => toggle(index)}
-                className="w-full flex items-center justify-between px-5 py-4 text-left font-medium text-foreground hover:bg-muted/50 transition-colors"
-                aria-expanded={openIndex === index}
-              >
-                <span>{item.question}</span>
-                <ChevronDown
-                  className={cn(
-                    'w-5 h-5 text-muted-foreground transition-transform duration-200',
-                    openIndex === index && 'rotate-180'
-                  )}
-                />
-              </button>
+          {items.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
               <div
+                key={index}
                 className={cn(
-                  'overflow-hidden transition-all duration-200',
-                  openIndex === index ? 'max-h-96' : 'max-h-0'
+                  'bg-white border rounded-2xl transition-all duration-200 shadow-xs overflow-hidden',
+                  isOpen ? 'border-amber-400 shadow-md ring-1 ring-amber-400/20' : 'border-slate-200 hover:border-slate-300'
                 )}
               >
-                <div className="px-5 pb-4 text-sm text-muted-foreground leading-relaxed">
-                  {item.answer}
+                <button
+                  onClick={() => toggle(index)}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left font-bold text-slate-900 hover:text-amber-600 transition-colors gap-4"
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-base sm:text-lg text-slate-900 leading-snug">{item.question}</span>
+                  <ChevronDown
+                    className={cn(
+                      'w-5 h-5 text-amber-500 shrink-0 transition-transform duration-200',
+                      isOpen && 'rotate-180 text-amber-600'
+                    )}
+                  />
+                </button>
+                <div
+                  className={cn(
+                    'overflow-hidden transition-all duration-200 ease-in-out',
+                    isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  )}
+                >
+                  <div className="px-6 pb-6 pt-1 text-sm sm:text-base text-slate-700 leading-relaxed border-t border-slate-100 bg-slate-50/50">
+                    {item.answer}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {withSchema && <JsonLd data={schemaData} />}

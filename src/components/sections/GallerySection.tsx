@@ -43,7 +43,7 @@ export default function GallerySection() {
             <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
               Espacios pensados para <span className="text-amber-400">vivir con orgullo</span> o vender con plusvalía.
             </h2>
-            <p className="text-slate-300 text-base leading-relaxed">
+            <p className="text-slate-600 text-base leading-relaxed">
               Cuidamos la iluminación, los materiales y la ergonomía para que cada metro cuadrado transmita sensación de amplitud, calidez y modernidad.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function GallerySection() {
           {proyectos.map((p, idx) => (
             <div
               key={idx}
-              className="bg-slate-950 rounded-2xl overflow-hidden border border-slate-800 hover:border-amber-500/40 transition-all group flex flex-col justify-between shadow-xl"
+              className="bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-amber-500/40 transition-all group flex flex-col justify-between shadow-xl"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -84,10 +84,10 @@ export default function GallerySection() {
               <div className="p-6 space-y-3 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
                   <div className="text-xs text-slate-400 font-medium">{p.location}</div>
-                  <h3 className="font-bold text-lg text-white group-hover:text-amber-400 transition-colors leading-snug">
+                  <h3 className="font-bold text-lg text-slate-900 group-hover:text-amber-600 transition-colors leading-snug">
                     {p.title}
                   </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {p.description}
                   </p>
                 </div>
