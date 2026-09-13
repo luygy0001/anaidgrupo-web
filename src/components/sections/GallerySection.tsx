@@ -1,6 +1,6 @@
 import Container from '@/components/ui/Container';
 import Image from 'next/image';
-import { Sparkles, ArrowRight, Eye, CheckCircle2 } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { WHATSAPP_URL } from '@/lib/constants';
 
 const proyectos = [
@@ -32,9 +32,9 @@ const proyectos = [
 
 export default function GallerySection() {
   return (
-    <section id="galeria" className="py-24 relative overflow-hidden bg-slate-950 text-white">
+    <section id="galeria" className="py-24 relative overflow-hidden bg-slate-100 text-slate-900 border-t border-slate-200">
       {/* ============================================================
-          FONDO CINEMÁTICO: Salón a dos alturas con escalera flotante y luz natural
+          FONDO CINEMÁTICO: Salón a dos alturas con luz natural brillante
           ============================================================ */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -45,23 +45,23 @@ export default function GallerySection() {
           className="object-cover object-center"
         />
 
-        {/* Máscara de contraste arquitectónico: deja admirar los ventanales y la escalera con total nitidez */}
-        <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/70" />
+        {/* Velo blanco translúcido de alta luminosidad: deja ver la escalera, ventanales y luz natural con máxima claridad */}
+        <div className="absolute inset-0 bg-white/70 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-white/50 to-white/75" />
       </div>
 
       <Container className="relative z-10">
-        {/* Cabecera de la Sección */}
+        {/* Cabecera de la Sección en alto contraste sobre fondo luminoso */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="space-y-4 max-w-2xl text-left">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/40 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-wider shadow-xs backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
               Obras y Transformaciones Reales
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-              Espacios pensados para <span className="text-amber-400">vivir con orgullo</span> o vender con plusvalía.
+            <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-950 leading-tight drop-shadow-xs">
+              Espacios pensados para <span className="text-amber-600">vivir con orgullo</span> o vender con plusvalía.
             </h2>
-            <p className="text-slate-200 text-base leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium">
+            <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
               Cuidamos la iluminación natural, la nobleza de los materiales y la pureza de líneas para que cada metro cuadrado transmita amplitud, serenidad y vanguardia.
             </p>
           </div>
@@ -70,19 +70,19 @@ export default function GallerySection() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900/80 hover:bg-slate-900 border border-white/20 text-amber-300 hover:text-amber-200 font-bold text-xs uppercase tracking-wider transition-all shadow-lg backdrop-blur-md shrink-0 hover:border-amber-400/50"
+            className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shrink-0 hover:shadow-lg"
           >
             <span>Ver más obras en vídeo por WhatsApp</span>
             <ArrowRight className="w-4 h-4 text-amber-400" />
           </a>
         </div>
 
-        {/* Grid de Proyectos con Tarjetas de Cristal Nítidas */}
+        {/* Grid de Proyectos con Tarjetas Blancas Nítidas */}
         <div className="grid md:grid-cols-3 gap-8">
           {proyectos.map((p, idx) => (
             <div
               key={idx}
-              className="bg-white/95 backdrop-blur-md rounded-2xl overflow-hidden border border-white/40 shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
+              className="bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group flex flex-col justify-between"
             >
               <div className="relative h-64 overflow-hidden">
                 <Image
@@ -94,7 +94,7 @@ export default function GallerySection() {
                 <div className="absolute top-3 left-3 bg-slate-950/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-amber-300 border border-white/15 shadow-sm">
                   {p.tag}
                 </div>
-                <div className="absolute bottom-3 right-3 bg-emerald-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-md text-[11px] font-bold text-white shadow-md">
+                <div className="absolute bottom-3 right-3 bg-emerald-600/95 backdrop-blur-md px-2.5 py-0.5 rounded-md text-[11px] font-bold text-white shadow-md">
                   Plazo: {p.duration}
                 </div>
               </div>
