@@ -59,7 +59,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center py-16 lg:py-24 overflow-hidden bg-slate-950">
       {/* ============================================================
-          FONDO CINEMÁTICO: Chalet moderno con piscina al anochecer
+          FONDO CINEMÁTICO: Chalet moderno invertido (espejo) y lleno de luz
           ============================================================ */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -68,13 +68,12 @@ export default function Hero() {
           fill
           priority
           quality={95}
-          className="object-cover object-center lg:object-[center_35%]"
+          className="object-cover object-center lg:object-[center_35%] -scale-x-100"
         />
 
-        {/* Máscara de gradiente suave: sombra a la izquierda para contraste del texto, limpia a la derecha para ver el chalet y la piscina */}
-        <div className="absolute inset-0 bg-slate-950/45" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/40" />
+        {/* Máscara luminosa ultra ligera: solo sombra sutil en el lateral del texto para que la foto brille con toda su fuerza */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/45 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent" />
       </div>
 
       {/* ============================================================
@@ -85,32 +84,32 @@ export default function Hero() {
           {/* Columna de Texto y Conversión (7 cols) */}
           <div className="lg:col-span-7 space-y-6 text-left">
             {/* Tag / Badge de impacto */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-sm backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
               <Zap className="w-3.5 h-3.5 text-amber-400" />
               Presupuestos con IA en menos de 60 minutos
             </div>
 
-            {/* H1 de Alto Impacto */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-lg">
+            {/* H1 de Alto Impacto con sombra de alta definición */}
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
               Reformas integrales con <span className="text-amber-400">plazo cerrado de 30 a 60 días</span> y diseño que revaloriza tu inmueble.
             </h1>
 
             {/* Subtítulo puente */}
-            <p className="text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-md font-medium">
+            <p className="text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium">
               Coordinamos arquitectos, interioristas y oficios homologados en Madrid y zona centro. Recibe fotos y porcentaje de avance casi a diario en tu WhatsApp sin tener que perseguir a nadie.
             </p>
 
             {/* Badges de Confianza Rápidos */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md p-2.5 rounded-xl border border-white/10 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Obra en 30-60 días</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md p-2.5 rounded-xl border border-white/10 shadow-sm">
+              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Precio cerrado por contrato</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-900/70 backdrop-blur-md p-2.5 rounded-xl border border-white/10 shadow-sm col-span-2 sm:col-span-1">
+              <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md col-span-2 sm:col-span-1">
                 <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Especialistas en Inversores</span>
               </div>
@@ -120,7 +119,7 @@ export default function Hero() {
             <div className="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
                 href="#contacto"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all transform hover:-translate-y-0.5 text-center"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm uppercase tracking-wider shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all transform hover:-translate-y-0.5 text-center"
               >
                 Pedir Presupuesto en 1h
               </a>
@@ -131,7 +130,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactar por WhatsApp"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-sm tracking-wide shadow-lg shadow-[#25D366]/30 transition-all transform hover:-translate-y-0.5 text-center"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-sm tracking-wide shadow-xl shadow-[#25D366]/30 transition-all transform hover:-translate-y-0.5 text-center"
               >
                 <WhatsAppIcon className="w-5 h-5 fill-white text-white shrink-0" />
                 <span>WhatsApp</span>
@@ -139,25 +138,25 @@ export default function Hero() {
             </div>
 
             <div className="pt-2 flex items-center gap-2 text-xs text-slate-200 font-medium flex-wrap">
-              <span>Atención técnica directa:</span>
+              <span className="drop-shadow-sm">Atención técnica directa:</span>
               <a
                 href={`tel:${PHONE}`}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/80 hover:bg-slate-900 border border-white/15 text-amber-300 hover:text-amber-200 font-bold transition-all shadow-xs backdrop-blur-sm"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/80 hover:bg-slate-900 border border-white/20 text-amber-300 hover:text-amber-200 font-bold transition-all shadow-md backdrop-blur-md"
                 aria-label={`Llamar al teléfono ${PHONE_DISPLAY}`}
               >
                 <Phone className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                 <span>Llamar al {PHONE_DISPLAY}</span>
               </a>
-              <span className="text-slate-300">(Sin compromiso)</span>
+              <span className="text-slate-300 drop-shadow-sm">(Sin compromiso)</span>
             </div>
           </div>
 
           {/* Columna Visual de Muestra en directo (5 cols) - Tarjeta de Cristal Translúcido */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-950/70 backdrop-blur-md p-3 sm:p-4 space-y-3">
+            <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950/65 backdrop-blur-md p-3 sm:p-4 space-y-3">
               {/* Selector interactivo de estancias */}
               <div className="flex items-center justify-between">
-                <span className="text-xs uppercase tracking-wider text-slate-300 font-bold">
+                <span className="text-xs uppercase tracking-wider text-slate-200 font-bold drop-shadow-xs">
                   Galería de Acabados
                 </span>
                 <div className="flex items-center gap-1">
@@ -179,7 +178,7 @@ export default function Hero() {
               </div>
 
               {/* Imagen de foco nítida enmarcada */}
-              <div className="relative h-60 sm:h-64 w-full rounded-xl overflow-hidden border border-white/10">
+              <div className="relative h-60 sm:h-64 w-full rounded-xl overflow-hidden border border-white/15">
                 <Image
                   src={active.image}
                   alt={active.title}
@@ -189,14 +188,14 @@ export default function Hero() {
                 <div className="absolute top-3 right-3 bg-emerald-600/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md">
                   Finalizada en {active.duration}
                 </div>
-                <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-amber-300 text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/10">
+                <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-amber-300 text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/15">
                   {active.location}
                 </div>
               </div>
 
               {/* Ficha técnica de la obra en curso */}
               <div className="space-y-1 text-left pt-1">
-                <h3 className="text-sm font-bold text-white">
+                <h3 className="text-sm font-bold text-white drop-shadow-xs">
                   {active.title}
                 </h3>
                 <p className="text-xs text-slate-200 leading-snug">
