@@ -6,7 +6,7 @@ import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
 export default function CTABar() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-2xl safe-area-pb">
+    <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-2xl safe-area-pb">
       <div className="flex items-stretch divide-x divide-slate-200">
         <a
           href="#contacto"

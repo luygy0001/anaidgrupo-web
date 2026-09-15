@@ -70,7 +70,7 @@ export default function CookieConsentBanner() {
       role="dialog"
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
-      className="fixed bottom-3 inset-x-3 sm:left-4 sm:right-auto sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-3 duration-300 pointer-events-auto"
+      className="fixed bottom-[76px] inset-x-3 sm:bottom-6 sm:left-4 sm:right-auto sm:max-w-md z-[60] animate-in fade-in slide-in-from-bottom-3 duration-300 pointer-events-auto"
     >
       <div className="bg-slate-950/95 backdrop-blur-xl border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl text-white">
         {!showSettings ? (
