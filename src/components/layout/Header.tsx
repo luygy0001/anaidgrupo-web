@@ -1,3 +1,4 @@
+import Image from 'next/image';
 'use client';
 
 import { useState } from 'react';
@@ -13,14 +14,16 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
-          {/* Logo y Marca */}
-          <a href="/" className="flex items-center gap-3 group shrink-0" aria-label={`${SITE_NAME} - Inicio`}>
-            <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 text-amber-400 flex items-center justify-center font-black text-xl shadow-xs group-hover:scale-105 transition-transform">
-              CA
-            </div>
-            <span className="font-extrabold text-slate-900 text-lg lg:text-xl tracking-tight whitespace-nowrap">
-              Construcciones Anaid
-            </span>
+          {/* Logo y Marca Oficial */}
+          <a href="/" className="flex items-center group shrink-0 py-1" aria-label={`${SITE_NAME} - Inicio`}>
+            <Image
+              src="/images/logo.png"
+              alt="Construcciones Anaid - Reformas Integrales y Arquitectura en Madrid"
+              width={260}
+              height={106}
+              priority
+              className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            />
           </a>
 
           {/* Desktop Nav */}
