@@ -5,9 +5,9 @@ import { WHATSAPP_URL } from '@/lib/constants';
 const pilares = [
   {
     icon: FileText,
-    title: 'Presupuesto en menos de 1 hora',
+    title: 'Presupuesto en menos de 24 horas',
     description:
-      'Rellenas el formulario, nos cuentas tu obra y eliges la calidad de los acabados. Un sistema de inteligencia artificial prepara el presupuesto y te lo enviamos. Antes de contratar, visitamos la obra para comprobar que todo coincide.',
+      'Rellenas el formulario, nos cuentas tu obra y eliges la calidad de los acabados. Un sistema de inteligencia artificial prepara el presupuesto, una persona lo revisa y te lo enviamos. Antes de contratar, visitamos la obra para comprobar que todo coincide.',
     highlight: 'Sin esperar semanas',
   },
   {
@@ -39,7 +39,7 @@ export default function AIExplainer() {
             Una reforma en la que <span className="text-amber-600">no tienes que perseguir</span> a nadie.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Lo que más quema de una reforma: esperar semanas un presupuesto y no saber cómo va la obra. Aquí tienes el número en menos de 1 hora y el avance en tu móvil.
+            Lo que más quema de una reforma: esperar semanas un presupuesto y no saber cómo va la obra. Aquí tienes el número en menos de 24 horas y el avance en tu móvil.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function AIExplainer() {
 
         <p className="mt-8 text-center text-sm">
           <a href="/ia-analisis-proyecto" className="font-semibold text-amber-700 underline hover:text-amber-800">
-            Cómo preparamos tu presupuesto en menos de 1 hora
+            Cómo preparamos tu presupuesto
           </a>
         </p>
 

@@ -210,8 +210,8 @@ export default function FormPresupuesto() {
             </>
           ) : (
             <p>
-              Te lo enviamos por WhatsApp y por correo en menos de 1 hora, a cualquier hora y cualquier día.
-              Antes de contratar, una persona visita la obra para comprobar que todo coincide.
+              Una persona lo revisa y te lo enviamos por correo y por WhatsApp en menos de 24 horas.
+              Antes de contratar, visitamos la obra para comprobar que todo coincide.
             </p>
           )}
         </div>
@@ -498,8 +498,9 @@ export default function FormPresupuesto() {
 
       {/* Transparencia sobre IA (AI Act art. 50 y RGPD art. 22) */}
       <p className="text-sm text-slate-200 leading-relaxed p-4 rounded-xl bg-slate-900 border border-slate-500">
-        Tu presupuesto lo prepara un sistema de inteligencia artificial con estos datos y te llega por
-        WhatsApp y por correo en menos de 1 hora. Antes de contratar, una persona visita la obra.{' '}
+        Tu presupuesto lo prepara un sistema de inteligencia artificial con estos datos y una persona lo
+        revisa antes de enviártelo por correo y WhatsApp, en menos de 24 horas. Antes de contratar,
+        visitamos la obra.{' '}
         <Link href="/ia-analisis-proyecto" className="underline text-amber-300 hover:text-amber-200">
           Cómo usamos la IA
         </Link>

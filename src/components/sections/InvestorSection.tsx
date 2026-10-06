@@ -15,7 +15,7 @@ export default function InvestorSection() {
             Reformas pensadas para <span className="text-amber-600">vender o alquilar antes</span>.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Cada mes de obra es un mes sin vender ni alquilar. Por eso tienes el presupuesto en menos de 1 hora y el plazo fijado en contrato. Por experiencia, la mayoría de obras no pasan de 60 días.
+            Cada mes de obra es un mes sin vender ni alquilar. Por eso tienes el presupuesto en menos de 24 horas y el plazo fijado en contrato. Por experiencia, la mayoría de obras no pasan de 60 días.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function InvestorSection() {
               <ul className="space-y-3 text-sm text-slate-700 pt-2">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span><strong>Presupuesto en menos de 1 hora</strong>: decides la compra con el coste de la obra delante.</span>
+                  <span><strong>Presupuesto en menos de 24 horas</strong>: decides la compra con el coste de la obra delante.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -66,12 +66,12 @@ export default function InvestorSection() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Que la obra no frene la venta</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Tu comprador duda porque no sabe cuánto le costará reformar. Con un presupuesto en menos de 1 hora, sale de la duda el mismo día y la operación sigue viva.
+                Tu comprador duda porque no sabe cuánto le costará reformar. Con un presupuesto en menos de 24 horas, sale de la duda enseguida y la operación sigue viva.
               </p>
               <ul className="space-y-3 text-sm text-slate-700 pt-2">
                 <li className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
-                  <span><strong>Presupuesto en menos de 1 hora</strong>: con los datos de la vivienda que nos pases.</span>
+                  <span><strong>Presupuesto en menos de 24 horas</strong>: con los datos de la vivienda que nos pases.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <CheckCircle className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />

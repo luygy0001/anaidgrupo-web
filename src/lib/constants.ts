@@ -29,7 +29,7 @@ export const HORARIO = 'L-V 8:30—19:30';
 export const HORARIO_DETAIL = {
   atencion: 'Lunes a Viernes: 8:30-19:30',
   urgencias: 'Atención prioritaria para inversores e inmobiliarias por WhatsApp',
-  chatbot: 'Presupuesto con inteligencia artificial en menos de 1 hora, a cualquier hora',
+  chatbot: 'Presupuesto preparado con inteligencia artificial y revisado por una persona en menos de 24 horas',
 };
 
 // Redes sociales oficiales (YouTube + LinkedIn)
@@ -92,7 +92,7 @@ export const SERVICES = [
     badge: 'Lo que más se usa',
     description: 'Las dos estancias que más usas cada día. Distribución, instalaciones, alicatado y mobiliario, con un profesional de cada oficio y la calidad que elijas.',
     icon: 'Sparkles',
-    features: ['Presupuesto en menos de 1 hora', 'Un profesional para cada oficio', 'Fotos del avance por WhatsApp'],
+    features: ['Presupuesto en menos de 24 horas', 'Un profesional para cada oficio', 'Fotos del avance por WhatsApp'],
   },
   {
     title: 'Reformas para inversores',
@@ -100,13 +100,13 @@ export const SERVICES = [
     badge: 'Para vender o alquilar',
     description: 'Pisos para vender o alquilar, en calidad media-baja o media. Sabes cuánto cuesta la obra antes de comprar. El plazo, fijado en el contrato.',
     icon: 'TrendingUp',
-    features: ['Presupuesto en menos de 1 hora', 'Plazo y precio en contrato', '1 presupuesto gratis cada semana'],
+    features: ['Presupuesto en menos de 24 horas', 'Plazo y precio en contrato', '1 presupuesto gratis cada semana'],
   },
   {
     title: 'Para inmobiliarias',
     slug: 'reformas-inmobiliarias-madrid',
     badge: 'Colaboración',
-    description: 'Tu comprador duda por la obra. Le damos un presupuesto en calidad media-baja en menos de 1 hora para que decida con un número delante.',
+    description: 'Tu comprador duda por la obra. Le damos un presupuesto en calidad media-baja en menos de 24 horas para que decida con un número delante.',
     icon: 'Building2',
     features: ['Calidad media-baja, cifra realista', 'Rápido, para no enfriar la venta', '1 presupuesto gratis cada semana'],
   },
@@ -120,12 +120,12 @@ export const FAQS = [
       'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid prepara el presupuesto, te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros. Si un profesional incumple de forma reiterada nuestros compromisos con los clientes, deja la red.',
   },
   {
-    question: '¿Cómo tengo el presupuesto en menos de 1 hora?',
+    question: '¿Cómo tengo el presupuesto en menos de 24 horas?',
     answer:
-      'Rellenas el formulario, nos cuentas qué quieres reformar y eliges la calidad de los acabados. Un sistema de inteligencia artificial, con tecnología de PyMExpert, prepara el presupuesto con esos datos y te lo enviamos. Antes de contratar, una persona visita la obra para comprobar que todo coincide. No tienes que esperar semanas para tener un primer número.',
+      'Rellenas el formulario, nos cuentas qué quieres reformar y eliges la calidad de los acabados. Un sistema de inteligencia artificial, con tecnología de PyMExpert, prepara el presupuesto con esos datos; una persona lo revisa y te lo enviamos por correo y WhatsApp en menos de 24 horas. Antes de contratar, visitamos la obra para comprobar que todo coincide. No tienes que esperar semanas para tener un primer número.',
   },
   {
-    question: '¿El presupuesto de 1 hora es el definitivo?',
+    question: '¿El presupuesto que recibo es el definitivo?',
     answer:
       'En la gran mayoría de los casos, sí. Antes de contratar visitamos la obra para comprobar que lo que nos contaste coincide con la realidad, y aprovechas para resolver tus dudas. El precio queda cerrado en el contrato, según el presupuesto firmado.',
   },

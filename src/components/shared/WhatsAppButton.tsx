@@ -8,7 +8,7 @@ export default function WhatsAppButton() {
     <aside aria-label="Contacto directo por WhatsApp" className="hidden lg:flex fixed bottom-6 right-6 z-40 items-center gap-3">
       {/* Tooltip con aviso de presupuesto rápido */}
       <div className="hidden sm:flex flex-col items-end bg-slate-950/95 backdrop-blur-md text-white px-4 py-2 rounded-2xl shadow-2xl border border-slate-800 text-xs">
-        <span className="text-slate-300">¿Presupuesto en 1 hora?</span>
+        <span className="text-slate-300">¿Tienes dudas?</span>
         <span className="text-[#25D366] font-bold">Escríbenos a WhatsApp</span>
       </div>
 

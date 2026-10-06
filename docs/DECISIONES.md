@@ -127,6 +127,18 @@
 44. **El chalé de fondo de la portada es una foto de banco de imágenes:** solo decorativa,
     sin texto que sugiera obra propia. Comprobar que su licencia permite uso comercial.
 
+45. **Los presupuestos quedan en BORRADOR de correo; Luis los revisa y da el visto bueno**
+    (06-10-2026). Sustituye a la decisión 43: ya no hay envío automático. En el futuro, el
+    borrador irá al profesional encargado de la obra para que lo revise y lo envíe él.
+46. **Plazo prometido: menos de 24 horas** (sustituye a la promesa de 1 hora 24/7 de las
+    decisiones 4 y 31). Cambiado en titular, metadatos, formulario, preguntas frecuentes, página
+    de IA, inversores y botones.
+47. **PDF desde una plantilla de Google Docs** (Google Workspace). Alternativa anotada:
+    PDFMonkey, que Luis usó antes.
+48. **WhatsApp: Luis envía el PDF desde la app** tras aprobar el borrador. Sin API de WhatsApp,
+    sin plantillas de Meta ni coexistencia.
+49. **Clientes nuevos en Google Drive** (con sus datos y el resumen de la obra), como ya hace Luis.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e

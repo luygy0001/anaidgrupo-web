@@ -20,7 +20,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
             <div className="text-center space-y-3">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider">
                 <Zap className="w-3.5 h-3.5" aria-hidden="true" />
-                Presupuesto en menos de 1 hora
+                Presupuesto en menos de 24 horas
               </div>
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
                 {title || 'Pide tu presupuesto. El primero es gratis.'}

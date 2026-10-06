@@ -78,12 +78,12 @@ export default function Header() {
               <span className="hidden sm:inline">WhatsApp</span>
             </a>
 
-            {/* Botón Presupuesto (1h) */}
+            {/* Botón Presupuesto */}
             <a
               href={PRESUPUESTO_HREF}
               className="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5"
             >
-              Presupuesto (1h)
+              Pedir presupuesto
             </a>
 
             {/* Botón menú móvil */}
@@ -135,7 +135,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className="w-full text-center py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm shadow-md"
               >
-                Pedir Presupuesto en 1h
+                Pedir presupuesto
               </a>
             </div>
           </nav>

@@ -76,12 +76,12 @@ export default function Hero() {
             {/* Tag / Badge de impacto */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
               <Zap className="w-3.5 h-3.5 text-amber-400" />
-              Presupuesto en menos de 1 hora
+              Presupuesto en menos de 24 horas
             </div>
 
             {/* H1 de Alto Impacto con sombra de alta definición */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-              Reformas en la Comunidad de Madrid con <span className="text-amber-400">presupuesto en menos de 1 hora</span> y fotos de tu obra casi cada día.
+              Reformas en la Comunidad de Madrid con <span className="text-amber-400">presupuesto en menos de 24 horas</span> y fotos de tu obra casi cada día.
             </h1>
 
             {/* Subtítulo puente */}

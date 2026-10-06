@@ -8,7 +8,7 @@ import { Brain, FileText, Layers, Repeat, Shield, AlertTriangle } from 'lucide-r
 export const metadata: Metadata = {
   title: 'Cómo usamos la IA',
   description:
-    'Qué hace la inteligencia artificial en Construcciones Anaid: prepara tu presupuesto en menos de 1 hora con tus datos. Qué no hace y qué decide siempre una persona.',
+    'Qué hace la inteligencia artificial en Construcciones Anaid: prepara un borrador de tu presupuesto que una persona revisa antes de enviártelo. Qué no hace y qué decide siempre una persona.',
   alternates: { canonical: '/ia-analisis-proyecto' },
 };
 
@@ -19,7 +19,7 @@ const capabilities = [
   {
     icon: FileText,
     title: 'Prepara tu presupuesto',
-    text: 'Con los datos del formulario y la calidad de acabados que eliges, un sistema de inteligencia artificial calcula tu presupuesto y redacta su descripción. Funciona las 24 horas: te llega en menos de 1 hora.',
+    text: 'Con los datos del formulario y la calidad de acabados que eliges, un sistema de inteligencia artificial prepara un borrador de tu presupuesto: el importe sale de nuestras tarifas y la IA redacta la descripción. Una persona lo revisa y te llega en menos de 24 horas.',
   },
   {
     icon: Layers,
@@ -34,6 +34,7 @@ const capabilities = [
 ];
 
 const limitations = [
+  'No envía nada por su cuenta: una persona revisa cada presupuesto antes de que te llegue.',
   'No visita tu obra: antes de contratar, una persona de Construcciones Anaid la visita para comprobar que todo coincide con lo que nos contaste.',
   'No fija el precio final: lo fija el profesional que hará la obra y queda cerrado en el contrato que firmas con él.',
   'No elige al profesional: la asignación la decide una persona de Construcciones Anaid.',
@@ -57,7 +58,7 @@ export default function IAAnalisisPage() {
             </h1>
             <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
               Usamos inteligencia artificial para una tarea concreta: preparar tu presupuesto
-              en menos de 1 hora. Te contamos qué hace, qué no hace y dónde decide siempre
+              en menos de 24 horas. Te contamos qué hace, qué no hace y dónde decide siempre
               una persona.
             </p>
           </div>

@@ -13,14 +13,14 @@ export const metadata: Metadata = {
   // absolute: la plantilla de layout.tsx añadiría la marca otra vez
   title: { absolute: 'Reformas en la Comunidad de Madrid | Construcciones Anaid' },
   description:
-    'Reformas en toda la Comunidad de Madrid. Elige la calidad, recibe tu presupuesto en menos de 1 hora y sigue tu obra con fotos casi a diario por WhatsApp.',
+    'Reformas en toda la Comunidad de Madrid. Elige la calidad, recibe tu presupuesto en menos de 24 horas y sigue tu obra con fotos casi a diario por WhatsApp.',
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Reformas en Madrid con presupuesto en menos de 1 hora',
+    title: 'Reformas en Madrid con presupuesto en menos de 24 horas',
     description:
-      'Elige la calidad de acabados, recibe tu presupuesto en menos de 1 hora y sigue tu obra con fotos casi a diario por WhatsApp.',
+      'Elige la calidad de acabados, recibe tu presupuesto en menos de 24 horas y sigue tu obra con fotos casi a diario por WhatsApp.',
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: 'es_ES',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Reformas en la Comunidad de Madrid | Construcciones Anaid',
     description:
-      'Reformas en la Comunidad de Madrid. Presupuesto en menos de 1 hora y fotos de tu obra casi a diario por WhatsApp.',
+      'Reformas en la Comunidad de Madrid. Presupuesto en menos de 24 horas y fotos de tu obra casi a diario por WhatsApp.',
     images: [`${SITE_URL}/images/obra-salon.jpg`],
   },
 };
@@ -52,7 +52,7 @@ const schemaData = {
       '@id': `${SITE_URL}/#business`,
       name: 'Construcciones Anaid',
       description:
-        'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid. Construcciones Anaid prepara tu presupuesto en menos de 1 hora, te asigna al profesional adecuado de su red de arquitectos y oficios, coordina la obra y te envía fotos del avance casi a diario por WhatsApp.',
+        'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid. Construcciones Anaid prepara tu presupuesto en menos de 24 horas, te asigna al profesional adecuado de su red de arquitectos y oficios, coordina la obra y te envía fotos del avance casi a diario por WhatsApp.',
       url: SITE_URL,
       telephone: PHONE,
       email: EMAIL,
@@ -98,7 +98,7 @@ const schemaData = {
             itemOffered: {
               '@type': 'Service',
               name: 'Reformas para inversores e inmobiliarias',
-              description: 'Reformas en calidad media-baja o media para vender o alquilar, con presupuesto en menos de 1 hora.',
+              description: 'Reformas en calidad media-baja o media para vender o alquilar, con presupuesto en menos de 24 horas.',
             },
           },
           {
