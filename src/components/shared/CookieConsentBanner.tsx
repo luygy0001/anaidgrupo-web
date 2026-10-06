@@ -94,7 +94,7 @@ export default function CookieConsentBanner() {
       ref={bannerRef}
       role="dialog"
       aria-labelledby="cookie-title"
-      aria-describedby="cookie-desc"
+      aria-describedby={showSettings ? undefined : 'cookie-desc'}
       className="fixed bottom-3 inset-x-3 sm:bottom-6 sm:left-4 sm:right-auto sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-3 duration-300 pointer-events-auto"
     >
       <div className="bg-slate-950/95 backdrop-blur-xl border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl text-white">
@@ -108,9 +108,9 @@ export default function CookieConsentBanner() {
                 <Cookie className="w-4 h-4" />
               </div>
               <div className="space-y-0.5 text-left">
-                <h3 id="cookie-title" className="text-xs font-bold text-white tracking-tight">
+                <p id="cookie-title" className="text-xs font-bold text-white tracking-tight">
                   Transparencia de cookies (RGPD / AEPD)
-                </h3>
+                </p>
                 <p id="cookie-desc" className="text-[11px] text-slate-300 leading-snug">
                   Usamos cookies técnicas para que la web funcione y analíticas para medir visitas. Puedes aceptarlas, rechazarlas o configurarlas.{' '}
                   <a href="/cookies" className="text-amber-400 hover:underline font-medium">
@@ -156,7 +156,7 @@ export default function CookieConsentBanner() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-2">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-amber-400" />
-                <h4 className="text-xs font-bold text-white">Preferencias de privacidad</h4>
+                <p id="cookie-title" className="text-xs font-bold text-white">Preferencias de privacidad</p>
               </div>
               <button
                 type="button"
