@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2, Phone, ShieldAlert, Wallet } from 'lucide-rea
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import InfoProteccionDatos from '@/components/forms/InfoProteccionDatos';
 import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import {
   CALIDADES_POR_PERFIL,
@@ -130,7 +131,7 @@ export default function FormPresupuesto() {
     else if (!telefonoValido(telefono)) e.telefono = 'El móvil debe tener entre 9 y 15 cifras.';
     if (!email.trim()) e.email = 'Indica tu correo.';
     else if (!emailValido(email)) e.email = 'Revisa el correo: falta la @ o el dominio.';
-    if (!aceptaPrivacidad) e.aceptaPrivacidad = 'Acepta la política de privacidad para continuar.';
+    if (!aceptaPrivacidad) e.aceptaPrivacidad = 'Confirma que has leído la política de privacidad para continuar.';
     if (!aceptaCondicionPago) e.aceptaCondicionPago = 'Acepta la condición de los presupuestos adicionales.';
     return e;
   };
@@ -506,6 +507,8 @@ export default function FormPresupuesto() {
         </Link>
       </p>
 
+      <InfoProteccionDatos tipo="presupuesto" tema="oscuro" />
+
       <div className="space-y-3">
         <div>
           <div className="flex items-start gap-3">
@@ -520,7 +523,7 @@ export default function FormPresupuesto() {
               className="mt-0.5 w-5 h-5 shrink-0 accent-amber-400"
             />
             <label htmlFor="acepta-privacidad" className="text-sm text-slate-200">
-              He leído y acepto la{' '}
+              He leído la{' '}
               <Link href="/privacidad" className="underline text-amber-300 hover:text-amber-200">
                 política de privacidad
               </Link>

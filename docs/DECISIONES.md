@@ -139,6 +139,39 @@
     sin plantillas de Meta ni coexistencia.
 49. **Clientes nuevos en Google Drive** (con sus datos y el resumen de la obra), como ya hace Luis.
 
+### Segunda ronda de decisiones y privacidad (2026-10-06, noche)
+
+50. **IA: API de Claude (Anthropic).** A los clientes del EEE los contrata Anthropic Ireland; el
+    acuerdo de tratamiento de datos va dentro de sus condiciones comerciales; no entrena con los
+    datos y borra entradas y salidas en 30 días. La IA no recibe nombre, correo ni teléfono.
+51. **Servidor: VPS de Hostinger en Fráncfort (Alemania)**, dentro de la UE. Luis dijo primero
+    España, pero Hostinger no ofrece VPS en España (comprobado en su web); Luis lo confirmó.
+52. **Cuenta profesional de Google: el Google Workspace de PyMExpert** (Luis). Nunca el Gmail
+    personal: con una cuenta personal, Google no firma contrato de encargado del tratamiento
+    (RGPD art. 28). Comprobado por DNS que hoy ningún dominio de Luis tiene Workspace (el correo
+    está en Hostinger): hay que contratarlo antes de publicar. Remitente propuesto:
+    info@construccionesanaid.com como alias (D13 en el repositorio de n8n, pendiente).
+53. **Política de privacidad reescrita** en «tú» y con resumen: nombra a Hostinger (Fráncfort),
+    Google, Anthropic, Cloudflare y WhatsApp; explica las transferencias a EE. UU. y sus
+    garantías, la IA del borrador y la decisión automática de gratuidad con revisión humana
+    (RGPD art. 22); usa la base legal correcta (medidas precontractuales, no consentimiento) e
+    incluye los plazos. Aviso legal sin el chat y página de IA con el nombre del proveedor.
+54. **Plazos de conservación (propuestos, pendientes de confirmar por Luis):** sin obra, 12 meses
+    desde el último contacto; con obra, lo que dure y después bloqueo de 5 años; profesionales no
+    seleccionados, 12 meses; ejecuciones de n8n, 14 días. Consecuencia: «el primero gratis»
+    cuenta solo las solicitudes que aún se conservan. n8n avisa cada mes de lo caducado y borra
+    Luis (nada se borra solo).
+55. **Primera capa informativa en los cuatro formularios** (LOPDGDD art. 11): responsable,
+    finalidad, base, destinatarios y derechos junto a la casilla, que pasa a «He leído la política
+    de privacidad» (la base es la solicitud del cliente, no su consentimiento).
+56. **Cookies: un solo aviso, el propio.** Se retira CookieYes (sin configurar; habría mostrado un
+    segundo aviso). Mientras GTM no tenga ID real no se muestran el aviso ni «Configurar cookies»,
+    porque no hay nada que aceptar, y /cookies lo dice; al poner el ID aparecen solos. Si se
+    añaden en GTM etiquetas además de GA4, hay que actualizar /cookies.
+57. **Presupuestos de n8n:** IVA del 21 % siempre (base, IVA y total); cocina y baño por partidas
+    con precio por calidad (se definen al construir); cada presupuesto detalla la calidad elegida
+    partida por partida. Detalle en el repositorio de n8n.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e
@@ -152,11 +185,18 @@ Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
 ### Pendiente de confirmar por Luis
 
 - Lugar y plazo reales de cada foto de la galería.
-- Proveedor de IA que usa n8n y región del VPS de Hostinger (para la política de privacidad).
-- Textos de cada calidad (los tendrá la IA de n8n; la web solo muestra el nombre).
+- ~~Proveedor de IA que usa n8n y región del VPS de Hostinger~~ Resuelto (decisiones 50 y 51).
+- Textos de cada calidad: Luis los rellena en `plantillas/calidades.csv` del repositorio de n8n
+  (la web solo muestra el nombre).
+- Plazos de conservación (decisión 54).
+- Contratar el Google Workspace de PyMExpert y elegir remitente (decisión 52). Mientras el correo
+  siga en Hostinger, la política lo nombra como proveedor de correo; si pasa a Google, actualizarla.
 
 ### Pendiente técnico detectado (06-10-2026)
 
 - ~~Google Fonts desde los servidores de Google~~ **Resuelto (06-10-2026):** fuentes servidas
   desde la propia web con `next/font`; 0 peticiones a Google y CSP sin dominios de fuentes.
 - Turnstile: Luis debe crear el widget en Cloudflare y poner las dos claves en Dokploy.
+- `CookieConsentBanner.tsx` arrastra 3 errores de lint anteriores (setState dentro de un efecto y
+  tipo `Function`). El aviso no se muestra mientras no haya GTM: arreglarlos y probarlo cuando se
+  active la medición.

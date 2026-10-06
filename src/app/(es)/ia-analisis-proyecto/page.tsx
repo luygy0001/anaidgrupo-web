@@ -126,7 +126,8 @@ export default function IAAnalisisPage() {
           </div>
           <p className="text-muted-foreground leading-relaxed">
             Usamos tus datos solo para preparar y enviarte el presupuesto y para gestionar
-            tu obra. En la{' '}
+            tu obra. La IA que redacta el borrador es Claude, de la empresa Anthropic: no recibe
+            tu nombre, tu correo ni tu teléfono, y no usa tus datos para entrenarse. En la{' '}
             <Link href="/privacidad" className="text-primary underline">
               política de privacidad
             </Link>{' '}

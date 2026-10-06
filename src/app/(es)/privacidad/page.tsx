@@ -1,13 +1,110 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
-import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS } from '@/lib/constants';
+import { LEGAL, LEGAL_DRAFT, SITE_NAME, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS } from '@/lib/constants';
+import { IMPORTE_PRESUPUESTO_ADICIONAL } from '@/lib/presupuesto';
 
 export const metadata: Metadata = {
   title: 'Política de privacidad',
-  description: 'Política de privacidad de Construcciones Anaid. Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.',
+  description:
+    'Qué datos tratamos en Construcciones Anaid, para qué, con quién los compartimos (también la inteligencia artificial que prepara los presupuestos) y cómo ejercer tus derechos.',
   alternates: { canonical: '/privacidad' },
   robots: { index: false },
 };
+
+// Si cambia un proveedor, un plazo o el lugar del servidor, hay que actualizar esta página
+// (ver docs/DECISIONES.md, decisiones 50 a 56) y la fecha de «Última actualización».
+
+const ENLACE = 'text-primary underline';
+const CELDA = 'px-3 py-2 align-top';
+
+// En móvil las tablas se desplazan en horizontal: la región recibe el foco para poder moverla con
+// el teclado (WCAG 2.1.1) y se anuncia con el título de la tabla.
+function Tabla({ titulo, children }: { titulo: string; children: React.ReactNode }) {
+  return (
+    <div className="overflow-x-auto" tabIndex={0} role="region" aria-label={titulo}>
+      <table className="w-full text-sm border border-border">
+        <caption className="sr-only">{titulo}</caption>
+        {children}
+      </table>
+    </div>
+  );
+}
+
+const FINALIDADES: { finalidad: string; base: string }[] = [
+  {
+    finalidad:
+      'Preparar tu presupuesto, enviártelo por correo y por WhatsApp y organizar la visita a la obra antes de contratar.',
+    base: 'Aplicar las medidas precontractuales que nos pides (art. 6.1.b RGPD).',
+  },
+  {
+    finalidad: `Decidir si tu presupuesto es gratuito o cuesta ${IMPORTE_PRESUPUESTO_ADICIONAL} € (regla de presupuestos repetidos).`,
+    base: 'Medidas precontractuales: es una condición que aceptas al pedirlo (art. 6.1.b) y nuestro interés legítimo en evitar abusos (art. 6.1.f).',
+  },
+  {
+    finalidad:
+      'Pasar tu solicitud al profesional que hará la obra, si decides seguir adelante, y coordinar y seguir la obra.',
+    base: 'Medidas precontractuales y la relación que mantienes con nosotros (art. 6.1.b).',
+  },
+  {
+    finalidad: 'Contestar tus consultas por el formulario, WhatsApp, teléfono o correo.',
+    base: 'Medidas precontractuales si preguntas por un servicio (art. 6.1.b) o nuestro interés legítimo en atender a quien nos escribe (art. 6.1.f).',
+  },
+  {
+    finalidad: 'Valorar tu incorporación como profesional colaborador.',
+    base: 'Medidas precontractuales (art. 6.1.b).',
+  },
+  {
+    finalidad: 'Proteger la web frente a robots y abusos.',
+    base: 'Interés legítimo en la seguridad de la web (art. 6.1.f).',
+  },
+  {
+    finalidad: 'Cumplir obligaciones legales, por ejemplo fiscales o requerimientos de autoridades.',
+    base: 'Obligación legal (art. 6.1.c).',
+  },
+];
+
+const PROVEEDORES: { nombre: string; uso: string; lugar: string }[] = [
+  {
+    nombre: 'Hostinger',
+    uso: 'Servidor de la web y de la automatización que gestiona las solicitudes, y buzones de correo de @construccionesanaid.com.',
+    lugar: 'Servidor en Fráncfort (Alemania).',
+  },
+  {
+    nombre: 'Google (Google Workspace)',
+    uso: 'Correo con el que te enviamos el presupuesto, hojas de cálculo, documentos y la carpeta de cada cliente.',
+    lugar: 'Unión Europea y Estados Unidos.',
+  },
+  {
+    nombre: 'Anthropic (Claude)',
+    uso: 'Redactar el borrador de tu presupuesto. Según su política, borra lo que recibe en 30 días como máximo y no lo usa para entrenar sus modelos.',
+    lugar: 'Irlanda y Estados Unidos.',
+  },
+  {
+    nombre: 'Cloudflare (Turnstile)',
+    uso: 'Comprobar que quien envía un formulario es una persona y no un robot.',
+    lugar: 'Red mundial; empresa de Estados Unidos.',
+  },
+];
+
+const PLAZOS: { datos: string; plazo: string }[] = [
+  {
+    datos: 'Solicitudes de presupuesto o de proyecto que no llegan a obra, y consultas',
+    plazo: '12 meses desde nuestro último contacto. Después se borran.',
+  },
+  {
+    datos: 'Si contratas la obra con el profesional',
+    plazo:
+      'Mientras dure la obra y su seguimiento. Después, bloqueados mientras puedan exigirse responsabilidades (5 años con carácter general) y durante los plazos de la ley fiscal; luego se borran.',
+  },
+  {
+    datos: 'Profesionales que quieren colaborar',
+    plazo: 'Si no colaboramos, 12 meses. Si colaboramos, mientras dure la colaboración y después los plazos legales.',
+  },
+  { datos: 'Registro de la automatización que procesa los formularios', plazo: '14 días.' },
+  { datos: 'Copia en Anthropic al redactar el presupuesto', plazo: 'Hasta 30 días, según su política.' },
+  { datos: 'Dirección IP para limitar envíos repetidos', plazo: '15 minutos.' },
+];
 
 export default function PrivacidadPage() {
   return (
@@ -17,229 +114,288 @@ export default function PrivacidadPage() {
 
         {LEGAL_DRAFT && (
           <div className="mb-6 p-4 rounded-lg border border-amber-300 bg-amber-50 text-sm text-amber-900">
-            <strong>Documento en redacción.</strong> Los datos identificativos
-            del responsable (CIF/NIF) se completarán antes de la publicación
-            definitiva. Esta página no está indexada en buscadores.
+            <strong>Documento en redacción.</strong> Esta página no está indexada en buscadores.
           </div>
         )}
 
-        <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: abril de 2026</p>
+        <div className="text-muted-foreground space-y-8">
+          <p className="text-xs italic">Última actualización: 6 de octubre de 2026</p>
 
           <p>
-            En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27
-            de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al
-            tratamiento de datos personales (RGPD), y de la Ley Orgánica 3/2018, de 5 de diciembre,
-            de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), le
-            informamos de lo siguiente:
+            Aquí te contamos, sin letra pequeña, qué datos tuyos tratamos, para qué, con quién los
+            compartimos y qué derechos tienes. Aplicamos el Reglamento General de Protección de Datos
+            (RGPD) y la Ley Orgánica 3/2018, de Protección de Datos Personales y garantía de los
+            derechos digitales (LOPDGDD).
           </p>
 
+          <div className="p-5 rounded-xl border border-border bg-muted">
+            <h2 className="text-lg font-semibold text-foreground mb-3">En resumen</h2>
+            <ul className="list-disc pl-5 space-y-1.5">
+              <li>
+                Tus datos los trata {LEGAL.titular}, con el nombre comercial {SITE_NAME}.
+              </li>
+              <li>
+                Los usamos para preparar tu presupuesto, contestarte y, si sigues adelante, pasar tu
+                obra al profesional que la hará.
+              </li>
+              <li>
+                Una inteligencia artificial (Claude, de Anthropic) redacta el borrador de tu
+                presupuesto sin conocer tu nombre, tu correo ni tu teléfono, y una persona lo revisa
+                antes de enviártelo.
+              </li>
+              <li>
+                Si tu presupuesto es gratuito o de pago lo decide un proceso automático: puedes pedir
+                que lo revise una persona.
+              </li>
+              <li>No vendemos tus datos ni te enviamos publicidad.</li>
+              <li>
+                Puedes pedir verlos, corregirlos o borrarlos escribiendo a{' '}
+                <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a>.
+              </li>
+            </ul>
+          </div>
+
           <div>
-            <h2 className="text-lg font-semibold text-foreground">1. Responsable del tratamiento</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-2">1. Quién trata tus datos</h2>
             <ul className="list-disc pl-5 space-y-1">
               <li><strong>Responsable:</strong> {LEGAL.titular} (nombre comercial: {SITE_NAME})</li>
               <li><strong>NIF:</strong> {LEGAL.nif}</li>
               <li><strong>Domicilio:</strong> {ADDRESS}</li>
-              <li><strong>Correo electrónico:</strong> <a href={`mailto:${EMAIL}`} className="text-primary underline">{EMAIL}</a></li>
-              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-primary underline">{PHONE_DISPLAY}</a></li>
-              <li><strong>Sitio web:</strong> {SITE_URL}</li>
+              <li><strong>Correo:</strong> <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a></li>
+              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className={ENLACE}>{PHONE_DISPLAY}</a></li>
             </ul>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">2. Datos que recogemos</h2>
-            <p>Recabamos datos personales a través de los siguientes canales:</p>
-
-            <h3 className="text-base font-semibold text-foreground mt-4">a) Formulario de solicitud de proyecto</h3>
-            <p>Datos recogidos: nombre completo, teléfono, email, código postal, descripción del proyecto, tipo de servicio, nivel de urgencia y, opcionalmente, fotografías del proyecto.</p>
-
-            <h3 className="text-base font-semibold text-foreground mt-4">b) Chat guiado</h3>
-            <p>
-              Este sitio web dispone de un chat guiado (no un chatbot de inteligencia artificial
-              autónomo) que recoge los mismos datos que el formulario de solicitud mediante un flujo
-              de preguntas predefinidas. Los datos proporcionados a través del chat se almacenan y
-              tratan con las mismas finalidades y garantías que los datos del formulario.
-            </p>
-
-            <h3 className="text-base font-semibold text-foreground mt-4">c) Formulario de contacto</h3>
-            <p>Datos recogidos: nombre, email, teléfono (opcional) y mensaje.</p>
-
-            <h3 className="text-base font-semibold text-foreground mt-4">d) Formulario de incorporación de profesionales</h3>
-            <p>Datos recogidos: nombre completo, empresa, email, teléfono, especialidades, zonas de trabajo y descripción de actividad.</p>
-
-            <h3 className="text-base font-semibold text-foreground mt-4">e) Panel de usuarios registrados</h3>
-            <p>Datos recogidos: email y contraseña para el acceso al panel privado de profesionales colaboradores.</p>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">3. Finalidad del tratamiento</h2>
-            <p>Los datos personales recabados se tratan con las siguientes finalidades:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Gestionar las solicitudes de proyecto enviadas por los usuarios a través de formularios, chat guiado u otros canales.</li>
-              <li>Analizar, clasificar y puntuar cada solicitud para asignarla al profesional colaborador más adecuado según especialidad, zona y disponibilidad.</li>
-              <li>Contactar al usuario para dar seguimiento a su solicitud y facilitar la comunicación con el profesional asignado.</li>
-              <li>Gestionar las solicitudes de incorporación de profesionales colaboradores a la red de {SITE_NAME}.</li>
-              <li>Responder a las consultas recibidas a través del formulario de contacto.</li>
-              <li>Gestionar el acceso y la funcionalidad del panel privado de profesionales.</li>
-              <li>Cumplir con las obligaciones legales aplicables.</li>
-            </ul>
-            <p>
-              <strong>No realizamos envío de comunicaciones comerciales</strong> salvo que el usuario
-              haya prestado su consentimiento expreso e inequívoco para ello.
+            <p className="mt-3">
+              {SITE_NAME} no ejecuta obras: estudia tu solicitud, prepara el presupuesto y te pone en
+              contacto con un profesional autónomo, que es quien firma contigo el contrato de obra.
             </p>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">4. Base legal del tratamiento</h2>
-            <p>La base legal para el tratamiento de los datos personales es:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Consentimiento del interesado</strong> (art. 6.1.a RGPD): al marcar la casilla
-                de aceptación de esta política de privacidad en los formularios y el chat guiado, el
-                usuario presta su consentimiento libre, específico, informado e inequívoco para el
-                tratamiento de sus datos.
-              </li>
-              <li>
-                <strong>Ejecución de medidas precontractuales</strong> (art. 6.1.b RGPD): los datos
-                facilitados para la solicitud de proyecto se tratan en el marco de la prestación del
-                servicio de intermediación solicitado por el usuario.
-              </li>
-              <li>
-                <strong>Interés legítimo</strong> (art. 6.1.f RGPD): para la gestión interna, mejora
-                del servicio y prevención de fraude.
-              </li>
-              <li>
-                <strong>Cumplimiento de obligaciones legales</strong> (art. 6.1.c RGPD): cuando sea
-                necesario para cumplir con la legislación aplicable.
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">5. Destinatarios de los datos</h2>
-            <p>Los datos personales podrán ser comunicados a:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Profesionales colaboradores:</strong> los datos de contacto y la descripción
-                del proyecto del usuario se compartirán con el profesional colaborador asignado a su
-                solicitud, exclusivamente para la gestión y ejecución del proyecto solicitado.
-              </li>
-              <li>
-                <strong>Proveedores de servicios:</strong> proveedores de alojamiento web (Hostinger),
-                correo electrónico y herramientas de gestión necesarias para la operativa del servicio,
-                que actúan como encargados del tratamiento conforme al artículo 28 del RGPD.
-              </li>
-              <li>
-                <strong>Autoridades públicas:</strong> cuando exista obligación legal de comunicar los
-                datos a jueces, tribunales, administraciones públicas u organismos competentes.
-              </li>
-            </ul>
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">2. Qué datos tratamos</h2>
             <p>
-              No se realizan transferencias internacionales de datos fuera del Espacio Económico
-              Europeo (EEE).
+              Solo los que tú nos das y los técnicos imprescindibles para que la web funcione con
+              seguridad. No compramos datos ni los sacamos de otras fuentes.
+            </p>
+            <h3 className="text-base font-semibold text-foreground">Formulario de presupuesto</h3>
+            <p>
+              Si eres particular, inversor o inmobiliaria; la calidad de acabados; el tipo de obra; los
+              metros; el municipio; la descripción de la obra; tu nombre, móvil y correo, y las
+              casillas que marcas.
+            </p>
+            <h3 className="text-base font-semibold text-foreground">Solicitud de proyecto</h3>
+            <p>Nombre, teléfono, correo, código postal, tipo de servicio, urgencia y descripción.</p>
+            <h3 className="text-base font-semibold text-foreground">Formulario de contacto</h3>
+            <p>Nombre, correo, teléfono (si nos lo das) y tu mensaje.</p>
+            <h3 className="text-base font-semibold text-foreground">Formulario para profesionales</h3>
+            <p>
+              Nombre, empresa, teléfono, correo, especialidades, zonas de trabajo, experiencia y
+              descripción de tu actividad.
+            </p>
+            <h3 className="text-base font-semibold text-foreground">WhatsApp, teléfono y correo</h3>
+            <p>Lo que nos cuentes y las fotos que nos envíes.</p>
+            <h3 className="text-base font-semibold text-foreground">Datos técnicos</h3>
+            <p>
+              Tu dirección IP y datos de tu navegador, para comprobar que no eres un robot y limitar
+              los envíos repetidos.
+            </p>
+            <p>
+              No necesitamos datos de salud ni otros datos especialmente protegidos: por favor, no los
+              incluyas en la descripción.
             </p>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">6. Plazo de conservación</h2>
-            <p>Los datos personales se conservarán durante los siguientes plazos:</p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>
-                <strong>Solicitudes de proyecto:</strong> mientras dure la gestión de la solicitud y,
-                una vez finalizada, durante los plazos de prescripción legalmente aplicables (mínimo
-                3 años conforme al artículo 1.964 del Código Civil).
-              </li>
-              <li>
-                <strong>Datos de contacto:</strong> mientras se mantenga la relación y, posteriormente,
-                durante los plazos de prescripción legal.
-              </li>
-              <li>
-                <strong>Datos de profesionales colaboradores:</strong> mientras se mantenga la relación
-                de colaboración activa.
-              </li>
-              <li>
-                <strong>Datos del chat guiado:</strong> se conservarán asociados a la solicitud generada
-                y seguirán los mismos plazos que las solicitudes de proyecto.
-              </li>
-            </ul>
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">3. Para qué los usamos y con qué base legal</h2>
+            <Tabla titulo="Finalidades del tratamiento y su base legal">
+              <thead>
+                <tr className="bg-muted text-foreground">
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Para qué</th>
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Base legal</th>
+                </tr>
+              </thead>
+              <tbody>
+                {FINALIDADES.map((f) => (
+                  <tr key={f.finalidad} className="border-t border-border">
+                    <td className={CELDA}>{f.finalidad}</td>
+                    <td className={CELDA}>{f.base}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Tabla>
             <p>
-              Una vez transcurridos los plazos indicados, los datos serán suprimidos o, en su caso,
-              bloqueados conforme a la normativa vigente.
+              No te enviamos publicidad. Si algún día quisiéramos hacerlo, antes te pediríamos permiso
+              aparte.
             </p>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">7. Derechos del interesado</h2>
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">4. Inteligencia artificial y decisiones automáticas</h2>
+            <h3 className="text-base font-semibold text-foreground">El borrador de tu presupuesto</h3>
             <p>
-              De conformidad con el RGPD y la LOPDGDD, el usuario puede ejercer en cualquier momento
-              los siguientes derechos:
+              Un sistema de inteligencia artificial, Claude, de la empresa Anthropic, redacta el
+              borrador de tu presupuesto con los datos de la obra: perfil, calidad, tipo de obra,
+              metros, municipio y descripción. No recibe tu nombre, tu correo ni tu teléfono. El
+              importe no lo calcula la IA: sale de nuestras tarifas. Una persona revisa cada
+              presupuesto antes de enviártelo, y el precio final lo fija el profesional en el contrato,
+              después de visitar la obra. Te lo explicamos con más detalle en{' '}
+              <Link href="/ia-analisis-proyecto" className={ENLACE}>cómo usamos la IA</Link>.
+            </p>
+            <h3 className="text-base font-semibold text-foreground">Si tu presupuesto es gratuito o de pago</h3>
+            <p>
+              Esto sí lo decide un proceso automático, sin intervención de una persona, en el momento
+              en que envías el formulario. Mira tus solicitudes anteriores con el mismo correo o el
+              mismo móvil:
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Acceso:</strong> obtener confirmación de si se están tratando sus datos y acceder a los mismos.</li>
-              <li><strong>Rectificación:</strong> solicitar la corrección de datos inexactos o incompletos.</li>
-              <li><strong>Supresión:</strong> solicitar la eliminación de sus datos cuando, entre otros motivos, ya no sean necesarios para la finalidad para la que fueron recogidos.</li>
-              <li><strong>Limitación del tratamiento:</strong> solicitar la limitación del tratamiento en los supuestos previstos en el artículo 18 del RGPD.</li>
-              <li><strong>Portabilidad:</strong> recibir los datos en un formato estructurado, de uso común y lectura mecánica, y transmitirlos a otro responsable.</li>
-              <li><strong>Oposición:</strong> oponerse al tratamiento de sus datos en determinadas circunstancias.</li>
-              <li><strong>Revocación del consentimiento:</strong> retirar el consentimiento prestado en cualquier momento, sin que ello afecte a la licitud del tratamiento basado en el consentimiento previo a su retirada.</li>
+              <li>Particulares: el primer presupuesto es gratuito.</li>
+              <li>Inversores e inmobiliarias: un presupuesto gratuito cada 7 días.</li>
+              <li>
+                Los demás cuestan {IMPORTE_PRESUPUESTO_ADICIONAL} €. Te lo decimos antes de preparar
+                nada y decides tú si lo pides.
+              </li>
             </ul>
             <p>
-              Para ejercer estos derechos, el usuario puede dirigirse a{' '}
-              <a href={`mailto:${EMAIL}`} className="text-primary underline">{EMAIL}</a>,
-              indicando en el asunto &quot;Ejercicio de derechos RGPD&quot; y adjuntando copia de su
-              documento de identidad.
-            </p>
-            <p>
-              Asimismo, el usuario tiene derecho a presentar una reclamación ante la Agencia Española
-              de Protección de Datos (AEPD) en{' '}
-              <span className="text-primary">www.aepd.es</span>, si considera que el tratamiento de
-              sus datos no se ajusta a la normativa vigente.
+              Solo contamos las solicitudes que aún conservamos (ver el apartado 7). Tienes derecho a
+              que una persona revise esa decisión, a darnos tu punto de vista y a impugnarla:
+              escríbenos a <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a> (art. 22 RGPD).
             </p>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">8. Medidas de seguridad</h2>
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">5. Con quién compartimos tus datos</h2>
+            <h3 className="text-base font-semibold text-foreground">El profesional que hará tu obra</h3>
             <p>
-              {SITE_NAME} ha adoptado las medidas técnicas y organizativas adecuadas para garantizar
-              la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o
-              acceso no autorizado, de conformidad con lo establecido en el artículo 32 del RGPD.
-              Entre otras medidas:
+              Si decides seguir adelante, pasamos tus datos de contacto y los de la obra al profesional
+              autónomo asignado. Él firma contigo el contrato de obra y, desde ese momento, trata tus
+              datos como responsable para ejecutarla.
             </p>
+            <h3 className="text-base font-semibold text-foreground">Proveedores que trabajan para nosotros</h3>
+            <p>
+              Solo tratan los datos siguiendo nuestras instrucciones y con un contrato de encargo de
+              tratamiento (art. 28 RGPD):
+            </p>
+            <Tabla titulo={`Proveedores que tratan datos por cuenta de ${SITE_NAME}`}>
+              <thead>
+                <tr className="bg-muted text-foreground">
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Proveedor</th>
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Para qué</th>
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Dónde</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PROVEEDORES.map((p) => (
+                  <tr key={p.nombre} className="border-t border-border">
+                    <th scope="row" className={`${CELDA} text-left font-medium text-foreground`}>{p.nombre}</th>
+                    <td className={CELDA}>{p.uso}</td>
+                    <td className={CELDA}>{p.lugar}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Tabla>
+            <h3 className="text-base font-semibold text-foreground">WhatsApp</h3>
+            <p>
+              Si nos escribes por WhatsApp o te enviamos el presupuesto por ahí, WhatsApp (WhatsApp
+              Ireland Limited, del grupo Meta) trata esos mensajes según sus propias condiciones y su
+              política de privacidad.
+            </p>
+            <h3 className="text-base font-semibold text-foreground">Autoridades</h3>
+            <p>Solo cuando la ley nos obligue, por ejemplo jueces o la Agencia Tributaria.</p>
+            <p>No vendemos ni cedemos tus datos a nadie más.</p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-foreground mb-2">6. Transferencias fuera de la Unión Europea</h2>
+            <p>
+              Google, Anthropic, Cloudflare y Meta (WhatsApp) son empresas o grupos con sede en Estados
+              Unidos y pueden tratar datos allí. Esas transferencias se amparan en el Marco de
+              Privacidad de Datos UE-EE. UU. (para las empresas adheridas) y en las cláusulas
+              contractuales tipo aprobadas por la Comisión Europea, incluidas en sus contratos de
+              tratamiento de datos. Si quieres más información, escríbenos a{' '}
+              <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a>.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">7. Cuánto tiempo guardamos tus datos</h2>
+            <Tabla titulo="Plazos de conservación de los datos">
+              <thead>
+                <tr className="bg-muted text-foreground">
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Datos</th>
+                  <th scope="col" className={`${CELDA} text-left font-medium`}>Plazo</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PLAZOS.map((p) => (
+                  <tr key={p.datos} className="border-t border-border">
+                    <th scope="row" className={`${CELDA} text-left font-medium text-foreground`}>{p.datos}</th>
+                    <td className={CELDA}>{p.plazo}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Tabla>
+            <p>
+              Tu elección sobre cookies se guarda en tu propio navegador: lo explicamos en la{' '}
+              <Link href="/cookies" className={ENLACE}>política de cookies</Link>.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">8. Tus derechos</h2>
+            <p>Puedes pedirnos en cualquier momento:</p>
             <ul className="list-disc pl-5 space-y-1">
-              <li>Cifrado de las comunicaciones mediante protocolo HTTPS/TLS.</li>
-              <li>Almacenamiento seguro de contraseñas mediante algoritmos de hash.</li>
-              <li>Control de acceso basado en roles para el panel de administración.</li>
-              <li>Copias de seguridad periódicas de la base de datos.</li>
+              <li><strong>Acceso:</strong> saber qué datos tuyos tenemos.</li>
+              <li><strong>Rectificación:</strong> corregir los que estén mal.</li>
+              <li><strong>Supresión:</strong> borrarlos cuando ya no hagan falta.</li>
+              <li><strong>Oposición y limitación:</strong> que dejemos de usarlos o los usemos solo para algunas cosas.</li>
+              <li><strong>Portabilidad:</strong> recibirlos en un formato que puedas llevar a otra empresa.</li>
+              <li>
+                <strong>Revisión por una persona:</strong> que una persona revise una decisión
+                automática, como la de si tu presupuesto es gratuito.
+              </li>
+            </ul>
+            <p>
+              Escríbenos a <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a> con el asunto
+              «Protección de datos» e indica qué quieres. Te contestamos en un mes como máximo. Solo te
+              pediremos que acredites tu identidad si tenemos dudas razonables de que eres tú.
+            </p>
+            <p>
+              Si crees que no hemos tratado bien tus datos, puedes reclamar ante la Agencia Española de
+              Protección de Datos en{' '}
+              <a href="https://www.aepd.es" className={ENLACE} target="_blank" rel="noopener noreferrer">
+                www.aepd.es
+              </a>
+              .
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-lg font-semibold text-foreground mb-2">9. ¿Tienes que darnos tus datos?</h2>
+            <p>
+              Los campos marcados con asterisco son necesarios: sin ellos no podemos preparar tu
+              presupuesto ni contestarte. Para el presupuesto pedimos móvil y correo porque te lo
+              enviamos por los dos medios. Los formularios son para mayores de edad.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h2 className="text-lg font-semibold text-foreground">10. Cómo protegemos tus datos</h2>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Conexión cifrada (HTTPS) en toda la web.</li>
+              <li>Comprobación antirrobots y límite de envíos en los formularios.</li>
+              <li>La web y la automatización se comunican con una clave secreta.</li>
+              <li>
+                Solo acceden a tus datos quien gestiona tu solicitud y, cuando corresponde, el
+                profesional asignado.
+              </li>
+              <li>Proveedores con contrato de tratamiento de datos.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground">9. Uso de cookies</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-2">11. Cambios en esta política</h2>
             <p>
-              Este sitio web puede utilizar cookies propias y de terceros. Para más información,
-              consulte nuestra{' '}
-              <a href="/cookies" className="text-primary underline">política de cookies</a>.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">10. Modificaciones</h2>
-            <p>
-              {SITE_NAME} se reserva el derecho a modificar la presente política de privacidad para
-              adaptarla a novedades legislativas o jurisprudenciales, así como a cambios en la
-              operativa del servicio. Cualquier modificación será publicada en esta misma página
-              con indicación de la fecha de actualización.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="text-lg font-semibold text-foreground">11. Contacto</h2>
-            <p>
-              Para cualquier consulta relacionada con esta política de privacidad o con el
-              tratamiento de sus datos personales, puede contactar con nosotros en{' '}
-              <a href={`mailto:${EMAIL}`} className="text-primary underline">{EMAIL}</a>{' '}
-              o llamando al{' '}
-              <a href={`tel:${PHONE}`} className="text-primary underline">{PHONE_DISPLAY}</a>.
+              Si cambiamos algo importante, por ejemplo un proveedor, lo actualizaremos aquí con su
+              fecha.
             </p>
           </div>
         </div>

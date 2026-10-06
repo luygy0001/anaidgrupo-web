@@ -86,8 +86,11 @@ Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier o
    explicar cómo hablar con una persona (AI Act art. 50.1, en vigor desde el 02-08-2026).
 4. **Plazo de 24 horas**: la web lo promete; si un borrador lleva más de 20 horas sin enviarse,
    n8n se lo recuerda a Luis para no incumplirlo en silencio.
-5. **Datos**: guardar solo lo necesario y el tiempo que diga la política de privacidad; el
-   proveedor de IA y la región del servidor deben figurar en ella.
+5. **Datos**: guardar solo lo necesario y el tiempo que dice la política de privacidad (sin obra,
+   12 meses; ejecuciones de n8n, 14 días). La política ya nombra a Anthropic (API de Claude), el
+   VPS de Hostinger en Fráncfort, Google y Cloudflare: si cambia un proveedor, hay que
+   actualizarla. La cuenta de Google es el Workspace de PyMExpert (nunca un Gmail personal) y los
+   correos salen como info@construccionesanaid.com.
 6. **Precios internos**: los €/m² por calidad (700 / 900 / 1.050, sin IVA) y los textos de cada
    calidad viven solo en n8n; la web nunca los publica.
 

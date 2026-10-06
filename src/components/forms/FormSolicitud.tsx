@@ -7,6 +7,7 @@ import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import InfoProteccionDatos from '@/components/forms/InfoProteccionDatos';
 import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import { WHATSAPP_URL } from '@/lib/constants';
 import { trackFormSubmit } from '@/lib/tracking';
@@ -175,6 +176,8 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
         después de enviar la solicitud: nos ayudan a analizar mejor tu proyecto.
       </p>
 
+      <InfoProteccionDatos tipo="solicitud" />
+
       <div className="flex items-start gap-2">
         <input
           type="checkbox"
@@ -185,17 +188,13 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
           className="mt-1 h-4 w-4 rounded border-border text-primary focus:ring-primary/20"
         />
         <label htmlFor="aceptaPrivacidad" className="text-sm text-foreground">
-          Acepto la{' '}
+          He leído la{' '}
           <a href="/privacidad" className="text-primary underline">
             política de privacidad
-          </a>{' '}
-          y el tratamiento de mis datos.
+          </a>
+          .
         </label>
       </div>
-
-      <p className="text-xs text-muted-foreground">
-        Tus datos están protegidos y solo se usarán para gestionar tu solicitud.
-      </p>
 
       {status === 'error' && (
         <div role="alert" className="rounded-lg bg-red-50 border border-red-200 p-4">

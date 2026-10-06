@@ -144,7 +144,7 @@ function validarPresupuesto(campos: Campos): string | null {
   if (!texto(campos, 'municipio')) return 'Indica el municipio de la obra.';
   if (tipoObra === 'otra' && !texto(campos, 'descripcion')) return 'Cuéntanos qué obra necesitas.';
   if (!texto(campos, 'nombre')) return 'Indica tu nombre.';
-  if (campos.aceptaPrivacidad !== true) return 'Tienes que aceptar la política de privacidad.';
+  if (campos.aceptaPrivacidad !== true) return 'Confirma que has leído la política de privacidad.';
   if (campos.aceptaCondicionPago !== true) return 'Tienes que aceptar las condiciones de los presupuestos adicionales.';
   return null;
 }

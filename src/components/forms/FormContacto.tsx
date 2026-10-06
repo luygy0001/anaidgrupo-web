@@ -6,6 +6,7 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import InfoProteccionDatos from '@/components/forms/InfoProteccionDatos';
 import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import { trackFormSubmit } from '@/lib/tracking';
 
@@ -52,10 +53,12 @@ export default function FormContacto() {
       <Input name="telefono" label="Teléfono (opcional)" type="tel" placeholder="600 000 000" />
       <Textarea name="mensaje" label="Mensaje" required placeholder="¿En qué podemos ayudarte?" />
 
+      <InfoProteccionDatos tipo="contacto" />
+
       <label className="flex items-start gap-2 cursor-pointer">
         <input type="checkbox" required className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary" />
         <span className="text-sm text-muted-foreground">
-          Acepto la <a href="/privacidad" className="text-primary underline">política de privacidad</a>.
+          He leído la <a href="/privacidad" className="text-primary underline">política de privacidad</a>.
         </span>
       </label>
 

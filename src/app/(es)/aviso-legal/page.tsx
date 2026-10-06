@@ -24,7 +24,7 @@ export default function AvisoLegalPage() {
         )}
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: abril de 2026</p>
+          <p className="text-xs italic">Última actualización: 6 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Datos identificativos del titular</h2>
@@ -60,7 +60,7 @@ export default function AvisoLegalPage() {
             <p>
               El presente sitio web tiene por objeto facilitar información sobre los servicios de
               intermediación de {SITE_NAME}, así como permitir a los usuarios enviar solicitudes de
-              proyecto a través de formularios, chat guiado y otros canales de comunicación habilitados.
+              proyecto a través de sus formularios, WhatsApp, teléfono y correo electrónico.
             </p>
           </div>
 
@@ -124,14 +124,14 @@ export default function AvisoLegalPage() {
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground">6. Chat guiado y formularios</h2>
+            <h2 className="text-lg font-semibold text-foreground">6. Formularios e inteligencia artificial</h2>
             <p>
-              Este sitio web dispone de un chat guiado y formularios de solicitud que recogen datos
-              personales del usuario. Dichos datos se tratan conforme a lo establecido en nuestra{' '}
+              Los formularios de este sitio web recogen datos personales que se tratan conforme a
+              nuestra{' '}
               <a href="/privacidad" className="text-primary underline">política de privacidad</a>.
-              El chat guiado no es un asistente de inteligencia artificial autónomo; se trata de un
-              flujo de preguntas predefinidas diseñado para recopilar la información necesaria para
-              analizar la solicitud del usuario.
+              El borrador de cada presupuesto lo redacta un sistema de inteligencia artificial y lo
+              revisa una persona antes de enviarlo; el detalle está en{' '}
+              <a href="/ia-analisis-proyecto" className="text-primary underline">cómo usamos la IA</a>.
             </p>
           </div>
 

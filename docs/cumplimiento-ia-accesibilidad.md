@@ -42,8 +42,8 @@ VoiceOver) y, si se quiere declarar conformidad plena, auditoría externa.
 |---|---|---|
 | /ia-analisis-proyecto describía funciones no confirmadas (fotos, puntuación, urgencia) y negaba que la IA genere presupuestos | Transparencia (AI Act art. 50; RGPD art. 13); prácticas comerciales leales | Corregido (commit 5c5cfa4): cuenta qué hace la IA, qué es automático y qué decide una persona |
 | La portada hablaba de «automatización» sin decir que es IA | Transparencia | Corregido |
-| Presupuesto y regla de los 150 € son decisiones automatizadas | RGPD art. 22 | Añadido en la web el derecho a que una persona lo revise. **Falta en la política de privacidad** |
-| Política de privacidad: menciona un chat y un panel que ya no existen; no nombra la IA, Turnstile, n8n ni Google | RGPD art. 13 | **Pendiente: se actualiza con el formulario nuevo** |
+| La regla de los 150 € es una decisión automatizada (el presupuesto ya no: lo revisa una persona) | RGPD art. 22 | Resuelto: la web y la política de privacidad explican la regla y el derecho a revisión humana (06-10-2026) |
+| Política de privacidad: menciona un chat y un panel que ya no existen; no nombra la IA, Turnstile, n8n ni Google | RGPD art. 13 | Resuelto (06-10-2026): nombra a Hostinger (Fráncfort), Google, Anthropic, Cloudflare y WhatsApp, las transferencias y los plazos; primera capa en los cuatro formularios |
 | Si WhatsApp lo contestara una IA, habría que decirlo al empezar la conversación | AI Act art. 50.1 | Resuelto: lo contesta Luis (persona); no aplica mientras sea así |
 | El presupuesto que envía n8n debe indicar que está elaborado con IA | Buena práctica de transparencia | Se documenta en el contrato de datos de n8n |
 | Formación en IA de quien usa el sistema (Luis y profesionales que reciben los resúmenes) | AI Act art. 4 | Obligación interna: dejar constancia de la formación |
@@ -52,8 +52,8 @@ VoiceOver) y, si se quiere declarar conformidad plena, auditoría externa.
 ## 4. Preguntas abiertas para Luis
 
 1. ~~¿WhatsApp lo responderá una IA o una persona?~~ Una persona (Luis).
-2. ¿Qué proveedor de IA usa n8n (OpenAI, Anthropic, Google…)? ¿En qué región está el VPS de n8n? **Pendiente.**
-3. ~~¿El presupuesto se envía sin que lo revise una persona antes?~~ Sí, automático 24/7.
+2. ~~¿Qué proveedor de IA usa n8n? ¿En qué región está el VPS?~~ API de Claude (Anthropic); VPS de Hostinger en Fráncfort (Alemania).
+3. ~~¿El presupuesto se envía sin que lo revise una persona antes?~~ No: queda en borrador y lo revisa Luis antes de enviarlo (decisión 45).
 4. ~~¿La foto del chalé es una obra real o generada?~~ Banco de imágenes.
 
 ## Fuentes
@@ -63,3 +63,7 @@ VoiceOver) y, si se quiere declarar conformidad plena, auditoría externa.
 - Proyecto de Ley Orgánica de IA en el Congreso: https://finreg360.com/alerta/el-congreso-inicia-el-tramite-del-proyecto-de-ley-organica-para-el-buen-uso-y-la-gobernanza-de-la-inteligencia-artificial/
 - Ley 11/2023 y exención de microempresas: https://www.fieldfisher.com/es-es/locations/espana/actualidad/accesibilidad-obligatoria-claves-de-la-transposicion-accesibility-act
 - EN 301 549 V4.1.1 y WCAG 2.2: https://www.dwt.com/insights/2026/09/european-accessibility-act-ict-standards-update
+- Plazos de conservación de datos de Anthropic (30 días): https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data
+- Condiciones comerciales de Anthropic (Anthropic Ireland para el EEE, sin entrenamiento, acuerdo de tratamiento incluido): https://www.anthropic.com/legal/commercial-terms
+- Centros de datos de VPS de Hostinger (Francia, Alemania, Lituania, Reino Unido; no España): https://www.hostinger.com/support/1583267-where-are-your-servers-located
+- Datos que recoge Turnstile y papel de Cloudflare: https://www.cloudflare.com/turnstile-privacy-policy/

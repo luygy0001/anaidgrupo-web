@@ -6,6 +6,7 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import InfoProteccionDatos from '@/components/forms/InfoProteccionDatos';
 import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import { trackFormSubmit } from '@/lib/tracking';
 
@@ -111,6 +112,8 @@ export default function FormProfesional() {
         required
       />
 
+      <InfoProteccionDatos tipo="profesional" />
+
       <label className="flex items-start gap-2 cursor-pointer">
         <input
           type="checkbox"
@@ -119,11 +122,11 @@ export default function FormProfesional() {
           className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
         />
         <span className="text-sm text-muted-foreground">
-          Acepto la{' '}
+          He leído la{' '}
           <a href="/privacidad" className="text-primary underline">
             política de privacidad
-          </a>{' '}
-          y el tratamiento de mis datos.
+          </a>
+          .
         </span>
       </label>
 

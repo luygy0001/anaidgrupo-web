@@ -1,11 +1,10 @@
-import { GTM_ID } from '@/lib/constants';
+import { GTM_CONFIGURADO, GTM_ID } from '@/lib/constants';
 
 // Fallback <noscript> que debe ir justo después de <body>.
 // Usa iframe clásico de GTM para usuarios con JS deshabilitado.
 
 export default function GTMNoScript() {
-  const isPlaceholder = !GTM_ID || GTM_ID === 'GTM-XXXXXXX';
-  if (isPlaceholder) return null;
+  if (!GTM_CONFIGURADO) return null;
 
   return (
     <noscript>

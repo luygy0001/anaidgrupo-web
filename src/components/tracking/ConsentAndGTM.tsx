@@ -1,11 +1,11 @@
 import Script from 'next/script';
-import { GTM_ID } from '@/lib/constants';
+import { GTM_CONFIGURADO, GTM_ID } from '@/lib/constants';
 
 // Scripts que deben cargarse en <head>:
 // 1. Consent Mode v2 defaults (denegado por defecto, UE/RGPD).
 // 2. Google Tag Manager (GTM fan-out a GA4 / Meta Pixel / etc.).
 // Importante: los defaults de Consent Mode se emiten ANTES de cargar GTM.
-// CookieYes actualizará los flags cuando el usuario guarde sus preferencias.
+// El aviso de cookies propio (CookieConsentBanner) actualiza los flags al guardar la elección.
 
 const consentDefaultsSrc = `
   window.dataLayer = window.dataLayer || [];
@@ -31,8 +31,6 @@ function gtmSnippet(id: string): string {
 }
 
 export default function ConsentAndGTM() {
-  const isPlaceholder = !GTM_ID || GTM_ID === 'GTM-XXXXXXX';
-
   return (
     <>
       <Script
@@ -40,7 +38,7 @@ export default function ConsentAndGTM() {
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: consentDefaultsSrc }}
       />
-      {!isPlaceholder && (
+      {GTM_CONFIGURADO && (
         <Script
           id="gtm-loader"
           strategy="afterInteractive"

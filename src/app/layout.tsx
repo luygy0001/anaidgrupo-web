@@ -4,7 +4,6 @@ import './globals.css';
 import { SITE_NAME, SITE_URL } from '@/lib/constants';
 import ConsentAndGTM from '@/components/tracking/ConsentAndGTM';
 import GTMNoScript from '@/components/tracking/GTMNoScript';
-import CookieYesLoader from '@/components/tracking/CookieYesLoader';
 import ClickTracker from '@/components/tracking/ClickTracker';
 
 // Fuentes servidas desde la propia web: next/font las descarga al compilar y el navegador no
@@ -43,7 +42,6 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col">
         <GTMNoScript />
-        <CookieYesLoader />
         <ClickTracker />
         {children}
       </body>
