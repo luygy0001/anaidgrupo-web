@@ -67,6 +67,27 @@
 22. **Galería:** vuelve ya, como obras reales de Anaid, con el tipo de obra y sin lugar ni
     plazo hasta que Luis pase los datos.
 
+### Respuestas de Luis a la propuesta de copy de portada (2026-10-06)
+
+23. **Precio cerrado:** sí, en el contrato, según el presupuesto firmado. El precio final
+    lo fija el profesional que hace la obra.
+24. **Presupuesto de 1 hora:** en el 90 % de los casos es el definitivo. Antes de contratar
+    se hace una visita visual a la obra para contrastar que lo explicado coincide con la
+    realidad (y resolver dudas). No llamarlo «definitivo» en la web.
+25. **Diseño 3D:** no se incluye. Bajo petición, diseño 3D con IA con coste según lo que se pida.
+26. **Licencias y permisos:** por cuenta del cliente. Si piden que los gestione Anaid, se
+    valora con coste aparte (se intenta no hacerlo).
+27. **Comisiones a inmobiliarias:** se pactan en persona; nada en la web.
+28. **Calidades:** cada una lleva un tope por material (ejemplo revestimiento: media-baja
+    hasta 20 €/m², media hasta 40 €/m², alta hasta 90 €/m²). Si el cliente elige algo más
+    caro, paga la diferencia. En la web se explica el mecanismo sin cifras (decisión 15).
+29. **Contador semanal confirmado:** particular, 1 gratis en total; inmobiliaria e
+    inversor, 1 gratis por semana; el resto, 150 €.
+30. **Plazos incumplidos:** el contrato entre profesional y cliente incluye penalización
+    por retraso. Los profesionales de la red trabajan con unos valores fijados previamente
+    con Construcciones Anaid; Luis empezó a explicar qué pasa si los incumplen de forma
+    reiterada (frase incompleta: pendiente de confirmar).
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e

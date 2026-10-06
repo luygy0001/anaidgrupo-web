@@ -76,32 +76,32 @@ export default function Hero() {
             {/* Tag / Badge de impacto */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
               <Zap className="w-3.5 h-3.5 text-amber-400" />
-              Presupuestos con IA en menos de 60 minutos
+              Presupuesto en menos de 1 hora
             </div>
 
             {/* H1 de Alto Impacto con sombra de alta definición */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-              Reformas integrales con <span className="text-amber-400">plazo cerrado de 30 a 60 días</span> y diseño que revaloriza tu inmueble.
+              Reformas en la Comunidad de Madrid con <span className="text-amber-400">presupuesto en menos de 1 hora</span> y fotos de tu obra casi cada día.
             </h1>
 
             {/* Subtítulo puente */}
             <p className="text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium">
-              Coordinamos arquitectos, interioristas y oficios homologados en Madrid y zona centro. Recibe fotos y porcentaje de avance casi a diario en tu WhatsApp sin tener que perseguir a nadie.
+              Eliges la calidad de los acabados y te asignamos al profesional adecuado de nuestra red de arquitectos y oficios. Tú firmas con él; nosotros coordinamos y te mandamos el avance por WhatsApp. Sin perseguir a nadie.
             </p>
 
             {/* Badges de Confianza Rápidos */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
               <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md">
                 <Clock className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Obra en 30-60 días</span>
+                <span>Plazo y precio en contrato</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md">
                 <ShieldCheck className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Precio cerrado por contrato</span>
+                <span>Un solo interlocutor</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md col-span-2 sm:col-span-1">
                 <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Especialistas en Inversores</span>
+                <span>También para inversores</span>
               </div>
             </div>
 
@@ -111,7 +111,7 @@ export default function Hero() {
                 href="#contacto"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm uppercase tracking-wider shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all transform hover:-translate-y-0.5 text-center"
               >
-                Pedir Presupuesto en 1h
+                Pedir presupuesto gratis
               </a>
 
               {/* Botón WhatsApp Oficial con Icono Original y Texto WhatsApp */}
@@ -128,7 +128,7 @@ export default function Hero() {
             </div>
 
             <div className="pt-2 flex items-center gap-2 text-xs text-slate-200 font-medium flex-wrap">
-              <span className="drop-shadow-sm">Atención técnica directa:</span>
+              <span className="drop-shadow-sm">¿Prefieres hablar?</span>
               <a
                 href={`tel:${PHONE}`}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/80 hover:bg-slate-900 border border-white/20 text-amber-300 hover:text-amber-200 font-bold transition-all shadow-md backdrop-blur-md"
@@ -147,7 +147,7 @@ export default function Hero() {
               {/* Selector interactivo de estancias */}
               <div className="flex items-center justify-between">
                 <span className="text-xs uppercase tracking-wider text-slate-200 font-bold drop-shadow-xs">
-                  Galería de Acabados
+                  Obras de nuestra red
                 </span>
                 <div className="flex items-center gap-1">
                   {SLIDES.map((s, i) => (

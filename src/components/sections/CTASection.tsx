@@ -13,7 +13,7 @@ interface CTASectionProps {
 }
 
 export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
-  const [profile, setProfile] = useState<'inversor' | 'inmobiliaria' | 'particular'>('inversor');
+  const [profile, setProfile] = useState<'inversor' | 'inmobiliaria' | 'particular'>('particular');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -59,10 +59,10 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 <CheckCircle2 className="w-10 h-10" />
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-white">
-                ¡Solicitud recibida y protegida con éxito!
+                Recibido. Ya estamos con tu presupuesto.
               </h3>
               <p className="text-slate-300 max-w-md mx-auto text-sm leading-relaxed">
-                Nuestro sistema de IA y equipo técnico ya están procesando tus datos de forma confidencial. Recibirás tu valoración preliminar en tu email y WhatsApp en menos de 60 minutos.
+                Te lo enviamos por WhatsApp en menos de 1 hora, en horario de atención (lunes a viernes, de 8:30 a 19:30). Si lo has pedido fuera de ese horario, te llega el siguiente día laborable.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
@@ -72,7 +72,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-colors"
                 >
                   <WhatsAppIcon className="w-5 h-5 fill-white text-white" />
-                  <span>Agilizar por WhatsApp</span>
+                  <span>Escribirnos por WhatsApp</span>
                 </a>
                 <a
                   href={`tel:${PHONE}`}
@@ -88,18 +88,29 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
               <div className="text-center space-y-3">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider">
                   <Zap className="w-3.5 h-3.5" />
-                  Presupuesto con IA en menos de 1 hora
+                  Presupuesto en menos de 1 hora
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
-                  {title || 'Pide tu presupuesto sin esperas ni rodeos.'}
+                  {title || 'Pide tu presupuesto. El primero es gratis.'}
                 </h2>
                 <p className="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto">
-                  {subtitle || 'Selecciona tu perfil, cuéntanos brevemente tu proyecto y te enviamos una estimación técnica realista directamente a tu móvil.'}
+                  {subtitle || 'Dinos quién eres, elige la calidad de los acabados y cuéntanos tu obra. Te mandamos el presupuesto al móvil.'}
                 </p>
               </div>
 
               {/* Selector de Perfil (Alimentador del Triage n8n) */}
               <div className="grid grid-cols-3 gap-2 sm:gap-3 p-1.5 bg-slate-900 rounded-xl border border-slate-800">
+                <button
+                  type="button"
+                  onClick={() => setProfile('particular')}
+                  className={`py-2.5 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-center cursor-pointer ${
+                    profile === 'particular'
+                      ? 'bg-amber-400 text-slate-950 shadow-md'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Soy particular
+                </button>
                 <button
                   type="button"
                   onClick={() => setProfile('inversor')}
@@ -109,7 +120,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  Soy Inversor (Flipping / Rentas)
+                  Soy inversor
                 </button>
                 <button
                   type="button"
@@ -120,18 +131,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
-                  Soy Inmobiliaria (Alianza B2B)
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setProfile('particular')}
-                  className={`py-2.5 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-center cursor-pointer ${
-                    profile === 'particular'
-                      ? 'bg-amber-400 text-slate-950 shadow-md'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  Soy Particular
+                  Soy inmobiliaria
                 </button>
               </div>
 
@@ -143,7 +143,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 </div>
               )}
 
-              {/* Formulario blindado */}
+              {/* Formulario de presupuesto */}
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
                 {/* Trampa anti-bot oculta (Honeypot) */}
                 <div className="hidden" aria-hidden="true">
@@ -153,7 +153,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Nombre completo *</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Nombre *</label>
                     <input
                       type="text"
                       name="nombre"
@@ -164,7 +164,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Teléfono móvil / WhatsApp *</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Móvil (WhatsApp) *</label>
                     <input
                       type="tel"
                       name="telefono"
@@ -177,7 +177,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Email (opcional para recibir PDF)</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Correo (opcional, para recibirlo también en PDF)</label>
                     <input
                       type="email"
                       name="email"
@@ -187,12 +187,12 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">Zona o Municipio (Madrid / alrededores) *</label>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">Municipio de la obra *</label>
                     <input
                       type="text"
                       name="zona"
                       required
-                      placeholder="Ej. Alcalá de Henares, Pozuelo, Madrid Centro..."
+                      placeholder="Ej. Móstoles, Alcalá de Henares, Madrid centro…"
                       className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-amber-400 placeholder:text-slate-500"
                     />
                   </div>
@@ -200,15 +200,21 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
 
                 <div>
                   <label className="block text-xs font-semibold text-slate-300 mb-1">
-                    ¿Qué tipo de reforma o inmueble necesitas intervenir?
+                    ¿Qué quieres reformar?
                   </label>
                   <textarea
                     rows={3}
                     name="detalles"
-                    placeholder="Ej. Piso de 85 m² para reformar integralmente en 40 días antes de poner en alquiler. Necesito cocina abierta, dos baños y climatización."
+                    placeholder="Ej. Piso de 85 m². Reforma completa: cocina abierta, dos baños y aire acondicionado."
                     className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white text-sm focus:outline-none focus:border-amber-400 placeholder:text-slate-500"
                   />
                 </div>
+
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  {profile === 'particular'
+                    ? 'Tu primer presupuesto es gratis. Si después necesitas otro, cuesta 150 €.'
+                    : 'Tienes un presupuesto gratis cada semana. Los siguientes de esa semana cuestan 150 €.'}
+                </p>
 
                 <div className="pt-2">
                   <button
@@ -217,10 +223,10 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                     className="w-full py-4 px-8 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:bg-slate-800 disabled:text-slate-500 text-slate-950 font-black text-sm uppercase tracking-wider shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     {loading ? (
-                      <span>Procesando con IA y validando...</span>
+                      <span>Enviando tu solicitud…</span>
                     ) : (
                       <>
-                        <span>Solicitar Presupuesto Estimado en 1 Hora</span>
+                        <span>Pedir mi presupuesto</span>
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}
@@ -228,7 +234,10 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 pt-2 gap-2">
-                  <span>🔒 Formulario blindado: tus datos viajan cifrados bajo HTTPS y RGPD.</span>
+                  <span>
+                    Usamos tus datos solo para preparar y enviarte el presupuesto.{' '}
+                    <a href="/privacidad" className="underline hover:text-amber-400">Privacidad</a>
+                  </span>
                   <a
                     href={`tel:${PHONE}`}
                     className="inline-flex items-center gap-1.5 font-bold text-slate-300 hover:text-amber-400 transition-colors"

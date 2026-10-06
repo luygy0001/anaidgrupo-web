@@ -18,7 +18,6 @@ import {
   SOCIAL,
   SITE_NAME,
   HORARIO_DETAIL,
-  ADDRESS,
   COVERAGE_AREA,
   POWERED_BY,
   NAV_ITEMS,
@@ -55,7 +54,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Reformas integrales con plazo cerrado en 30-60 días y diseño pensado para revalorizar tu vivienda o maximizar tu rentabilidad como inversor. En Madrid y zona centro.
+              Reformas en toda la Comunidad de Madrid. Te asignamos al profesional adecuado de nuestra red, coordinamos la obra y te mandamos el avance casi a diario por WhatsApp.
             </p>
             <div className="flex gap-3 pt-2">
               <a
@@ -133,7 +132,7 @@ export default function Footer() {
               </p>
               <p className="flex items-start gap-2 text-xs text-slate-400 pt-1">
                 <MapPin className="w-4 h-4 shrink-0 text-slate-500 mt-0.5" />
-                <span>{ADDRESS} ({COVERAGE_AREA})</span>
+                <span>{COVERAGE_AREA}</span>
               </p>
               <p className="flex items-start gap-2 text-xs text-slate-400">
                 <Clock className="w-4 h-4 shrink-0 text-slate-500 mt-0.5" />

@@ -7,19 +7,20 @@ import GallerySection from '@/components/sections/GallerySection';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import JsonLd from '@/components/seo/JsonLd';
-import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, ADDRESS, SOCIAL } from '@/lib/constants';
+import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, SOCIAL } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Reformas Integrales en Madrid (30-60 Días) | Construcciones Anaid',
+  // absolute: la plantilla de layout.tsx añadiría la marca otra vez
+  title: { absolute: 'Reformas en la Comunidad de Madrid | Construcciones Anaid' },
   description:
-    'Especialistas en reformas integrales y para inversores en Madrid y Alcalá de Henares con plazo cerrado de 30 a 60 días. Presupuestos con IA en menos de 1h y seguimiento diario por WhatsApp.',
+    'Reformas en toda la Comunidad de Madrid. Elige la calidad, recibe tu presupuesto en menos de 1 hora y sigue tu obra con fotos casi a diario por WhatsApp.',
   alternates: {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: 'Reformas Integrales en Madrid con Plazo Cerrado | Construcciones Anaid',
+    title: 'Reformas en Madrid con presupuesto en menos de 1 hora',
     description:
-      'Reformas llave en mano con plazo garantizado de 30 a 60 días. Presupuesto estimado con IA en menos de 1 hora y seguimiento casi diario por WhatsApp.',
+      'Elige la calidad de acabados, recibe tu presupuesto en menos de 1 hora y sigue tu obra con fotos casi a diario por WhatsApp.',
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: 'es_ES',
@@ -29,15 +30,15 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/obra-salon.jpg`,
         width: 1200,
         height: 675,
-        alt: 'Salón con concepto abierto, obra de la red de Construcciones Anaid',
+        alt: 'Salón abierto de una obra de la red de Construcciones Anaid',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Reformas Integrales en Madrid (30-60 Días) | Construcciones Anaid',
+    title: 'Reformas en la Comunidad de Madrid | Construcciones Anaid',
     description:
-      'Reformas con plazo cerrado en 30-60 días y diseño para revalorizar tu vivienda. Presupuesto en 1h con IA.',
+      'Reformas en la Comunidad de Madrid. Presupuesto en menos de 1 hora y fotos de tu obra casi a diario por WhatsApp.',
     images: [`${SITE_URL}/images/obra-salon.jpg`],
   },
 };
@@ -50,28 +51,13 @@ const schemaData = {
       '@type': 'HomeAndConstructionBusiness',
       '@id': `${SITE_URL}/#business`,
       name: 'Construcciones Anaid',
-      alternateName: 'Anaid Grupo Reformas',
       description:
-        'Empresa de reformas integrales y rehabilitación en la Comunidad de Madrid especializada en proyectos con plazo cerrado de 30 a 60 días, presupuestos preliminares con Inteligencia Artificial en menos de 1 hora y seguimiento diario de obra por WhatsApp.',
+        'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid. Construcciones Anaid prepara tu presupuesto en menos de 1 hora, te asigna al profesional adecuado de su red de arquitectos y oficios, coordina la obra y te envía fotos del avance casi a diario por WhatsApp.',
       url: SITE_URL,
       telephone: PHONE,
       email: EMAIL,
-      priceRange: '€€',
-      currenciesAccepted: 'EUR',
-      paymentAccepted: 'Transferencia bancaria, financiación',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: 'C/ Isaac Peral, 46',
-        addressLocality: 'Valdeavero',
-        addressRegion: 'Madrid',
-        postalCode: '28816',
-        addressCountry: 'ES',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 40.6306,
-        longitude: -3.3328,
-      },
+      // Negocio de área de servicio: sin dirección pública (la sede solo figura en las
+      // páginas legales, decisión de Luis del 06-10-2026).
       areaServed: [
         { '@type': 'AdministrativeArea', name: 'Comunidad de Madrid' },
         { '@type': 'City', name: 'Madrid' },
@@ -103,32 +89,32 @@ const schemaData = {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Reformas Integrales de Vivienda',
-              description: 'Reforma integral completa en Madrid con plazos cerrados de 30 a 60 días garantizados por contrato.',
+              name: 'Reforma integral de vivienda',
+              description: 'Reforma completa de vivienda en la Comunidad de Madrid con profesionales de la red de Construcciones Anaid y el plazo fijado en el contrato de obra.',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Reformas para Inversores y House Flipping',
-              description: 'Reforma rápida con acabados neutros pensada para venta o alquiler.',
+              name: 'Reformas para inversores e inmobiliarias',
+              description: 'Reformas en calidad media-baja o media para vender o alquilar, con presupuesto en menos de 1 hora.',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Cocinas de Diseño con Isla',
-              description: 'Diseño e instalación de cocinas abiertas integradas con muebles a medida y encimeras de cuarzo.',
+              name: 'Reforma de cocina',
+              description: 'Reforma de cocina: distribución, instalaciones y mobiliario, con la calidad de acabados que elijas.',
             },
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Baños en Suite con Microcemento',
-              description: 'Renovación de baños con ducha italiana, grifería termostática y acabados de lujo.',
+              name: 'Reforma de baño',
+              description: 'Reforma de baño: cambio de bañera por ducha, alicatado, sanitarios y grifería, con la calidad que elijas.',
             },
           },
         ],
@@ -158,7 +144,8 @@ export default function HomePage() {
       <AIExplainer />
       <ServicesGrid />
       <GallerySection />
-      <FAQAccordion items={[...FAQS]} />
+      {/* El FAQPage ya va en el @graph de esta página: sin schema duplicado */}
+      <FAQAccordion items={[...FAQS]} withSchema={false} />
       <CTASection />
     </>
   );

@@ -59,13 +59,13 @@ export default function GallerySection() {
           <div className="space-y-3.5 max-w-2xl text-left bg-white/95 backdrop-blur-md p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-200/90">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-              Obras y Transformaciones Reales
+              Obras reales de nuestra red
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
-              Espacios pensados para <span className="text-amber-600">vivir con orgullo</span> o vender con plusvalía.
+              Así quedan las casas con <span className="text-amber-600">profesionales de nuestra red</span>.
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-              Cuidamos la iluminación natural, la nobleza de los materiales y la pureza de líneas para que cada metro cuadrado transmita amplitud, serenidad y vanguardia.
+              Obras reales de profesionales de la red de Construcciones Anaid. Si te gusta alguna, pide una parecida y te decimos cuánto costaría en tu casa.
             </p>
           </div>
 
@@ -120,13 +120,13 @@ export default function GallerySection() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                   <span className="text-slate-500 font-medium flex items-center gap-1.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    Obra llave en mano
+                    Obra de nuestra red
                   </span>
                   <a
                     href={PRESUPUESTO_HREF}
                     className="font-bold text-amber-600 hover:text-amber-700 inline-flex items-center gap-1"
                   >
-                    <span>Pedir similar</span>
+                    <span>Quiero una así</span>
                     <ArrowRight className="w-3 h-3" />
                   </a>
                 </div>

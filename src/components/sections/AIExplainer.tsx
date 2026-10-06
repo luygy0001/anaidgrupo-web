@@ -5,24 +5,24 @@ import { WHATSAPP_URL } from '@/lib/constants';
 const pilares = [
   {
     icon: FileText,
-    title: 'Presupuesto paramétrico en menos de 1 hora',
+    title: 'Presupuesto en menos de 1 hora',
     description:
-      'Mediante nuestro sistema de IA entrenado con precios de obra en la Comunidad de Madrid, calculamos desgloses fiables de materiales, mano de obra e instalaciones sin esperas de semanas.',
-    highlight: 'Sin esperas ni presupuestos inflados',
+      'Rellenas el formulario, nos cuentas tu obra y eliges la calidad de los acabados. Una automatización prepara el presupuesto y te lo enviamos. Antes de contratar, visitamos la obra para comprobar que todo coincide.',
+    highlight: 'Sin esperar semanas',
   },
   {
     icon: Camera,
-    title: 'Reporte diario con fotos directo a tu WhatsApp',
+    title: 'Fotos de tu obra casi cada día',
     description:
-      'Se acabó desplazarte a la obra o perseguir al contratista por teléfono. Casi a diario recibes en tu móvil fotos del avance, el porcentaje completado de cada fase y las tareas del día siguiente.',
-    highlight: 'Transparencia absoluta en tu móvil',
+      'Estás en el trabajo y te vibra el móvil: fotos de cómo avanza tu cocina. No tienes que pasarte por la obra ni llamar a nadie para saber cómo va.',
+    highlight: 'Todo en tu WhatsApp',
   },
   {
     icon: Clock,
-    title: 'Cronograma estricto en 30 a 60 días',
+    title: 'Plazo y precio en contrato',
     description:
-      'Arquitectos e interioristas coordinan cada gremio (albañilería, fontanería, electricidad, pintura) con cronogramas cerrados. Cada día cuenta para que entres a vivir o vendas tu inmueble rápido.',
-    highlight: 'Plazos garantizados por contrato',
+      'Te asignamos al profesional adecuado de nuestra red y firmas con él el contrato, con el plazo y el precio por escrito. Nosotros coordinamos y te acompañamos hasta el final. Por experiencia, la mayoría de obras no pasan de 60 días.',
+    highlight: 'Un solo interlocutor: nosotros',
   },
 ];
 
@@ -33,13 +33,13 @@ export default function AIExplainer() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider">
             <Brain className="w-3.5 h-3.5 text-amber-600" />
-            Tecnología PyMExpert aplicada a la construcción
+            Con tecnología de PyMExpert
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Una constructora donde <span className="text-amber-600">no tienes que perseguir</span> al jefe de obra.
+            Una reforma en la que <span className="text-amber-600">no tienes que perseguir</span> a nadie.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Eliminamos de raíz los dos grandes dolores de una reforma: la lentitud en los presupuestos y la incertidumbre durante la obra. Todo controlado desde tu móvil.
+            Lo que más quema de una reforma: esperar semanas un presupuesto y no saber cómo va la obra. Aquí tienes el número en menos de 1 hora y el avance en tu móvil.
           </p>
         </div>
 
@@ -71,15 +71,15 @@ export default function AIExplainer() {
 
         <p className="mt-8 text-center text-sm">
           <a href="/ia-analisis-proyecto" className="font-semibold text-amber-700 underline hover:text-amber-800">
-            Cómo usamos la IA para analizar tu proyecto
+            Cómo preparamos tu presupuesto en menos de 1 hora
           </a>
         </p>
 
         {/* Banner de llamada de acción intermedia */}
         <div className="mt-12 bg-amber-50 border border-amber-200 p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-xs">
           <div>
-            <h4 className="font-bold text-slate-900 text-base">¿Tienes una vivienda que necesitas valorar hoy mismo?</h4>
-            <p className="text-xs text-slate-600">Envíanos zona, m² y fotos aproximadas por WhatsApp y recibe estimación en 1 hora.</p>
+            <h4 className="font-bold text-slate-900 text-base">¿Quieres saber hoy cuánto cuesta reformar tu casa?</h4>
+            <p className="text-xs text-slate-600">Escríbenos por WhatsApp con el municipio, los metros y unas fotos. Te decimos el siguiente paso.</p>
           </div>
           <a
             href={WHATSAPP_URL}
@@ -88,7 +88,7 @@ export default function AIExplainer() {
             className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shrink-0 transition-colors inline-flex items-center gap-2 shadow-xs"
           >
             <MessageSquareText className="w-4 h-4" />
-            Valorar mi reforma por WhatsApp
+            Escribir por WhatsApp
           </a>
         </div>
       </Container>

@@ -22,13 +22,13 @@ export default function ServicesGrid() {
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider">
-            Especialidades Técnicas
+            Qué hacemos
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Soluciones integrales coordinadas por <span className="text-amber-600">arquitectos y técnicos</span>.
+            Tu obra, con <span className="text-amber-600">arquitectos y oficios</span> de nuestra red.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Centralizamos la dirección facultativa y la ejecución de cada oficio. Una única empresa responsable, un solo interlocutor y plazos auditados.
+            Te asignamos al profesional adecuado para cada trabajo y coordinamos la obra contigo. Un solo interlocutor de principio a fin.
           </p>
         </div>
 
