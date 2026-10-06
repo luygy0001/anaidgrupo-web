@@ -34,11 +34,26 @@
 10. **Panel (`/panel`):** pendiente; Luis pidió una explicación sencilla.
 11. **Infraestructura:** dominio en Hostinger; VPS con Dokploy y Docker.
 
+### Compuerta 1 — segunda ronda (2026-10-06)
+
+12. **Valdeavero** solo en aviso legal y privacidad, como exige la ley. En ningún otro sitio.
+13. **Correos disponibles:** info@, admi@, hola@ y redes@construccionesanaid.com. Criterio
+    aplicado: **info@** como correo público (contacto, aviso legal, privacidad y derechos
+    RGPD); **redes@** para perfiles sociales; admi@ y hola@ no se publican.
+14. **Cloudflare Turnstile** aprobado como antibots (mencionarlo en cookies y privacidad).
+15. **Precios:** nunca con IVA y **no se publican**. El cliente solo elige la calidad; n8n
+    calcula el presupuesto con sus datos. Los €/m² (700 / 900 / 1.050) son internos de n8n.
+16. **Presupuestos repetidos:** la regla de los 150 € vale para los tres perfiles.
+    Inmobiliarias e inversores tienen además un contador de **1 por semana**.
+    Interpretación a confirmar: particular, 1 gratis en total; inmobiliaria e inversor,
+    1 gratis por semana; el resto, 150 €. El control lo hace n8n (guarda el historial).
+17. **n8n** está en el VPS de Hostinger. Luis tiene **Google Workspace** (Gmail, Sheets),
+    útil para que n8n envíe el presupuesto y guarde los contactos.
+18. **Automatizaciones:** la web deja todo listo y documentado (datos que envía, respuestas
+    que espera); Luis monta los flujos de n8n después.
+
 ### Pendiente de confirmar por Luis
 
-- ¿Los €/m² llevan IVA incluido? ¿Valen para todo tipo de obra o solo para la reforma
-  integral? (un baño o una cocina suelen presupuestarse por partida, no por m²).
-- Regla de los 150 €: ¿para todos los perfiles o solo inmobiliarias e inversores?
-  ¿Se detecta también por teléfono, además de por email?
 - Lugar y plazo reales de cada foto de la galería.
-- ¿Dónde corre n8n: en el mismo VPS?
+- Panel `/panel`: retirar (recomendado) o terminar como proyecto aparte.
+- Interpretación del contador semanal (punto 16).
