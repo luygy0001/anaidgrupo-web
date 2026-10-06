@@ -115,6 +115,16 @@
     no es cliente (Luis, 06-10-2026). El correo además sirve a n8n para detectar
     presupuestos repetidos y enviar el PDF.
 
+41. **Plan del formulario de presupuesto aprobado** (perfil, calidad según perfil, tipo de
+    obra, m², municipio, descripción, nombre, móvil y correo obligatorios, casillas de
+    privacidad y de pago de presupuestos adicionales, Turnstile, respuesta inmediata de n8n).
+42. **WhatsApp lo contesta una IA (n8n).** Obligación (AI Act art. 50.1): decirlo al empezar
+    la conversación. Se documenta en el contrato de n8n y en la página de IA.
+43. **El presupuesto sale automático 24/7, sin revisión humana previa.** Es una decisión
+    automatizada (RGPD art. 22): la web ofrece revisión por una persona.
+44. **El chalé de fondo de la portada es una foto de banco de imágenes:** solo decorativa,
+    sin texto que sugiera obra propia. Comprobar que su licencia permite uso comercial.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e
@@ -128,4 +138,5 @@ Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
 ### Pendiente de confirmar por Luis
 
 - Lugar y plazo reales de cada foto de la galería.
-- Interpretación del contador semanal (punto 16).
+- Proveedor de IA que usa n8n y región del VPS de Hostinger (para la política de privacidad).
+- Textos de cada calidad (los tendrá la IA de n8n; la web solo muestra el nombre).

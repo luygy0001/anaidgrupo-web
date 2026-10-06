@@ -51,9 +51,8 @@ export default function AccesibilidadPage() {
           <div>
             <h2 className="text-lg font-semibold text-foreground">3. Limitaciones conocidas</h2>
             <p>
-              El formulario de presupuesto de la portada se está rediseñando para que todas sus
-              etiquetas y mensajes de error se anuncien correctamente en los lectores de pantalla.
-              Mientras tanto, puedes pedir tu presupuesto por teléfono o por WhatsApp.
+              A fecha de la última revisión no conocemos barreras pendientes. Aun así, si algún
+              formulario te da problemas, puedes pedir tu presupuesto por teléfono o por WhatsApp.
             </p>
           </div>
 
