@@ -13,7 +13,7 @@ import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
 import Container from '@/components/ui/Container';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
-// Obras reales de Construcciones Anaid. Sin plazo, ubicación ni resultados
+// Obras reales de la red de Construcciones Anaid. Sin plazo, ubicación ni resultados
 // hasta tener el dato real de cada una.
 const SLIDES = [
   {
@@ -176,7 +176,7 @@ export default function Hero() {
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-slate-200 text-[11px] font-semibold px-2.5 py-1 rounded-md border border-white/15">
-                  Obra realizada por Construcciones Anaid
+                  Obra de nuestra red de profesionales
                 </div>
               </div>
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/obra-salon.jpg`,
         width: 1200,
         height: 675,
-        alt: 'Salón con concepto abierto reformado por Construcciones Anaid',
+        alt: 'Salón con concepto abierto, obra de la red de Construcciones Anaid',
       },
     ],
   },

@@ -13,7 +13,8 @@ type Obra = {
   duration?: string;
 };
 
-// Obras reales de Construcciones Anaid (confirmado por Luis el 06-10-2026).
+// Obras reales de profesionales de la red de Construcciones Anaid (confirmado por Luis el
+// 06-10-2026). Anaid no ejecuta la obra: la firma el autónomo asignado.
 // Pendiente: lugar y plazo reales de cada una.
 const proyectos: Obra[] = [
   {
@@ -45,7 +46,7 @@ export default function GallerySection() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/salon-doble-altura.jpg"
-          alt="Salón de lujo a dos alturas con escalera volada de madera y barandilla acristalada reformado por Construcciones Anaid"
+          alt="Salón de lujo a dos alturas con escalera volada de madera y barandilla acristalada, obra de la red de Construcciones Anaid"
           fill
           quality={98}
           className="object-cover object-center"

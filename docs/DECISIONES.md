@@ -55,9 +55,14 @@
 19. **Panel `/panel` se retira.** Al principio los contactos se gestionan con n8n y una base
     de datos. Se quita en la fase de limpieza.
 
-20. **Contrato:** lo firma **Construcciones Anaid** como contratista; responde del plazo y
-    subcontrata a la red. Se elimina todo el discurso de «intermediación» / «no ejecutamos
-    obras directamente».
+20. ~~Contrato: lo firma Construcciones Anaid como contratista.~~ **CORREGIDO por Luis el
+    mismo día (muy importante): el contrato de obra lo firma el AUTÓNOMO asignado al
+    proyecto, no Construcciones Anaid.** Anaid analiza, presupuesta, asigna al profesional
+    de su red, coordina y hace seguimiento, pero no ejecuta ni firma la obra. El plazo queda
+    en el contrato entre cliente y profesional. El discurso de «intermediación» de las
+    páginas interiores era correcto en el fondo; solo cambia la marca. Nunca escribir
+    «constructora», «obra realizada por Construcciones Anaid» ni «una única empresa
+    responsable».
 21. **Marca:** solo **Construcciones Anaid**. Fuera «Anaid Grupo» de toda la web.
 22. **Galería:** vuelve ya, como obras reales de Anaid, con el tipo de obra y sin lugar ni
     plazo hasta que Luis pase los datos.
