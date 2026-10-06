@@ -29,7 +29,7 @@ export const HORARIO = 'L-V 8:30—19:30';
 export const HORARIO_DETAIL = {
   atencion: 'Lunes a Viernes: 8:30-19:30',
   urgencias: 'Atención prioritaria para inversores e inmobiliarias por WhatsApp',
-  chatbot: 'Presupuestos inmediatos con IA y WhatsApp: disponible 24/7',
+  chatbot: 'Presupuesto con inteligencia artificial en menos de 1 hora, a cualquier hora',
 };
 
 // Redes sociales oficiales (YouTube + LinkedIn)
@@ -122,7 +122,7 @@ export const FAQS = [
   {
     question: '¿Cómo tengo el presupuesto en menos de 1 hora?',
     answer:
-      'Rellenas el formulario, nos cuentas qué quieres reformar y eliges la calidad de los acabados. Una automatización, con tecnología de PyMExpert, prepara el presupuesto con esos datos y te lo enviamos. No tienes que esperar semanas para tener un primer número.',
+      'Rellenas el formulario, nos cuentas qué quieres reformar y eliges la calidad de los acabados. Un sistema de inteligencia artificial, con tecnología de PyMExpert, prepara el presupuesto con esos datos y te lo enviamos. Antes de contratar, una persona visita la obra para comprobar que todo coincide. No tienes que esperar semanas para tener un primer número.',
   },
   {
     question: '¿El presupuesto de 1 hora es el definitivo?',

@@ -7,7 +7,7 @@ const pilares = [
     icon: FileText,
     title: 'Presupuesto en menos de 1 hora',
     description:
-      'Rellenas el formulario, nos cuentas tu obra y eliges la calidad de los acabados. Una automatización prepara el presupuesto y te lo enviamos. Antes de contratar, visitamos la obra para comprobar que todo coincide.',
+      'Rellenas el formulario, nos cuentas tu obra y eliges la calidad de los acabados. Un sistema de inteligencia artificial prepara el presupuesto y te lo enviamos. Antes de contratar, visitamos la obra para comprobar que todo coincide.',
     highlight: 'Sin esperar semanas',
   },
   {
