@@ -81,9 +81,9 @@ export default function Footer() {
 
           {/* Enlaces Rápidos */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
               Navegación
-            </h3>
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
               {NAV_ITEMS.filter((item) => item.href !== '/').map((item) => (
                 <li key={item.href}>
@@ -96,9 +96,9 @@ export default function Footer() {
 
           {/* Servicios Clave */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
               Servicios
-            </h3>
+            </h2>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
               {SERVICE_PAGES.map((s) => (
                 <li key={s.href}>
@@ -110,9 +110,9 @@ export default function Footer() {
 
           {/* Contacto Directo */}
           <div className="space-y-3">
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
               Atención Directa
-            </h3>
+            </h2>
             <div className="space-y-2.5 text-sm text-slate-300">
               <a
                 href={WHATSAPP_URL}

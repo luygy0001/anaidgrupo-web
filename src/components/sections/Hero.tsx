@@ -182,9 +182,9 @@ export default function Hero() {
 
               {/* Descripción del acabado */}
               <div className="space-y-1 text-left pt-1">
-                <h3 className="text-sm font-bold text-white drop-shadow-xs">
+                <p className="text-sm font-bold text-white drop-shadow-xs">
                   {active.title}
-                </h3>
+                </p>
                 <p className="text-xs text-slate-200 leading-snug">
                   {active.subtitle}
                 </p>
