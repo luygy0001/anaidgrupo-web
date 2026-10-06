@@ -34,21 +34,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contacto',
   ];
 
-  const englishPages = [
-    '/en',
-    '/en/how-it-works',
-    '/en/services',
-    '/en/request-project',
-    '/en/join-network',
-    '/en/contact',
-  ];
-
-  const allPages = [...spanishPages, ...englishPages];
-
-  return allPages.map((path) => ({
+  return spanishPages.map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
-    changeFrequency: path === '' || path === '/en' ? 'weekly' : 'monthly',
+    changeFrequency: path === '' ? 'weekly' : 'monthly',
     priority: path === '' ? 1 : path === '/solicitar-proyecto' ? 0.9 : 0.7,
   }));
 }

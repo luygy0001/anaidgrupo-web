@@ -6,7 +6,7 @@ import ThankYouFire from '@/components/tracking/ThankYouFire';
 import { CheckCircle2, Clock, Phone, ArrowRight } from 'lucide-react';
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
 
-type Tipo = 'contacto' | 'solicitud' | 'profesional' | 'chat';
+type Tipo = 'contacto' | 'solicitud' | 'profesional';
 
 const TIPOS: Record<Tipo, { title: string; heading: string; subheading: string; next: string[] }> = {
   contacto: {
@@ -40,17 +40,6 @@ const TIPOS: Record<Tipo, { title: string; heading: string; subheading: string; 
       'Revisamos tu perfil, especialidades y zonas de trabajo.',
       'Si encaja con la red, te contactamos para una validación más detallada.',
       'Gracias por tu interés en colaborar con Construcciones Anaid.',
-    ],
-  },
-  chat: {
-    title: 'Solicitud recibida — Gracias',
-    heading: '¡Gracias por contactar!',
-    subheading:
-      'Hemos recibido la información que nos has facilitado por chat. Te contactaremos para avanzar con tu proyecto.',
-    next: [
-      'Revisamos tu solicitud y la asignamos al profesional adecuado.',
-      'Te contactaremos en menos de 24 horas laborables.',
-      'Puedes cerrar esta ventana con tranquilidad — tus datos están guardados.',
     ],
   },
 };

@@ -75,13 +75,6 @@ export const SERVICE_PAGES = [
   { label: 'Pequeñas obras', href: '/servicios/pequenas-obras-madrid', icon: 'Wrench', description: 'Arreglos y trabajos puntuales.' },
 ] as const;
 
-export const NAV_ITEMS_EN = [
-  { label: 'Home', href: '/en' },
-  { label: 'Investors', href: '/en#investors' },
-  { label: 'Services', href: '/en#services' },
-  { label: 'Contact', href: '/en#contact' },
-] as const;
-
 // Servicios especializados (tarjetas de portada). Particulares primero: público principal.
 // Construcciones Anaid no ejecuta ni firma la obra: la firma el profesional asignado.
 export const SERVICES = [
