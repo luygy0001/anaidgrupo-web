@@ -118,8 +118,10 @@
 41. **Plan del formulario de presupuesto aprobado** (perfil, calidad según perfil, tipo de
     obra, m², municipio, descripción, nombre, móvil y correo obligatorios, casillas de
     privacidad y de pago de presupuestos adicionales, Turnstile, respuesta inmediata de n8n).
-42. **WhatsApp lo contesta una IA (n8n).** Obligación (AI Act art. 50.1): decirlo al empezar
-    la conversación. Se documenta en el contrato de n8n y en la página de IA.
+42. ~~WhatsApp lo contesta una IA (n8n).~~ **CORREGIDO por Luis el mismo día: WhatsApp lo
+    contesta él, una persona.** No hace falta aviso de IA en WhatsApp ni se menciona en la
+    página de IA (commit de la página revertido). Si algún día lo contesta una IA, el primer
+    mensaje debe decirlo (AI Act art. 50.1).
 43. **El presupuesto sale automático 24/7, sin revisión humana previa.** Es una decisión
     automatizada (RGPD art. 22): la web ofrece revisión por una persona.
 44. **El chalé de fondo de la portada es una foto de banco de imágenes:** solo decorativa,

@@ -44,17 +44,17 @@ VoiceOver) y, si se quiere declarar conformidad plena, auditoría externa.
 | La portada hablaba de «automatización» sin decir que es IA | Transparencia | Corregido |
 | Presupuesto y regla de los 150 € son decisiones automatizadas | RGPD art. 22 | Añadido en la web el derecho a que una persona lo revise. **Falta en la política de privacidad** |
 | Política de privacidad: menciona un chat y un panel que ya no existen; no nombra la IA, Turnstile, n8n ni Google | RGPD art. 13 | **Pendiente: se actualiza con el formulario nuevo** |
-| Si WhatsApp lo contesta una IA, hay que decirlo al empezar la conversación | AI Act art. 50.1 | **Pendiente de respuesta de Luis** |
+| Si WhatsApp lo contestara una IA, habría que decirlo al empezar la conversación | AI Act art. 50.1 | Resuelto: lo contesta Luis (persona); no aplica mientras sea así |
 | El presupuesto que envía n8n debe indicar que está elaborado con IA | Buena práctica de transparencia | Se documenta en el contrato de datos de n8n |
 | Formación en IA de quien usa el sistema (Luis y profesionales que reciben los resúmenes) | AI Act art. 4 | Obligación interna: dejar constancia de la formación |
-| Imagen de fondo de la portada (chalé): si está generada con IA y se presenta como obra real | AI Act art. 50.4 / publicidad engañosa | **Pendiente de respuesta de Luis** |
+| Imagen de fondo de la portada (chalé): si está generada con IA y se presenta como obra real | AI Act art. 50.4 / publicidad engañosa | Resuelto: foto de banco de imágenes, decorativa (comprobar licencia de uso comercial) |
 
 ## 4. Preguntas abiertas para Luis
 
-1. ¿WhatsApp lo responderá una IA o una persona?
-2. ¿Qué proveedor de IA usa n8n (OpenAI, Anthropic, Google…)? ¿En qué región está el VPS de n8n?
-3. ¿El presupuesto se envía sin que lo revise una persona antes? (la web dice que sí, 24 h)
-4. ¿La foto del chalé de la portada es una obra real o una imagen generada?
+1. ~~¿WhatsApp lo responderá una IA o una persona?~~ Una persona (Luis).
+2. ¿Qué proveedor de IA usa n8n (OpenAI, Anthropic, Google…)? ¿En qué región está el VPS de n8n? **Pendiente.**
+3. ~~¿El presupuesto se envía sin que lo revise una persona antes?~~ Sí, automático 24/7.
+4. ~~¿La foto del chalé es una obra real o generada?~~ Banco de imágenes.
 
 ## Fuentes
 

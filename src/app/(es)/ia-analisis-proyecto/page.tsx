@@ -3,8 +3,7 @@ import Container from '@/components/ui/Container';
 import CTASection from '@/components/sections/CTASection';
 import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaimer';
 import Link from 'next/link';
-import { Brain, FileText, Layers, Repeat, Shield, AlertTriangle, MessageCircle } from 'lucide-react';
-import { PHONE_DISPLAY } from '@/lib/constants';
+import { Brain, FileText, Layers, Repeat, Shield, AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Cómo usamos la IA',
@@ -26,11 +25,6 @@ const capabilities = [
     icon: Layers,
     title: 'Explica qué incluye cada calidad',
     text: 'Cada calidad (media-baja, media o alta) tiene materiales de referencia con un precio máximo. La IA usa esa información para contarte qué entra en tu presupuesto. Si luego eliges un material más caro, pagas solo la diferencia.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Contesta en WhatsApp',
-    text: `Un asistente de inteligencia artificial responde tus mensajes de WhatsApp a cualquier hora y te lo dice al empezar la conversación. Si prefieres hablar con una persona, llámanos al ${PHONE_DISPLAY}.`,
   },
   {
     icon: Repeat,
@@ -76,7 +70,7 @@ export default function IAAnalisisPage() {
           <h2 className="text-2xl font-bold text-center mb-10">
             Qué hace la IA y qué es automático
           </h2>
-          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {capabilities.map((cap) => (
               <div
                 key={cap.title}

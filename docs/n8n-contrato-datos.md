@@ -74,10 +74,10 @@ Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier o
 1. **Presupuesto generado con IA** (AI Act art. 50 y RGPD art. 22): el presupuesto (PDF y
    mensaje) debe decir «Presupuesto elaborado con ayuda de inteligencia artificial» e incluir
    cómo pedir que lo revise una persona (correo info@construccionesanaid.com o teléfono).
-2. **WhatsApp con IA** (AI Act art. 50.1, en vigor desde el 02-08-2026): el primer mensaje de
-   cada conversación debe decir que contesta un asistente de inteligencia artificial y cómo
-   hablar con una persona (por ejemplo: «Soy el asistente de IA de Construcciones Anaid. Si
-   prefieres hablar con una persona, llama al 640 962 564.»).
+2. **WhatsApp lo contesta Luis (una persona)**: no hace falta aviso de IA. n8n solo envía por
+   WhatsApp el presupuesto, que ya lleva su etiqueta de IA (punto 1). **Si algún día las
+   conversaciones las contesta una IA**, el primer mensaje debe decirlo y explicar cómo hablar
+   con una persona (AI Act art. 50.1, en vigor desde el 02-08-2026).
 3. **Plazo de 1 hora, 24/7**: la web lo promete; si el flujo falla, que avise a Luis (correo o
    WhatsApp) para no incumplirlo en silencio.
 4. **Datos**: guardar solo lo necesario y el tiempo que diga la política de privacidad; el
