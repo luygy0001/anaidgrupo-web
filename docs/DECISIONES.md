@@ -171,6 +171,11 @@
 57. **Presupuestos de n8n:** IVA del 21 % siempre (base, IVA y total); cocina y baño por partidas
     con precio por calidad (se definen al construir); cada presupuesto detalla la calidad elegida
     partida por partida. Detalle en el repositorio de n8n.
+58. **/unete-red sin promesas falsas:** fuera la tarjeta «Panel privado para gestionar tus leads»
+    (el panel se retiró, decisión 38) y la de IA para «resúmenes y clasificación». Ahora: «Tu
+    contrato, tu obra» (firma el profesional y fija el precio tras la visita) y la IA que prepara
+    el borrador revisado por una persona. Pendiente: revisar el resto de la página con el
+    copywriter.
 
 ### Fase 1 — Navegación (2026-10-06, hecha)
 

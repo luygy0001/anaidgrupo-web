@@ -5,7 +5,7 @@ import FormProfesional from '@/components/forms/FormProfesional';
 import {
   Users,
   Filter,
-  BarChart3,
+  Handshake,
   Zap,
   Shield,
   CheckCircle,
@@ -30,14 +30,14 @@ const benefits = [
     text: 'Nuestra tecnología y automatizaciones te liberan tiempo para que te centres en lo que mejor sabes hacer.',
   },
   {
-    icon: BarChart3,
-    title: 'Mejor control comercial',
-    text: 'Panel privado para gestionar tus leads, estados y seguimiento de forma organizada.',
+    icon: Handshake,
+    title: 'Tu contrato, tu obra',
+    text: 'Firmas tú el contrato con el cliente y fijas el precio final tras la visita. Nosotros te traemos la solicitud bien definida.',
   },
   {
     icon: Shield,
     title: 'Apoyo tecnológico',
-    text: 'IA para resúmenes, clasificación y orientación. Herramientas que te ayudan a trabajar mejor.',
+    text: 'La IA prepara el borrador de cada presupuesto y una persona lo revisa: llegas a la visita con la obra clara.',
   },
 ];
 
