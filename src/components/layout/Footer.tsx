@@ -6,6 +6,7 @@
   Clock,
   ExternalLink,
 } from 'lucide-react';
+import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import CookieSettingsButton from '@/components/layout/CookieSettingsButton';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
@@ -20,6 +21,9 @@ import {
   ADDRESS,
   COVERAGE_AREA,
   POWERED_BY,
+  NAV_ITEMS,
+  SERVICE_PAGES,
+  PRESUPUESTO_HREF,
 } from '@/lib/constants';
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -81,25 +85,26 @@ export default function Footer() {
               Navegación
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
-              <li><a href="#inversores" className="hover:text-white transition-colors">Inversores & Inmobiliarias</a></li>
-              <li><a href="#metodo-ia" className="hover:text-white transition-colors">Método IA (PyMExpert)</a></li>
-              <li><a href="#servicios" className="hover:text-white transition-colors">Reformas y Servicios</a></li>
-              <li><a href="#contacto" className="hover:text-white transition-colors">Pedir Presupuesto en 1h</a></li>
+              {NAV_ITEMS.filter((item) => item.href !== '/').map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-white transition-colors">{item.label}</Link>
+                </li>
+              ))}
+              <li><a href={PRESUPUESTO_HREF} className="hover:text-white transition-colors">Pedir presupuesto</a></li>
             </ul>
           </div>
 
           {/* Servicios Clave */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-amber-400">
-              Especialidades
+              Servicios
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
-              <li>Reformas Exprés House Flipping</li>
-              <li>Colaboración B2B con Inmobiliarias</li>
-              <li>Reformas Integrales de Vivienda</li>
-              <li>Cocinas Abiertas y Baños de Diseño</li>
-              <li>Arquitectura y Dirección de Obra</li>
-              <li>Seguimiento Diario por WhatsApp</li>
+              {SERVICE_PAGES.map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="hover:text-white transition-colors">{s.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 

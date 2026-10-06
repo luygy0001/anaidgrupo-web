@@ -69,6 +69,12 @@ export default function AIExplainer() {
           })}
         </div>
 
+        <p className="mt-8 text-center text-sm">
+          <a href="/ia-analisis-proyecto" className="font-semibold text-amber-700 underline hover:text-amber-800">
+            Cómo usamos la IA para analizar tu proyecto
+          </a>
+        </p>
+
         {/* Banner de llamada de acción intermedia */}
         <div className="mt-12 bg-amber-50 border border-amber-200 p-6 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left shadow-xs">
           <div>

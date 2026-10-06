@@ -52,8 +52,20 @@
 18. **Automatizaciones:** la web deja todo listo y documentado (datos que envía, respuestas
     que espera); Luis monta los flujos de n8n después.
 
+19. **Panel `/panel` se retira.** Al principio los contactos se gestionan con n8n y una base
+    de datos. Se quita en la fase de limpieza.
+
+### Fase 1 — Navegación (2026-10-06, hecha)
+
+Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e
+inmobiliarias, Cómo trabajamos, Zonas, Guías de precios, Contacto); pie con los 8 servicios;
+la portada enlaza a `/servicios` y a `/ia-analisis-proyecto`; las páginas de zona enlazaban
+a 4 servicios inexistentes (404) y ahora a los 8 reales; las anclas ya no quedan bajo la
+cabecera fija. Criterio de hecho: rastreo desde portada alcanza las 30 páginas del sitemap,
+0 enlaces rotos, 0 anclas rotas; verificado a 1366 y 375.
+Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
+
 ### Pendiente de confirmar por Luis
 
 - Lugar y plazo reales de cada foto de la galería.
-- Panel `/panel`: retirar (recomendado) o terminar como proyecto aparte.
 - Interpretación del contador semanal (punto 16).

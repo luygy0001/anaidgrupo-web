@@ -47,12 +47,30 @@ export const POWERED_BY = {
 } as const;
 
 // Navegación principal
+// Rutas absolutas: el menú debe funcionar desde cualquier página, no solo en portada.
 export const NAV_ITEMS = [
   { label: 'Inicio', href: '/' },
-  { label: 'Inversores & Inmobiliarias', href: '#inversores' },
-  { label: 'Método IA (PyMExpert)', href: '#metodo-ia' },
-  { label: 'Reformas & Servicios', href: '#servicios' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Inversores e inmobiliarias', href: '/#inversores' },
+  { label: 'Cómo trabajamos', href: '/como-funciona' },
+  { label: 'Zonas', href: '/zonas' },
+  { label: 'Guías de precios', href: '/guias-precios' },
+  { label: 'Contacto', href: '/contacto' },
+] as const;
+
+// Formulario principal de presupuesto (portada)
+export const PRESUPUESTO_HREF = '/#contacto';
+
+// Páginas de servicio, para el pie y el enlazado interno
+export const SERVICE_PAGES = [
+  { label: 'Reforma integral', href: '/servicios/reforma-integral-madrid', icon: 'Home', description: 'Vivienda o local completo, llave en mano.' },
+  { label: 'Reforma de cocina', href: '/servicios/reforma-cocina-madrid', icon: 'ChefHat', description: 'Distribución, mobiliario e instalaciones.' },
+  { label: 'Reforma de baño', href: '/servicios/reforma-bano-madrid', icon: 'Bath', description: 'Cambio de bañera por ducha, alicatado y sanitarios.' },
+  { label: 'Arquitecto para reformas', href: '/servicios/arquitecto-reformas-madrid', icon: 'Ruler', description: 'Proyecto, licencias y dirección de obra.' },
+  { label: 'Electricista', href: '/servicios/electricista-madrid', icon: 'Zap', description: 'Instalaciones, boletines y averías.' },
+  { label: 'Fontanero', href: '/servicios/fontanero-madrid', icon: 'Droplets', description: 'Instalaciones, fugas y saneamiento.' },
+  { label: 'Climatización', href: '/servicios/climatizacion-madrid', icon: 'Thermometer', description: 'Aire acondicionado, aerotermia y calefacción.' },
+  { label: 'Pequeñas obras', href: '/servicios/pequenas-obras-madrid', icon: 'Wrench', description: 'Arreglos y trabajos puntuales.' },
 ] as const;
 
 export const NAV_ITEMS_EN = [

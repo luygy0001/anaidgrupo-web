@@ -3,7 +3,7 @@ import FormSolicitud from '@/components/forms/FormSolicitud';
 import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaimer';
 import JsonLd from '@/components/seo/JsonLd';
 import { zoneLocalBusinessSchema, breadcrumbSchema } from '@/lib/seo-schemas';
-import { SERVICES } from '@/lib/constants';
+import { SERVICE_PAGES } from '@/lib/constants';
 import {
   MapPin,
   ChevronRight,
@@ -118,12 +118,12 @@ export default function ZoneLanding({
             Cubrimos la tipología completa de reformas y servicios técnicos de hogar. Cada solicitud se asigna al colaborador validado más adecuado según el tipo de trabajo y su disponibilidad en la zona.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
-            {SERVICES.map((s) => {
+            {SERVICE_PAGES.map((s) => {
               const Icon = iconMap[s.icon] || Wrench;
               return (
                 <a
-                  key={s.slug}
-                  href={`/servicios/${s.slug}`}
+                  key={s.href}
+                  href={s.href}
                   className="group flex items-start gap-3 p-4 rounded-lg bg-muted border border-transparent hover:border-primary/30 hover:bg-white transition-colors"
                 >
                   <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
@@ -131,7 +131,7 @@ export default function ZoneLanding({
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {s.title} en {municipio}
+                      {s.label} en {municipio}
                     </p>
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {s.description}

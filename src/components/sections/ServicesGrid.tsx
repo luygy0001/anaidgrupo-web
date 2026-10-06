@@ -82,6 +82,16 @@ export default function ServicesGrid() {
             );
           })}
         </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="/servicios"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 bg-white text-sm font-bold text-slate-800 hover:border-amber-400 hover:text-amber-700 transition-colors"
+          >
+            <span>Ver todos los servicios: cocina, baño, electricidad, fontanería y más</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </Container>
     </section>
   );

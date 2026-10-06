@@ -1,9 +1,10 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
-import { NAV_ITEMS, PHONE, PHONE_DISPLAY, WHATSAPP_URL, SITE_NAME } from '@/lib/constants';
+import { NAV_ITEMS, PHONE, PHONE_DISPLAY, WHATSAPP_URL, SITE_NAME, PRESUPUESTO_HREF } from '@/lib/constants';
 import Container from '@/components/ui/Container';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
@@ -15,7 +16,7 @@ export default function Header() {
       <Container>
         <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
           {/* Logo y Marca Oficial */}
-          <a href="/" className="flex items-center group shrink-0 py-1" aria-label={`${SITE_NAME} - Inicio`}>
+          <Link href="/" className="flex items-center group shrink-0 py-1" aria-label={`${SITE_NAME} - Inicio`}>
             <Image
               src="/images/logo.png"
               alt="Construcciones Anaid - Reformas Integrales y Arquitectura en Madrid"
@@ -24,18 +25,18 @@ export default function Header() {
               priority
               className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden xl:flex items-center gap-1.5" aria-label="Navegación principal">
             {NAV_ITEMS.filter((item) => item.label !== 'Inicio' && item.label !== 'Contacto').map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="px-3 py-1.5 text-xs font-bold text-slate-700 hover:text-amber-600 transition-colors rounded-lg hover:bg-slate-100/80"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -69,7 +70,7 @@ export default function Header() {
 
             {/* Botón Presupuesto (1h) */}
             <a
-              href="#contacto"
+              href={PRESUPUESTO_HREF}
               className="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs shadow-sm hover:shadow-md transition-all transform hover:-translate-y-0.5"
             >
               Presupuesto (1h)
@@ -91,14 +92,14 @@ export default function Header() {
         {mobileOpen && (
           <div className="xl:hidden py-4 border-t border-slate-200 bg-white space-y-2">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className="block px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-100 hover:text-amber-600 rounded-lg"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <div className="pt-3 border-t border-slate-200 flex flex-col gap-2.5 px-3">
               <a
@@ -118,7 +119,7 @@ export default function Header() {
                 <span>WhatsApp</span>
               </a>
               <a
-                href="#contacto"
+                href={PRESUPUESTO_HREF}
                 onClick={() => setMobileOpen(false)}
                 className="w-full text-center py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm shadow-md"
               >

@@ -127,6 +127,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Scroll suave */
 html {
   scroll-behavior: smooth;
+  /* Que las anclas (#inversores, #contacto) no queden bajo la cabecera fija */
+  scroll-padding-top: 5.5rem;
   overflow-x: hidden;
   max-width: 100vw;
   background-color: #ffffff;
