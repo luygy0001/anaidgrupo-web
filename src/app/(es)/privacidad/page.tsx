@@ -37,8 +37,8 @@ export default function PrivacidadPage() {
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Responsable del tratamiento</h2>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Responsable:</strong> {LEGAL.razonSocial}</li>
-              <li><strong>CIF/NIF:</strong> {LEGAL.cif}</li>
+              <li><strong>Responsable:</strong> {LEGAL.titular} (nombre comercial: {SITE_NAME})</li>
+              <li><strong>NIF:</strong> {LEGAL.nif}</li>
               <li><strong>Domicilio:</strong> {ADDRESS}</li>
               <li><strong>Correo electrónico:</strong> <a href={`mailto:${EMAIL}`} className="text-primary underline">{EMAIL}</a></li>
               <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-primary underline">{PHONE_DISPLAY}</a></li>

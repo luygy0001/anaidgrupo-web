@@ -177,9 +177,9 @@ export const INTERMEDIATION_DISCLAIMER =
   'Construcciones Anaid coordina proyectos integrales de reforma y construcción a través de una red homologada de profesionales, técnicos y arquitectos colegiados.';
 
 export const LEGAL_DRAFT = false;
+// Titular de la web: persona física; «Construcciones Anaid» es su nombre comercial.
 export const LEGAL = {
-  razonSocial: 'Construcciones Anaid',
-  cif: 'Pendiente de actualización',
+  titular: 'Luis Manuel Vázquez',
+  nif: '08984194A',
   domicilio: 'C/ Isaac Peral, 46, Valdeavero, Madrid',
-  datosMercantiles: 'Registro Mercantil de Madrid',
 } as const;

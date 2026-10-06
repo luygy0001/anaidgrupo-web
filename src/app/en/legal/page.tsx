@@ -14,7 +14,7 @@ export default function LegalEnPage() {
       <Container narrow>
         <h1 className="text-3xl font-bold mb-8">Legal notice</h1>
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p><strong>Company:</strong> {SITE_NAME} · {LEGAL.razonSocial} · {LEGAL.cif}</p>
+          <p><strong>Company:</strong> {SITE_NAME} · {LEGAL.titular} · {LEGAL.nif}</p>
           <p><strong>Address:</strong> {LEGAL.domicilio}</p>
           <p><strong>Email:</strong> {EMAIL}</p>
           <h2 className="text-lg font-semibold text-foreground">Nature of the service</h2>

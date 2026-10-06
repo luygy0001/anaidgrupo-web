@@ -100,8 +100,16 @@
     con fuente verificable citada y aviso de que no son el presupuesto de Anaid (frente
     aparte de investigación).
 35. **NIF:** NO usar el de Anaid Grupo Empresarial SL (empresa parada; reactivación sin
-    decidir). **Bloqueante para producción:** falta el titular real de la web (persona o
-    sociedad, NIF) para aviso legal y privacidad; hoy muestran «Pendiente de actualización».
+    decidir). **Titular de la web:** Luis Manuel Vázquez, persona física; «Construcciones
+    Anaid» es su nombre comercial. Aviso legal y privacidad actualizados.
+36. **Crédito:** la web figura como creada por PyMExpert, con enlace a
+    https://www.pymexpert.com (pie y aviso legal). PyMExpert se publica a la vez.
+37. **n8n:** la IA del presupuesto tendrá los datos y textos de cada calidad.
+38. **Contraseñas fuera:** se quita el panel y la contraseña de staging. Si el negocio
+    escala, se rediseñará con accesos para profesionales.
+39. **Pendiente legal:** la privacidad aún menciona chat guiado, subida de fotos y panel;
+    hay que actualizarla con el formulario nuevo (Turnstile, n8n, Google Workspace como
+    encargados del tratamiento).
 
 ### Fase 1 — Navegación (2026-10-06, hecha)
 

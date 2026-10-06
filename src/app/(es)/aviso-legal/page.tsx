@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS, INTERMEDIATION_DISCLAIMER } from '@/lib/constants';
+import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS, INTERMEDIATION_DISCLAIMER, POWERED_BY } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Aviso legal',
@@ -34,13 +34,17 @@ export default function AvisoLegalPage() {
               siguientes datos identificativos del titular de este sitio web:
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Denominación comercial:</strong> {SITE_NAME}</li>
-              <li><strong>Razón social:</strong> {LEGAL.razonSocial}</li>
-              <li><strong>CIF/NIF:</strong> {LEGAL.cif}</li>
-              <li><strong>Domicilio social:</strong> {ADDRESS}</li>
+              <li><strong>Titular:</strong> {LEGAL.titular}</li>
+              <li><strong>Nombre comercial:</strong> {SITE_NAME}</li>
+              <li><strong>NIF:</strong> {LEGAL.nif}</li>
+              <li><strong>Domicilio:</strong> {ADDRESS}</li>
               <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-amber-400 underline hover:text-amber-300">{PHONE_DISPLAY}</a></li>
               <li><strong>Correo electrónico:</strong> {EMAIL}</li>
               <li><strong>Sitio web:</strong> {SITE_URL}</li>
+              <li>
+                <strong>Diseño y desarrollo web:</strong>{' '}
+                <a href={POWERED_BY.url} target="_blank" rel="noopener" className="text-amber-400 underline hover:text-amber-300">{POWERED_BY.name}</a>
+              </li>
             </ul>
           </div>
 
