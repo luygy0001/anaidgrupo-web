@@ -20,6 +20,7 @@ formulario y el servidor.
 
 ```
 N8N_LEAD_WEBHOOK_URL=https://<tu-n8n>/webhook/<id>
+N8N_WEBHOOK_SECRET=<secreto largo; el mismo que la credencial «Anaid - Webhook» de n8n>
 ```
 
 La ruta valida y sanea los campos permitidos de cada tipo y los reenvía en JSON a ese webhook,

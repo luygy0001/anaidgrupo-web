@@ -272,9 +272,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: ERROR_CONTACTO_DIRECTO }, { status: 503 });
     }
 
+    // Secreto compartido con el Header Auth del webhook de n8n (credencial «Anaid - Webhook»)
+    const cabeceras: Record<string, string> = { 'Content-Type': 'application/json' };
+    const secretoWebhook = process.env.N8N_WEBHOOK_SECRET;
+    if (secretoWebhook) cabeceras['X-Webhook-Secret'] = secretoWebhook;
+
     const respuesta = await fetch(webhookUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: cabeceras,
       body: JSON.stringify({
         tipo,
         ...campos,

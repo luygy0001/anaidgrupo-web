@@ -5,7 +5,11 @@ versión aquí, en `src/lib/presupuesto.ts` y en el flujo de n8n a la vez.
 
 La web envía cada formulario a `POST /api/lead`, que valida y reenvía a la URL de
 `N8N_LEAD_WEBHOOK_URL` (nodo **Webhook** de n8n, método POST, respuesta «Using 'Respond to
-Webhook' node»). Tiempo máximo de espera de la web: **10 segundos**. Si n8n no contesta 2xx a
+Webhook' node»). **Autenticación:** si existe `N8N_WEBHOOK_SECRET`, la web envía la cabecera
+`X-Webhook-Secret` con ese valor; en n8n, Header Auth con la credencial `Anaid - Webhook`
+(nombre de cabecera `X-Webhook-Secret`, mismo valor). El diseño del flujo está en
+`D:\CoworkClaude\n8n-automatizaciones\automatizaciones\construcciones-anaid\presupuesto-desde-formulario`.
+Tiempo máximo de espera de la web: **10 segundos**. Si n8n no contesta 2xx a
 tiempo, la web muestra un error y pide al cliente que llame o escriba por WhatsApp.
 
 ## 1. Presupuesto (`tipo: "presupuesto"`)
