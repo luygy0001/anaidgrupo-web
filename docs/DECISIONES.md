@@ -111,6 +111,10 @@
     hay que actualizarla con el formulario nuevo (Turnstile, n8n, Google Workspace como
     encargados del tratamiento).
 
+40. **Formulario de presupuesto: correo y teléfono obligatorios.** Quien no quiera darlos
+    no es cliente (Luis, 06-10-2026). El correo además sirve a n8n para detectar
+    presupuestos repetidos y enviar el PDF.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e
