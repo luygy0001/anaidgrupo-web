@@ -67,7 +67,7 @@ n8n decide **en el momento** si el presupuesto es gratuito, mirando su historial
 
 | Situación | Respuesta | Lo que ve el cliente |
 |---|---|---|
-| Gratuito | `{ "estado": "aceptado" }` | «Recibido. Te lo enviamos por WhatsApp y por correo en menos de 1 hora.» |
+| Gratuito | `{ "estado": "aceptado" }` | «Recibido. Una persona lo revisa y te lo enviamos por correo y por WhatsApp en menos de 24 horas.» |
 | Adicional (de pago) | `{ "estado": "pago_requerido", "importe": 150 }` | «Ya tienes un presupuesto gratuito. Este cuesta 150 €; te escribimos por WhatsApp con los datos de pago (Bizum o transferencia). Si crees que es un error, lo revisa una persona.» |
 
 Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier otro código**
@@ -78,15 +78,17 @@ Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier o
 1. **Presupuesto generado con IA** (AI Act art. 50 y RGPD art. 22): el presupuesto (PDF y
    mensaje) debe decir «Presupuesto elaborado con ayuda de inteligencia artificial» e incluir
    cómo pedir que lo revise una persona (correo info@construccionesanaid.com o teléfono).
-2. **WhatsApp lo contesta Luis (una persona)**: no hace falta aviso de IA. n8n solo envía por
-   WhatsApp el presupuesto, que ya lleva su etiqueta de IA (punto 1). **Si algún día las
-   conversaciones las contesta una IA**, el primer mensaje debe decirlo y explicar cómo hablar
-   con una persona (AI Act art. 50.1, en vigor desde el 02-08-2026).
-3. **Plazo de 1 hora, 24/7**: la web lo promete; si el flujo falla, que avise a Luis (correo o
-   WhatsApp) para no incumplirlo en silencio.
-4. **Datos**: guardar solo lo necesario y el tiempo que diga la política de privacidad; el
+2. **Borrador, nunca envío automático** (decisión 45): n8n deja el presupuesto como borrador de
+   correo con el PDF y avisa a Luis; Luis lo revisa, lo envía y reenvía el PDF por WhatsApp desde
+   la app. En el futuro el borrador irá al profesional encargado de la obra.
+3. **WhatsApp lo contesta Luis (una persona)**: no hace falta aviso de IA ni API de WhatsApp.
+   **Si algún día las conversaciones las contesta una IA**, el primer mensaje debe decirlo y
+   explicar cómo hablar con una persona (AI Act art. 50.1, en vigor desde el 02-08-2026).
+4. **Plazo de 24 horas**: la web lo promete; si un borrador lleva más de 20 horas sin enviarse,
+   n8n se lo recuerda a Luis para no incumplirlo en silencio.
+5. **Datos**: guardar solo lo necesario y el tiempo que diga la política de privacidad; el
    proveedor de IA y la región del servidor deben figurar en ella.
-5. **Precios internos**: los €/m² por calidad (700 / 900 / 1.050, sin IVA) y los textos de cada
+6. **Precios internos**: los €/m² por calidad (700 / 900 / 1.050, sin IVA) y los textos de cada
    calidad viven solo en n8n; la web nunca los publica.
 
 ## 2. Otros formularios
