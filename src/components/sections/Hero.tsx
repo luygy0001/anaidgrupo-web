@@ -72,7 +72,7 @@ export default function Hero() {
       <Container className="relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Columna de Texto y Conversión (7 cols) */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="lg:col-span-7 min-w-0 space-y-6 text-left">
             {/* Tag / Badge de impacto */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
               <Zap className="w-3.5 h-3.5 text-amber-400" />
@@ -120,9 +120,9 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contactar por WhatsApp"
-                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-black text-sm tracking-wide shadow-xl shadow-[#25D366]/30 transition-all transform hover:-translate-y-0.5 text-center"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-black text-sm tracking-wide shadow-xl shadow-[#25D366]/30 transition-all transform hover:-translate-y-0.5 text-center"
               >
-                <WhatsAppIcon className="w-5 h-5 fill-white text-white shrink-0" />
+                <WhatsAppIcon className="w-5 h-5 fill-slate-950 text-slate-950 shrink-0" />
                 <span>WhatsApp</span>
               </a>
             </div>
@@ -142,7 +142,7 @@ export default function Hero() {
           </div>
 
           {/* Columna Visual de Muestra en directo (5 cols) - Tarjeta de Cristal Translúcido */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 min-w-0 relative">
             <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl bg-slate-950/65 backdrop-blur-md p-3 sm:p-4 space-y-3">
               {/* Selector interactivo de estancias */}
               <div className="flex items-center justify-between">
@@ -155,6 +155,7 @@ export default function Hero() {
                       key={s.tag}
                       type="button"
                       onClick={() => setCurrentSlide(i)}
+                      aria-pressed={i === currentSlide}
                       className={`px-2.5 py-1 text-xs font-bold rounded-md transition-all ${
                         i === currentSlide
                           ? 'bg-amber-400 text-slate-950 shadow-sm'

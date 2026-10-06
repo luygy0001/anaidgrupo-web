@@ -162,10 +162,11 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
             <a href="/aviso-legal" className="hover:underline">Aviso Legal</a>
             <a href="/privacidad" className="hover:underline">Privacidad</a>
             <a href="/cookies" className="hover:underline">Cookies</a>
+            <a href="/accesibilidad" className="hover:underline">Accesibilidad</a>
             <CookieSettingsButton className="hover:underline text-slate-400 hover:text-amber-400 transition-colors">
               Configurar cookies
             </CookieSettingsButton>

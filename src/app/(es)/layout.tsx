@@ -10,11 +10,16 @@ export default function SpanishLayout({
 }) {
   return (
     <>
+      <a href="#contenido" className="saltar-contenido">
+        Saltar al contenido
+      </a>
+      {/* El aviso de cookies va al principio del orden de tabulación: se alcanza antes que el
+          contenido que puede tapar */}
+      <CookieConsentBanner />
       <Header />
-      <main className="flex-1">{children}</main>
+      <main id="contenido" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
       <Footer />
       <WhatsAppButton />
-      <CookieConsentBanner />
     </>
   );
 }

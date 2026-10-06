@@ -17,10 +17,10 @@ export default function WhatsAppButton() {
         href={WHATSAPP_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-full bg-[#25D366] text-white shadow-2xl hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40"
+        className="inline-flex items-center gap-2.5 px-4 py-3 sm:px-5 sm:py-3.5 rounded-full bg-[#25D366] text-slate-950 shadow-2xl hover:bg-[#20bd5a] hover:scale-105 active:scale-95 transition-all duration-200"
         aria-label="Contactar por WhatsApp con Construcciones Anaid"
       >
-        <WhatsAppIcon className="w-6 h-6 fill-white shrink-0" />
+        <WhatsAppIcon className="w-6 h-6 fill-slate-950 shrink-0" />
         <span className="font-bold text-sm tracking-wide">WhatsApp</span>
       </a>
     </aside>

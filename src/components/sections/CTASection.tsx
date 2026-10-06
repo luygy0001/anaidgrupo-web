@@ -69,9 +69,9 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm shadow-md transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold text-sm shadow-md transition-colors"
                 >
-                  <WhatsAppIcon className="w-5 h-5 fill-white text-white" />
+                  <WhatsAppIcon className="w-5 h-5 fill-slate-950 text-slate-950" />
                   <span>Escribirnos por WhatsApp</span>
                 </a>
                 <a
@@ -103,6 +103,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 <button
                   type="button"
                   onClick={() => setProfile('particular')}
+                  aria-pressed={profile === 'particular'}
                   className={`py-2.5 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-center cursor-pointer ${
                     profile === 'particular'
                       ? 'bg-amber-400 text-slate-950 shadow-md'
@@ -114,6 +115,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 <button
                   type="button"
                   onClick={() => setProfile('inversor')}
+                  aria-pressed={profile === 'inversor'}
                   className={`py-2.5 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-center cursor-pointer ${
                     profile === 'inversor'
                       ? 'bg-amber-400 text-slate-950 shadow-md'
@@ -125,6 +127,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 <button
                   type="button"
                   onClick={() => setProfile('inmobiliaria')}
+                  aria-pressed={profile === 'inmobiliaria'}
                   className={`py-2.5 px-2 text-xs sm:text-sm font-bold rounded-lg transition-all text-center cursor-pointer ${
                     profile === 'inmobiliaria'
                       ? 'bg-amber-400 text-slate-950 shadow-md'

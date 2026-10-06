@@ -85,7 +85,7 @@ export default function AIExplainer() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs uppercase tracking-wider shrink-0 transition-colors inline-flex items-center gap-2 shadow-xs"
+            className="px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold text-xs uppercase tracking-wider shrink-0 transition-colors inline-flex items-center gap-2 shadow-xs"
           >
             <MessageSquareText className="w-4 h-4" />
             Escribir por WhatsApp

@@ -38,12 +38,12 @@ export default function AvisoLegalPage() {
               <li><strong>Nombre comercial:</strong> {SITE_NAME}</li>
               <li><strong>NIF:</strong> {LEGAL.nif}</li>
               <li><strong>Domicilio:</strong> {ADDRESS}</li>
-              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-amber-400 underline hover:text-amber-300">{PHONE_DISPLAY}</a></li>
+              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-amber-700 underline hover:text-amber-800">{PHONE_DISPLAY}</a></li>
               <li><strong>Correo electrónico:</strong> {EMAIL}</li>
               <li><strong>Sitio web:</strong> {SITE_URL}</li>
               <li>
                 <strong>Diseño y desarrollo web:</strong>{' '}
-                <a href={POWERED_BY.url} target="_blank" rel="noopener" className="text-amber-400 underline hover:text-amber-300">{POWERED_BY.name}</a>
+                <a href={POWERED_BY.url} target="_blank" rel="noopener" className="text-amber-700 underline hover:text-amber-800">{POWERED_BY.name}</a>
               </li>
             </ul>
           </div>

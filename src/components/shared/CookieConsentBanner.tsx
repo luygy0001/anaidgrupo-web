@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ShieldCheck, Cookie, Settings2, X, Check } from 'lucide-react';
 
 interface CookiePreferences {
@@ -17,6 +17,7 @@ export default function CookieConsentBanner() {
   const [showSettings, setShowSettings] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     try {
@@ -42,6 +43,29 @@ export default function CookieConsentBanner() {
     return () => window.removeEventListener('open_cookie_settings', handleReopen);
   }, []);
 
+  // Accesibilidad (WCAG 2.4.11, foco no oculto): mientras el aviso está abierto, la página
+  // reserva su altura abajo para que el elemento con foco se desplace por encima de él,
+  // y Escape lo cierra por esta visita sin guardar consentimiento (no se activa nada).
+  useEffect(() => {
+    if (!visible) return;
+    const html = document.documentElement;
+    const reservarEspacio = () => {
+      const alto = bannerRef.current?.offsetHeight ?? 0;
+      html.style.scrollPaddingBottom = `${alto + 24}px`;
+    };
+    reservarEspacio();
+    window.addEventListener('resize', reservarEspacio);
+    const cerrarConEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setVisible(false);
+    };
+    document.addEventListener('keydown', cerrarConEscape);
+    return () => {
+      html.style.scrollPaddingBottom = '';
+      window.removeEventListener('resize', reservarEspacio);
+      document.removeEventListener('keydown', cerrarConEscape);
+    };
+  }, [visible, showSettings]);
+
   const saveConsent = (prefs: { necessary: boolean; analytics: boolean; marketing: boolean }) => {
     const data: CookiePreferences = {
       ...prefs,
@@ -66,7 +90,8 @@ export default function CookieConsentBanner() {
   if (!visible) return null;
 
   return (
-    <aside
+    <div
+      ref={bannerRef}
       role="dialog"
       aria-labelledby="cookie-title"
       aria-describedby="cookie-desc"
@@ -162,9 +187,12 @@ export default function CookieConsentBanner() {
                     type="checkbox"
                     checked={analytics}
                     onChange={(e) => setAnalytics(e.target.checked)}
+                    role="switch"
+                    aria-checked={analytics}
+                    aria-label="Cookies analíticas"
                     className="sr-only peer"
                   />
-                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                 </label>
               </div>
 
@@ -178,9 +206,12 @@ export default function CookieConsentBanner() {
                     type="checkbox"
                     checked={marketing}
                     onChange={(e) => setMarketing(e.target.checked)}
+                    role="switch"
+                    aria-checked={marketing}
+                    aria-label="Cookies de personalización"
                     className="sr-only peer"
                   />
-                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                 </label>
               </div>
             </div>
@@ -196,6 +227,6 @@ export default function CookieConsentBanner() {
           </div>
         )}
       </div>
-    </aside>
+    </div>
   );
 }

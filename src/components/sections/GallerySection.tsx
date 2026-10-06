@@ -98,7 +98,7 @@ export default function GallerySection() {
                   {p.tag}
                 </div>
                 {p.duration && (
-                  <div className="absolute bottom-3 right-3 bg-emerald-600/95 backdrop-blur-md px-2.5 py-0.5 rounded-md text-[11px] font-bold text-white shadow-md">
+                  <div className="absolute bottom-3 right-3 bg-emerald-700 backdrop-blur-md px-2.5 py-0.5 rounded-md text-[11px] font-bold text-white shadow-md">
                     Plazo: {p.duration}
                   </div>
                 )}
