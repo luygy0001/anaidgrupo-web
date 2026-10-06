@@ -145,8 +145,6 @@ Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
 
 ### Pendiente técnico detectado (06-10-2026)
 
-- **Google Fonts se carga desde los servidores de Google**: envía la IP del visitante a Google
-  sin consentimiento (riesgo RGPD; sentencia alemana de 2022) y la CSP bloquea una conexión que
-  hace el navegador. Solución: servir las fuentes desde la web con `next/font` (incluido en
-  Next, sin dependencias nuevas).
+- ~~Google Fonts desde los servidores de Google~~ **Resuelto (06-10-2026):** fuentes servidas
+  desde la propia web con `next/font`; 0 peticiones a Google y CSP sin dominios de fuentes.
 - Turnstile: Luis debe crear el widget en Cloudflare y poner las dos claves en Dokploy.
