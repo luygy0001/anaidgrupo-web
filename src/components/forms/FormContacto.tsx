@@ -5,13 +5,14 @@ import { useRouter } from 'next/navigation';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
-import { contact } from '@/lib/api';
+import { enviarFormulario } from '@/lib/enviarFormulario';
 import { trackFormSubmit } from '@/lib/tracking';
 
 type Status = 'idle' | 'loading' | 'error';
 
 export default function FormContacto() {
   const [status, setStatus] = useState<Status>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +21,7 @@ export default function FormContacto() {
 
     const form = new FormData(e.currentTarget);
     try {
-      await contact.send({
+      await enviarFormulario('contacto', {
         nombre: form.get('nombre') as string,
         email: form.get('email') as string,
         telefono: (form.get('telefono') as string) || '',
@@ -28,7 +29,8 @@ export default function FormContacto() {
       });
       trackFormSubmit();
       router.push('/gracias/contacto');
-    } catch {
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Error al enviar.');
       setStatus('error');
     }
   };
@@ -48,7 +50,7 @@ export default function FormContacto() {
       </label>
 
       {status === 'error' && (
-        <p className="text-sm text-error">Error al enviar. Inténtalo de nuevo.</p>
+        <p className="text-sm text-error">{errorMessage}</p>
       )}
 
       <Button type="submit" fullWidth disabled={status === 'loading'}>

@@ -5,6 +5,7 @@ import Container from '@/components/ui/Container';
 import { Zap, CheckCircle2, Send, ShieldAlert, ArrowRight, Phone } from 'lucide-react';
 import { WHATSAPP_URL, PHONE, PHONE_DISPLAY } from '@/lib/constants';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
+import { enviarFormulario } from '@/lib/enviarFormulario';
 
 interface CTASectionProps {
   title?: string;
@@ -25,33 +26,21 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    const payload = {
-      profile,
-      nombre: formData.get('nombre'),
-      telefono: formData.get('telefono'),
-      email: formData.get('email'),
-      zona: formData.get('zona'),
-      descripcion: formData.get('detalles'),
-      company_fax: formData.get('company_fax'), // Honeypot anti-spam
-    };
+    const texto = (campo: string) => String(formData.get(campo) ?? '');
 
     try {
-      const res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
+      await enviarFormulario('presupuesto', {
+        perfil: profile,
+        nombre: texto('nombre'),
+        telefono: texto('telefono'),
+        email: texto('email'),
+        zona: texto('zona'),
+        descripcion: texto('detalles'),
+        company_fax: texto('company_fax'), // Honeypot anti-spam
       });
-
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setSubmitted(true);
-      } else {
-        setErrorMessage(data.error || 'No se ha podido procesar la solicitud. Por favor llámanos o escríbenos por WhatsApp.');
-      }
-    } catch {
-      setErrorMessage('Error de conexión con el servidor. Puedes llamarnos o contactar por WhatsApp directamente.');
+      setSubmitted(true);
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'No se ha podido procesar la solicitud.');
     } finally {
       setLoading(false);
     }

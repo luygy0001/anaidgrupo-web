@@ -1,16 +1,55 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// Rate Limiting en memoria para mitigar spam y ataques de saturación
+// ============================================================
+// Recepción única de formularios públicos
+// ------------------------------------------------------------
+// Todos los formularios de la web (presupuesto de portada, contacto,
+// solicitud de proyecto y alta de profesionales) envían aquí. La ruta
+// valida, sanea y reenvía el contacto al webhook de n8n configurado en
+// N8N_LEAD_WEBHOOK_URL. Si el webhook no existe o falla, responde con
+// error para que el usuario lo sepa y use teléfono o WhatsApp: nunca se
+// confirma como recibido un contacto que no ha llegado a ningún sitio.
+// ============================================================
+
+type Tipo = 'presupuesto' | 'contacto' | 'solicitud' | 'profesional';
+
+// Campos admitidos por tipo de formulario. Cualquier otro se descarta.
+const CAMPOS: Record<Tipo, readonly string[]> = {
+  presupuesto: ['perfil', 'nombre', 'telefono', 'email', 'zona', 'descripcion'],
+  contacto: ['nombre', 'telefono', 'email', 'mensaje'],
+  solicitud: [
+    'nombre',
+    'telefono',
+    'email',
+    'codigoPostal',
+    'tipoServicio',
+    'noSabeQueNecesita',
+    'urgencia',
+    'descripcion',
+    'origenFormulario',
+  ],
+  profesional: [
+    'nombre',
+    'empresa',
+    'telefono',
+    'email',
+    'especialidades',
+    'zonas',
+    'experiencia',
+    'descripcion',
+  ],
+};
+
+const ERROR_CONTACTO_DIRECTO =
+  'No hemos podido registrar tu solicitud. Por favor, llámanos o escríbenos por WhatsApp y te atendemos al momento.';
+
+// Rate limiting en memoria para mitigar spam
 const rateLimitMap = new Map<string, { count: number; expiresAt: number }>();
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
   const entry = rateLimitMap.get(ip);
-  if (!entry) {
-    rateLimitMap.set(ip, { count: 1, expiresAt: now + 15 * 60 * 1000 });
-    return false;
-  }
-  if (now > entry.expiresAt) {
+  if (!entry || now > entry.expiresAt) {
     rateLimitMap.set(ip, { count: 1, expiresAt: now + 15 * 60 * 1000 });
     return false;
   }
@@ -21,12 +60,25 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
-// Sanitización de texto para prevenir inyecciones
-function sanitize(input: string): string {
-  return input
-    .replace(/[<>]/g, '') // Eliminar tags HTML
-    .trim()
-    .slice(0, 500); // Límite de longitud
+// Saneado de texto para evitar inyecciones de HTML
+function sanitize(input: string, max = 2000): string {
+  return input.replace(/[<>]/g, '').trim().slice(0, max);
+}
+
+function sanearValor(valor: unknown): string | string[] | boolean | null {
+  if (typeof valor === 'string') return sanitize(valor);
+  if (typeof valor === 'boolean') return valor;
+  if (Array.isArray(valor)) {
+    return valor
+      .filter((v): v is string => typeof v === 'string')
+      .slice(0, 20)
+      .map((v) => sanitize(v, 100));
+  }
+  return null;
+}
+
+function esTipo(valor: unknown): valor is Tipo {
+  return typeof valor === 'string' && valor in CAMPOS;
 }
 
 export async function POST(req: NextRequest) {
@@ -34,14 +86,13 @@ export async function POST(req: NextRequest) {
     const origin = req.headers.get('origin') || req.headers.get('referer') || '';
     const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
 
-    // 1. Verificación de Origen Legítimo (Prevención de CSRF y llamadas desde webs externas)
+    // 1. Origen legítimo (evita envíos desde webs externas)
     const allowedHosts = ['construccionesanaid.com', 'www.construccionesanaid.com', 'localhost'];
-    const isAllowed = allowedHosts.some((host) => origin.includes(host));
-    if (origin && !isAllowed) {
+    if (origin && !allowedHosts.some((host) => origin.includes(host))) {
       return NextResponse.json({ error: 'Origen no autorizado' }, { status: 403 });
     }
 
-    // 2. Control de Frecuencia (Rate Limiting)
+    // 2. Control de frecuencia
     if (isRateLimited(ip)) {
       return NextResponse.json(
         { error: 'Has alcanzado el límite de solicitudes. Por favor, contáctanos directamente por WhatsApp o teléfono.' },
@@ -49,69 +100,72 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const body = await req.json();
+    const body: unknown = await req.json();
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Solicitud no válida' }, { status: 400 });
+    }
+    const datos = body as Record<string, unknown>;
 
-    // 3. Trampa Anti-Bot (Honeypot)
-    // Si un bot rellena este campo invisible, descartamos la petición silenciosamente sin dar pistas
-    if (body.company_fax || body.website_url) {
-      return NextResponse.json({ success: true, message: 'Solicitud tramitada' });
+    // 3. Trampa anti-bot: si un bot rellena el campo invisible, se descarta sin dar pistas
+    if (datos.company_fax || datos.website_url) {
+      return NextResponse.json({ success: true });
     }
 
-    const { profile, nombre, telefono, email, zona, descripcion } = body;
+    // Compatibilidad: el formulario de portada no enviaba tipo
+    const tipo: Tipo = esTipo(datos.tipo) ? datos.tipo : 'presupuesto';
 
-    // 4. Validación rigurosa de campos obligatorios
-    if (!telefono || typeof telefono !== 'string') {
-      return NextResponse.json({ error: 'El teléfono es obligatorio' }, { status: 400 });
+    // 4. Campos permitidos y saneados
+    const campos: Record<string, string | string[] | boolean> = {};
+    for (const campo of CAMPOS[tipo]) {
+      const valor = sanearValor(datos[campo]);
+      if (valor !== null && valor !== '') campos[campo] = valor;
     }
 
-    // Formato de teléfono (mínimo 9 dígitos)
-    const cleanPhone = telefono.replace(/\s+/g, '');
-    const phoneRegex = /^[+0-9]{9,15}$/;
-    if (!phoneRegex.test(cleanPhone)) {
-      return NextResponse.json({ error: 'El formato del teléfono no es válido' }, { status: 400 });
-    }
+    // 5. Validación: hace falta un medio de contacto válido
+    const telefono = typeof campos.telefono === 'string' ? campos.telefono.replace(/\s+/g, '') : '';
+    const email = typeof campos.email === 'string' ? campos.email : '';
 
-    // Validación de email opcional
-    if (email && typeof email === 'string') {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email.trim())) {
-        return NextResponse.json({ error: 'El formato de email no es válido' }, { status: 400 });
+    if (telefono) {
+      if (!/^[+0-9]{9,15}$/.test(telefono)) {
+        return NextResponse.json({ error: 'El formato del teléfono no es válido' }, { status: 400 });
       }
+      campos.telefono = telefono;
+    }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ error: 'El formato del email no es válido' }, { status: 400 });
+    }
+    if (tipo === 'contacto' ? !email : !telefono) {
+      return NextResponse.json(
+        { error: tipo === 'contacto' ? 'El email es obligatorio' : 'El teléfono es obligatorio' },
+        { status: 400 }
+      );
     }
 
-    // 5. Datos saneados y validados
-    const leadData = {
-      profile: ['inversor', 'inmobiliaria', 'particular'].includes(profile) ? profile : 'particular',
-      nombre: sanitize(nombre || 'Sin nombre'),
-      telefono: cleanPhone,
-      email: email ? sanitize(email) : null,
-      zona: sanitize(zona || 'Madrid'),
-      descripcion: sanitize(descripcion || 'Sin detalles adicionales'),
-      ip,
-      fecha: new Date().toISOString(),
-    };
-
-    // 6. Si existe un webhook seguro de n8n configurado en servidor, reenviamos de forma privada
+    // 6. Reenvío a n8n. Sin webhook o con fallo, el usuario recibe error.
     const webhookUrl = process.env.N8N_LEAD_WEBHOOK_URL;
-    if (webhookUrl) {
-      try {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(leadData),
-        });
-      } catch (err) {
-        console.error('Error forwarding lead to n8n:', err);
-        // Continuamos para no bloquear al usuario legítimo
-      }
+    if (!webhookUrl) {
+      console.error('[api/lead] N8N_LEAD_WEBHOOK_URL no está configurada: contacto no registrado.');
+      return NextResponse.json({ error: ERROR_CONTACTO_DIRECTO }, { status: 503 });
     }
 
-    return NextResponse.json({
-      success: true,
-      message: 'Tu solicitud ha sido recibida y protegida con éxito.',
+    const respuesta = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ tipo, ...campos, ip, fecha: new Date().toISOString() }),
+      signal: AbortSignal.timeout(10_000),
+    }).catch((err: unknown) => {
+      console.error('[api/lead] Error de red al reenviar a n8n:', err);
+      return null;
     });
+
+    if (!respuesta || !respuesta.ok) {
+      console.error('[api/lead] n8n no aceptó el contacto. Estado:', respuesta?.status ?? 'sin respuesta');
+      return NextResponse.json({ error: ERROR_CONTACTO_DIRECTO }, { status: 502 });
+    }
+
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('API lead error:', error);
-    return NextResponse.json({ error: 'Error interno de procesamiento' }, { status: 500 });
+    console.error('[api/lead] Error interno:', error);
+    return NextResponse.json({ error: ERROR_CONTACTO_DIRECTO }, { status: 500 });
   }
 }

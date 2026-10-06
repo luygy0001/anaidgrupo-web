@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
-import { professionals } from '@/lib/api';
+import { enviarFormulario } from '@/lib/enviarFormulario';
 import { trackFormSubmit } from '@/lib/tracking';
 
 const SPECIALTIES = [
@@ -23,6 +23,7 @@ type Status = 'idle' | 'loading' | 'error';
 
 export default function FormProfesional() {
   const [status, setStatus] = useState<Status>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
   const [selectedSpecs, setSelectedSpecs] = useState<string[]>([]);
   const router = useRouter();
 
@@ -40,17 +41,20 @@ export default function FormProfesional() {
     const data = new FormData(form);
 
     try {
-      await professionals.apply({
+      await enviarFormulario('profesional', {
         nombre: data.get('nombre') as string,
         empresa: (data.get('empresa') as string) || undefined,
         email: data.get('email') as string,
         telefono: data.get('telefono') as string,
         especialidades: selectedSpecs,
-        zonas: [(data.get('zonas') as string) || 'Madrid'],
+        zonas: (data.get('zonas') as string) || 'Madrid',
+        experiencia: data.get('experiencia') as string,
+        descripcion: data.get('descripcion') as string,
       });
       trackFormSubmit({ form_location: 'form-profesional' });
       router.push('/gracias/profesional');
-    } catch {
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Error al enviar la solicitud.');
       setStatus('error');
     }
   };
@@ -114,9 +118,7 @@ export default function FormProfesional() {
       </label>
 
       {status === 'error' && (
-        <p className="text-sm text-error">
-          Error al enviar la solicitud. Inténtalo de nuevo o contacta por WhatsApp.
-        </p>
+        <p className="text-sm text-error">{errorMessage}</p>
       )}
 
       <Button type="submit" fullWidth disabled={status === 'loading'}>

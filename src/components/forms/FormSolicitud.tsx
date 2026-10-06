@@ -6,7 +6,8 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
-import { leads, files } from '@/lib/api';
+import { enviarFormulario } from '@/lib/enviarFormulario';
+import { WHATSAPP_URL } from '@/lib/constants';
 import { trackFormSubmit } from '@/lib/tracking';
 
 type FormStatus = 'idle' | 'loading' | 'error';
@@ -43,7 +44,6 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
   const [urgencia, setUrgencia] = useState('MEDIA');
   const [tipoServicio, setTipoServicio] = useState('');
   const [noSabeQueNecesita, setNoSabeQueNecesita] = useState(false);
-  const [fotos, setFotos] = useState<FileList | null>(null);
   const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -55,8 +55,7 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
     setErrorMessage('');
 
     try {
-      // Create lead via API
-      const result = await leads.create({
+      await enviarFormulario('solicitud', {
         nombre,
         telefono,
         email,
@@ -65,23 +64,18 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
         urgencia,
         tipoServicio: tipoServicio || 'NO_SE',
         noSabeQueNecesita,
-        fuente: 'FORMULARIO',
+        origenFormulario: formLocation,
       });
-
-      // Upload photos if any
-      if (fotos && fotos.length > 0) {
-        for (let i = 0; i < fotos.length; i++) {
-          await files.upload(fotos[i], result.id);
-        }
-      }
 
       const service = tipoServicio || 'NO_SE';
       trackFormSubmit({ service, ...(formLocation ? { form_location: formLocation } : {}) });
       router.push(`/gracias/solicitud?service=${encodeURIComponent(service)}`);
-    } catch {
+    } catch (err) {
       setStatus('error');
       setErrorMessage(
-        'Ha ocurrido un error al enviar tu solicitud. Por favor, inténtalo de nuevo o contacta con nosotros.'
+        err instanceof Error
+          ? err.message
+          : 'Ha ocurrido un error al enviar tu solicitud. Por favor, contacta con nosotros.'
       );
     }
   };
@@ -163,22 +157,13 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
         required
       />
 
-      <div className="space-y-1">
-        <label className="block text-sm font-medium text-foreground">
-          Fotos del proyecto (opcional)
-        </label>
-        <input
-          type="file"
-          multiple
-          accept="image/*"
-          onChange={(e) => setFotos(e.target.files)}
-          className="w-full text-sm text-muted-foreground file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-primary/10 file:text-primary hover:file:bg-primary/20 transition-colors"
-        />
-        <p className="text-sm text-muted-foreground">
-          Puedes adjuntar varias imágenes para ayudarnos a analizar mejor tu
-          necesidad.
-        </p>
-      </div>
+      <p className="text-sm text-muted-foreground">
+        ¿Tienes fotos? Envíanoslas por{' '}
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+          WhatsApp
+        </a>{' '}
+        después de enviar la solicitud: nos ayudan a analizar mejor tu proyecto.
+      </p>
 
       <div className="flex items-start gap-2">
         <input
