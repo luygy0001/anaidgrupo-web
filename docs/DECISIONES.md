@@ -140,3 +140,11 @@ Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
 - Lugar y plazo reales de cada foto de la galería.
 - Proveedor de IA que usa n8n y región del VPS de Hostinger (para la política de privacidad).
 - Textos de cada calidad (los tendrá la IA de n8n; la web solo muestra el nombre).
+
+### Pendiente técnico detectado (06-10-2026)
+
+- **Google Fonts se carga desde los servidores de Google**: envía la IP del visitante a Google
+  sin consentimiento (riesgo RGPD; sentencia alemana de 2022) y la CSP bloquea una conexión que
+  hace el navegador. Solución: servir las fuentes desde la web con `next/font` (incluido en
+  Next, sin dependencias nuevas).
+- Turnstile: Luis debe crear el widget en Cloudflare y poner las dos claves en Dokploy.

@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle2, Phone, ShieldAlert, Wallet } from 'lucide-rea
 import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import {
   CALIDADES_POR_PERFIL,
   IMPORTE_PRESUPUESTO_ADICIONAL,
@@ -79,6 +80,8 @@ export default function FormPresupuesto() {
   const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
   const [aceptaCondicionPago, setAceptaCondicionPago] = useState(false);
   const [trampa, setTrampa] = useState('');
+  const [tokenAntibots, setTokenAntibots] = useState('');
+  const [reinicioAntibots, setReinicioAntibots] = useState(0);
 
   const [errores, setErrores] = useState<Errores>({});
   const [errorEnvio, setErrorEnvio] = useState('');
@@ -139,6 +142,10 @@ export default function FormPresupuesto() {
     setErrores(e);
     setIntentos((n) => n + 1);
     if (Object.keys(e).length > 0) return;
+    if (TURNSTILE_ACTIVO && !tokenAntibots) {
+      setErrorEnvio(MENSAJE_ESPERA_TURNSTILE);
+      return;
+    }
 
     setEstado('enviando');
     try {
@@ -156,6 +163,7 @@ export default function FormPresupuesto() {
         aceptaCondicionPago,
         origenFormulario: typeof window !== 'undefined' ? window.location.pathname : '',
         company_fax: trampa,
+        turnstileToken: tokenAntibots,
       });
       if (respuesta.estado === 'pago_requerido') {
         setImporte(respuesta.importe ?? IMPORTE_PRESUPUESTO_ADICIONAL);
@@ -166,6 +174,7 @@ export default function FormPresupuesto() {
     } catch (err) {
       setErrorEnvio(err instanceof Error ? err.message : 'No hemos podido enviar tu solicitud.');
       setEstado('formulario');
+      setReinicioAntibots((n) => n + 1);
     }
   };
 
@@ -539,6 +548,8 @@ export default function FormPresupuesto() {
           {ayudaError('aceptaCondicionPago')}
         </div>
       </div>
+
+      <Turnstile onToken={setTokenAntibots} reinicio={reinicioAntibots} tema="dark" />
 
       <button
         type="submit"

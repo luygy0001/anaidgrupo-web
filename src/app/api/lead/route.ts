@@ -149,6 +149,30 @@ function validarPresupuesto(campos: Campos): string | null {
   return null;
 }
 
+// Antibots Cloudflare Turnstile. Sin clave secreta: en desarrollo se omite; en producción se
+// rechaza (mejor un error visible que dejar entrar bots sin control).
+async function verificarTurnstile(token: unknown, ip: string): Promise<boolean> {
+  const secreto = process.env.TURNSTILE_SECRET_KEY;
+  if (!secreto) {
+    if (process.env.NODE_ENV === 'production') {
+      console.error('[api/lead] Falta TURNSTILE_SECRET_KEY: envío rechazado.');
+      return false;
+    }
+    return true;
+  }
+  if (typeof token !== 'string' || !token) return false;
+  const cuerpo = new URLSearchParams({ secret: secreto, response: token });
+  if (ip && ip !== 'anonymous') cuerpo.set('remoteip', ip);
+  const respuesta = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body: cuerpo,
+    signal: AbortSignal.timeout(5_000),
+  }).catch(() => null);
+  if (!respuesta?.ok) return false;
+  const datos: unknown = await respuesta.json().catch(() => null);
+  return !!datos && typeof datos === 'object' && 'success' in datos && datos.success === true;
+}
+
 // Lo que n8n contesta al recibir un presupuesto. Si no dice nada, se da por aceptado.
 function leerRespuestaN8n(cuerpo: unknown): { estado: 'aceptado' | 'pago_requerido'; importe?: number } {
   if (cuerpo && typeof cuerpo === 'object' && 'estado' in cuerpo && cuerpo.estado === 'pago_requerido') {
@@ -187,6 +211,17 @@ export async function POST(req: NextRequest) {
     // 3. Trampa anti-bot: si un bot rellena el campo invisible, se descarta sin dar pistas
     if (datos.company_fax || datos.website_url) {
       return NextResponse.json({ success: true });
+    }
+
+    // 3 bis. Antibots (Turnstile). El token no se reenvía a n8n.
+    if (!(await verificarTurnstile(datos.turnstileToken, ip))) {
+      return NextResponse.json(
+        {
+          error:
+            'No hemos podido comprobar que no eres un robot. Recarga la página e inténtalo de nuevo, o llámanos o escríbenos por WhatsApp.',
+        },
+        { status: 403 }
+      );
     }
 
     // Compatibilidad: el formulario de portada antiguo no enviaba tipo

@@ -30,6 +30,24 @@ gratuito (`aceptado`) o de pago (`pago_requerido`) y la web lo muestra al moment
 
 Las fotos no se suben por el formulario: se piden por WhatsApp después del envío.
 
+## Antibots: Cloudflare Turnstile (los cuatro formularios)
+
+Componente `forms/Turnstile` (sin interacción para casi todo el mundo) y verificación en
+`/api/lead` contra Cloudflare. El token solo vale una vez: tras un envío fallido se pide otro.
+
+| Variable | Dónde | Valor |
+|---|---|---|
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Dokploy (se incrusta al compilar) | Clave de sitio creada por Luis en Cloudflare para construccionesanaid.com |
+| `TURNSTILE_SECRET_KEY` | Dokploy, solo servidor | Clave secreta del mismo widget. **Nunca en el código** |
+
+- Sin `TURNSTILE_SECRET_KEY` **en producción**, la ruta rechaza los envíos (mejor un error
+  visible que entrar bots): comprobarlo en la compuerta 3 antes de publicar.
+- En local se usan las claves de prueba públicas de Cloudflare (documentación oficial
+  «Testing»): sitio `1x00000000000000000000AA` y secreto `1x0000000000000000000000000000000AA`
+  (siempre aprueban); secreto `2x0000000000000000000000000000000AA` para probar el rechazo.
+- CSP: `https://challenges.cloudflare.com` en `script-src` y `frame-src` (`next.config.ts`).
+- Cloudflare debe figurar en la política de privacidad y en la de cookies.
+
 ## Accesibilidad del formulario de presupuesto
 
 Grupos con `fieldset` y `legend`, etiquetas vinculadas, errores asociados a cada campo

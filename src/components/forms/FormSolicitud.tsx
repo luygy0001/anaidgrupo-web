@@ -7,6 +7,7 @@ import Textarea from '@/components/ui/Textarea';
 import Select from '@/components/ui/Select';
 import Button from '@/components/ui/Button';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import { WHATSAPP_URL } from '@/lib/constants';
 import { trackFormSubmit } from '@/lib/tracking';
 
@@ -47,10 +48,17 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
   const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
   const [status, setStatus] = useState<FormStatus>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [tokenAntibots, setTokenAntibots] = useState('');
+  const [reinicioAntibots, setReinicioAntibots] = useState(0);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (TURNSTILE_ACTIVO && !tokenAntibots) {
+      setErrorMessage(MENSAJE_ESPERA_TURNSTILE);
+      setStatus('error');
+      return;
+    }
     setStatus('loading');
     setErrorMessage('');
 
@@ -65,6 +73,7 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
         tipoServicio: tipoServicio || 'NO_SE',
         noSabeQueNecesita,
         origenFormulario: formLocation,
+        turnstileToken: tokenAntibots,
       });
 
       const service = tipoServicio || 'NO_SE';
@@ -77,6 +86,7 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
           ? err.message
           : 'Ha ocurrido un error al enviar tu solicitud. Por favor, contacta con nosotros.'
       );
+      setReinicioAntibots((n) => n + 1);
     }
   };
 
@@ -188,10 +198,12 @@ export default function FormSolicitud({ formLocation }: FormSolicitudProps = {})
       </p>
 
       {status === 'error' && (
-        <div className="rounded-lg bg-red-50 border border-red-200 p-4">
+        <div role="alert" className="rounded-lg bg-red-50 border border-red-200 p-4">
           <p className="text-sm text-red-700">{errorMessage}</p>
         </div>
       )}
+
+      <Turnstile onToken={setTokenAntibots} reinicio={reinicioAntibots} />
 
       <Button type="submit" fullWidth disabled={status === 'loading'}>
         {status === 'loading' ? 'Enviando...' : 'Enviar solicitud'}

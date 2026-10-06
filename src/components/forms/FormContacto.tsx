@@ -6,6 +6,7 @@ import Input from '@/components/ui/Input';
 import Textarea from '@/components/ui/Textarea';
 import Button from '@/components/ui/Button';
 import { enviarFormulario } from '@/lib/enviarFormulario';
+import Turnstile, { MENSAJE_ESPERA_TURNSTILE, TURNSTILE_ACTIVO } from '@/components/forms/Turnstile';
 import { trackFormSubmit } from '@/lib/tracking';
 
 type Status = 'idle' | 'loading' | 'error';
@@ -13,10 +14,17 @@ type Status = 'idle' | 'loading' | 'error';
 export default function FormContacto() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [tokenAntibots, setTokenAntibots] = useState('');
+  const [reinicioAntibots, setReinicioAntibots] = useState(0);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (TURNSTILE_ACTIVO && !tokenAntibots) {
+      setErrorMessage(MENSAJE_ESPERA_TURNSTILE);
+      setStatus('error');
+      return;
+    }
     setStatus('loading');
 
     const form = new FormData(e.currentTarget);
@@ -26,12 +34,14 @@ export default function FormContacto() {
         email: form.get('email') as string,
         telefono: (form.get('telefono') as string) || '',
         mensaje: form.get('mensaje') as string,
+        turnstileToken: tokenAntibots,
       });
       trackFormSubmit();
       router.push('/gracias/contacto');
     } catch (err) {
       setErrorMessage(err instanceof Error ? err.message : 'Error al enviar.');
       setStatus('error');
+      setReinicioAntibots((n) => n + 1);
     }
   };
 
@@ -50,8 +60,10 @@ export default function FormContacto() {
       </label>
 
       {status === 'error' && (
-        <p className="text-sm text-error">{errorMessage}</p>
+        <p role="alert" className="text-sm text-error">{errorMessage}</p>
       )}
+
+      <Turnstile onToken={setTokenAntibots} reinicio={reinicioAntibots} />
 
       <Button type="submit" fullWidth disabled={status === 'loading'}>
         {status === 'loading' ? 'Enviando...' : 'Enviar mensaje'}
