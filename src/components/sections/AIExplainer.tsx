@@ -36,7 +36,7 @@ export default function AIExplainer() {
             Tecnología PyMExpert aplicada a la construcción
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            La primera constructora de Madrid donde <span className="text-amber-600">no tienes que perseguir</span> al jefe de obra.
+            Una constructora donde <span className="text-amber-600">no tienes que perseguir</span> al jefe de obra.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
             Eliminamos de raíz los dos grandes dolores de una reforma: la lentitud en los presupuestos y la incertidumbre durante la obra. Todo controlado desde tu móvil.

@@ -52,8 +52,6 @@ export const NAV_ITEMS = [
   { label: 'Inversores & Inmobiliarias', href: '#inversores' },
   { label: 'Método IA (PyMExpert)', href: '#metodo-ia' },
   { label: 'Reformas & Servicios', href: '#servicios' },
-  { label: 'Obras Realizadas', href: '#galeria' },
-  { label: 'Opiniones', href: '#testimonios' },
   { label: 'Contacto', href: '#contacto' },
 ] as const;
 

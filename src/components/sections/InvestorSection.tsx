@@ -66,7 +66,7 @@ export default function InvestorSection() {
               </div>
               <h3 className="text-2xl font-bold text-slate-900">Desbloquea ventas con compradores indecisos</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                El 70% de los compradores dudan ante una vivienda para reformar porque no saben cuánto les costará la obra. Te damos la cifra técnica en 24h para cerrar la operación.
+                Muchos compradores dudan ante una vivienda para reformar porque no saben cuánto les costará la obra. Te damos la cifra técnica en 24h para cerrar la operación.
               </p>
               <ul className="space-y-3 text-sm text-slate-700 pt-2">
                 <li className="flex items-start gap-2.5">
@@ -95,26 +95,6 @@ export default function InvestorSection() {
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
-          </div>
-        </div>
-
-        {/* Caso de éxito de Rentabilidad / Datos Reales */}
-        <div className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-md grid sm:grid-cols-4 gap-6 text-center">
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-amber-600">45 Días</span>
-            <p className="text-xs text-slate-600 mt-1 font-medium">Plazo medio de reforma integral</p>
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-emerald-600">+22%</span>
-            <p className="text-xs text-slate-600 mt-1 font-medium">Revalorización media en venta rápida</p>
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-slate-900">&lt; 1 Hora</span>
-            <p className="text-xs text-slate-600 mt-1 font-medium">Entrega de presupuesto estimado</p>
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-black text-sky-600">100%</span>
-            <p className="text-xs text-slate-600 mt-1 font-medium">Transparencia diaria por WhatsApp</p>
           </div>
         </div>
       </Container>

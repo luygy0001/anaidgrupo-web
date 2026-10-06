@@ -13,41 +13,31 @@ import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
 import Container from '@/components/ui/Container';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
+// Imágenes orientativas de acabados: no son obras propias, así que no llevan
+// plazo, ubicación ni resultados. Sustituir por fotos de obras reales cuando las haya.
 const SLIDES = [
   {
     tag: 'Salón',
-    title: 'Reforma Integral en Chamberí',
-    subtitle: 'Salón diáfano con concepto abierto y cocina integrada',
-    stat: '+24% revalorización para venta rápida',
-    duration: '42 días',
-    location: 'Madrid Centro',
+    title: 'Salón diáfano con cocina integrada',
+    subtitle: 'Concepto abierto, luz natural y acabados neutros',
     image: '/images/obra-salon.jpg',
   },
   {
     tag: 'Cocina',
-    title: 'Cocina de Diseño con Isla',
+    title: 'Cocina con isla',
     subtitle: 'Muebles a medida, encimera de cuarzo e iluminación LED',
-    stat: 'Acabados de lujo y máxima durabilidad',
-    duration: '18 días',
-    location: 'Pozuelo de Alarcón',
     image: '/images/obra-cocina.jpg',
   },
   {
     tag: 'Baño',
-    title: 'Baño Principal en Suite',
+    title: 'Baño en suite',
     subtitle: 'Ducha italiana, microcemento y grifería empotrada',
-    stat: 'Estilo spa residencial contemporáneo',
-    duration: '12 días',
-    location: 'Alcalá de Henares',
     image: '/images/obra-bano.jpg',
   },
   {
     tag: 'Suite',
-    title: 'Dormitorio Principal con Vestidor',
-    subtitle: 'Armarios integrados a medida y suite luminosa',
-    stat: 'Espacios optimizados al milímetro',
-    duration: '15 días',
-    location: 'Las Rozas',
+    title: 'Dormitorio principal con vestidor',
+    subtitle: 'Armarios integrados a medida',
     image: '/images/obra-dormitorio.jpg',
   },
 ];
@@ -64,7 +54,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/chalet-moderno-noche.jpg"
-          alt="Chalet moderno de lujo con piscina iluminada al anochecer construido por Construcciones Anaid"
+          alt="Chalet moderno con piscina iluminada al anochecer"
           fill
           priority
           quality={95}
@@ -185,25 +175,18 @@ export default function Hero() {
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
-                <div className="absolute top-3 right-3 bg-emerald-600/90 backdrop-blur-sm text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-md">
-                  Finalizada en {active.duration}
-                </div>
-                <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-amber-300 text-[11px] font-bold px-2.5 py-1 rounded-md border border-white/15">
-                  {active.location}
+                <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-slate-200 text-[11px] font-semibold px-2.5 py-1 rounded-md border border-white/15">
+                  Imagen orientativa
                 </div>
               </div>
 
-              {/* Ficha técnica de la obra en curso */}
+              {/* Descripción del acabado */}
               <div className="space-y-1 text-left pt-1">
                 <h3 className="text-sm font-bold text-white drop-shadow-xs">
                   {active.title}
                 </h3>
                 <p className="text-xs text-slate-200 leading-snug">
                   {active.subtitle}
-                </p>
-                <p className="text-xs text-amber-300 font-semibold pt-0.5 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  {active.stat}
                 </p>
               </div>
             </div>

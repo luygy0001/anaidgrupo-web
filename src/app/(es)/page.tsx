@@ -3,8 +3,6 @@ import Hero from '@/components/sections/Hero';
 import InvestorSection from '@/components/sections/InvestorSection';
 import AIExplainer from '@/components/sections/AIExplainer';
 import ServicesGrid from '@/components/sections/ServicesGrid';
-import GallerySection from '@/components/sections/GallerySection';
-import ReviewsSection from '@/components/sections/ReviewsSection';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import JsonLd from '@/components/seo/JsonLd';
@@ -30,7 +28,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/obra-salon.jpg`,
         width: 1200,
         height: 675,
-        alt: 'Reforma integral y diseño de salón en Madrid por Construcciones Anaid',
+        alt: 'Salón reformado con concepto abierto (imagen orientativa)',
       },
     ],
   },
@@ -113,7 +111,7 @@ const schemaData = {
             itemOffered: {
               '@type': 'Service',
               name: 'Reformas para Inversores y House Flipping',
-              description: 'Intervención rápida de alta revalorización (+20%) para venta rápida o alquiler de máxima rentabilidad.',
+              description: 'Reforma rápida con acabados neutros pensada para venta o alquiler.',
             },
           },
           {
@@ -158,8 +156,6 @@ export default function HomePage() {
       <InvestorSection />
       <AIExplainer />
       <ServicesGrid />
-      <GallerySection />
-      <ReviewsSection />
       <FAQAccordion items={[...FAQS]} />
       <CTASection />
     </>

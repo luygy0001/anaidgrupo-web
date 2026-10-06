@@ -84,8 +84,6 @@ export default function Footer() {
               <li><a href="#inversores" className="hover:text-white transition-colors">Inversores & Inmobiliarias</a></li>
               <li><a href="#metodo-ia" className="hover:text-white transition-colors">Método IA (PyMExpert)</a></li>
               <li><a href="#servicios" className="hover:text-white transition-colors">Reformas y Servicios</a></li>
-              <li><a href="#galeria" className="hover:text-white transition-colors">Obras Realizadas</a></li>
-              <li><a href="#testimonios" className="hover:text-white transition-colors">Opiniones Verificadas</a></li>
               <li><a href="#contacto" className="hover:text-white transition-colors">Pedir Presupuesto en 1h</a></li>
             </ul>
           </div>
