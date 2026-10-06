@@ -88,6 +88,14 @@
     con Construcciones Anaid; Luis empezó a explicar qué pasa si los incumplen de forma
     reiterada (frase incompleta: pendiente de confirmar).
 
+31. **Automatización de presupuestos 24/7.** El presupuesto llega en menos de 1 hora a
+    cualquier hora.
+32. **Profesionales que incumplen** de forma reiterada los compromisos con los clientes
+    dejan la red.
+33. **Experiencia:** Luis lleva en el sector desde 2003 (antes con su empresa). Se puede
+    mencionar sin datos exactos: «más de 20 años en el sector de la reforma». No nombrar la
+    empresa antigua ni dar cifras.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e

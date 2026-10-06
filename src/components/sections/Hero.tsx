@@ -101,7 +101,7 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-white bg-slate-950/70 backdrop-blur-md p-2.5 rounded-xl border border-white/15 shadow-md col-span-2 sm:col-span-1">
                 <TrendingUp className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>También para inversores</span>
+                <span>Más de 20 años en el sector</span>
               </div>
             </div>
 

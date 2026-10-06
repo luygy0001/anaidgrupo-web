@@ -62,7 +62,7 @@ export default function CTASection({ title, subtitle }: CTASectionProps = {}) {
                 Recibido. Ya estamos con tu presupuesto.
               </h3>
               <p className="text-slate-300 max-w-md mx-auto text-sm leading-relaxed">
-                Te lo enviamos por WhatsApp en menos de 1 hora, en horario de atención (lunes a viernes, de 8:30 a 19:30). Si lo has pedido fuera de ese horario, te llega el siguiente día laborable.
+                Te lo enviamos por WhatsApp en menos de 1 hora, a cualquier hora y cualquier día.
               </p>
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a

@@ -123,7 +123,7 @@ export const FAQS = [
   {
     question: '¿Quién firma el contrato de obra?',
     answer:
-      'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid prepara el presupuesto, te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros.',
+      'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid prepara el presupuesto, te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros. Si un profesional incumple de forma reiterada nuestros compromisos con los clientes, deja la red.',
   },
   {
     question: '¿Cómo tengo el presupuesto en menos de 1 hora?',
@@ -154,6 +154,11 @@ export const FAQS = [
     question: '¿Quién se encarga de las licencias y permisos?',
     answer:
       'Las licencias y los permisos corren por cuenta del cliente. Si prefieres que los gestionemos nosotros, lo valoramos aparte, con su coste.',
+  },
+  {
+    question: '¿Qué experiencia tenéis?',
+    answer:
+      'Más de 20 años en el sector de la reforma. Con ese criterio elegimos a los arquitectos y oficios de nuestra red y fijamos con ellos los compromisos con cada cliente. Quien los incumple de forma reiterada deja de trabajar con nosotros.',
   },
   {
     question: '¿Cómo sé cómo va mi obra si no puedo ir?',
