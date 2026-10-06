@@ -55,6 +55,13 @@
 19. **Panel `/panel` se retira.** Al principio los contactos se gestionan con n8n y una base
     de datos. Se quita en la fase de limpieza.
 
+20. **Contrato:** lo firma **Construcciones Anaid** como contratista; responde del plazo y
+    subcontrata a la red. Se elimina todo el discurso de «intermediación» / «no ejecutamos
+    obras directamente».
+21. **Marca:** solo **Construcciones Anaid**. Fuera «Anaid Grupo» de toda la web.
+22. **Galería:** vuelve ya, como obras reales de Anaid, con el tipo de obra y sin lugar ni
+    plazo hasta que Luis pase los datos.
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e

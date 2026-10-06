@@ -28,12 +28,12 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-1.5" aria-label="Navegación principal">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Navegación principal">
             {NAV_ITEMS.filter((item) => item.label !== 'Inicio' && item.label !== 'Contacto').map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="px-3 py-1.5 text-xs font-bold text-slate-700 hover:text-amber-600 transition-colors rounded-lg hover:bg-slate-100/80"
+                className="whitespace-nowrap px-2.5 py-1.5 text-xs font-bold text-slate-700 hover:text-amber-600 transition-colors rounded-lg hover:bg-slate-100/80"
               >
                 {item.label}
               </Link>

@@ -51,6 +51,7 @@ export const POWERED_BY = {
 export const NAV_ITEMS = [
   { label: 'Inicio', href: '/' },
   { label: 'Servicios', href: '/servicios' },
+  { label: 'Obras', href: '/#galeria' },
   { label: 'Inversores e inmobiliarias', href: '/#inversores' },
   { label: 'Cómo trabajamos', href: '/como-funciona' },
   { label: 'Zonas', href: '/zonas' },

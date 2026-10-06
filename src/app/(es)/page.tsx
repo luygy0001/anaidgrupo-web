@@ -3,6 +3,7 @@ import Hero from '@/components/sections/Hero';
 import InvestorSection from '@/components/sections/InvestorSection';
 import AIExplainer from '@/components/sections/AIExplainer';
 import ServicesGrid from '@/components/sections/ServicesGrid';
+import GallerySection from '@/components/sections/GallerySection';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import JsonLd from '@/components/seo/JsonLd';
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/images/obra-salon.jpg`,
         width: 1200,
         height: 675,
-        alt: 'Salón reformado con concepto abierto (imagen orientativa)',
+        alt: 'Salón con concepto abierto reformado por Construcciones Anaid',
       },
     ],
   },
@@ -156,6 +157,7 @@ export default function HomePage() {
       <InvestorSection />
       <AIExplainer />
       <ServicesGrid />
+      <GallerySection />
       <FAQAccordion items={[...FAQS]} />
       <CTASection />
     </>
