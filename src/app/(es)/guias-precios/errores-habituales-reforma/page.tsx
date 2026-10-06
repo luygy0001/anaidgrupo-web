@@ -5,7 +5,7 @@ import { AlertTriangle } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Errores habituales en una reforma',
-  description: 'Los errores más comunes al planificar una reforma y cómo evitarlos. Guía práctica de Anaid Grupo.',
+  description: 'Los errores más comunes al planificar una reforma y cómo evitarlos. Guía práctica de Construcciones Anaid.',
   alternates: { canonical: '/guias-precios/errores-habituales-reforma' },
 };
 

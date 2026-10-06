@@ -37,7 +37,7 @@ export default function ChatFlow({ onClose }: ChatFlowProps) {
     {
       rol: 'BOT',
       contenido:
-        '¡Hola! Soy el asistente de Anaid Grupo. ¿En qué podemos ayudarte?',
+        '¡Hola! Soy el asistente de Construcciones Anaid. ¿En qué podemos ayudarte?',
       options: SERVICE_OPTIONS,
     },
   ]);

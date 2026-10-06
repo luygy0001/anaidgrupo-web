@@ -9,7 +9,7 @@ import { CheckCircle, XCircle } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Cómo funciona',
   description:
-    'Descubre cómo Anaid Grupo analiza cada solicitud, filtra la necesidad y asigna al profesional adecuado para tu proyecto en Madrid.',
+    'Descubre cómo Construcciones Anaid analiza cada solicitud, filtra la necesidad y asigna al profesional adecuado para tu proyecto en Madrid.',
   alternates: { canonical: '/como-funciona' },
 };
 
@@ -51,7 +51,7 @@ export default function ComoFuncionaPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="p-6 rounded-xl bg-success/5 border border-success/20">
               <h2 className="text-xl font-bold text-foreground mb-4">
-                Qué hace Anaid Grupo
+                Qué hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
                 {queHace.map((item) => (
@@ -64,7 +64,7 @@ export default function ComoFuncionaPage() {
             </div>
             <div className="p-6 rounded-xl bg-error/5 border border-error/20">
               <h2 className="text-xl font-bold text-foreground mb-4">
-                Qué NO hace Anaid Grupo
+                Qué NO hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
                 {queNoHace.map((item) => (
@@ -111,8 +111,8 @@ export default function ComoFuncionaPage() {
             colaborador que mejor encaje.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            El cliente final no elige entre una lista de profesionales. Anaid
-            Grupo centraliza el análisis y la asignación para garantizar que cada
+            El cliente final no elige entre una lista de profesionales. Construcciones
+            Anaid centraliza el análisis y la asignación para garantizar que cada
             proyecto reciba la atención adecuada.
           </p>
         </Container>
@@ -164,7 +164,7 @@ export default function ComoFuncionaPage() {
             Diferencia entre orientación inicial y presupuesto final
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
-            La orientación inicial que ofrece Anaid Grupo es una estimación
+            La orientación inicial que ofrece Construcciones Anaid es una estimación
             basada en la información proporcionada. Sirve para que el cliente
             tenga una referencia, pero no es un presupuesto cerrado ni vinculante.
           </p>

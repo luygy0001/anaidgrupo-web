@@ -14,7 +14,7 @@ export default function ElectricistaPage() {
       slug="electricista-madrid"
       breadcrumbName="Electricista"
       description="Servicio de intermediación para trabajos de electricidad en Madrid: instalaciones, averías, boletines y mantenimiento con profesionales validados."
-      intro="Desde averías puntuales hasta instalaciones completas, Anaid Grupo analiza tu necesidad y te asigna un electricista cualificado en la Comunidad de Madrid."
+      intro="Desde averías puntuales hasta instalaciones completas, Construcciones Anaid analiza tu necesidad y te asigna un electricista cualificado en la Comunidad de Madrid."
       trabajos={[
         'Reparación de averías eléctricas',
         'Instalación y cambio de cuadros eléctricos',

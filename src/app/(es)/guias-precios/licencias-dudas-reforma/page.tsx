@@ -14,7 +14,7 @@ const faqs = [
   { question: '¿Qué es una comunicación previa?', answer: 'Es un trámite más sencillo que la licencia de obra. Se presenta ante el ayuntamiento y, en muchos casos, permite iniciar la obra de forma inmediata o en unos pocos días.' },
   { question: '¿Necesito permiso de la comunidad de vecinos?', answer: 'Si la obra afecta a zonas comunes, fachada o estructura, sí necesitas autorización de la comunidad. Para obras dentro de tu vivienda que no afecten a la estructura, normalmente no es necesario, aunque conviene avisar.' },
   { question: '¿Cuánto cuesta una licencia de obra?', answer: 'El coste varía según el municipio y el tipo de obra. Una comunicación previa puede costar entre 50 y 300 €. Una licencia de obra mayor puede superar los 1.000 €, ya que incluye tasas municipales y el ICIO (Impuesto sobre Construcciones).' },
-  { question: '¿Quién tramita la licencia?', answer: 'Normalmente el arquitecto o arquitecto técnico que redacta el proyecto. El profesional asignado por Anaid Grupo puede orientarte sobre si necesitas un técnico para tu caso.' },
+  { question: '¿Quién tramita la licencia?', answer: 'Normalmente el arquitecto o arquitecto técnico que redacta el proyecto. El profesional asignado por Construcciones Anaid puede orientarte sobre si necesitas un técnico para tu caso.' },
   { question: '¿Puedo reformar un piso de alquiler?', answer: 'Sí, pero necesitas autorización por escrito del propietario. Es recomendable dejar por escrito qué modificaciones se van a hacer y quién asume el coste.' },
 ];
 

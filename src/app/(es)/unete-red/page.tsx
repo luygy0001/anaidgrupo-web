@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: 'Únete a nuestra red',
   description:
-    'Si eres profesional del sector reformas, únete a la red de colaboradores de Anaid Grupo. Recibe leads filtrados con apoyo tecnológico.',
+    'Si eres profesional del sector reformas, únete a la red de colaboradores de Construcciones Anaid. Recibe leads filtrados con apoyo tecnológico.',
   alternates: { canonical: '/unete-red' },
 };
 
@@ -70,7 +70,7 @@ export default function UneteRedPage() {
               Para profesionales
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold">
-              Únete a la red de colaboradores de Anaid Grupo
+              Únete a la red de colaboradores de Construcciones Anaid
             </h1>
             <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
               Si eres profesional del sector y quieres recibir oportunidades mejor

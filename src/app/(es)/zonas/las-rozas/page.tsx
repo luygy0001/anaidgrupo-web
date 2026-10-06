@@ -4,10 +4,10 @@ import ZoneLanding from '@/components/sections/ZoneLanding';
 const MUNICIPIO = 'Las Rozas de Madrid';
 const SLUG = 'las-rozas';
 const DESCRIPTION =
-  'Reformas y servicios técnicos en Las Rozas de Madrid. Anaid Grupo asigna al profesional validado más adecuado para tu proyecto en la Comunidad de Madrid.';
+  'Reformas y servicios técnicos en Las Rozas de Madrid. Construcciones Anaid asigna al profesional validado más adecuado para tu proyecto en la Comunidad de Madrid.';
 
 export const metadata: Metadata = {
-  title: 'Reformas en Las Rozas de Madrid | Anaid Grupo',
+  title: 'Reformas en Las Rozas de Madrid',
   description: DESCRIPTION,
   alternates: { canonical: `/zonas/${SLUG}` },
 };
@@ -19,7 +19,7 @@ export default function LasRozasPage() {
       slug={SLUG}
       description={DESCRIPTION}
       introParagraphs={[
-        'Las Rozas combina grandes áreas residenciales de vivienda unifamiliar con bloques de pisos modernos. Anaid Grupo analiza cada proyecto y te asigna al profesional validado adecuado, tanto si necesitas una reforma integral de chalet como si quieres renovar un baño o una cocina.',
+        'Las Rozas combina grandes áreas residenciales de vivienda unifamiliar con bloques de pisos modernos. Construcciones Anaid analiza cada proyecto y te asigna al profesional validado adecuado, tanto si necesitas una reforma integral de chalet como si quieres renovar un baño o una cocina.',
         'Cubrimos zonas como Las Matas, Molino de la Hoz, Monterrozas, El Cantizal y el centro urbano. Trabajamos proyectos residenciales, actualizaciones de instalaciones y reformas en comunidades de vecinos.',
         'Somos plataforma de intermediación: conectamos tu necesidad con el profesional que mejor encaja. El presupuesto definitivo lo entrega el propio profesional tras visitar el proyecto en persona.',
       ]}

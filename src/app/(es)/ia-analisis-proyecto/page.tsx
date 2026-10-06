@@ -7,7 +7,7 @@ import { Brain, ScanSearch, BarChart3, Zap, Shield, AlertTriangle } from 'lucide
 export const metadata: Metadata = {
   title: 'IA para reformas',
   description:
-    'Descubre cómo Anaid Grupo usa inteligencia artificial para analizar, clasificar y asignar mejor cada proyecto de reforma en Madrid.',
+    'Descubre cómo Construcciones Anaid usa inteligencia artificial para analizar, clasificar y asignar mejor cada proyecto de reforma en Madrid.',
   alternates: { canonical: '/ia-analisis-proyecto' },
 };
 
@@ -37,7 +37,7 @@ const capabilities = [
 const limitations = [
   'La IA no sustituye la valoración técnica profesional.',
   'La IA no genera presupuestos definitivos.',
-  'La decisión final de asignación siempre la controla Anaid Grupo.',
+  'La decisión final de asignación siempre la controla Construcciones Anaid.',
   'El presupuesto definitivo requiere visita y revisión por parte del profesional.',
   'La IA no ejecuta ni supervisa obras.',
 ];
@@ -130,8 +130,8 @@ export default function IAAnalisisPage() {
             utiliza exclusivamente para analizar y gestionar tu solicitud. La IA
             procesa los datos internamente para generar resúmenes y clasificaciones,
             pero todas las decisiones finales —especialmente la asignación del
-            profesional y la validación del proyecto— las toma el equipo de Anaid
-            Grupo en colaboración con el profesional asignado.
+            profesional y la validación del proyecto— las toma el equipo de Construcciones
+            Anaid en colaboración con el profesional asignado.
           </p>
         </Container>
       </section>

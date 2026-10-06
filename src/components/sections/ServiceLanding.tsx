@@ -122,10 +122,10 @@ export default function ServiceLanding({
         </Container>
       </section>
 
-      {/* Cómo te ayuda Anaid Grupo */}
+      {/* Cómo te ayuda Construcciones Anaid */}
       <section className="section-padding">
         <Container narrow>
-          <h2 className="text-2xl font-bold mb-4">Cómo te ayuda Anaid Grupo</h2>
+          <h2 className="text-2xl font-bold mb-4">Cómo te ayuda Construcciones Anaid</h2>
           <ul className="space-y-3">
             <li className="flex items-start gap-2 text-foreground">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />

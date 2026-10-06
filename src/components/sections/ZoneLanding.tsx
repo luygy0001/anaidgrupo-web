@@ -186,7 +186,7 @@ export default function ZoneLanding({
       {/* Por qué confiar */}
       <section className="section-padding bg-muted">
         <Container narrow>
-          <h2 className="text-2xl font-bold mb-4">Por qué confiar en Anaid Grupo</h2>
+          <h2 className="text-2xl font-bold mb-4">Por qué confiar en Construcciones Anaid</h2>
           <ul className="space-y-3 text-foreground">
             <li className="flex items-start gap-2">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />

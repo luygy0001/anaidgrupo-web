@@ -4,7 +4,7 @@ import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, A
 
 export const metadata: Metadata = {
   title: 'Política de privacidad',
-  description: 'Política de privacidad de Anaid Grupo Construcción. Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.',
+  description: 'Política de privacidad de Construcciones Anaid. Información sobre el tratamiento de datos personales conforme al RGPD y la LOPDGDD.',
   alternates: { canonical: '/privacidad' },
   robots: { index: false },
 };

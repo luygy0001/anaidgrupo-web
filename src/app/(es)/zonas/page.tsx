@@ -57,13 +57,12 @@ const CAPAS: Capa[] = [
     id: 'operativa',
     titulo: 'Núcleo operativo',
     descripcion:
-      'Zona de referencia operativa de Anaid Grupo, con cercanía directa a nuestra sede y la red de profesionales colaboradores.',
+      'Zona con una presencia especialmente cercana de nuestra red de profesionales colaboradores.',
     icon: Building2,
     municipios: [
       {
         nombre: 'Alcalá de Henares',
         slug: 'alcala-de-henares',
-        nota: 'Sede en Valdeavero (Madrid)',
       },
     ],
   },
@@ -124,11 +123,6 @@ export default function ZonasPage() {
                             {m.nota && (
                               <p className="text-xs text-muted-foreground mt-0.5">
                                 {m.nota}
-                              </p>
-                            )}
-                            {!m.hasLanding && (
-                              <p className="text-xs text-muted-foreground mt-0.5 italic">
-                                Próximamente landing dedicada
                               </p>
                             )}
                           </div>

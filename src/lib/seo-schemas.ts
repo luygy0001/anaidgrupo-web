@@ -19,14 +19,7 @@ export const organizationSchema = {
     email: EMAIL,
     contactType: 'customer service',
     areaServed: 'ES',
-    availableLanguage: ['Spanish', 'English'],
-  },
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C/ Isaac Peral, 46',
-    addressLocality: 'Valdeavero',
-    addressRegion: 'Madrid',
-    addressCountry: 'ES',
+    availableLanguage: ['Spanish'],
   },
   areaServed: {
     '@type': 'State',
@@ -44,14 +37,6 @@ export const localBusinessSchema = {
   telephone: PHONE,
   email: EMAIL,
   image: `${SITE_URL}/img/logo.svg`,
-  priceRange: '€€',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'C/ Isaac Peral, 46',
-    addressLocality: 'Valdeavero',
-    addressRegion: 'Madrid',
-    addressCountry: 'ES',
-  },
   areaServed: {
     '@type': 'State',
     name: 'Comunidad de Madrid',
@@ -142,14 +127,6 @@ export function zoneLocalBusinessSchema({
     description,
     telephone: '+34640962564',
     image: `${SITE_URL}/img/logo.svg`,
-    priceRange: '€€',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'C/ Isaac Peral, 46',
-      addressLocality: 'Valdeavero',
-      addressRegion: 'Madrid',
-      addressCountry: 'ES',
-    },
     areaServed: {
       '@type': 'City',
       name: municipio,

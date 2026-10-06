@@ -96,6 +96,13 @@
     mencionar sin datos exactos: «más de 20 años en el sector de la reforma». No nombrar la
     empresa antigua ni dar cifras.
 
+34. **Precios de las guías:** se mantienen como precios de mercado orientativos en Madrid,
+    con fuente verificable citada y aviso de que no son el presupuesto de Anaid (frente
+    aparte de investigación).
+35. **NIF:** NO usar el de Anaid Grupo Empresarial SL (empresa parada; reactivación sin
+    decidir). **Bloqueante para producción:** falta el titular real de la web (persona o
+    sociedad, NIF) para aviso legal y privacidad; hoy muestran «Pendiente de actualización».
+
 ### Fase 1 — Navegación (2026-10-06, hecha)
 
 Menú con rutas absolutas válidas en todas las páginas (Servicios, Inversores e

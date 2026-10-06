@@ -6,7 +6,7 @@ import { EMAIL, LEGAL_DRAFT } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Política de cookies',
   description:
-    'Política de cookies de Anaid Grupo: qué cookies utilizamos, con qué finalidad y cómo gestionar tus preferencias en cualquier momento.',
+    'Política de cookies de Construcciones Anaid: qué cookies utilizamos, con qué finalidad y cómo gestionar tus preferencias en cualquier momento.',
   alternates: { canonical: '/cookies' },
   robots: { index: false },
 };
@@ -65,7 +65,7 @@ export default function CookiesPage() {
                 <tbody>
                   <tr className="border-t border-border">
                     <td className="px-3 py-2 align-top">Necesarias</td>
-                    <td className="px-3 py-2 align-top">Anaid Grupo</td>
+                    <td className="px-3 py-2 align-top">Construcciones Anaid</td>
                     <td className="px-3 py-2 align-top">
                       Cookies técnicas de sesión para el funcionamiento básico
                       del sitio (mantener la sesión iniciada en el panel de

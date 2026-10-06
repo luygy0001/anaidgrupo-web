@@ -14,7 +14,7 @@ export default function ReformaBanoPage() {
       slug="reforma-bano-madrid"
       breadcrumbName="Reforma de baño"
       description="Servicio de intermediación para reformas de baño en Madrid: análisis del proyecto y asignación al profesional validado."
-      intro="Moderniza tu baño con la ayuda de un profesional adecuado. Anaid Grupo analiza tu proyecto y asigna al colaborador que mejor encaja con tus necesidades en Madrid."
+      intro="Moderniza tu baño con la ayuda de un profesional adecuado. Construcciones Anaid analiza tu proyecto y asigna al colaborador que mejor encaja con tus necesidades en Madrid."
       trabajos={[
         'Cambio de plato de ducha o bañera',
         'Alicatado y solado completo',

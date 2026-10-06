@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Reforma de cocina en Madrid',
-  description: 'Reforma tu cocina en Madrid con profesionales seleccionados. Anaid Grupo analiza tu proyecto y te asigna al colaborador adecuado.',
+  description: 'Reforma tu cocina en Madrid con profesionales seleccionados. Construcciones Anaid analiza tu proyecto y te asigna al colaborador adecuado.',
   alternates: { canonical: '/servicios/reforma-cocina-madrid' },
 };
 
@@ -14,7 +14,7 @@ export default function ReformaCocinaPage() {
       slug="reforma-cocina-madrid"
       breadcrumbName="Reforma de cocina"
       description="Servicio de intermediación para reformas de cocina en Madrid: análisis del proyecto y asignación al profesional validado."
-      intro="La cocina es el corazón del hogar. Si necesitas renovarla, Anaid Grupo analiza tu proyecto y te conecta con el profesional adecuado en la Comunidad de Madrid."
+      intro="La cocina es el corazón del hogar. Si necesitas renovarla, Construcciones Anaid analiza tu proyecto y te conecta con el profesional adecuado en la Comunidad de Madrid."
       trabajos={[
         'Diseño y distribución de cocina',
         'Instalación de muebles altos y bajos',

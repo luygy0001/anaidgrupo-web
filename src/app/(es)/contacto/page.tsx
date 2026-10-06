@@ -8,7 +8,6 @@ import {
   EMAIL,
   WHATSAPP_URL,
   HORARIO_DETAIL,
-  ADDRESS,
   COVERAGE_AREA,
 } from '@/lib/constants';
 import { localBusinessSchema } from '@/lib/seo-schemas';
@@ -17,7 +16,7 @@ import FormContacto from '@/components/forms/FormContacto';
 export const metadata: Metadata = {
   title: 'Contacto',
   description:
-    'Contacta con Anaid Grupo por teléfono, WhatsApp o email. Estamos en Madrid para ayudarte con tu proyecto de reforma o construcción.',
+    'Contacta con Construcciones Anaid por teléfono, WhatsApp o email. Estamos en Madrid para ayudarte con tu proyecto de reforma o construcción.',
   alternates: { canonical: '/contacto' },
 };
 
@@ -96,9 +95,8 @@ export default function ContactoPage() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Dirección</p>
-                  <p className="font-semibold text-foreground">{ADDRESS}</p>
-                  <p className="text-sm text-muted-foreground mt-1">Cobertura: {COVERAGE_AREA}</p>
+                  <p className="text-sm text-muted-foreground">Zona de trabajo</p>
+                  <p className="font-semibold text-foreground">{COVERAGE_AREA}</p>
                 </div>
               </div>
             </div>

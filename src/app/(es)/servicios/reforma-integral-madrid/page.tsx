@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Reforma integral en Madrid',
-  description: 'Solicita tu reforma integral en Madrid. Anaid Grupo analiza tu proyecto y te asigna al profesional adecuado. Colaboradores seleccionados.',
+  description: 'Solicita tu reforma integral en Madrid. Construcciones Anaid analiza tu proyecto y te asigna al profesional adecuado. Colaboradores seleccionados.',
   alternates: { canonical: '/servicios/reforma-integral-madrid' },
 };
 
@@ -14,7 +14,7 @@ export default function ReformaIntegralPage() {
       slug="reforma-integral-madrid"
       breadcrumbName="Reforma integral"
       description="Servicio de intermediación para reformas integrales de vivienda y local en la Comunidad de Madrid: coordinación, análisis y asignación al profesional validado."
-      intro="Si necesitas una renovación completa de tu vivienda o local, Anaid Grupo analiza tu proyecto y te conecta con el profesional adecuado para llevarlo a cabo en la Comunidad de Madrid."
+      intro="Si necesitas una renovación completa de tu vivienda o local, Construcciones Anaid analiza tu proyecto y te conecta con el profesional adecuado para llevarlo a cabo en la Comunidad de Madrid."
       trabajos={[
         'Renovación completa de viviendas y locales',
         'Redistribución de espacios y tabiquería',

@@ -4,7 +4,7 @@ import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, A
 
 export const metadata: Metadata = {
   title: 'Aviso legal',
-  description: 'Aviso legal de Anaid Grupo Construcción. Información sobre el titular, condiciones de uso y responsabilidad.',
+  description: 'Aviso legal de Construcciones Anaid. Información sobre el titular, condiciones de uso y responsabilidad.',
   alternates: { canonical: '/aviso-legal' },
   robots: { index: false },
 };

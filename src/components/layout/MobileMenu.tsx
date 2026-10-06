@@ -41,7 +41,7 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         <div className="flex items-center justify-between px-4 h-16 border-b border-border">
           <Image
             src="/img/logo-small.svg"
-            alt="Anaid Grupo"
+            alt="Construcciones Anaid"
             width={150}
             height={30}
             className="h-7 w-auto"

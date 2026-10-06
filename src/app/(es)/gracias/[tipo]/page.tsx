@@ -39,7 +39,7 @@ const TIPOS: Record<Tipo, { title: string; heading: string; subheading: string; 
     next: [
       'Revisamos tu perfil, especialidades y zonas de trabajo.',
       'Si encaja con la red, te contactamos para una validación más detallada.',
-      'Gracias por tu interés en colaborar con Anaid Grupo.',
+      'Gracias por tu interés en colaborar con Construcciones Anaid.',
     ],
   },
   chat: {
