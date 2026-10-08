@@ -97,8 +97,7 @@ Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier o
 ### Implementación en n8n (2026-10-08)
 
 Construida y probada en el laboratorio con datos sintéticos; detalle en
-`D:\CoworkClaude
-8n-automatizacionesutomatizaciones\construcciones-anaid\presupuesto-desde-formulario`.
+`D:\CoworkClaude\n8n-automatizaciones\automatizaciones\construcciones-anaid\presupuesto-desde-formulario`.
 
 - Webhook `POST /webhook/anaid-solicitudes`, autenticado con la cabecera `X-Webhook-Secret`
   (credencial `Anaid - Webhook` = `N8N_WEBHOOK_SECRET` de la web).
