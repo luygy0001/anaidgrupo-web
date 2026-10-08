@@ -94,6 +94,23 @@ Si n8n contesta 200 sin `estado`, la web lo trata como `aceptado`. **Cualquier o
 6. **Precios internos**: los €/m² por calidad (700 / 900 / 1.050, sin IVA) y los textos de cada
    calidad viven solo en n8n; la web nunca los publica.
 
+### Implementación en n8n (2026-10-08)
+
+Construida y probada en el laboratorio con datos sintéticos; detalle en
+`D:\CoworkClaude
+8n-automatizacionesutomatizaciones\construcciones-anaid\presupuesto-desde-formulario`.
+
+- Webhook `POST /webhook/anaid-solicitudes`, autenticado con la cabecera `X-Webhook-Secret`
+  (credencial `Anaid - Webhook` = `N8N_WEBHOOK_SECRET` de la web).
+- Responde `{"estado":"aceptado"}` o `{"estado":"pago_requerido","importe":150}` en el momento;
+  datos inválidos, 422 con `{"error": "..."}` (la web ya los filtra antes).
+- Una petición idéntica en menos de 15 minutos devuelve el mismo estado y no se registra dos veces.
+- Contacto, solicitud de proyecto y alta de profesional: `{"estado":"aceptado"}` y registro en la
+  pestaña `Contactos`.
+- Pendiente para producción: Google Workspace de PyMExpert, instancia n8n de producción y prueba
+  con servicios reales. Hasta entonces, la web no tiene `N8N_LEAD_WEBHOOK_URL` y muestra el error
+  de contacto directo.
+
 ## 2. Otros formularios
 
 | `tipo` | Origen | Campos | Respuesta esperada |
