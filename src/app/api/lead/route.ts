@@ -173,6 +173,41 @@ async function verificarTurnstile(token: unknown, ip: string): Promise<boolean> 
   return !!datos && typeof datos === 'object' && 'success' in datos && datos.success === true;
 }
 
+// Orígenes desde los que se aceptan envíos. Comparación exacta del origen (esquema, host y
+// puerto), nunca por subcadena: `includes` aceptaba construccionesanaid.com.otro-dominio.com
+// o cualquier origen con «localhost».
+const ORIGENES_PERMITIDOS: ReadonlySet<string> = new Set([
+  'https://construccionesanaid.com',
+  'https://www.construccionesanaid.com',
+]);
+
+function origenPermitido(cabecera: string): boolean {
+  let url: URL;
+  try {
+    url = new URL(cabecera);
+  } catch {
+    return false;
+  }
+  if (ORIGENES_PERMITIDOS.has(url.origin)) return true;
+  // En desarrollo, el servidor local en cualquier puerto; en producción, nunca.
+  return process.env.NODE_ENV !== 'production' && (url.hostname === 'localhost' || url.hostname === '127.0.0.1');
+}
+
+// IP del cliente para el límite de frecuencia. La web va detrás de Traefik (Dokploy): Traefik
+// añade al final de X-Forwarded-For la IP real de la conexión y, con su configuración por
+// defecto, borra la que mande el cliente. Se toma el último valor, el que pone el proxy, nunca
+// el primero, que el cliente puede inventar si Traefik llegara a fiarse de esas cabeceras.
+// Si algún día se pone Cloudflare como proxy delante, habrá que usar CF-Connecting-IP.
+function ipCliente(req: NextRequest): string {
+  const ultima = req.headers
+    .get('x-forwarded-for')
+    ?.split(',')
+    .map((parte) => parte.trim())
+    .filter(Boolean)
+    .at(-1);
+  return ultima || req.headers.get('x-real-ip')?.trim() || 'anonymous';
+}
+
 // Lo que n8n contesta al recibir un presupuesto. Si no dice nada, se da por aceptado.
 function leerRespuestaN8n(cuerpo: unknown): { estado: 'aceptado' | 'pago_requerido'; importe?: number } {
   if (cuerpo && typeof cuerpo === 'object' && 'estado' in cuerpo && cuerpo.estado === 'pago_requerido') {
@@ -186,11 +221,10 @@ function leerRespuestaN8n(cuerpo: unknown): { estado: 'aceptado' | 'pago_requeri
 export async function POST(req: NextRequest) {
   try {
     const origin = req.headers.get('origin') || req.headers.get('referer') || '';
-    const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous';
+    const ip = ipCliente(req);
 
-    // 1. Origen legítimo (evita envíos desde webs externas)
-    const allowedHosts = ['construccionesanaid.com', 'www.construccionesanaid.com', 'localhost'];
-    if (origin && !allowedHosts.some((host) => origin.includes(host))) {
+    // 1. Origen legítimo (evita envíos desde webs externas): comparación exacta
+    if (origin && !origenPermitido(origin)) {
       return NextResponse.json({ error: 'Origen no autorizado' }, { status: 403 });
     }
 
