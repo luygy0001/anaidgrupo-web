@@ -67,10 +67,10 @@ export default function Footer() {
                 <YouTubeIcon className="w-5 h-5" />
               </a>
               <a
-                href={SOCIAL.linkedinPersonal}
+                href={SOCIAL.linkedinEmpresa}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Perfil LinkedIn de Luis Manuel Vázquez Troncoso"
+                aria-label="Página de LinkedIn de Construcciones Anaid"
                 className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-sky-400 hover:bg-slate-800 transition-colors"
               >
                 <LinkedInIcon className="w-5 h-5" />

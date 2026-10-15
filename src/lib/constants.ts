@@ -39,6 +39,7 @@ export const RESPUESTA_PLAZO = 'Te respondemos en menos de 48 horas';
 // Redes sociales oficiales (YouTube + LinkedIn)
 export const SOCIAL = {
   linkedinPersonal: 'https://www.linkedin.com/in/luis-manuel-vazquez-troncoso/',
+  // Página de empresa creada por Luis el 15-10-2026
   linkedinEmpresa: 'https://www.linkedin.com/company/construcciones-anaid/',
   youtube: 'https://www.youtube.com/@ConstruccionesAnaid',
   facebook: 'https://www.facebook.com/construccionesanaid',

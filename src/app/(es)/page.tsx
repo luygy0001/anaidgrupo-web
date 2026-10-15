@@ -74,7 +74,8 @@ const schemaData = {
           closes: '19:30',
         },
       ],
-      sameAs: [SOCIAL.youtube, SOCIAL.linkedinPersonal, SOCIAL.linkedinEmpresa],
+      // Solo perfiles del propio negocio (no el personal del titular)
+      sameAs: [SOCIAL.youtube, SOCIAL.linkedinEmpresa],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Servicios de reforma',
