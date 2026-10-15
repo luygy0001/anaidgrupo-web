@@ -235,3 +235,5 @@ Luis necesita la web pública ya, mientras se termina la versión completa
 70. **Correo público: se mantiene info@construccionesanaid.com** (decisión 13). Luis valoró pasar a
     hola@ el 15-10-2026 y decidió no cambiarlo. En Hostinger, info@ es el buzón real y hola@ un
     alias que entrega en él.
+71. **Facebook**: página `facebook.com/Construccionesanaid` (Luis, 15-10-2026). Botón en el pie junto a
+    YouTube y LinkedIn, y en los datos para Google de la portada.

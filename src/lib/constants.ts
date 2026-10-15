@@ -43,7 +43,8 @@ export const SOCIAL = {
   // Página de empresa creada por Luis el 15-10-2026
   linkedinEmpresa: 'https://www.linkedin.com/company/construcciones-anaid/',
   youtube: 'https://www.youtube.com/@ConstruccionesAnaid',
-  facebook: 'https://www.facebook.com/construccionesanaid',
+  // Página de Facebook confirmada por Luis el 15-10-2026
+  facebook: 'https://www.facebook.com/Construccionesanaid',
 } as const;
 
 // Firma de tecnología y desarrollo
