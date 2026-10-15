@@ -273,3 +273,5 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     en `constants.ts` (texto) y `horarioApertura` en `seo-schemas.ts` (datos para Google, que usan
     la portada y contacto). En contacto y en el pie, cada tramo va en su línea para que no se corte
     a mitad. La respuesta «en menos de 48 horas laborables, de lunes a viernes» no cambia.
+78. **Sin cabecera `X-Powered-By`** (Luis, 15-10-2026): `poweredByHeader: false` en `next.config.ts`.
+    La web dejaba de decir en cada respuesta que funciona con Next.js; no cambia nada más.

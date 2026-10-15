@@ -2,6 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'standalone',
+  // Sin la cabecera «X-Powered-By: Next.js»: no dar pistas de la tecnología del servidor.
+  poweredByHeader: false,
   images: {
     remotePatterns: [
       {
