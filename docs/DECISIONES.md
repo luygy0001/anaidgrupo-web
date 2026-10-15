@@ -259,3 +259,10 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     antigua iba con contraseña), ninguna página enlaza a ellas y el sitemap solo lista páginas que
     existen. Las 404 no penalizan al resto de la web. Cuando vuelvan con la versión completa,
     volverán a dar 200.
+76. **Frase de intermediación** (Luis, 15-10-2026): la frase de `INTERMEDIATION_DISCLAIMER` (Servicios,
+    Cómo trabajamos, páginas de servicio y de zona, y aviso legal) decía «proyectos integrales de
+    reforma y construcción» y «red homologada»: chocaba con la decisión de no hacer obra nueva y
+    afirmaba una homologación que no existe. Pasa a: «Construcciones Anaid coordina reformas con una
+    red de arquitectos, autónomos y empresas. El contrato de obra lo firmas con el profesional
+    asignado, que hace la obra y responde de su trabajo.» La rama de la versión completa tiene la
+    frase antigua: cambiarla al retomarla.
