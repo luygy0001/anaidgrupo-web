@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
-import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS, INTERMEDIATION_DISCLAIMER } from '@/lib/constants';
+import { LEGAL, LEGAL_DRAFT, SITE_NAME, SITE_URL, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS, INTERMEDIATION_DISCLAIMER, POWERED_BY } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Aviso legal',
-  description: 'Aviso legal de Anaid Grupo Construcción. Información sobre el titular, condiciones de uso y responsabilidad.',
+  description: 'Aviso legal de Construcciones Anaid. Información sobre el titular, condiciones de uso y responsabilidad.',
   alternates: { canonical: '/aviso-legal' },
   robots: { index: false },
 };
@@ -24,7 +24,7 @@ export default function AvisoLegalPage() {
         )}
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: abril de 2026</p>
+          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Datos identificativos del titular</h2>
@@ -34,13 +34,17 @@ export default function AvisoLegalPage() {
               siguientes datos identificativos del titular de este sitio web:
             </p>
             <ul className="list-disc pl-5 space-y-1">
-              <li><strong>Denominación comercial:</strong> {SITE_NAME}</li>
-              <li><strong>Razón social:</strong> {LEGAL.razonSocial}</li>
-              <li><strong>CIF/NIF:</strong> {LEGAL.cif}</li>
-              <li><strong>Domicilio social:</strong> {ADDRESS}</li>
-              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-amber-400 underline hover:text-amber-300">{PHONE_DISPLAY}</a></li>
+              <li><strong>Titular:</strong> {LEGAL.titular}</li>
+              <li><strong>Nombre comercial:</strong> {SITE_NAME}</li>
+              <li><strong>NIF:</strong> {LEGAL.nif}</li>
+              <li><strong>Domicilio:</strong> {ADDRESS}</li>
+              <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className="text-amber-700 underline hover:text-amber-800">{PHONE_DISPLAY}</a></li>
               <li><strong>Correo electrónico:</strong> {EMAIL}</li>
               <li><strong>Sitio web:</strong> {SITE_URL}</li>
+              <li>
+                <strong>Diseño y desarrollo web:</strong>{' '}
+                <a href={POWERED_BY.url} target="_blank" rel="noopener" className="text-amber-700 underline hover:text-amber-800">{POWERED_BY.name}</a>
+              </li>
             </ul>
           </div>
 
@@ -56,7 +60,7 @@ export default function AvisoLegalPage() {
             <p>
               El presente sitio web tiene por objeto facilitar información sobre los servicios de
               intermediación de {SITE_NAME}, así como permitir a los usuarios enviar solicitudes de
-              proyecto a través de formularios, chat guiado y otros canales de comunicación habilitados.
+              proyecto a través de sus formularios, WhatsApp, teléfono y correo electrónico.
             </p>
           </div>
 
@@ -112,22 +116,16 @@ export default function AvisoLegalPage() {
               <li>
                 Los contenidos de terceros a los que se pueda acceder mediante enlaces desde este sitio web.
               </li>
-              <li>
-                La exactitud, veracidad o actualidad de los rangos de precios orientativos publicados,
-                que tienen carácter meramente informativo y no constituyen una oferta vinculante.
-              </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground">6. Chat guiado y formularios</h2>
+            <h2 className="text-lg font-semibold text-foreground">6. Formularios</h2>
             <p>
-              Este sitio web dispone de un chat guiado y formularios de solicitud que recogen datos
-              personales del usuario. Dichos datos se tratan conforme a lo establecido en nuestra{' '}
+              El formulario de este sitio web recoge datos personales que se tratan conforme a
+              nuestra{' '}
               <a href="/privacidad" className="text-primary underline">política de privacidad</a>.
-              El chat guiado no es un asistente de inteligencia artificial autónomo; se trata de un
-              flujo de preguntas predefinidas diseñado para recopilar la información necesaria para
-              analizar la solicitud del usuario.
+              Las consultas llegan por correo y las contesta una persona.
             </p>
           </div>
 

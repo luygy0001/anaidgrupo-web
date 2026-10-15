@@ -22,13 +22,13 @@ export default function ServicesGrid() {
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300 text-xs font-bold uppercase tracking-wider">
-            Especialidades Técnicas
+            Qué hacemos
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-            Soluciones integrales coordinadas por <span className="text-amber-600">arquitectos y técnicos</span>.
+            Tu obra, con <span className="text-amber-600">arquitectos y oficios</span> de nuestra red.
           </h2>
           <p className="text-slate-600 text-base leading-relaxed">
-            Centralizamos la dirección facultativa y la ejecución de cada oficio. Una única empresa responsable, un solo interlocutor y plazos auditados.
+            Te asignamos al profesional adecuado para cada trabajo y coordinamos la obra contigo. Un solo interlocutor de principio a fin.
           </p>
         </div>
 
@@ -72,15 +72,25 @@ export default function ServicesGrid() {
                 <div className="pt-4 border-t border-slate-100">
                   <a
                     href="#contacto"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-amber-600 hover:text-amber-700 uppercase tracking-wider transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 hover:text-amber-800 uppercase tracking-wider transition-colors"
                   >
-                    <span>Pedir presupuesto para este servicio</span>
+                    <span>Consultar por este servicio</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
             );
           })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="/servicios"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-slate-300 bg-white text-sm font-bold text-slate-800 hover:border-amber-400 hover:text-amber-700 transition-colors"
+          >
+            <span>Ver todos los servicios: cocina, baño, electricidad, fontanería y más</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </Container>
     </section>

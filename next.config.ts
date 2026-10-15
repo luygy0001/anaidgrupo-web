@@ -43,9 +43,12 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
+              // Web provisional: sin scripts ni marcos de terceros (Turnstile vuelve con la versión completa)
               "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com data:",
+              "frame-src 'none'",
+              // Fuentes propias (next/font): sin Google Fonts
+              "style-src 'self' 'unsafe-inline'",
+              "font-src 'self' data:",
               "img-src 'self' data: blob: https:",
               "connect-src 'self' https://*.construccionesanaid.com",
               "form-action 'self'",

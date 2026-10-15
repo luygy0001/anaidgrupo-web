@@ -20,7 +20,7 @@ export default function ServiciosPage() {
             Servicios que podemos ayudarte a canalizar
           </h1>
           <p className="mt-4 text-muted-foreground text-center text-lg">
-            Anaid Grupo centraliza la solicitud, analiza el proyecto y lo asigna
+            Construcciones Anaid centraliza la solicitud, analiza el proyecto y lo asigna
             al colaborador adecuado según el tipo de trabajo. No ejecutamos
             obras: conectamos cada necesidad con el profesional indicado.
           </p>

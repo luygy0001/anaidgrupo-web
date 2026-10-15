@@ -14,7 +14,7 @@ export default function PequenasObrasPage() {
       slug="pequenas-obras-madrid"
       breadcrumbName="Pequeñas obras"
       description="Servicio de intermediación para pequeñas obras y reparaciones en Madrid: pintura, montajes, albañilería menor y preparación de vivienda con profesionales validados."
-      intro="Reparaciones, montajes, pintura y trabajos puntuales: Anaid Grupo analiza tu solicitud y te conecta con un profesional adecuado para pequeñas obras en Madrid."
+      intro="Reparaciones, montajes, pintura y trabajos puntuales: Construcciones Anaid analiza tu solicitud y te conecta con un profesional adecuado para pequeñas obras en Madrid."
       trabajos={[
         'Pintura de interiores y exteriores',
         'Montaje de muebles y estanterías',
@@ -29,7 +29,7 @@ export default function PequenasObrasPage() {
       faqs={[
         { question: '¿Qué se considera una pequeña obra?', answer: 'Trabajos de menor envergadura que no requieren licencia de obra: pintura, montajes, reparaciones de paredes o suelos, instalación de puertas, pequeños trabajos de albañilería, etc.' },
         { question: '¿Puedo solicitar varios trabajos pequeños en una sola petición?', answer: 'Sí, puedes describir todos los trabajos que necesitas en una sola solicitud. El profesional asignado valorará el conjunto.' },
-        { question: '¿Cuánto suelen costar las pequeñas obras?', answer: 'El coste varía mucho según el tipo de trabajo. Una mano de pintura para un piso puede costar entre 500 y 1.500 €, mientras que un montaje puntual puede ser mucho menos. El profesional te dará un presupuesto concreto.' },
+        { question: '¿Cuánto suelen costar las pequeñas obras?', answer: 'El coste varía mucho según el tipo de trabajo. Cuéntanos qué necesitas y el profesional asignado te dará un presupuesto concreto.' },
       ]}
     />
   );

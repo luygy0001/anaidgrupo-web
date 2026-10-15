@@ -4,7 +4,7 @@ import { MapPin } from 'lucide-react';
 
 export default function CoverageSection() {
   return (
-    <section className="section-padding bg-muted">
+    <section id="zonas" className="section-padding bg-muted scroll-mt-20">
       <Container>
         <div className="text-center max-w-2xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">

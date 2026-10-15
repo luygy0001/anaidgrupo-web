@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   Anaid Grupo Construcción — Design Tokens
+   Construcciones Anaid — Design Tokens
    Logo gold: #D97706 (amber-600)
    ============================================================ */
 
@@ -69,8 +69,8 @@
   --color-error: var(--error);
   --color-warning: var(--warning);
   --color-info: var(--info);
-  --font-heading: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
 }
 
 /* ============================================================
@@ -118,15 +118,55 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
-/* Focus ring accesible */
+/* Foco accesible (WCAG 2.4.7 y 1.4.11): anillo azul con banda blanca interior,
+   visible tanto sobre fondos claros como sobre los oscuros de cabecera, formulario y pie. */
 :focus-visible {
-  outline: 2px solid var(--primary-500);
+  outline: 3px solid var(--primary-500);
   outline-offset: 2px;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+
+/* Enlace «Saltar al contenido» (WCAG 2.4.1): oculto hasta que recibe el foco */
+.saltar-contenido {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: var(--primary-500);
+  font-weight: 700;
+}
+.saltar-contenido:focus {
+  top: 1rem;
+}
+/* El destino del salto recibe el foco sin dibujar un marco alrededor de toda la página */
+#contenido:focus,
+#contenido:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Respeta a quien pide menos movimiento en su sistema (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Scroll suave */
 html {
   scroll-behavior: smooth;
+  /* Que las anclas (#inversores, #contacto) no queden bajo la cabecera fija */
+  scroll-padding-top: 5.5rem;
   overflow-x: hidden;
   max-width: 100vw;
   background-color: #ffffff;

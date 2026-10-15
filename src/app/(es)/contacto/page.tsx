@@ -8,16 +8,16 @@ import {
   EMAIL,
   WHATSAPP_URL,
   HORARIO_DETAIL,
-  ADDRESS,
   COVERAGE_AREA,
+  RESPUESTA_PLAZO,
 } from '@/lib/constants';
 import { localBusinessSchema } from '@/lib/seo-schemas';
-import FormContacto from '@/components/forms/FormContacto';
+import FormConsulta from '@/components/forms/FormConsulta';
 
 export const metadata: Metadata = {
   title: 'Contacto',
   description:
-    'Contacta con Anaid Grupo por teléfono, WhatsApp o email. Estamos en Madrid para ayudarte con tu proyecto de reforma o construcción.',
+    'Contacta con Construcciones Anaid por teléfono, WhatsApp, email o formulario para tu reforma en la Comunidad de Madrid. Te respondemos en menos de 48 horas laborables.',
   alternates: { canonical: '/contacto' },
 };
 
@@ -31,8 +31,8 @@ export default function ContactoPage() {
           <div className="text-center mb-12">
             <h1 className="text-3xl sm:text-4xl font-bold">Contacto</h1>
             <p className="mt-3 text-muted-foreground text-lg">
-              Estamos aquí para ayudarte. Escríbenos, llámanos o envía un
-              WhatsApp.
+              Escríbenos, llámanos o envía un WhatsApp. Te respondemos en
+              menos de 48 horas laborables.
             </p>
           </div>
 
@@ -87,7 +87,7 @@ export default function ContactoPage() {
                 <div>
                   <p className="text-sm text-muted-foreground">Horario de atención</p>
                   <p className="font-semibold text-foreground">{HORARIO_DETAIL.atencion}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{HORARIO_DETAIL.chatbot}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{RESPUESTA_PLAZO}.</p>
                 </div>
               </div>
 
@@ -96,9 +96,8 @@ export default function ContactoPage() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Dirección</p>
-                  <p className="font-semibold text-foreground">{ADDRESS}</p>
-                  <p className="text-sm text-muted-foreground mt-1">Cobertura: {COVERAGE_AREA}</p>
+                  <p className="text-sm text-muted-foreground">Zona de trabajo</p>
+                  <p className="font-semibold text-foreground">{COVERAGE_AREA}</p>
                 </div>
               </div>
             </div>
@@ -106,7 +105,7 @@ export default function ContactoPage() {
             {/* Contact form */}
             <div>
               <h2 className="text-xl font-bold mb-4">Envíanos un mensaje</h2>
-              <FormContacto />
+              <FormConsulta />
             </div>
           </div>
         </Container>

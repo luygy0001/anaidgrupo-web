@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { ShieldCheck, Cookie, Settings2, X, Check } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ShieldCheck, Cookie, X, Check } from 'lucide-react';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -12,12 +12,19 @@ interface CookiePreferences {
 
 const STORAGE_KEY = 'anaid_cookie_consent_v1';
 
+// Firma de gtag que usa este aviso (Consent Mode v2)
+type Gtag = (comando: 'consent', accion: 'update', valores: Record<string, 'granted' | 'denied'>) => void;
+
 export default function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analytics, setAnalytics] = useState(false);
   const [marketing, setMarketing] = useState(false);
+  const bannerRef = useRef<HTMLDivElement>(null);
 
+  // La elección guardada se lee al montar: en el servidor no existe localStorage, y leerla en el
+  // estado inicial haría que el HTML del servidor y el del navegador no coincidieran (hidratación).
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -41,6 +48,30 @@ export default function CookieConsentBanner() {
     window.addEventListener('open_cookie_settings', handleReopen);
     return () => window.removeEventListener('open_cookie_settings', handleReopen);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
+
+  // Accesibilidad (WCAG 2.4.11, foco no oculto): mientras el aviso está abierto, la página
+  // reserva su altura abajo para que el elemento con foco se desplace por encima de él,
+  // y Escape lo cierra por esta visita sin guardar consentimiento (no se activa nada).
+  useEffect(() => {
+    if (!visible) return;
+    const html = document.documentElement;
+    const reservarEspacio = () => {
+      const alto = bannerRef.current?.offsetHeight ?? 0;
+      html.style.scrollPaddingBottom = `${alto + 24}px`;
+    };
+    reservarEspacio();
+    window.addEventListener('resize', reservarEspacio);
+    const cerrarConEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setVisible(false);
+    };
+    document.addEventListener('keydown', cerrarConEscape);
+    return () => {
+      html.style.scrollPaddingBottom = '';
+      window.removeEventListener('resize', reservarEspacio);
+      document.removeEventListener('keydown', cerrarConEscape);
+    };
+  }, [visible, showSettings]);
 
   const saveConsent = (prefs: { necessary: boolean; analytics: boolean; marketing: boolean }) => {
     const data: CookiePreferences = {
@@ -55,8 +86,9 @@ export default function CookieConsentBanner() {
     setVisible(false);
     setShowSettings(false);
 
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
-      (window as unknown as { gtag: Function }).gtag('consent', 'update', {
+    const gtag = typeof window !== 'undefined' ? (window as unknown as { gtag?: Gtag }).gtag : undefined;
+    if (gtag) {
+      gtag('consent', 'update', {
         analytics_storage: prefs.analytics ? 'granted' : 'denied',
         ad_storage: prefs.marketing ? 'granted' : 'denied',
       });
@@ -66,10 +98,11 @@ export default function CookieConsentBanner() {
   if (!visible) return null;
 
   return (
-    <aside
+    <div
+      ref={bannerRef}
       role="dialog"
       aria-labelledby="cookie-title"
-      aria-describedby="cookie-desc"
+      aria-describedby={showSettings ? undefined : 'cookie-desc'}
       className="fixed bottom-3 inset-x-3 sm:bottom-6 sm:left-4 sm:right-auto sm:max-w-md z-50 animate-in fade-in slide-in-from-bottom-3 duration-300 pointer-events-auto"
     >
       <div className="bg-slate-950/95 backdrop-blur-xl border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl text-white">
@@ -83,9 +116,9 @@ export default function CookieConsentBanner() {
                 <Cookie className="w-4 h-4" />
               </div>
               <div className="space-y-0.5 text-left">
-                <h3 id="cookie-title" className="text-xs font-bold text-white tracking-tight">
+                <p id="cookie-title" className="text-xs font-bold text-white tracking-tight">
                   Transparencia de cookies (RGPD / AEPD)
-                </h3>
+                </p>
                 <p id="cookie-desc" className="text-[11px] text-slate-300 leading-snug">
                   Usamos cookies técnicas para que la web funcione y analíticas para medir visitas. Puedes aceptarlas, rechazarlas o configurarlas.{' '}
                   <a href="/cookies" className="text-amber-400 hover:underline font-medium">
@@ -131,7 +164,7 @@ export default function CookieConsentBanner() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-2">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-amber-400" />
-                <h4 className="text-xs font-bold text-white">Preferencias de privacidad</h4>
+                <p id="cookie-title" className="text-xs font-bold text-white">Preferencias de privacidad</p>
               </div>
               <button
                 type="button"
@@ -162,9 +195,12 @@ export default function CookieConsentBanner() {
                     type="checkbox"
                     checked={analytics}
                     onChange={(e) => setAnalytics(e.target.checked)}
+                    role="switch"
+                    aria-checked={analytics}
+                    aria-label="Cookies analíticas"
                     className="sr-only peer"
                   />
-                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                 </label>
               </div>
 
@@ -178,9 +214,12 @@ export default function CookieConsentBanner() {
                     type="checkbox"
                     checked={marketing}
                     onChange={(e) => setMarketing(e.target.checked)}
+                    role="switch"
+                    aria-checked={marketing}
+                    aria-label="Cookies de personalización"
                     className="sr-only peer"
                   />
-                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                 </label>
               </div>
             </div>
@@ -196,6 +235,6 @@ export default function CookieConsentBanner() {
           </div>
         )}
       </div>
-    </aside>
+    </div>
   );
 }

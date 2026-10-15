@@ -14,7 +14,7 @@ export default function ElectricistaPage() {
       slug="electricista-madrid"
       breadcrumbName="Electricista"
       description="Servicio de intermediación para trabajos de electricidad en Madrid: instalaciones, averías, boletines y mantenimiento con profesionales validados."
-      intro="Desde averías puntuales hasta instalaciones completas, Anaid Grupo analiza tu necesidad y te asigna un electricista cualificado en la Comunidad de Madrid."
+      intro="Desde averías puntuales hasta instalaciones completas, Construcciones Anaid analiza tu necesidad y te asigna un electricista cualificado en la Comunidad de Madrid."
       trabajos={[
         'Reparación de averías eléctricas',
         'Instalación y cambio de cuadros eléctricos',
@@ -26,7 +26,6 @@ export default function ElectricistaPage() {
         'Revisión y actualización de instalaciones antiguas',
       ]}
       cuando="Los servicios de electricista se necesitan ante averías imprevistas, al renovar una instalación antigua que no cumple normativa, al reformar una vivienda, al ampliar la instalación para nuevas necesidades o para obtener certificaciones y boletines obligatorios."
-      rangoOrientativo={{ rango: '50 – 150 €/hora', nota: 'Según tipo de intervención, materiales y complejidad.' }}
       faqs={[
         { question: '¿Cuándo necesito un boletín eléctrico?', answer: 'Un boletín eléctrico es obligatorio al dar de alta un suministro, al cambiar la potencia contratada o al modificar la instalación. El electricista te orientará según tu caso.' },
         { question: '¿Pueden actualizar mi instalación eléctrica sin hacer obra?', answer: 'En muchos casos sí, especialmente si solo se trata de cambiar el cuadro o añadir protecciones. Si hay que hacer regatas en las paredes, puede requerir algo más de obra.' },

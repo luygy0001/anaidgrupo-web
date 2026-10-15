@@ -1,12 +1,10 @@
 // Tracking helper — push events to Google Tag Manager dataLayer.
 // GTM se encarga del fan-out a GA4, Meta Pixel, etc. desde su UI.
-// Consent Mode v2 queda a cargo de CookieYes (ver CookieYesLoader).
+// Consent Mode v2: valores por defecto en ConsentAndGTM y actualización en CookieConsentBanner.
 
 declare global {
   interface Window {
     dataLayer?: Array<Record<string, unknown>>;
-    // CookieYes expone una API global para reabrir el banner.
-    revisitCkyConsent?: () => void;
   }
 }
 

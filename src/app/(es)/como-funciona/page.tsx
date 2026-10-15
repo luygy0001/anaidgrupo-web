@@ -7,9 +7,9 @@ import { FAQS } from '@/lib/constants';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Cómo funciona',
+  title: 'Cómo trabajamos',
   description:
-    'Descubre cómo Anaid Grupo analiza cada solicitud, filtra la necesidad y asigna al profesional adecuado para tu proyecto en Madrid.',
+    'Cómo trabaja Construcciones Anaid: estudiamos tu reforma, te asignamos al profesional adecuado de nuestra red en Madrid y coordinamos la obra contigo.',
   alternates: { canonical: '/como-funciona' },
 };
 
@@ -51,7 +51,7 @@ export default function ComoFuncionaPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="p-6 rounded-xl bg-success/5 border border-success/20">
               <h2 className="text-xl font-bold text-foreground mb-4">
-                Qué hace Anaid Grupo
+                Qué hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
                 {queHace.map((item) => (
@@ -64,7 +64,7 @@ export default function ComoFuncionaPage() {
             </div>
             <div className="p-6 rounded-xl bg-error/5 border border-error/20">
               <h2 className="text-xl font-bold text-foreground mb-4">
-                Qué NO hace Anaid Grupo
+                Qué NO hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
                 {queNoHace.map((item) => (
@@ -86,10 +86,9 @@ export default function ComoFuncionaPage() {
             Cómo se clasifica una solicitud
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
-            Cuando envías tu solicitud, nuestro sistema analiza la información
-            que proporcionas: tipo de trabajo, descripción, fotos, urgencia y
-            código postal. A partir de estos datos, clasificamos tu proyecto y
-            determinamos qué tipo de profesional necesitas.
+            Cuando nos escribes, una persona revisa lo que nos cuentas: el tipo
+            de reforma, qué necesitas y en qué municipio. Con esos datos vemos tu
+            proyecto y qué tipo de profesional necesitas.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Si has indicado que no sabes qué profesional necesitas, nuestro
@@ -111,8 +110,8 @@ export default function ComoFuncionaPage() {
             colaborador que mejor encaje.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            El cliente final no elige entre una lista de profesionales. Anaid
-            Grupo centraliza el análisis y la asignación para garantizar que cada
+            El cliente final no elige entre una lista de profesionales. Construcciones
+            Anaid centraliza el análisis y la asignación para garantizar que cada
             proyecto reciba la atención adecuada.
           </p>
         </Container>
@@ -129,7 +128,7 @@ export default function ComoFuncionaPage() {
               <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white text-sm font-bold">1</span>
               <div>
                 <p className="font-medium text-foreground">Análisis inicial</p>
-                <p className="text-sm text-muted-foreground">Revisamos tu solicitud en menos de 24 horas laborables.</p>
+                <p className="text-sm text-muted-foreground">Te respondemos en menos de 48 horas laborables para ver tu caso.</p>
               </div>
             </li>
             <li className="flex gap-4">
@@ -164,7 +163,7 @@ export default function ComoFuncionaPage() {
             Diferencia entre orientación inicial y presupuesto final
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
-            La orientación inicial que ofrece Anaid Grupo es una estimación
+            La orientación inicial que ofrece Construcciones Anaid es una estimación
             basada en la información proporcionada. Sirve para que el cliente
             tenga una referencia, pero no es un presupuesto cerrado ni vinculante.
           </p>

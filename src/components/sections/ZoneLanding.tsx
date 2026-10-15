@@ -1,9 +1,9 @@
 import Container from '@/components/ui/Container';
-import FormSolicitud from '@/components/forms/FormSolicitud';
+import FormConsulta from '@/components/forms/FormConsulta';
 import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaimer';
 import JsonLd from '@/components/seo/JsonLd';
 import { zoneLocalBusinessSchema, breadcrumbSchema } from '@/lib/seo-schemas';
-import { SERVICES } from '@/lib/constants';
+import { SERVICE_PAGES } from '@/lib/constants';
 import {
   MapPin,
   ChevronRight,
@@ -118,12 +118,12 @@ export default function ZoneLanding({
             Cubrimos la tipología completa de reformas y servicios técnicos de hogar. Cada solicitud se asigna al colaborador validado más adecuado según el tipo de trabajo y su disponibilidad en la zona.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
-            {SERVICES.map((s) => {
+            {SERVICE_PAGES.map((s) => {
               const Icon = iconMap[s.icon] || Wrench;
               return (
                 <a
-                  key={s.slug}
-                  href={`/servicios/${s.slug}`}
+                  key={s.href}
+                  href={s.href}
                   className="group flex items-start gap-3 p-4 rounded-lg bg-muted border border-transparent hover:border-primary/30 hover:bg-white transition-colors"
                 >
                   <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-primary/10 text-primary shrink-0">
@@ -131,7 +131,7 @@ export default function ZoneLanding({
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {s.title} en {municipio}
+                      {s.label} en {municipio}
                     </p>
                     <p className="text-xs text-muted-foreground mt-0.5">
                       {s.description}
@@ -186,7 +186,7 @@ export default function ZoneLanding({
       {/* Por qué confiar */}
       <section className="section-padding bg-muted">
         <Container narrow>
-          <h2 className="text-2xl font-bold mb-4">Por qué confiar en Anaid Grupo</h2>
+          <h2 className="text-2xl font-bold mb-4">Por qué confiar en Construcciones Anaid</h2>
           <ul className="space-y-3 text-foreground">
             <li className="flex items-start gap-2">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
@@ -204,8 +204,8 @@ export default function ZoneLanding({
         </Container>
       </section>
 
-      {/* CTA: formulario embebido con form_location=zona-<slug> */}
-      <section className="section-padding">
+      {/* CTA: formulario de consulta de la zona */}
+      <section id="contacto" className="section-padding scroll-mt-20">
         <Container narrow>
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
@@ -213,10 +213,10 @@ export default function ZoneLanding({
                 Solicita tu proyecto en {municipio}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso.
+                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso. Te respondemos en menos de 48 horas laborables.
               </p>
             </div>
-            <FormSolicitud formLocation={`zona-${slug}`} />
+            <FormConsulta idPrefijo={`zona-${slug}`} />
           </div>
         </Container>
       </section>

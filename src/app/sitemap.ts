@@ -1,54 +1,33 @@
 import type { MetadataRoute } from 'next';
 import { SITE_URL } from '@/lib/constants';
 
+// Web provisional (release/web-basica): solo las páginas públicas e indexables. Las legales y la
+// de agradecimiento llevan noindex y no van aquí. Al publicar la versión completa, volver a
+// añadir guías de precios, IA, únete a la red y solicitar proyecto.
+const PAGINAS = [
+  '',
+  '/servicios',
+  '/servicios/reforma-integral-madrid',
+  '/servicios/reforma-bano-madrid',
+  '/servicios/reforma-cocina-madrid',
+  '/servicios/electricista-madrid',
+  '/servicios/fontanero-madrid',
+  '/servicios/climatizacion-madrid',
+  '/servicios/arquitecto-reformas-madrid',
+  '/servicios/pequenas-obras-madrid',
+  '/zonas',
+  '/zonas/pozuelo-de-alarcon',
+  '/zonas/las-rozas',
+  '/zonas/majadahonda',
+  '/como-funciona',
+  '/contacto',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = SITE_URL;
-
-  const spanishPages = [
-    '',
-    '/como-funciona',
-    '/servicios',
-    '/servicios/reforma-integral-madrid',
-    '/servicios/reforma-bano-madrid',
-    '/servicios/reforma-cocina-madrid',
-    '/servicios/electricista-madrid',
-    '/servicios/fontanero-madrid',
-    '/servicios/climatizacion-madrid',
-    '/servicios/arquitecto-reformas-madrid',
-    '/servicios/pequenas-obras-madrid',
-    '/zonas',
-    '/zonas/pozuelo-de-alarcon',
-    '/zonas/las-rozas',
-    '/zonas/majadahonda',
-    '/solicitar-proyecto',
-    '/guias-precios',
-    '/guias-precios/precios-reformas-madrid',
-    '/guias-precios/cuanto-cuesta-reforma-integral',
-    '/guias-precios/cuanto-cuesta-reformar-bano',
-    '/guias-precios/cuanto-cuesta-reformar-cocina',
-    '/guias-precios/checklist-presupuesto',
-    '/guias-precios/errores-habituales-reforma',
-    '/guias-precios/licencias-dudas-reforma',
-    '/ia-analisis-proyecto',
-    '/unete-red',
-    '/contacto',
-  ];
-
-  const englishPages = [
-    '/en',
-    '/en/how-it-works',
-    '/en/services',
-    '/en/request-project',
-    '/en/join-network',
-    '/en/contact',
-  ];
-
-  const allPages = [...spanishPages, ...englishPages];
-
-  return allPages.map((path) => ({
-    url: `${baseUrl}${path}`,
+  return PAGINAS.map((path) => ({
+    url: `${SITE_URL}${path}`,
     lastModified: new Date(),
-    changeFrequency: path === '' || path === '/en' ? 'weekly' : 'monthly',
-    priority: path === '' ? 1 : path === '/solicitar-proyecto' ? 0.9 : 0.7,
+    changeFrequency: path === '' ? 'weekly' : 'monthly',
+    priority: path === '' ? 1 : path === '/contacto' ? 0.8 : 0.7,
   }));
 }
