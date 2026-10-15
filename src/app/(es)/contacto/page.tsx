@@ -17,7 +17,7 @@ import FormConsulta from '@/components/forms/FormConsulta';
 export const metadata: Metadata = {
   title: 'Contacto',
   description:
-    'Contacta con Construcciones Anaid por teléfono, WhatsApp, email o formulario para tu reforma en la Comunidad de Madrid. Te respondemos en menos de 48 horas.',
+    'Contacta con Construcciones Anaid por teléfono, WhatsApp, email o formulario para tu reforma en la Comunidad de Madrid. Te respondemos en menos de 48 horas laborables.',
   alternates: { canonical: '/contacto' },
 };
 
@@ -32,7 +32,7 @@ export default function ContactoPage() {
             <h1 className="text-3xl sm:text-4xl font-bold">Contacto</h1>
             <p className="mt-3 text-muted-foreground text-lg">
               Escríbenos, llámanos o envía un WhatsApp. Te respondemos en
-              menos de 48 horas.
+              menos de 48 horas laborables.
             </p>
           </div>
 

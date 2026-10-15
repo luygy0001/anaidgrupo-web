@@ -10,9 +10,9 @@ import {
 } from '@/lib/consulta';
 
 // ============================================================
-// Formulario de consulta de la web provisional → correo a info@
+// Formulario de consulta de la web provisional → correo a hola@
 // ------------------------------------------------------------
-// Valida, sanea y envía la consulta por el SMTP de Hostinger (buzón info@construccionesanaid.com).
+// Valida, sanea y envía la consulta por el SMTP de Hostinger (buzón hola@construccionesanaid.com).
 // Solo responde «enviado» si el servidor de correo ha aceptado el mensaje; si no, error visible
 // con teléfono y WhatsApp. Sin n8n, sin IA y sin Turnstile en esta versión.
 // Variables (Dokploy > Environment): SMTP_USER y SMTP_PASS obligatorias; SMTP_HOST, SMTP_PORT y
@@ -142,7 +142,7 @@ export async function POST(req: NextRequest) {
       '',
       '---',
       'Al responder a este correo, la respuesta va directamente al cliente.',
-      'Compromiso de la web: respuesta en menos de 48 horas.',
+      'Compromiso de la web: respuesta en menos de 48 horas laborables.',
     ].join('\n');
 
     const usuario = process.env.SMTP_USER;

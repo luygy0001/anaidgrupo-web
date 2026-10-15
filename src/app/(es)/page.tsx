@@ -11,7 +11,7 @@ import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, SOCIAL } from '@/lib/constants
 
 const TITULO = 'Reformas en Madrid con trato directo | Construcciones Anaid';
 const DESCRIPCION =
-  'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas.';
+  'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas laborables.';
 
 export const metadata: Metadata = {
   // absolute: la plantilla de layout.tsx añadiría la marca otra vez

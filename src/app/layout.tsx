@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    'Reformas integrales, de cocina y de baño en la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas.',
+    'Reformas integrales, de cocina y de baño en la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas laborables.',
   openGraph: {
     type: 'website',
     locale: 'es_ES',

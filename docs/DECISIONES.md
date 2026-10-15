@@ -226,3 +226,12 @@ Luis necesita la web pública ya, mientras se termina la versión completa
 65. **Google:** solo Search Console por ahora (sin Analytics ni aviso de cookies).
 66. **Despliegue:** commit en rama → pull request a `main` → Dokploy despliega `main`. Lo configura
     Luis en Dokploy con la guía; la contraseña del buzón la pone él.
+67. **Respuesta en menos de 48 horas laborables (de lunes a viernes)** (Luis, 15-10-2026): sustituye
+    a «menos de 48 horas» en toda la web, porque el horario de atención es de lunes a viernes.
+68. **LinkedIn de empresa** creada por Luis: `linkedin.com/company/construcciones-anaid`. El pie y
+    los datos para Google la enlazan; el perfil personal sale de los datos del negocio.
+69. **La red es de autónomos y empresas**, coordinada por Construcciones Anaid con arquitectos; la
+    visita a la obra antes de contratar la hace el profesional asignado (Luis, 15-10-2026).
+70. **Correo público: hola@construccionesanaid.com** (Luis, 15-10-2026). Sustituye a info@ de la
+    decisión 13 en toda la web y en LinkedIn. El formulario llega a hola@ y se envía desde ese
+    mismo buzón por el SMTP de Hostinger (`SMTP_USER` = hola@).

@@ -128,7 +128,7 @@ export default function ComoFuncionaPage() {
               <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white text-sm font-bold">1</span>
               <div>
                 <p className="font-medium text-foreground">Análisis inicial</p>
-                <p className="text-sm text-muted-foreground">Te respondemos en menos de 48 horas para ver tu caso.</p>
+                <p className="text-sm text-muted-foreground">Te respondemos en menos de 48 horas laborables para ver tu caso.</p>
               </div>
             </li>
             <li className="flex gap-4">

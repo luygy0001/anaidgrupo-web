@@ -13,7 +13,7 @@ import { RESPUESTA_PLAZO } from '@/lib/constants';
 
 type Estado = 'inicial' | 'enviando' | 'error';
 
-// Formulario único de la web provisional: llega por correo a info@ (ver /api/contacto).
+// Formulario único de la web provisional: llega por correo a hola@ (ver /api/contacto).
 // Sin presupuesto automático, sin n8n y sin comprobación antirrobots: campo trampa y límite de
 // envíos en el servidor.
 export default function FormConsulta({ idPrefijo = 'consulta' }: { idPrefijo?: string }) {

@@ -213,7 +213,7 @@ export default function ZoneLanding({
                 Solicita tu proyecto en {municipio}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso. Te respondemos en menos de 48 horas.
+                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso. Te respondemos en menos de 48 horas laborables.
               </p>
             </div>
             <FormConsulta idPrefijo={`zona-${slug}`} />

@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Reforma de baño en Madrid',
-  description: 'Reforma de baño en Madrid. Te asignamos un profesional cualificado para renovar tu baño. Te respondemos en menos de 48 horas.',
+  description: 'Reforma de baño en Madrid. Te asignamos un profesional cualificado para renovar tu baño. Te respondemos en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/reforma-bano-madrid' },
 };
 

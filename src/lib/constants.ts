@@ -18,7 +18,8 @@ export const PHONE = '+34640962564';
 export const PHONE_DISPLAY = '640 962 564';
 export const WHATSAPP_NUMBER = '34640962564';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20de%20Madrid.`;
-export const EMAIL = 'info@construccionesanaid.com';
+// Correo público: hola@ (Luis, 15-10-2026; sustituye a info@ de la decisión 13)
+export const EMAIL = 'hola@construccionesanaid.com';
 export const EMAIL_ADMIN = 'admin@construccionesanaid.com';
 
 // Ubicación y cobertura
@@ -34,7 +35,7 @@ export const HORARIO_DETAIL = {
 
 // Promesa de la web provisional (release/web-basica): respuesta de una persona por correo,
 // teléfono o WhatsApp. Sin presupuesto automático hasta la versión completa.
-export const RESPUESTA_PLAZO = 'Te respondemos en menos de 48 horas';
+export const RESPUESTA_PLAZO = 'Te respondemos en menos de 48 horas laborables';
 
 // Redes sociales oficiales (YouTube + LinkedIn)
 export const SOCIAL = {
@@ -112,7 +113,7 @@ export const SERVICES = [
     badge: 'Colaboración',
     description: 'Tu comprador duda por la obra. Le ayudamos a conocer qué reforma necesita la vivienda para que decida con más información.',
     icon: 'Building2',
-    features: ['Trato directo', 'Respuesta en menos de 48 horas', 'Un solo interlocutor'],
+    features: ['Trato directo', 'Respuesta en menos de 48 horas laborables', 'Un solo interlocutor'],
   },
 ] as const;
 
@@ -126,7 +127,7 @@ export const FAQS = [
   {
     question: '¿Cuándo me respondéis?',
     answer:
-      'En menos de 48 horas. Escríbenos por el formulario, por WhatsApp o llámanos, cuéntanos qué quieres reformar y en qué municipio, y una persona te contesta para ver tu caso. Si hace falta, organizamos una visita a la obra.',
+      'En menos de 48 horas laborables, de lunes a viernes. Escríbenos por el formulario, por WhatsApp o llámanos, cuéntanos qué quieres reformar y en qué municipio, y una persona te contesta para ver tu caso. Si hace falta, organizamos una visita a la obra.',
   },
   {
     question: '¿Cómo se prepara el presupuesto?',

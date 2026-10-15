@@ -10,9 +10,9 @@ La rama `release/web-basica` es una versión básica y pública mientras se term
 (rama `fix/contenido-real-y-formularios`), que la sustituirá. Diferencias:
 
 - Un solo formulario de consulta (nombre, teléfono, email, tipo de reforma y mensaje) que llega
-  por correo a info@construccionesanaid.com por el SMTP de Hostinger (`src/app/api/contacto`).
+  por correo a hola@construccionesanaid.com por el SMTP de Hostinger (`src/app/api/contacto`).
   Campo trampa y límite de 5 envíos cada 15 minutos por IP. Sin n8n, sin IA y sin Turnstile.
-- Promesa: «Te respondemos en menos de 48 horas». Sin presupuesto automático ni precios.
+- Promesa: «Te respondemos en menos de 48 horas laborables». Sin presupuesto automático ni precios.
 - Fuera hasta la versión completa: guías de precios, página de IA, «Únete a la red» y «Solicitar
   proyecto».
 - Aviso de mejoras en todas las páginas (`src/components/shared/AvisoMejoras.tsx`).
@@ -32,11 +32,11 @@ contraseña y enviar una consulta de prueba marcada «(PRUEBA)».
 
 | Variable | Obligatoria | Valor |
 |---|---|---|
-| `SMTP_USER` | Sí | `info@construccionesanaid.com` |
-| `SMTP_PASS` | Sí | Contraseña del buzón info@ (solo en Dokploy y en el gestor de contraseñas) |
+| `SMTP_USER` | Sí | `hola@construccionesanaid.com` |
+| `SMTP_PASS` | Sí | Contraseña del buzón hola@ (solo en Dokploy y en el gestor de contraseñas) |
 | `SMTP_HOST` | No | Por defecto `smtp.hostinger.com` |
 | `SMTP_PORT` | No | Por defecto `465` (SSL). Alternativa de Hostinger: `587` |
-| `CONTACTO_DESTINO` | No | A quién llegan las consultas. Por defecto `info@construccionesanaid.com` |
+| `CONTACTO_DESTINO` | No | A quién llegan las consultas. Por defecto `hola@construccionesanaid.com` |
 
 Sin `SMTP_USER` o `SMTP_PASS`, en producción el formulario responde con error y pide llamar o
 escribir por WhatsApp: nunca da por enviada una consulta que no ha salido. En desarrollo, sin

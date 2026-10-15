@@ -15,7 +15,7 @@ const TIPOS: Record<Tipo, { title: string; heading: string; subheading: string; 
     subheading: 'Gracias por escribirnos. Una persona revisa tu consulta y te contesta.',
     next: [
       `Revisamos tu consulta en horario de atención (${HORARIO_DETAIL.atencion}).`,
-      'Te respondemos en menos de 48 horas por teléfono, WhatsApp o correo.',
+      'Te respondemos en menos de 48 horas laborables por teléfono, WhatsApp o correo.',
       'Si es urgente, puedes llamarnos o escribirnos por WhatsApp.',
     ],
   },
@@ -36,7 +36,7 @@ export async function generateMetadata({
   const data = TIPOS[tipo as Tipo];
   return {
     title: data?.title ?? 'Gracias',
-    description: 'Hemos recibido tu consulta. Te respondemos en menos de 48 horas.',
+    description: 'Hemos recibido tu consulta. Te respondemos en menos de 48 horas laborables.',
     robots: { index: false, follow: true },
     alternates: { canonical: `/gracias/${tipo}` },
   };

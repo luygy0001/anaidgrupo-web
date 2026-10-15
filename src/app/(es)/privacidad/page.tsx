@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 // Versión de la web provisional (rama release/web-basica, 15-10-2026): un formulario de consulta
-// que llega por correo a info@ (Hostinger). Sin IA, sin automatizaciones ni Turnstile. Al publicar
+// que llega por correo a hola@ (Hostinger). Sin IA, sin automatizaciones ni Turnstile. Al publicar
 // la versión completa, vuelve la política de la rama fix/contenido-real-y-formularios.
 
 const ENLACE = 'text-primary underline';
