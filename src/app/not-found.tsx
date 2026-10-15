@@ -1,5 +1,11 @@
+import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import Button from '@/components/ui/Button';
+
+// Título propio para la pestaña. Next.js ya añade «noindex» a las respuestas 404.
+export const metadata: Metadata = {
+  title: 'Página no encontrada',
+};
 
 export default function NotFound() {
   return (
