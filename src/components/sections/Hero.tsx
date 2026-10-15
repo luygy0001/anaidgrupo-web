@@ -86,7 +86,7 @@ export default function Hero() {
 
             {/* Subtítulo puente */}
             <p className="text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium">
-              Una red de profesionales autónomos, arquitectos y oficios, coordinada por Luis Manuel. Te asignamos al profesional adecuado para tu obra: tú firmas con él; nosotros coordinamos y te mandamos el avance por WhatsApp. Sin perseguir a nadie.
+              Una red de profesionales autónomos, arquitectos y oficios, coordinada por Construcciones Anaid. Te asignamos al profesional adecuado para tu obra: tú firmas con él; nosotros coordinamos y te mandamos el avance por WhatsApp. Sin perseguir a nadie.
             </p>
 
             {/* Badges de Confianza Rápidos */}
