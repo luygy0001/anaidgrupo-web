@@ -12,7 +12,7 @@ export const organizationSchema = {
   '@id': `${SITE_URL}#organization`,
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/img/logo.svg`,
+  logo: `${SITE_URL}/images/logo.png`,
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: PHONE,
@@ -36,7 +36,7 @@ export const localBusinessSchema = {
   url: SITE_URL,
   telephone: PHONE,
   email: EMAIL,
-  image: `${SITE_URL}/img/logo.svg`,
+  image: `${SITE_URL}/images/logo.png`,
   areaServed: {
     '@type': 'State',
     name: 'Comunidad de Madrid',
@@ -126,7 +126,7 @@ export function zoneLocalBusinessSchema({
     url: `${SITE_URL}/zonas/${slug}`,
     description,
     telephone: '+34640962564',
-    image: `${SITE_URL}/img/logo.svg`,
+    image: `${SITE_URL}/images/logo.png`,
     areaServed: {
       '@type': 'City',
       name: municipio,

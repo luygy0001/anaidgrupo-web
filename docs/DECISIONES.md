@@ -237,3 +237,6 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     alias que entrega en él.
 71. **Facebook**: página `facebook.com/Construccionesanaid` (Luis, 15-10-2026). Botón en el pie junto a
     YouTube y LinkedIn, y en los datos para Google de la portada.
+72. **Logo en los datos para Google:** las fichas de negocio de contacto y zonas apuntaban a
+    `public/img/logo.svg`, un logo antiguo de «Anaid Grupo» con «Tecnología con IA» (contra la
+    decisión 21). Pasan a `public/images/logo.png`, el logo real, y se retiran los dos SVG de «Anaid Grupo» (`logo.svg` y `logo-small.svg`, este sin usar).
