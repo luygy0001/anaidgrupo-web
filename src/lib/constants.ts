@@ -27,10 +27,14 @@ export const EMAIL_ADMIN = 'admin@construccionesanaid.com';
 export const ADDRESS = 'C/ Isaac Peral, 46, Valdeavero (Madrid)';
 export const COVERAGE_AREA = 'Toda la Comunidad de Madrid';
 
-// Horario
-export const HORARIO = 'L-V 8:30—19:30';
+// Horario: el mismo que el Perfil de Empresa de Google (Luis, 15-10-2026). Los datos para Google
+// están en `horarioApertura` (seo-schemas.ts): si cambia uno, cambia el otro.
+export const HORARIO = 'L-J 8:00–18:00 · V 8:00–15:00';
+// `tramos` se muestra en líneas separadas (contacto y pie) para que no se corte a mitad de tramo.
+const TRAMOS_HORARIO = ['Lunes a jueves: 8:00–18:00', 'Viernes: 8:00–15:00'] as const;
 export const HORARIO_DETAIL = {
-  atencion: 'Lunes a Viernes: 8:30-19:30',
+  atencion: TRAMOS_HORARIO.join(' · '),
+  tramos: TRAMOS_HORARIO,
 };
 
 // Promesa de la web provisional (release/web-basica): respuesta de una persona por correo,

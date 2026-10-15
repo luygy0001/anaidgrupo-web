@@ -86,7 +86,13 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Horario de atención</p>
-                  <p className="font-semibold text-foreground">{HORARIO_DETAIL.atencion}</p>
+                  <p className="font-semibold text-foreground">
+                    {HORARIO_DETAIL.tramos.map((tramo) => (
+                      <span key={tramo} className="block">
+                        {tramo}
+                      </span>
+                    ))}
+                  </p>
                   <p className="text-sm text-muted-foreground mt-1">{RESPUESTA_PLAZO}.</p>
                 </div>
               </div>

@@ -153,7 +153,13 @@ export default function Footer() {
               </p>
               <p className="flex items-start gap-2 text-xs text-slate-400">
                 <Clock className="w-4 h-4 shrink-0 text-slate-500 mt-0.5" />
-                <span>{HORARIO_DETAIL.atencion}</span>
+                <span>
+                  {HORARIO_DETAIL.tramos.map((tramo) => (
+                    <span key={tramo} className="block">
+                      {tramo}
+                    </span>
+                  ))}
+                </span>
               </p>
             </div>
           </div>
