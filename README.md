@@ -32,11 +32,11 @@ contraseña y enviar una consulta de prueba marcada «(PRUEBA)».
 
 | Variable | Obligatoria | Valor |
 |---|---|---|
-| `SMTP_USER` | Sí | `hola@construccionesanaid.com` |
-| `SMTP_PASS` | Sí | Contraseña del buzón hola@ (solo en Dokploy y en el gestor de contraseñas) |
+| `SMTP_USER` | Sí | `info@construccionesanaid.com` (el buzón real de Hostinger; hola@ es un alias que entrega en él) |
+| `SMTP_PASS` | Sí | Contraseña del buzón info@ (solo en Dokploy y en el gestor de contraseñas) |
 | `SMTP_HOST` | No | Por defecto `smtp.hostinger.com` |
 | `SMTP_PORT` | No | Por defecto `465` (SSL). Alternativa de Hostinger: `587` |
-| `CONTACTO_DESTINO` | No | A quién llegan las consultas. Por defecto `hola@construccionesanaid.com` |
+| `CONTACTO_DESTINO` | No | A quién llegan las consultas. Por defecto `hola@construccionesanaid.com` (alias que entrega en info@) |
 
 Sin `SMTP_USER` o `SMTP_PASS`, en producción el formulario responde con error y pide llamar o
 escribir por WhatsApp: nunca da por enviada una consulta que no ha salido. En desarrollo, sin

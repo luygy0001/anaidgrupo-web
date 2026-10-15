@@ -233,5 +233,6 @@ Luis necesita la web pública ya, mientras se termina la versión completa
 69. **La red es de autónomos y empresas**, coordinada por Construcciones Anaid con arquitectos; la
     visita a la obra antes de contratar la hace el profesional asignado (Luis, 15-10-2026).
 70. **Correo público: hola@construccionesanaid.com** (Luis, 15-10-2026). Sustituye a info@ de la
-    decisión 13 en toda la web y en LinkedIn. El formulario llega a hola@ y se envía desde ese
-    mismo buzón por el SMTP de Hostinger (`SMTP_USER` = hola@).
+    decisión 13 en toda la web y en LinkedIn. En Hostinger, info@ es el buzón real y hola@ un
+    alias que entrega en él (Luis): el formulario entra y envía con info@ (`SMTP_USER` = info@) y se
+    manda a hola@.
