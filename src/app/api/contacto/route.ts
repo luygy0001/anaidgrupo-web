@@ -10,10 +10,9 @@ import {
 } from '@/lib/consulta';
 
 // ============================================================
-// Formulario de consulta de la web provisional → correo a hola@
+// Formulario de consulta de la web provisional → correo a info@
 // ------------------------------------------------------------
-// Valida, sanea y envía la consulta por el SMTP de Hostinger: entra y envía con el buzón real
-// (info@, SMTP_USER) y la manda a hola@, el correo público, que es un alias que entrega en info@.
+// Valida, sanea y envía la consulta por el SMTP de Hostinger (buzón info@construccionesanaid.com).
 // Solo responde «enviado» si el servidor de correo ha aceptado el mensaje; si no, error visible
 // con teléfono y WhatsApp. Sin n8n, sin IA y sin Turnstile en esta versión.
 // Variables (Dokploy > Environment): SMTP_USER y SMTP_PASS obligatorias; SMTP_HOST, SMTP_PORT y

@@ -3,7 +3,7 @@ import { EMAIL, LEGAL, SITE_NAME } from '@/lib/constants';
 
 // Primera capa informativa junto al formulario (RGPD art. 13 y LOPDGDD art. 11). La segunda
 // capa es /privacidad: si cambian proveedores o finalidades, actualizar las dos.
-// Web provisional: la consulta llega por correo a hola@ (Hostinger). Sin IA ni automatizaciones.
+// Web provisional: la consulta llega por correo a info@ (Hostinger). Sin IA ni automatizaciones.
 
 export default function InfoProteccionDatos({ tema = 'claro' }: { tema?: 'claro' | 'oscuro' }) {
   const claseTexto = tema === 'oscuro' ? 'text-slate-300' : 'text-muted-foreground';
