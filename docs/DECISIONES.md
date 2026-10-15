@@ -247,3 +247,22 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     español de España, categoría «Consejos y estilo» y moderación básica. Pendiente de Luis:
     declarar que no está dirigido a niños, añadir a gerente@ como propietario y verificar el
     teléfono si YouTube lo pide.
+74. **Icono de la web** (Luis, 15-10-2026): la pestaña mostraba el triángulo de la plantilla de
+    Next.js. Se sustituye por el monograma «CA» del logo, sacado de `public/images/logo.png`:
+    `src/app/favicon.ico` (16, 32 y 48 px; el de 16 px recortado sobre las letras para que se lea),
+    `src/app/icon.png` (192 px, múltiplo de 48 como pide Google para los resultados de búsqueda) y
+    `src/app/apple-icon.png` (180 px, opaco, para iPhone). Fondo blanco: se ve en pestañas claras y
+    oscuras.
+75. **Páginas retiradas = 404** (15-10-2026): `/guias-precios`, `/ia-analisis-proyecto`, `/unete-red`
+    y `/solicitar-proyecto` devuelven 404 con `noindex` y la 404 tiene título propio («Página no
+    encontrada»). Sin redirecciones: Google no tenía ninguna página del dominio indexada (la web
+    antigua iba con contraseña), ninguna página enlaza a ellas y el sitemap solo lista páginas que
+    existen. Las 404 no penalizan al resto de la web. Cuando vuelvan con la versión completa,
+    volverán a dar 200.
+76. **Frase de intermediación** (Luis, 15-10-2026): la frase de `INTERMEDIATION_DISCLAIMER` (Servicios,
+    Cómo trabajamos, páginas de servicio y de zona, y aviso legal) decía «proyectos integrales de
+    reforma y construcción» y «red homologada»: chocaba con la decisión de no hacer obra nueva y
+    afirmaba una homologación que no existe. Pasa a: «Construcciones Anaid coordina reformas con una
+    red de arquitectos, autónomos y empresas. El contrato de obra lo firmas con el profesional
+    asignado, que hace la obra y responde de su trabajo.» La rama de la versión completa tiene la
+    frase antigua: cambiarla al retomarla.

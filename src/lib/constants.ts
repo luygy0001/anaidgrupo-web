@@ -163,7 +163,7 @@ export const FAQS = [
 ] as const;
 
 export const INTERMEDIATION_DISCLAIMER =
-  'Construcciones Anaid coordina proyectos integrales de reforma y construcción a través de una red homologada de profesionales, técnicos y arquitectos colegiados.';
+  'Construcciones Anaid coordina reformas con una red de arquitectos, autónomos y empresas. El contrato de obra lo firmas con el profesional asignado, que hace la obra y responde de su trabajo.';
 
 export const LEGAL_DRAFT = false;
 // Titular de la web: persona física; «Construcciones Anaid» es su nombre comercial.
