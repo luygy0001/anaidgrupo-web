@@ -266,3 +266,10 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     red de arquitectos, autónomos y empresas. El contrato de obra lo firmas con el profesional
     asignado, que hace la obra y responde de su trabajo.» La rama de la versión completa tiene la
     frase antigua: cambiarla al retomarla.
+77. **Horario único** (Luis, 15-10-2026), igual que el Perfil de Empresa de Google: **lunes a jueves
+    de 8:00 a 18:00 y viernes de 8:00 a 15:00**. Sustituye a los tres horarios que convivían en la
+    web: 8:30–19:30 en el texto visible y en los datos para Google de la portada, y 9:00–14:00 más
+    16:00–19:00 en los de contacto. Ahora hay una sola fuente para cada formato: `HORARIO_DETAIL`
+    en `constants.ts` (texto) y `horarioApertura` en `seo-schemas.ts` (datos para Google, que usan
+    la portada y contacto). En contacto y en el pie, cada tramo va en su línea para que no se corte
+    a mitad. La respuesta «en menos de 48 horas laborables, de lunes a viernes» no cambia.

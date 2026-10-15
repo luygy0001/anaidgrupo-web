@@ -8,6 +8,7 @@ import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import JsonLd from '@/components/seo/JsonLd';
 import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, SOCIAL } from '@/lib/constants';
+import { horarioApertura } from '@/lib/seo-schemas';
 
 const TITULO = 'Reformas en Madrid con trato directo | Construcciones Anaid';
 const DESCRIPCION =
@@ -66,14 +67,7 @@ const schemaData = {
         { '@type': 'City', name: 'Las Rozas de Madrid' },
         { '@type': 'City', name: 'Majadahonda' },
       ],
-      openingHoursSpecification: [
-        {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-          opens: '08:30',
-          closes: '19:30',
-        },
-      ],
+      openingHoursSpecification: horarioApertura,
       // Solo perfiles del propio negocio (no el personal del titular)
       sameAs: [SOCIAL.youtube, SOCIAL.linkedinEmpresa, SOCIAL.facebook],
       hasOfferCatalog: {

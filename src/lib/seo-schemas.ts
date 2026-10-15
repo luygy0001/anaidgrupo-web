@@ -6,6 +6,22 @@ import {
   SOCIAL,
 } from './constants';
 
+// Horario para Google: el mismo que HORARIO_DETAIL (constants.ts) y que el Perfil de Empresa.
+export const horarioApertura = [
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+    opens: '08:00',
+    closes: '18:00',
+  },
+  {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Friday'],
+    opens: '08:00',
+    closes: '15:00',
+  },
+];
+
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -41,20 +57,7 @@ export const localBusinessSchema = {
     '@type': 'State',
     name: 'Comunidad de Madrid',
   },
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '14:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '16:00',
-      closes: '19:00',
-    },
-  ],
+  openingHoursSpecification: horarioApertura,
 };
 
 type BreadcrumbItem = { name: string; url: string };
