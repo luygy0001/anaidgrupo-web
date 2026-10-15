@@ -240,3 +240,10 @@ Luis necesita la web pública ya, mientras se termina la versión completa
 72. **Logo en los datos para Google:** las fichas de negocio de contacto y zonas apuntaban a
     `public/img/logo.svg`, un logo antiguo de «Anaid Grupo» con «Tecnología con IA» (contra la
     decisión 21). Pasan a `public/images/logo.png`, el logo real, y se retiran los dos SVG de «Anaid Grupo» (`logo.svg` y `logo-small.svg`, este sin usar).
+73. **Canal de YouTube** creado por Luis el 15-10-2026 con luis@pymexpert.com (cuenta de marca):
+    `@ConstruccionesAnaid`, ID `UC59ykHhlB76Eb3tQbDgoxVw`. Configurado con la extensión de Claude en
+    Chrome: descripción, 5 enlaces (web, contacto, WhatsApp, LinkedIn, Facebook), correo info@,
+    banner y foto de perfil (monograma CA), país España, palabras clave, subidas en privado,
+    español de España, categoría «Consejos y estilo» y moderación básica. Pendiente de Luis:
+    declarar que no está dirigido a niños, añadir a gerente@ como propietario y verificar el
+    teléfono si YouTube lo pide.
