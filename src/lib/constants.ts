@@ -127,12 +127,12 @@ export const FAQS = [
   {
     question: '¿Cuándo me respondéis?',
     answer:
-      'En menos de 48 horas laborables, de lunes a viernes. Escríbenos por el formulario, por WhatsApp o llámanos, cuéntanos qué quieres reformar y en qué municipio, y una persona te contesta para ver tu caso. Si hace falta, organizamos una visita a la obra.',
+      'En menos de 48 horas laborables, de lunes a viernes. Escríbenos por el formulario, por WhatsApp o llámanos, cuéntanos qué quieres reformar y en qué municipio, y una persona te contesta para ver tu caso.',
   },
   {
     question: '¿Cómo se prepara el presupuesto?',
     answer:
-      'Con lo que nos cuentas y, si hace falta, con una visita a la obra para ver el estado real y resolver tus dudas. El precio queda cerrado en el contrato que firmas con el profesional asignado.',
+      'Con lo que nos cuentas. Antes de contratar, el profesional asignado visita la obra para comprobar el estado real y resolver tus dudas. El precio queda cerrado en el contrato que firmas con él.',
   },
   {
     question: '¿Cuánto dura una obra?',
