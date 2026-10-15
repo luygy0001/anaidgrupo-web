@@ -160,18 +160,6 @@ export default function ZonasPage() {
             </p>
           </div>
 
-          <div className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/10">
-            <h3 className="font-semibold text-foreground mb-2">
-              ¿Eres profesional en alguna de estas zonas?
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Estamos ampliando la red de colaboradores validados.{' '}
-              <a href="/unete-red" className="text-primary underline">
-                Únete a la red
-              </a>
-              .
-            </p>
-          </div>
         </Container>
       </section>
 

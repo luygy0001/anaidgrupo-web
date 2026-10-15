@@ -24,7 +24,6 @@ export default function ReformaIntegralPage() {
         'Proyectos con necesidad de licencia de obra',
       ]}
       cuando="Este tipo de reforma suele necesitarse al comprar una vivienda de segunda mano, al renovar un piso antiguo, al cambiar la distribución del hogar o al adaptar un local comercial. También cuando la vivienda necesita una actualización completa de instalaciones."
-      rangoOrientativo={{ rango: '400 – 1.200 €/m²', nota: 'Según alcance, calidades y estado inicial de la vivienda.' }}
       faqs={[
         { question: '¿Cuánto dura una reforma integral?', answer: 'Depende del alcance, pero una reforma integral de un piso medio en Madrid puede durar entre 2 y 4 meses. El profesional asignado te dará un plazo estimado tras valorar el proyecto.' },
         { question: '¿Necesito licencia de obra para una reforma integral?', answer: 'En muchos casos sí, especialmente si se modifican tabiques, instalaciones o elementos estructurales. El profesional o un arquitecto técnico pueden orientarte sobre los permisos necesarios.' },

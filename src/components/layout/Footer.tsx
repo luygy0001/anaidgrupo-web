@@ -89,7 +89,7 @@ export default function Footer() {
                   <Link href={item.href} className="hover:text-white transition-colors">{item.label}</Link>
                 </li>
               ))}
-              <li><a href={PRESUPUESTO_HREF} className="hover:text-white transition-colors">Pedir presupuesto</a></li>
+              <li><a href={PRESUPUESTO_HREF} className="hover:text-white transition-colors">Cuéntanos tu reforma</a></li>
             </ul>
           </div>
 

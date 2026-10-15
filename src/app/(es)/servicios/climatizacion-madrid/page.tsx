@@ -26,7 +26,6 @@ export default function ClimatizacionPage() {
         'Climatización de locales comerciales',
       ]}
       cuando="Se necesita un profesional de climatización al instalar o sustituir un sistema de aire acondicionado, al cambiar la caldera, al querer mejorar la eficiencia energética del hogar, al acondicionar un local comercial o al planificar una reforma que incluya nuevas instalaciones de frío y calor."
-      rangoOrientativo={{ rango: '1.000 – 5.000 €', nota: 'Según tipo de equipo, número de unidades y complejidad de la instalación.' }}
       faqs={[
         { question: '¿Qué sistema de climatización es mejor para mi vivienda?', answer: 'Depende del tamaño, la distribución y tus necesidades. El profesional valorará tu caso y te recomendará la solución más eficiente.' },
         { question: '¿La aerotermia es rentable en Madrid?', answer: 'En muchos casos sí, especialmente en viviendas unifamiliares o con buen aislamiento. El profesional puede calcular el ahorro estimado para tu situación.' },

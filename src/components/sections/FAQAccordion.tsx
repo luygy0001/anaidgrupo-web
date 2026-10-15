@@ -37,7 +37,7 @@ export default function FAQAccordion({
   };
 
   return (
-    <section className="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="preguntas-frecuentes" className="py-20 bg-slate-50 border-t border-slate-200 scroll-mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 space-y-3">
           <span className="inline-block text-xs font-bold uppercase tracking-widest text-amber-800 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full">
@@ -47,7 +47,7 @@ export default function FAQAccordion({
             {title}
           </h2>
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
-            Resolvemos con total transparencia las dudas más habituales sobre plazos, presupuestos cerrados y seguimiento de obra.
+            Las dudas más habituales sobre quién firma la obra, plazos y seguimiento.
           </p>
         </div>
 

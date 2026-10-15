@@ -74,7 +74,7 @@ export default function ServicesGrid() {
                     href="#contacto"
                     className="inline-flex items-center gap-2 text-xs font-bold text-amber-700 hover:text-amber-800 uppercase tracking-wider transition-colors"
                   >
-                    <span>Pedir presupuesto para este servicio</span>
+                    <span>Consultar por este servicio</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

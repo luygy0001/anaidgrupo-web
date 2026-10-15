@@ -6,10 +6,10 @@ import {
   Clock,
   ShieldCheck,
   TrendingUp,
-  Zap,
+  MessageSquareText,
   Phone,
 } from 'lucide-react';
-import { PHONE, PHONE_DISPLAY, WHATSAPP_URL } from '@/lib/constants';
+import { PHONE, PHONE_DISPLAY, RESPUESTA_PLAZO, WHATSAPP_URL } from '@/lib/constants';
 import Container from '@/components/ui/Container';
 import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
@@ -75,18 +75,18 @@ export default function Hero() {
           <div className="lg:col-span-7 min-w-0 space-y-6 text-left">
             {/* Tag / Badge de impacto */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/25 border border-amber-400/50 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-md backdrop-blur-md">
-              <Zap className="w-3.5 h-3.5 text-amber-400" />
-              Presupuesto en menos de 24 horas
+              <MessageSquareText className="w-3.5 h-3.5 text-amber-400" />
+              {RESPUESTA_PLAZO}
             </div>
 
             {/* H1 de Alto Impacto con sombra de alta definición */}
             <h1 className="text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
-              Reformas en la Comunidad de Madrid con <span className="text-amber-400">presupuesto en menos de 24 horas</span> y fotos de tu obra casi cada día.
+              Reformas en la Comunidad de Madrid con <span className="text-amber-400">trato directo</span> y fotos de tu obra casi cada día.
             </h1>
 
             {/* Subtítulo puente */}
             <p className="text-base sm:text-lg text-slate-100 leading-relaxed max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] font-medium">
-              Eliges la calidad de los acabados y te asignamos al profesional adecuado de nuestra red de arquitectos y oficios. Tú firmas con él; nosotros coordinamos y te mandamos el avance por WhatsApp. Sin perseguir a nadie.
+              Una red de profesionales autónomos, arquitectos y oficios, coordinada por Luis Manuel. Te asignamos al profesional adecuado para tu obra: tú firmas con él; nosotros coordinamos y te mandamos el avance por WhatsApp. Sin perseguir a nadie.
             </p>
 
             {/* Badges de Confianza Rápidos */}
@@ -111,7 +111,7 @@ export default function Hero() {
                 href="#contacto"
                 className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-sm uppercase tracking-wider shadow-xl shadow-amber-500/25 hover:shadow-amber-500/40 transition-all transform hover:-translate-y-0.5 text-center"
               >
-                Pedir presupuesto gratis
+                Cuéntanos tu reforma
               </a>
 
               {/* Botón WhatsApp Oficial con Icono Original y Texto WhatsApp */}

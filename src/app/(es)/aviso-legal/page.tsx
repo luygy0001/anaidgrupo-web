@@ -24,7 +24,7 @@ export default function AvisoLegalPage() {
         )}
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: 6 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Datos identificativos del titular</h2>
@@ -116,22 +116,16 @@ export default function AvisoLegalPage() {
               <li>
                 Los contenidos de terceros a los que se pueda acceder mediante enlaces desde este sitio web.
               </li>
-              <li>
-                La exactitud, veracidad o actualidad de los rangos de precios orientativos publicados,
-                que tienen carácter meramente informativo y no constituyen una oferta vinculante.
-              </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground">6. Formularios e inteligencia artificial</h2>
+            <h2 className="text-lg font-semibold text-foreground">6. Formularios</h2>
             <p>
-              Los formularios de este sitio web recogen datos personales que se tratan conforme a
+              El formulario de este sitio web recoge datos personales que se tratan conforme a
               nuestra{' '}
               <a href="/privacidad" className="text-primary underline">política de privacidad</a>.
-              El borrador de cada presupuesto lo redacta un sistema de inteligencia artificial y lo
-              revisa una persona antes de enviarlo; el detalle está en{' '}
-              <a href="/ia-analisis-proyecto" className="text-primary underline">cómo usamos la IA</a>.
+              Las consultas llegan por correo y las contesta una persona.
             </p>
           </div>
 

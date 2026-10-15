@@ -22,7 +22,6 @@ interface ServiceLandingProps {
   breadcrumbName: string;
   trabajos: string[];
   cuando: string;
-  rangoOrientativo?: { rango: string; nota: string };
   faqs: FAQItem[];
 }
 
@@ -41,7 +40,6 @@ export default function ServiceLanding({
   breadcrumbName,
   trabajos,
   cuando,
-  rangoOrientativo,
   faqs,
 }: ServiceLandingProps) {
   const breadcrumbs = [
@@ -93,7 +91,7 @@ export default function ServiceLanding({
             {intro}
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3">
-            <Button href="/solicitar-proyecto">Solicitar proyecto gratuito</Button>
+            <Button href="#contacto">Cuéntanos tu proyecto</Button>
             <Button href="/como-funciona" variant="outline">Cómo funciona</Button>
           </div>
         </Container>
@@ -162,22 +160,6 @@ export default function ServiceLanding({
           </ol>
         </Container>
       </section>
-
-      {/* Rango orientativo */}
-      {rangoOrientativo && (
-        <section className="section-padding">
-          <Container narrow>
-            <h2 className="text-2xl font-bold mb-4">Rango orientativo de precios</h2>
-            <div className="p-4 rounded-xl bg-accent-light/50 border border-accent/20">
-              <p className="text-lg font-semibold text-primary">{rangoOrientativo.rango}</p>
-              <p className="text-sm text-muted-foreground mt-1">{rangoOrientativo.nota}</p>
-              <p className="text-xs text-muted-foreground mt-2 italic">
-                Este rango es orientativo. El precio definitivo lo determina el profesional tras valorar el proyecto en persona.
-              </p>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* Cobertura en la Comunidad de Madrid */}
       <section className="section-padding">

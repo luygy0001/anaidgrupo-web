@@ -1,5 +1,5 @@
 import Container from '@/components/ui/Container';
-import FormSolicitud from '@/components/forms/FormSolicitud';
+import FormConsulta from '@/components/forms/FormConsulta';
 import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaimer';
 import JsonLd from '@/components/seo/JsonLd';
 import { zoneLocalBusinessSchema, breadcrumbSchema } from '@/lib/seo-schemas';
@@ -204,8 +204,8 @@ export default function ZoneLanding({
         </Container>
       </section>
 
-      {/* CTA: formulario embebido con form_location=zona-<slug> */}
-      <section className="section-padding">
+      {/* CTA: formulario de consulta de la zona */}
+      <section id="contacto" className="section-padding scroll-mt-20">
         <Container narrow>
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-8">
@@ -213,10 +213,10 @@ export default function ZoneLanding({
                 Solicita tu proyecto en {municipio}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso.
+                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso. Te respondemos en menos de 48 horas.
               </p>
             </div>
-            <FormSolicitud formLocation={`zona-${slug}`} />
+            <FormConsulta idPrefijo={`zona-${slug}`} />
           </div>
         </Container>
       </section>

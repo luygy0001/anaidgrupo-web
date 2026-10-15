@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ShieldCheck, Cookie, Settings2, X, Check } from 'lucide-react';
+import { ShieldCheck, Cookie, X, Check } from 'lucide-react';
 
 interface CookiePreferences {
   necessary: boolean;
@@ -12,6 +12,9 @@ interface CookiePreferences {
 
 const STORAGE_KEY = 'anaid_cookie_consent_v1';
 
+// Firma de gtag que usa este aviso (Consent Mode v2)
+type Gtag = (comando: 'consent', accion: 'update', valores: Record<string, 'granted' | 'denied'>) => void;
+
 export default function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -19,6 +22,9 @@ export default function CookieConsentBanner() {
   const [marketing, setMarketing] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
+  // La elección guardada se lee al montar: en el servidor no existe localStorage, y leerla en el
+  // estado inicial haría que el HTML del servidor y el del navegador no coincidieran (hidratación).
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
@@ -42,6 +48,7 @@ export default function CookieConsentBanner() {
     window.addEventListener('open_cookie_settings', handleReopen);
     return () => window.removeEventListener('open_cookie_settings', handleReopen);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   // Accesibilidad (WCAG 2.4.11, foco no oculto): mientras el aviso está abierto, la página
   // reserva su altura abajo para que el elemento con foco se desplace por encima de él,
@@ -79,8 +86,9 @@ export default function CookieConsentBanner() {
     setVisible(false);
     setShowSettings(false);
 
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
-      (window as unknown as { gtag: Function }).gtag('consent', 'update', {
+    const gtag = typeof window !== 'undefined' ? (window as unknown as { gtag?: Gtag }).gtag : undefined;
+    if (gtag) {
+      gtag('consent', 'update', {
         analytics_storage: prefs.analytics ? 'granted' : 'denied',
         ad_storage: prefs.marketing ? 'granted' : 'denied',
       });

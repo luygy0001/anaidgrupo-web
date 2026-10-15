@@ -25,25 +25,18 @@ interface Elemento {
   duracion: string;
 }
 
-const NECESARIAS: Elemento[] = [
-  {
-    nombre: 'Comprobación antirrobots (Turnstile)',
-    titular: 'Cloudflare',
-    finalidad:
-      'Comprobar que quien envía un formulario es una persona. Funciona dentro de un recuadro de Cloudflare y puede guardar en su propio dominio (challenges.cloudflare.com) una cookie técnica, como cf.turnstile.u. No sirve para publicidad ni para seguirte. Solo en páginas con formulario.',
-    duracion: 'La que fija Cloudflare para la comprobación.',
-  },
-  ...(GTM_CONFIGURADO
-    ? [
-        {
-          nombre: 'anaid_cookie_consent_v1 (almacenamiento local)',
-          titular: 'Construcciones Anaid',
-          finalidad: 'Recordar tu elección sobre las cookies de análisis.',
-          duracion: 'Hasta que la borres o cambies tu elección.',
-        },
-      ]
-    : []),
-];
+// Web provisional: sin comprobación antirrobots (Turnstile) ni otras cookies técnicas. Solo
+// existe el almacenamiento de la elección de cookies si se configura la medición (GTM).
+const NECESARIAS: Elemento[] = GTM_CONFIGURADO
+  ? [
+      {
+        nombre: 'anaid_cookie_consent_v1 (almacenamiento local)',
+        titular: 'Construcciones Anaid',
+        finalidad: 'Recordar tu elección sobre las cookies de análisis.',
+        duracion: 'Hasta que la borres o cambies tu elección.',
+      },
+    ]
+  : [];
 
 const ANALITICAS: Elemento[] = GTM_CONFIGURADO
   ? [
@@ -98,7 +91,7 @@ export default function CookiesPage() {
         )}
 
         <div className="text-muted-foreground space-y-8">
-          <p className="text-xs italic">Última actualización: 6 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground mb-2">1. Qué son las cookies</h2>
@@ -114,7 +107,11 @@ export default function CookiesPage() {
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-foreground">2. Las que usamos</h2>
             <h3 className="text-base font-semibold text-foreground">Necesarias (no requieren tu permiso)</h3>
-            <TablaElementos titulo="Cookies y tecnologías necesarias" elementos={NECESARIAS} />
+            {NECESARIAS.length > 0 ? (
+              <TablaElementos titulo="Cookies y tecnologías necesarias" elementos={NECESARIAS} />
+            ) : (
+              <p>Ninguna: esta web no guarda cookies en tu dispositivo.</p>
+            )}
 
             <h3 className="text-base font-semibold text-foreground">De análisis y de publicidad</h3>
             {ANALITICAS.length > 0 ? (
@@ -145,23 +142,23 @@ export default function CookiesPage() {
               </>
             )}
             <p>
-              También puedes borrar o bloquear las cookies desde la configuración de tu navegador. Si
-              bloqueas la comprobación antirrobots, es posible que no puedas enviar los formularios:
-              en ese caso, escríbenos por WhatsApp o llámanos.
+              También puedes borrar o bloquear las cookies desde la configuración de tu navegador.
             </p>
           </div>
 
-          <div>
-            <h2 className="text-lg font-semibold text-foreground mb-2">4. Transferencias fuera de la Unión Europea</h2>
-            <p>
-              Cloudflare{GTM_CONFIGURADO ? ' y Google son empresas' : ' es una empresa'} de Estados
-              Unidos. Las transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. y en
-              las cláusulas contractuales tipo aprobadas por la Comisión Europea.
-            </p>
-          </div>
+          {GTM_CONFIGURADO && (
+            <div>
+              <h2 className="text-lg font-semibold text-foreground mb-2">4. Transferencias fuera de la Unión Europea</h2>
+              <p>
+                Google es una empresa de Estados Unidos. Las transferencias se amparan en el Marco de
+                Privacidad de Datos UE-EE. UU. y en las cláusulas contractuales tipo aprobadas por la
+                Comisión Europea.
+              </p>
+            </div>
+          )}
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground mb-2">5. Más información</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-2">{GTM_CONFIGURADO ? '5' : '4'}. Más información</h2>
             <p>
               Lo demás sobre tus datos está en la{' '}
               <Link href="/privacidad" className={ENLACE}>política de privacidad</Link>. Si tienes

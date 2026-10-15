@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Reforma de baño en Madrid',
-  description: 'Reforma de baño en Madrid. Te asignamos un profesional cualificado para renovar tu baño. Solicita proyecto gratuito.',
+  description: 'Reforma de baño en Madrid. Te asignamos un profesional cualificado para renovar tu baño. Te respondemos en menos de 48 horas.',
   alternates: { canonical: '/servicios/reforma-bano-madrid' },
 };
 
@@ -26,7 +26,6 @@ export default function ReformaBanoPage() {
         'Accesibilidad: plato a nivel, barras, etc.',
       ]}
       cuando="La reforma de baño suele necesitarse cuando el baño es antiguo y necesita una actualización completa, cuando hay problemas de humedad o filtraciones, al querer mejorar la accesibilidad o cuando simplemente se quiere modernizar el espacio."
-      rangoOrientativo={{ rango: '3.000 – 10.000 €', nota: 'Según tamaño, materiales elegidos y estado actual del baño.' }}
       faqs={[
         { question: '¿Cuánto tarda una reforma de baño?', answer: 'Una reforma completa de baño suele durar entre 1 y 3 semanas, según el alcance de los trabajos. El profesional te dará un plazo más preciso tras valorar tu caso.' },
         { question: '¿Puedo cambiar la bañera por un plato de ducha?', answer: 'Sí, es uno de los trabajos más habituales. El profesional valorará la viabilidad técnica y te propondrá las mejores opciones.' },

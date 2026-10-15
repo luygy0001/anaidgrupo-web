@@ -7,9 +7,9 @@ import { FAQS } from '@/lib/constants';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Cómo funciona',
+  title: 'Cómo trabajamos',
   description:
-    'Descubre cómo Construcciones Anaid analiza cada solicitud, filtra la necesidad y asigna al profesional adecuado para tu proyecto en Madrid.',
+    'Cómo trabaja Construcciones Anaid: estudiamos tu reforma, te asignamos al profesional adecuado de nuestra red en Madrid y coordinamos la obra contigo.',
   alternates: { canonical: '/como-funciona' },
 };
 
@@ -86,10 +86,9 @@ export default function ComoFuncionaPage() {
             Cómo se clasifica una solicitud
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
-            Cuando envías tu solicitud, nuestro sistema analiza la información
-            que proporcionas: tipo de trabajo, descripción, fotos, urgencia y
-            código postal. A partir de estos datos, clasificamos tu proyecto y
-            determinamos qué tipo de profesional necesitas.
+            Cuando nos escribes, una persona revisa lo que nos cuentas: el tipo
+            de reforma, qué necesitas y en qué municipio. Con esos datos vemos tu
+            proyecto y qué tipo de profesional necesitas.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             Si has indicado que no sabes qué profesional necesitas, nuestro
@@ -129,7 +128,7 @@ export default function ComoFuncionaPage() {
               <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white text-sm font-bold">1</span>
               <div>
                 <p className="font-medium text-foreground">Análisis inicial</p>
-                <p className="text-sm text-muted-foreground">Revisamos tu solicitud en menos de 24 horas laborables.</p>
+                <p className="text-sm text-muted-foreground">Te respondemos en menos de 48 horas para ver tu caso.</p>
               </div>
             </li>
             <li className="flex gap-4">

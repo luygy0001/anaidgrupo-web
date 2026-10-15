@@ -26,7 +26,6 @@ export default function FontaneroPage() {
         'Revisión y mantenimiento preventivo',
       ]}
       cuando="Los servicios de fontanería se necesitan ante urgencias como fugas de agua o atascos, al renovar baño o cocina, al cambiar calentador o caldera, al detectar humedades o pérdidas de presión, o durante una reforma donde hay que mover instalaciones."
-      rangoOrientativo={{ rango: '50 – 120 €/hora', nota: 'Según urgencia, complejidad y materiales necesarios.' }}
       faqs={[
         { question: '¿Atendéis urgencias de fontanería?', answer: 'Sí. Indica la urgencia en tu solicitud y priorizaremos la asignación de un fontanero disponible lo antes posible.' },
         { question: '¿Puedo cambiar las tuberías de plomo por otras más seguras?', answer: 'Sí, y es recomendable. El fontanero valorará el estado de la instalación y te propondrá las alternativas más adecuadas.' },

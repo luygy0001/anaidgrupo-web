@@ -2,18 +2,18 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import { LEGAL, LEGAL_DRAFT, SITE_NAME, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS } from '@/lib/constants';
-import { IMPORTE_PRESUPUESTO_ADICIONAL } from '@/lib/presupuesto';
 
 export const metadata: Metadata = {
   title: 'Política de privacidad',
   description:
-    'Qué datos tratamos en Construcciones Anaid, para qué, con quién los compartimos (también la inteligencia artificial que prepara los presupuestos) y cómo ejercer tus derechos.',
+    'Qué datos tratamos en Construcciones Anaid cuando nos escribes, para qué, con quién los compartimos, cuánto tiempo los guardamos y cómo ejercer tus derechos.',
   alternates: { canonical: '/privacidad' },
   robots: { index: false },
 };
 
-// Si cambia un proveedor, un plazo o el lugar del servidor, hay que actualizar esta página
-// (ver docs/DECISIONES.md, decisiones 50 a 56) y la fecha de «Última actualización».
+// Versión de la web provisional (rama release/web-basica, 15-10-2026): un formulario de consulta
+// que llega por correo a info@ (Hostinger). Sin IA, sin automatizaciones ni Turnstile. Al publicar
+// la versión completa, vuelve la política de la rama fix/contenido-real-y-formularios.
 
 const ENLACE = 'text-primary underline';
 const CELDA = 'px-3 py-2 align-top';
@@ -34,12 +34,8 @@ function Tabla({ titulo, children }: { titulo: string; children: React.ReactNode
 const FINALIDADES: { finalidad: string; base: string }[] = [
   {
     finalidad:
-      'Preparar tu presupuesto, enviártelo por correo y por WhatsApp y organizar la visita a la obra antes de contratar.',
-    base: 'Aplicar las medidas precontractuales que nos pides (art. 6.1.b RGPD).',
-  },
-  {
-    finalidad: `Decidir si tu presupuesto es gratuito o cuesta ${IMPORTE_PRESUPUESTO_ADICIONAL} € (regla de presupuestos repetidos).`,
-    base: 'Medidas precontractuales: es una condición que aceptas al pedirlo (art. 6.1.b) y nuestro interés legítimo en evitar abusos (art. 6.1.f).',
+      'Contestar tu consulta por el formulario, WhatsApp, teléfono o correo y, si sigues adelante, preparar tu presupuesto y organizar la visita a la obra.',
+    base: 'Aplicar las medidas precontractuales que nos pides (art. 6.1.b RGPD) o nuestro interés legítimo en atender a quien nos escribe (art. 6.1.f).',
   },
   {
     finalidad:
@@ -47,15 +43,7 @@ const FINALIDADES: { finalidad: string; base: string }[] = [
     base: 'Medidas precontractuales y la relación que mantienes con nosotros (art. 6.1.b).',
   },
   {
-    finalidad: 'Contestar tus consultas por el formulario, WhatsApp, teléfono o correo.',
-    base: 'Medidas precontractuales si preguntas por un servicio (art. 6.1.b) o nuestro interés legítimo en atender a quien nos escribe (art. 6.1.f).',
-  },
-  {
-    finalidad: 'Valorar tu incorporación como profesional colaborador.',
-    base: 'Medidas precontractuales (art. 6.1.b).',
-  },
-  {
-    finalidad: 'Proteger la web frente a robots y abusos.',
+    finalidad: 'Proteger la web frente a robots y envíos abusivos.',
     base: 'Interés legítimo en la seguridad de la web (art. 6.1.f).',
   },
   {
@@ -67,29 +55,14 @@ const FINALIDADES: { finalidad: string; base: string }[] = [
 const PROVEEDORES: { nombre: string; uso: string; lugar: string }[] = [
   {
     nombre: 'Hostinger',
-    uso: 'Servidor de la web y de la automatización que gestiona las solicitudes, y buzones de correo de @construccionesanaid.com.',
-    lugar: 'Servidor en Fráncfort (Alemania).',
-  },
-  {
-    nombre: 'Google (Google Workspace)',
-    uso: 'Correo con el que te enviamos el presupuesto, hojas de cálculo, documentos y la carpeta de cada cliente.',
-    lugar: 'Unión Europea y Estados Unidos.',
-  },
-  {
-    nombre: 'Anthropic (Claude)',
-    uso: 'Redactar el borrador de tu presupuesto. Según su política, borra lo que recibe en 30 días como máximo y no lo usa para entrenar sus modelos.',
-    lugar: 'Irlanda y Estados Unidos.',
-  },
-  {
-    nombre: 'Cloudflare (Turnstile)',
-    uso: 'Comprobar que quien envía un formulario es una persona y no un robot.',
-    lugar: 'Red mundial; empresa de Estados Unidos.',
+    uso: 'Servidor de la web y buzones de correo de @construccionesanaid.com, donde recibimos tu consulta.',
+    lugar: 'Servidor de la web en Fráncfort (Alemania).',
   },
 ];
 
 const PLAZOS: { datos: string; plazo: string }[] = [
   {
-    datos: 'Solicitudes de presupuesto o de proyecto que no llegan a obra, y consultas',
+    datos: 'Consultas que no llegan a obra',
     plazo: '12 meses desde nuestro último contacto. Después se borran.',
   },
   {
@@ -97,13 +70,7 @@ const PLAZOS: { datos: string; plazo: string }[] = [
     plazo:
       'Mientras dure la obra y su seguimiento. Después, bloqueados mientras puedan exigirse responsabilidades (5 años con carácter general) y durante los plazos de la ley fiscal; luego se borran.',
   },
-  {
-    datos: 'Profesionales que quieren colaborar',
-    plazo: 'Si no colaboramos, 12 meses. Si colaboramos, mientras dure la colaboración y después los plazos legales.',
-  },
-  { datos: 'Registro de la automatización que procesa los formularios', plazo: '14 días.' },
-  { datos: 'Copia en Anthropic al redactar el presupuesto', plazo: 'Hasta 30 días, según su política.' },
-  { datos: 'Dirección IP para limitar envíos repetidos', plazo: '15 minutos.' },
+  { datos: 'Dirección IP para limitar envíos repetidos', plazo: '15 minutos, solo en la memoria del servidor.' },
 ];
 
 export default function PrivacidadPage() {
@@ -119,7 +86,7 @@ export default function PrivacidadPage() {
         )}
 
         <div className="text-muted-foreground space-y-8">
-          <p className="text-xs italic">Última actualización: 6 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
 
           <p>
             Aquí te contamos, sin letra pequeña, qué datos tuyos tratamos, para qué, con quién los
@@ -135,17 +102,12 @@ export default function PrivacidadPage() {
                 Tus datos los trata {LEGAL.titular}, con el nombre comercial {SITE_NAME}.
               </li>
               <li>
-                Los usamos para preparar tu presupuesto, contestarte y, si sigues adelante, pasar tu
+                Los usamos para contestarte y, si sigues adelante, preparar tu presupuesto y pasar tu
                 obra al profesional que la hará.
               </li>
               <li>
-                Una inteligencia artificial (Claude, de Anthropic) redacta el borrador de tu
-                presupuesto sin conocer tu nombre, tu correo ni tu teléfono, y una persona lo revisa
-                antes de enviártelo.
-              </li>
-              <li>
-                Si tu presupuesto es gratuito o de pago lo decide un proceso automático: puedes pedir
-                que lo revise una persona.
+                Tu consulta nos llega por correo y la lee y contesta una persona. No usamos
+                inteligencia artificial ni decisiones automáticas con tus datos.
               </li>
               <li>No vendemos tus datos ni te enviamos publicidad.</li>
               <li>
@@ -176,31 +138,15 @@ export default function PrivacidadPage() {
               Solo los que tú nos das y los técnicos imprescindibles para que la web funcione con
               seguridad. No compramos datos ni los sacamos de otras fuentes.
             </p>
-            <h3 className="text-base font-semibold text-foreground">Formulario de presupuesto</h3>
-            <p>
-              Si eres particular, inversor o inmobiliaria; la calidad de acabados; el tipo de obra; los
-              metros; el municipio; la descripción de la obra; tu nombre, móvil y correo, y las
-              casillas que marcas.
-            </p>
-            <h3 className="text-base font-semibold text-foreground">Solicitud de proyecto</h3>
-            <p>Nombre, teléfono, correo, código postal, tipo de servicio, urgencia y descripción.</p>
-            <h3 className="text-base font-semibold text-foreground">Formulario de contacto</h3>
-            <p>Nombre, correo, teléfono (si nos lo das) y tu mensaje.</p>
-            <h3 className="text-base font-semibold text-foreground">Formulario para profesionales</h3>
-            <p>
-              Nombre, empresa, teléfono, correo, especialidades, zonas de trabajo, experiencia y
-              descripción de tu actividad.
-            </p>
+            <h3 className="text-base font-semibold text-foreground">Formulario de consulta</h3>
+            <p>Nombre, teléfono, correo, tipo de reforma, tu mensaje y la página desde la que nos escribes.</p>
             <h3 className="text-base font-semibold text-foreground">WhatsApp, teléfono y correo</h3>
             <p>Lo que nos cuentes y las fotos que nos envíes.</p>
             <h3 className="text-base font-semibold text-foreground">Datos técnicos</h3>
-            <p>
-              Tu dirección IP y datos de tu navegador, para comprobar que no eres un robot y limitar
-              los envíos repetidos.
-            </p>
+            <p>Tu dirección IP, solo para limitar los envíos repetidos del formulario.</p>
             <p>
               No necesitamos datos de salud ni otros datos especialmente protegidos: por favor, no los
-              incluyas en la descripción.
+              incluyas en el mensaje.
             </p>
           </div>
 
@@ -228,36 +174,11 @@ export default function PrivacidadPage() {
             </p>
           </div>
 
-          <div className="space-y-3">
-            <h2 className="text-lg font-semibold text-foreground">4. Inteligencia artificial y decisiones automáticas</h2>
-            <h3 className="text-base font-semibold text-foreground">El borrador de tu presupuesto</h3>
+          <div>
+            <h2 className="text-lg font-semibold text-foreground mb-2">4. Inteligencia artificial y decisiones automáticas</h2>
             <p>
-              Un sistema de inteligencia artificial, Claude, de la empresa Anthropic, redacta el
-              borrador de tu presupuesto con los datos de la obra: perfil, calidad, tipo de obra,
-              metros, municipio y descripción. No recibe tu nombre, tu correo ni tu teléfono. El
-              importe no lo calcula la IA: sale de nuestras tarifas. Una persona revisa cada
-              presupuesto antes de enviártelo, y el precio final lo fija el profesional en el contrato,
-              después de visitar la obra. Te lo explicamos con más detalle en{' '}
-              <Link href="/ia-analisis-proyecto" className={ENLACE}>cómo usamos la IA</Link>.
-            </p>
-            <h3 className="text-base font-semibold text-foreground">Si tu presupuesto es gratuito o de pago</h3>
-            <p>
-              Esto sí lo decide un proceso automático, sin intervención de una persona, en el momento
-              en que envías el formulario. Mira tus solicitudes anteriores con el mismo correo o el
-              mismo móvil:
-            </p>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Particulares: el primer presupuesto es gratuito.</li>
-              <li>Inversores e inmobiliarias: un presupuesto gratuito cada 7 días.</li>
-              <li>
-                Los demás cuestan {IMPORTE_PRESUPUESTO_ADICIONAL} €. Te lo decimos antes de preparar
-                nada y decides tú si lo pides.
-              </li>
-            </ul>
-            <p>
-              Solo contamos las solicitudes que aún conservamos (ver el apartado 7). Tienes derecho a
-              que una persona revise esa decisión, a darnos tu punto de vista y a impugnarla:
-              escríbenos a <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a> (art. 22 RGPD).
+              En esta web no usamos inteligencia artificial con tus datos ni tomamos decisiones
+              automáticas sobre ti: tu consulta la lee y la contesta una persona.
             </p>
           </div>
 
@@ -294,9 +215,8 @@ export default function PrivacidadPage() {
             </Tabla>
             <h3 className="text-base font-semibold text-foreground">WhatsApp</h3>
             <p>
-              Si nos escribes por WhatsApp o te enviamos el presupuesto por ahí, WhatsApp (WhatsApp
-              Ireland Limited, del grupo Meta) trata esos mensajes según sus propias condiciones y su
-              política de privacidad.
+              Si nos escribes por WhatsApp, WhatsApp (WhatsApp Ireland Limited, del grupo Meta) trata
+              esos mensajes según sus propias condiciones y su política de privacidad.
             </p>
             <h3 className="text-base font-semibold text-foreground">Autoridades</h3>
             <p>Solo cuando la ley nos obligue, por ejemplo jueces o la Agencia Tributaria.</p>
@@ -306,11 +226,10 @@ export default function PrivacidadPage() {
           <div>
             <h2 className="text-lg font-semibold text-foreground mb-2">6. Transferencias fuera de la Unión Europea</h2>
             <p>
-              Google, Anthropic, Cloudflare y Meta (WhatsApp) son empresas o grupos con sede en Estados
-              Unidos y pueden tratar datos allí. Esas transferencias se amparan en el Marco de
-              Privacidad de Datos UE-EE. UU. (para las empresas adheridas) y en las cláusulas
-              contractuales tipo aprobadas por la Comisión Europea, incluidas en sus contratos de
-              tratamiento de datos. Si quieres más información, escríbenos a{' '}
+              Si usas WhatsApp, Meta es un grupo con sede en Estados Unidos y puede tratar datos allí.
+              Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. y en las
+              cláusulas contractuales tipo aprobadas por la Comisión Europea. Si quieres más
+              información, escríbenos a{' '}
               <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a>.
             </p>
           </div>
@@ -334,7 +253,7 @@ export default function PrivacidadPage() {
               </tbody>
             </Tabla>
             <p>
-              Tu elección sobre cookies se guarda en tu propio navegador: lo explicamos en la{' '}
+              Sobre las cookies, lo explicamos en la{' '}
               <Link href="/cookies" className={ENLACE}>política de cookies</Link>.
             </p>
           </div>
@@ -348,10 +267,6 @@ export default function PrivacidadPage() {
               <li><strong>Supresión:</strong> borrarlos cuando ya no hagan falta.</li>
               <li><strong>Oposición y limitación:</strong> que dejemos de usarlos o los usemos solo para algunas cosas.</li>
               <li><strong>Portabilidad:</strong> recibirlos en un formato que puedas llevar a otra empresa.</li>
-              <li>
-                <strong>Revisión por una persona:</strong> que una persona revise una decisión
-                automática, como la de si tu presupuesto es gratuito.
-              </li>
             </ul>
             <p>
               Escríbenos a <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a> con el asunto
@@ -371,9 +286,9 @@ export default function PrivacidadPage() {
           <div>
             <h2 className="text-lg font-semibold text-foreground mb-2">9. ¿Tienes que darnos tus datos?</h2>
             <p>
-              Los campos marcados con asterisco son necesarios: sin ellos no podemos preparar tu
-              presupuesto ni contestarte. Para el presupuesto pedimos móvil y correo porque te lo
-              enviamos por los dos medios. Los formularios son para mayores de edad.
+              Los campos marcados con asterisco son necesarios: sin ellos no podemos contestarte.
+              Pedimos teléfono y correo para poder responderte por el medio que te venga mejor. Los
+              formularios son para mayores de edad.
             </p>
           </div>
 
@@ -381,10 +296,10 @@ export default function PrivacidadPage() {
             <h2 className="text-lg font-semibold text-foreground">10. Cómo protegemos tus datos</h2>
             <ul className="list-disc pl-5 space-y-1">
               <li>Conexión cifrada (HTTPS) en toda la web.</li>
-              <li>Comprobación antirrobots y límite de envíos en los formularios.</li>
-              <li>La web y la automatización se comunican con una clave secreta.</li>
+              <li>Límite de envíos y filtro contra robots en el formulario.</li>
+              <li>La consulta viaja a nuestro correo por una conexión cifrada.</li>
               <li>
-                Solo acceden a tus datos quien gestiona tu solicitud y, cuando corresponde, el
+                Solo acceden a tus datos quien gestiona tu consulta y, cuando corresponde, el
                 profesional asignado.
               </li>
               <li>Proveedores con contrato de tratamiento de datos.</li>

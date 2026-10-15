@@ -43,9 +43,9 @@ const nextConfig: NextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              // Turnstile (antibots): script e iframe de Cloudflare
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://challenges.cloudflare.com",
-              "frame-src https://challenges.cloudflare.com",
+              // Web provisional: sin scripts ni marcos de terceros (Turnstile vuelve con la versión completa)
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+              "frame-src 'none'",
               // Fuentes propias (next/font): sin Google Fonts
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",

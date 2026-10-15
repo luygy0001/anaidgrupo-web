@@ -205,3 +205,24 @@ Detectado para la fase de limpieza: `MobileMenu.tsx` no se usa.
 - `CookieConsentBanner.tsx` arrastra 3 errores de lint anteriores (setState dentro de un efecto y
   tipo `Function`). El aviso no se muestra mientras no haya GTM: arreglarlos y probarlo cuando se
   active la medición.
+
+## 2026-10-15 — Web provisional (rama release/web-basica)
+
+Luis necesita la web pública ya, mientras se termina la versión completa
+(`fix/contenido-real-y-formularios`, que no se toca y sustituirá a esta).
+
+59. **Web provisional pública, sin contraseña**, desde `release/web-basica`, creada desde la rama completa.
+60. **Un solo formulario de consulta** (nombre, teléfono, email, tipo de reforma: baño, cocina,
+    reforma integral u otro; mensaje) que llega por correo a info@ por el **SMTP de Hostinger**
+    (librería nodemailer 10.0.13, fijada; aprobada por Luis). Campo trampa y límite de envíos. Sin
+    n8n, sin IA y sin Turnstile. El formulario solo dice «enviado» si el servidor de correo lo acepta.
+61. **Promesa: «Te respondemos en menos de 48 horas».** Fuera el presupuesto en 24 horas, la
+    gratuidad y los 150 €, las calidades y los precios orientativos de los servicios.
+62. **Fuera hasta la versión completa** (404, sin enlaces ni sitemap): guías de precios (precios
+    sin fuente, decisión 34), página de IA, «Únete a la red» y «Solicitar proyecto».
+63. **Aviso de mejoras** en todas las páginas, sin fechas ni promesas concretas.
+64. **Privacidad, cookies y aviso legal adaptados** a lo que hace la provisional: solo Hostinger
+    (web y correo) y WhatsApp si el cliente lo usa; sin IA ni decisiones automáticas; sin cookies.
+65. **Google:** solo Search Console por ahora (sin Analytics ni aviso de cookies).
+66. **Despliegue:** commit en rama → pull request a `main` → Dokploy despliega `main`. Lo configura
+    Luis en Dokploy con la guía; la contraseña del buzón la pone él.

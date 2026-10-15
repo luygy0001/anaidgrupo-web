@@ -14,11 +14,11 @@ const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: '--font
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `Reformas integrales en Madrid con profesionales validados y presupuesto claro · ${SITE_NAME}`,
+    default: `Reformas en la Comunidad de Madrid · ${SITE_NAME}`,
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    'Conectamos tu proyecto con profesionales validados en Madrid. Proceso ágil, presupuesto claro y seguimiento digital. Reformas integrales, baño, cocina, piscinas y servicios técnicos.',
+    'Reformas integrales, de cocina y de baño en la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas.',
   openGraph: {
     type: 'website',
     locale: 'es_ES',

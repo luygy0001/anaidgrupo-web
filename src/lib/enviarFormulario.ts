@@ -1,43 +1,41 @@
-// Envío de formularios públicos a /api/lead.
-// Lanza un Error con el mensaje para el usuario si el contacto no se registra.
+// Envío del formulario de consulta a /api/contacto.
+// Lanza un Error con el mensaje para la persona si la consulta no ha llegado: nunca se da por
+// enviada sin la confirmación del servidor (que solo la da si el correo ha salido).
 
-import type { EstadoPresupuesto } from '@/lib/presupuesto';
+import type { TipoReforma } from '@/lib/consulta';
 
-export type TipoFormulario = 'presupuesto' | 'contacto' | 'solicitud' | 'profesional';
-
-type ValorCampo = string | string[] | boolean | number | undefined;
-
-// Respuesta de la ruta. En los presupuestos, n8n indica si se prepara o si requiere pago.
-export interface RespuestaFormulario {
-  estado?: EstadoPresupuesto;
-  importe?: number;
+export interface DatosConsulta {
+  nombre: string;
+  telefono: string;
+  email: string;
+  tipoReforma: TipoReforma | '';
+  mensaje: string;
+  aceptaPrivacidad: boolean;
+  // Página desde la que se envía, para saber de dónde llegan las consultas
+  origen: string;
+  // Campo trampa (honeypot): una persona lo deja vacío
+  sitioWeb: string;
 }
 
 const ERROR_RED =
   'Error de conexión. Puedes llamarnos o escribirnos por WhatsApp directamente.';
 
-export async function enviarFormulario(
-  tipo: TipoFormulario,
-  campos: Record<string, ValorCampo>
-): Promise<RespuestaFormulario> {
+export async function enviarConsulta(datos: DatosConsulta): Promise<void> {
   let res: Response;
   try {
-    res = await fetch('/api/lead', {
+    res = await fetch('/api/contacto', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tipo, ...campos }),
+      body: JSON.stringify(datos),
     });
   } catch {
     throw new Error(ERROR_RED);
   }
 
-  const data: { success?: boolean; error?: string; estado?: EstadoPresupuesto; importe?: number } = await res
-    .json()
-    .catch(() => ({}));
+  const data: { success?: boolean; error?: string } = await res.json().catch(() => ({}));
   if (!res.ok || !data.success) {
     throw new Error(
-      data.error || 'No hemos podido registrar tu solicitud. Llámanos o escríbenos por WhatsApp.'
+      data.error || 'No hemos podido enviar tu consulta. Llámanos o escríbenos por WhatsApp.'
     );
   }
-  return { estado: data.estado, importe: data.importe };
 }

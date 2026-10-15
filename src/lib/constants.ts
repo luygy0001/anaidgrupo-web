@@ -30,9 +30,11 @@ export const COVERAGE_AREA = 'Toda la Comunidad de Madrid';
 export const HORARIO = 'L-V 8:30—19:30';
 export const HORARIO_DETAIL = {
   atencion: 'Lunes a Viernes: 8:30-19:30',
-  urgencias: 'Atención prioritaria para inversores e inmobiliarias por WhatsApp',
-  chatbot: 'Presupuesto preparado con inteligencia artificial y revisado por una persona en menos de 24 horas',
 };
+
+// Promesa de la web provisional (release/web-basica): respuesta de una persona por correo,
+// teléfono o WhatsApp. Sin presupuesto automático hasta la versión completa.
+export const RESPUESTA_PLAZO = 'Te respondemos en menos de 48 horas';
 
 // Redes sociales oficiales (YouTube + LinkedIn)
 export const SOCIAL = {
@@ -55,14 +57,13 @@ export const NAV_ITEMS = [
   { label: 'Inicio', href: '/' },
   { label: 'Servicios', href: '/servicios' },
   { label: 'Obras', href: '/#galeria' },
-  { label: 'Inversores e inmobiliarias', href: '/#inversores' },
   { label: 'Cómo trabajamos', href: '/como-funciona' },
   { label: 'Zonas', href: '/zonas' },
-  { label: 'Guías de precios', href: '/guias-precios' },
+  { label: 'Preguntas frecuentes', href: '/#preguntas-frecuentes' },
   { label: 'Contacto', href: '/contacto' },
 ] as const;
 
-// Formulario principal de presupuesto (portada)
+// Formulario de consulta de la portada
 export const PRESUPUESTO_HREF = '/#contacto';
 
 // Páginas de servicio, para el pie y el enlazado interno
@@ -86,31 +87,31 @@ export const SERVICES = [
     badge: 'Todo coordinado',
     description: 'Toda tu casa de una vez. Te asignamos arquitecto y oficios de nuestra red: albañilería, fontanería, electricidad, climatización y pintura. Tú hablas solo con nosotros.',
     icon: 'Home',
-    features: ['Fotos del avance por WhatsApp', 'Plazo y precio en contrato', 'Calidad media-baja, media o alta'],
+    features: ['Fotos del avance por WhatsApp', 'Plazo y precio en contrato', 'Un solo interlocutor'],
   },
   {
     title: 'Reforma de cocina y baño',
     slug: 'reforma-cocina-bano',
     badge: 'Lo que más se usa',
-    description: 'Las dos estancias que más usas cada día. Distribución, instalaciones, alicatado y mobiliario, con un profesional de cada oficio y la calidad que elijas.',
+    description: 'Las dos estancias que más usas cada día. Distribución, instalaciones, alicatado y mobiliario, con un profesional de cada oficio.',
     icon: 'Sparkles',
-    features: ['Presupuesto en menos de 24 horas', 'Un profesional para cada oficio', 'Fotos del avance por WhatsApp'],
+    features: ['Un profesional para cada oficio', 'Fotos del avance por WhatsApp', 'Trato directo'],
   },
   {
     title: 'Reformas para inversores',
     slug: 'reformas-inversores-madrid',
     badge: 'Para vender o alquilar',
-    description: 'Pisos para vender o alquilar, en calidad media-baja o media. Sabes cuánto cuesta la obra antes de comprar. El plazo, fijado en el contrato.',
+    description: 'Pisos para vender o alquilar. Te ayudamos a conocer el alcance de la obra antes de decidir, y el plazo queda fijado en el contrato.',
     icon: 'TrendingUp',
-    features: ['Presupuesto en menos de 24 horas', 'Plazo y precio en contrato', '1 presupuesto gratis cada semana'],
+    features: ['Plazo y precio en contrato', 'Fotos del avance por WhatsApp', 'Un solo interlocutor'],
   },
   {
     title: 'Para inmobiliarias',
     slug: 'reformas-inmobiliarias-madrid',
     badge: 'Colaboración',
-    description: 'Tu comprador duda por la obra. Le damos un presupuesto en calidad media-baja en menos de 24 horas para que decida con un número delante.',
+    description: 'Tu comprador duda por la obra. Le ayudamos a conocer qué reforma necesita la vivienda para que decida con más información.',
     icon: 'Building2',
-    features: ['Calidad media-baja, cifra realista', 'Rápido, para no enfriar la venta', '1 presupuesto gratis cada semana'],
+    features: ['Trato directo', 'Respuesta en menos de 48 horas', 'Un solo interlocutor'],
   },
 ] as const;
 
@@ -122,29 +123,19 @@ export const FAQS = [
       'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid prepara el presupuesto, te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros. Si un profesional incumple de forma reiterada nuestros compromisos con los clientes, deja la red.',
   },
   {
-    question: '¿Cómo tengo el presupuesto en menos de 24 horas?',
+    question: '¿Cuándo me respondéis?',
     answer:
-      'Rellenas el formulario, nos cuentas qué quieres reformar y eliges la calidad de los acabados. Un sistema de inteligencia artificial, con tecnología de PyMExpert, prepara el presupuesto con esos datos; una persona lo revisa y te lo enviamos por correo y WhatsApp en menos de 24 horas. Antes de contratar, visitamos la obra para comprobar que todo coincide. No tienes que esperar semanas para tener un primer número.',
+      'En menos de 48 horas. Escríbenos por el formulario, por WhatsApp o llámanos, cuéntanos qué quieres reformar y en qué municipio, y una persona te contesta para ver tu caso. Si hace falta, organizamos una visita a la obra.',
   },
   {
-    question: '¿El presupuesto que recibo es el definitivo?',
+    question: '¿Cómo se prepara el presupuesto?',
     answer:
-      'En la gran mayoría de los casos, sí. Antes de contratar visitamos la obra para comprobar que lo que nos contaste coincide con la realidad, y aprovechas para resolver tus dudas. El precio queda cerrado en el contrato, según el presupuesto firmado.',
-  },
-  {
-    question: '¿Qué calidades de acabado puedo elegir?',
-    answer:
-      'Hay tres: media-baja, media y alta. Si eres particular, eliges cualquiera de las tres; si eres inversor, media-baja o media; si eres inmobiliaria, el presupuesto se hace en media-baja. Cada calidad incluye un precio máximo por material, por ejemplo para el revestimiento. Si eliges un material más caro, pagas solo la diferencia.',
+      'Con lo que nos cuentas y, si hace falta, con una visita a la obra para ver el estado real y resolver tus dudas. El precio queda cerrado en el contrato que firmas con el profesional asignado.',
   },
   {
     question: '¿Cuánto dura una obra?',
     answer:
       'Depende del tamaño y de la dificultad. El plazo queda fijado en el contrato que firmas con el profesional asignado, antes de empezar. Por experiencia, la mayoría de obras no pasan de 60 días.',
-  },
-  {
-    question: '¿Cuánto cuesta pedir presupuesto?',
-    answer:
-      'El primero es gratis. Los siguientes cuestan 150 €. Si eres inversor o inmobiliaria, tienes uno gratis cada semana. Cada presupuesto lleva trabajo de verdad, y así podemos responder rápido a todos.',
   },
   {
     question: '¿Quién se encarga de las licencias y permisos?',
@@ -164,7 +155,7 @@ export const FAQS = [
   {
     question: '¿En qué zonas trabajáis?',
     answer:
-      'En toda la Comunidad de Madrid, en la capital y en cualquier municipio. Pon el tuyo en el formulario y te asignamos un profesional de nuestra red.',
+      'En toda la Comunidad de Madrid, en la capital y en cualquier municipio. Dinos el tuyo en el mensaje y te asignamos un profesional de nuestra red.',
   },
 ] as const;
 
