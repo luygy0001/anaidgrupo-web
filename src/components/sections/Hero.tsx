@@ -57,7 +57,6 @@ export default function Hero() {
           alt="Chalet moderno con piscina iluminada al anochecer"
           fill
           priority
-          quality={95}
           className="object-cover object-center lg:object-[center_35%] -scale-x-100"
         />
 
