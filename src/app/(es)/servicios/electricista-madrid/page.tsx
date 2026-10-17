@@ -13,7 +13,7 @@ export default function ElectricistaPage() {
       h1="Electricista en Madrid"
       slug="electricista-madrid"
       breadcrumbName="Electricista"
-      description="Servicio de intermediación para trabajos de electricidad en Madrid: instalaciones, averías, boletines y mantenimiento con profesionales validados."
+      description="Servicio de intermediación para trabajos de electricidad en Madrid: instalaciones, averías, boletines y mantenimiento con profesionales de nuestra red."
       intro="Desde averías puntuales hasta instalaciones completas, Construcciones Anaid analiza tu necesidad y te asigna un electricista cualificado en la Comunidad de Madrid."
       trabajos={[
         'Reparación de averías eléctricas',

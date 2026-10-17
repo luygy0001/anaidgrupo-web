@@ -14,7 +14,7 @@ const steps = [
     number: '02',
     title: 'Analizamos la necesidad',
     description:
-      'Nuestro equipo estudia cada solicitud para identificar el tipo de servicio, la urgencia y la complejidad del proyecto.',
+      'Una persona estudia cada solicitud para ver el tipo de servicio, la urgencia y la complejidad del proyecto.',
   },
   {
     icon: UserCheck,

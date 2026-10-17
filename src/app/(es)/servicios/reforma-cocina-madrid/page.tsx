@@ -13,7 +13,7 @@ export default function ReformaCocinaPage() {
       h1="Reforma de cocina en Madrid"
       slug="reforma-cocina-madrid"
       breadcrumbName="Reforma de cocina"
-      description="Servicio de intermediación para reformas de cocina en Madrid: análisis del proyecto y asignación al profesional validado."
+      description="Servicio de intermediación para reformas de cocina en Madrid: análisis del proyecto y asignación al profesional adecuado de nuestra red."
       intro="La cocina es el corazón del hogar. Si necesitas renovarla, Construcciones Anaid analiza tu proyecto y te conecta con el profesional adecuado en la Comunidad de Madrid."
       trabajos={[
         'Diseño y distribución de cocina',

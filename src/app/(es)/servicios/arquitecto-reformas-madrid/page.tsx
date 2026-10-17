@@ -13,7 +13,7 @@ export default function ArquitectoPage() {
       h1="Arquitecto / técnico para reformas en Madrid"
       slug="arquitecto-reformas-madrid"
       breadcrumbName="Arquitecto / técnico"
-      description="Servicio de intermediación para arquitectura técnica en Madrid: proyectos, licencias, dirección de obra y certificaciones con profesionales validados."
+      description="Servicio de intermediación para arquitectura técnica en Madrid: proyectos, licencias, dirección de obra y certificaciones con profesionales de nuestra red."
       intro="Proyectos técnicos, licencias de obra, dirección de obra y certificaciones: Construcciones Anaid te conecta con el arquitecto o técnico adecuado para tu reforma en Madrid."
       trabajos={[
         'Redacción de proyectos técnicos para reformas',

@@ -24,7 +24,7 @@ export default function AvisoLegalPage() {
         )}
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 17 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Datos identificativos del titular</h2>
@@ -59,8 +59,8 @@ export default function AvisoLegalPage() {
             </p>
             <p>
               El presente sitio web tiene por objeto facilitar información sobre los servicios de
-              intermediación de {SITE_NAME}, así como permitir a los usuarios enviar solicitudes de
-              proyecto a través de sus formularios, WhatsApp, teléfono y correo electrónico.
+              intermediación de {SITE_NAME}, así como permitir a los usuarios enviar consultas a través de
+              su formulario, WhatsApp, teléfono y correo electrónico.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function AvisoLegalPage() {
             <ul className="list-disc pl-5 space-y-1">
               <li>Hacer un uso adecuado y lícito del sitio web, de conformidad con la legislación vigente, la moral, las buenas costumbres y el orden público.</li>
               <li>No utilizar el sitio web con fines fraudulentos o contrarios a la buena fe.</li>
-              <li>No introducir datos falsos en los formularios de contacto, solicitud de proyecto o registro profesional.</li>
+              <li>No introducir datos falsos en el formulario de consulta.</li>
               <li>No realizar acciones que puedan dañar, inutilizar, sobrecargar o deteriorar el sitio web o impedir su normal uso.</li>
             </ul>
             <p>

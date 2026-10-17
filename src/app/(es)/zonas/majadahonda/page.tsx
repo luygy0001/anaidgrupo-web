@@ -4,7 +4,7 @@ import ZoneLanding from '@/components/sections/ZoneLanding';
 const MUNICIPIO = 'Majadahonda';
 const SLUG = 'majadahonda';
 const DESCRIPTION =
-  'Reformas y servicios técnicos en Majadahonda. Construcciones Anaid asigna al profesional validado más adecuado para tu proyecto en la Comunidad de Madrid.';
+  'Reformas y servicios técnicos en Majadahonda. Construcciones Anaid asigna al profesional de su red más adecuado para tu proyecto en la Comunidad de Madrid.';
 
 export const metadata: Metadata = {
   title: 'Reformas en Majadahonda',
@@ -19,15 +19,15 @@ export default function MajadahondaPage() {
       slug={SLUG}
       description={DESCRIPTION}
       introParagraphs={[
-        'Majadahonda es una zona consolidada del noroeste de Madrid, con un parque de viviendas que mezcla adosados, unifamiliares y bloques modernos. Construcciones Anaid centraliza tu solicitud y la asigna al profesional validado que mejor encaja con el tipo de proyecto y los plazos que manejas.',
-        'Trabajamos tanto en el centro urbano como en urbanizaciones y zonas residenciales. Cubrimos reformas integrales, actualización de baños y cocinas, climatización, electricidad, fontanería y servicios técnicos de arquitectura cuando el proyecto lo requiere.',
+        'Majadahonda es una zona consolidada del noroeste de Madrid, con un parque de viviendas que mezcla adosados, unifamiliares y bloques modernos. Construcciones Anaid centraliza tu solicitud y la asigna al profesional de nuestra red que mejor encaja con el tipo de proyecto y los plazos que manejas.',
+        'Llegamos tanto al centro urbano como a las urbanizaciones y zonas residenciales. Cubrimos reformas integrales, actualización de baños y cocinas, climatización, electricidad, fontanería y servicios técnicos de arquitectura cuando el proyecto lo requiere.',
         'Nuestro modelo es de intermediación: no ejecutamos directamente la obra, sino que conectamos tu proyecto con el profesional adecuado y acompañamos el proceso hasta que recibes el presupuesto definitivo.',
       ]}
       highlights={[
         'Proyectos habituales de reforma integral en adosados y unifamiliares consolidados.',
         'Alta demanda de actualización de instalaciones en viviendas de 20–30 años.',
-        'Equipos con experiencia en comunidades de propietarios y normativas locales.',
-        'Cercanía operativa con Pozuelo y Las Rozas, lo que agiliza tiempos de respuesta.',
+        'Profesionales con experiencia en comunidades de propietarios.',
+        'Cercanía con Pozuelo y Las Rozas: la misma red atiende los tres municipios.',
       ]}
       crossLinks={[
         { municipio: 'Pozuelo de Alarcón', slug: 'pozuelo-de-alarcon' },

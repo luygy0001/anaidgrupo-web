@@ -47,7 +47,7 @@ export interface ZoneLandingProps {
 const pasos = [
   { title: 'Cuéntanos tu proyecto', text: 'Envía tu solicitud con los detalles del trabajo que necesitas.' },
   { title: 'Analizamos la necesidad', text: 'Estudiamos tu solicitud para entender qué tipo de profesional encaja.' },
-  { title: 'Asignamos al profesional', text: 'Seleccionamos al colaborador validado más cercano a tu zona.' },
+  { title: 'Asignamos al profesional', text: 'Seleccionamos al colaborador de nuestra red más cercano a tu zona.' },
   { title: 'El profesional te contacta', text: 'Visita tu proyecto, lo valida y te entrega un presupuesto definitivo.' },
 ];
 
@@ -115,7 +115,7 @@ export default function ZoneLanding({
         <Container narrow>
           <h2 className="text-2xl font-bold mb-4">Servicios que cubrimos en {municipio}</h2>
           <p className="text-muted-foreground mb-6 leading-relaxed">
-            Cubrimos la tipología completa de reformas y servicios técnicos de hogar. Cada solicitud se asigna al colaborador validado más adecuado según el tipo de trabajo y su disponibilidad en la zona.
+            Cubrimos la tipología completa de reformas y servicios técnicos de hogar. Cada solicitud se asigna al colaborador más adecuado según el tipo de trabajo y su disponibilidad en la zona.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             {SERVICE_PAGES.map((s) => {
@@ -190,7 +190,7 @@ export default function ZoneLanding({
           <ul className="space-y-3 text-foreground">
             <li className="flex items-start gap-2">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-              Red de profesionales validados y cercanos a {municipio}.
+              Red de profesionales seleccionados y cercanos a {municipio}.
             </li>
             <li className="flex items-start gap-2">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
@@ -213,7 +213,7 @@ export default function ZoneLanding({
                 Solicita tu proyecto en {municipio}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Cuéntanos qué necesitas y te asignamos al profesional validado más adecuado. Sin compromiso. Te respondemos en menos de 48 horas laborables.
+                Cuéntanos qué necesitas y te asignamos al profesional más adecuado. Sin compromiso. Te respondemos en menos de 48 horas laborables.
               </p>
             </div>
             <FormConsulta idPrefijo={`zona-${slug}`} />

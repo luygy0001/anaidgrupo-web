@@ -15,7 +15,7 @@ export default function CoverageSection() {
             Comunidad de Madrid
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Trabajamos con una red de colaboradores estrictamente seleccionados
+            Trabajamos con una red de colaboradores seleccionados por nosotros
             que cubren la Comunidad de Madrid. Nuestro objetivo es asegurar que
             cada proyecto cuente con un profesional cercano y cualificado.
           </p>

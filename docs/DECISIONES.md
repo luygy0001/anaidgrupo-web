@@ -275,3 +275,30 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     a mitad. La respuesta «en menos de 48 horas laborables, de lunes a viernes» no cambia.
 78. **Sin cabecera `X-Powered-By`** (Luis, 15-10-2026): `poweredByHeader: false` en `next.config.ts`.
     La web dejaba de decir en cada respuesta que funciona con Next.js; no cambia nada más.
+
+### Auditoría de la web publicada (2026-10-17)
+
+79. **Plazos de obra** (Luis, 17-10-2026): la reforma habitual (vivienda de unos 80 m², tres
+    dormitorios, un baño, cocina y salón) no pasa de 60 días; las obras grandes (100-200 m² o más:
+    chalets, casas y pisos con más estancias y baños, patios o terreno) van de 2 a 4 meses. Sustituye
+    a los dos textos que se contradecían: la FAQ general («la mayoría de obras no pasan de 60 días»)
+    y la de reforma integral («entre 2 y 4 meses»). El plazo concreto sigue fijándose en el contrato.
+80. **Zonas suavizadas** (Luis, 17-10-2026): fuera «zonas premium», «alta renta media», «núcleo
+    operativo», «trabajamos en todas las urbanizaciones» y las afirmaciones de experiencia previa en
+    urbanizaciones concretas que hoy no se pueden demostrar. Se habla de cobertura («llegamos a»),
+    no de obras hechas.
+81. **«Validado» y «estrictamente seleccionado» fuera** (Luis, 17-10-2026, a propuesta de Claude):
+    sugieren un proceso de certificación que no existe, igual que «homologada» (decisión 76). Se
+    sustituyen por «de nuestra red», «seleccionado» o «elegidos por nosotros», que es lo que ocurre
+    de verdad: Luis decide quién entra en la red.
+82. **«Nuestro equipo» → «una persona»** en los textos de proceso (17-10-2026): hoy las consultas las
+    revisa Luis en persona, como ya decían la FAQ y la política de privacidad.
+83. **Cómo trabajamos sin «orientación inicial… estimación»** (17-10-2026): la web provisional no da
+    cifras orientativas (decisión 61). El bloque explica qué contiene nuestra respuesta y que el
+    presupuesto lo hace el profesional tras la visita.
+84. **Aviso legal sin «solicitud de proyecto» ni «registro profesional»** (17-10-2026): formularios
+    retirados en la provisional (decisión 62). Fecha de actualización del aviso legal: 17-10-2026.
+85. **Imagen para compartir única** (17-10-2026): `public/images/og-portada.jpg`, 1200×630, hecha a
+    partir de la foto real del salón con el logotipo y el titular, declarada en el layout raíz para
+    que todas las páginas tengan tarjeta al compartirse por WhatsApp o LinkedIn. Sustituye al JPG
+    original de 780 KB que solo tenía la portada.

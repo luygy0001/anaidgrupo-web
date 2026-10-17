@@ -131,7 +131,7 @@ export default function ServiceLanding({
             </li>
             <li className="flex items-start gap-2 text-foreground">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-              Asignamos un colaborador estrictamente seleccionado en tu zona de la Comunidad de Madrid.
+              Asignamos un colaborador de nuestra red en tu zona de la Comunidad de Madrid.
             </li>
             <li className="flex items-start gap-2 text-foreground">
               <ArrowRight className="w-4 h-4 text-primary mt-1 flex-shrink-0" />

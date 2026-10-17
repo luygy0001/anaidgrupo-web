@@ -17,7 +17,7 @@ export default function ServiciosPage() {
       <section className="section-padding bg-gradient-to-br from-primary/5 to-transparent">
         <Container narrow>
           <h1 className="text-3xl sm:text-4xl font-bold text-center">
-            Servicios que podemos ayudarte a canalizar
+            Servicios de reformas en Madrid
           </h1>
           <p className="mt-4 text-muted-foreground text-center text-lg">
             Construcciones Anaid centraliza la solicitud, analiza el proyecto y lo asigna

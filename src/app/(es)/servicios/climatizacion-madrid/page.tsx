@@ -13,7 +13,7 @@ export default function ClimatizacionPage() {
       h1="Climatización en Madrid"
       slug="climatizacion-madrid"
       breadcrumbName="Climatización"
-      description="Servicio de intermediación para climatización en Madrid: aire acondicionado, calefacción, aerotermia y mantenimiento con profesionales validados."
+      description="Servicio de intermediación para climatización en Madrid: aire acondicionado, calefacción, aerotermia y mantenimiento con profesionales de nuestra red."
       intro="Aire acondicionado, calefacción, aerotermia o suelo radiante: Construcciones Anaid analiza tu necesidad y te asigna al profesional de climatización adecuado en Madrid."
       trabajos={[
         'Instalación de aire acondicionado (split, multisplit, conductos)',
