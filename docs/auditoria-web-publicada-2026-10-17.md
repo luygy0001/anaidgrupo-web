@@ -284,6 +284,16 @@ del 06-10).
 8. DMARC con `rua` (lo hace Luis en el DNS de Hostinger o lo preparo con su visto bueno).
 9. Responder C2, L2 y F1.
 
+> **Aplicado el 17-10-2026** en la rama `fix/web-publicada-auditoria-2026-10-17`, un commit por
+> frente, verificado en local a 1366, 375 y 320 px y en la compilación de producción:
+> contenido (C1 con las decisiones 79-84 de Luis, C2, C3, C4, C5, L1), accesibilidad (A1, A2, F2
+> y fecha de la declaración), metadatos (S1, S2 con `og-portada.jpg` de 93 KB, S3, S4) y
+> seguridad (SEC1 sin `'unsafe-eval'` en producción, COOP, SEC4). Sobre P1: el optimizador de
+> Next 16 solo sirve la calidad 75 (`images.qualities` por defecto), así que `quality={95}` y
+> `{98}` nunca tuvieron efecto y se han quitado; bajar de 75 exigiría declararlo en la
+> configuración y comprobar la foto del hero a la vista. Queda pendiente de Luis lo que está
+> fuera del código (puntos 5 a 9) y de su respuesta L2 (registros del servidor) y E1 (DMARC).
+
 ### Segunda fase (con la versión completa)
 10. CSP con nonces y COOP; `aria-live` fijo en el formulario; `lastmod` real; calidad de imágenes
     a 75-80; `llms.txt`; `BreadcrumbList` en `/servicios` y `/zonas`; prueba con lector de
