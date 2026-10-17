@@ -20,7 +20,6 @@ export const WHATSAPP_NUMBER = '34640962564';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20de%20Madrid.`;
 // Correo público: info@ (decisión 13; Luis lo mantiene el 15-10-2026)
 export const EMAIL = 'info@construccionesanaid.com';
-export const EMAIL_ADMIN = 'admin@construccionesanaid.com';
 
 // Ubicación y cobertura
 // Domicilio: SOLO para aviso legal y privacidad (obligación legal). Nunca en otras páginas ni en schema.
