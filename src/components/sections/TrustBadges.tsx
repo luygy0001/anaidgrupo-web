@@ -10,7 +10,7 @@ const badges = [
   {
     icon: Users,
     title: 'Colaboradores seleccionados',
-    text: 'Estrictamente filtrados',
+    text: 'Elegidos por nosotros',
   },
   {
     icon: Filter,

@@ -6,7 +6,7 @@ import { MapPin, TrendingUp, Users, Building2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Zonas de cobertura en Madrid',
   description:
-    'Reformas y servicios en Madrid y su zona metropolitana: Pozuelo, Las Rozas, Majadahonda, Móstoles, Fuenlabrada, Leganés, Getafe, Alcorcón, Torrejón y Alcalá de Henares.',
+    'Reformas en Madrid y su área metropolitana: Pozuelo, Las Rozas, Majadahonda, Móstoles, Fuenlabrada, Leganés, Getafe, Alcorcón, Torrejón y Alcalá de Henares.',
   alternates: { canonical: '/zonas' },
 };
 
@@ -27,10 +27,10 @@ type Capa = {
 
 const CAPAS: Capa[] = [
   {
-    id: 'premium',
-    titulo: 'Zonas premium',
+    id: 'noroeste',
+    titulo: 'Noroeste de Madrid',
     descripcion:
-      'Municipios con alta renta media donde abordamos reformas integrales, cocina y baño de mayor entidad, con acabados de gama alta.',
+      'Municipios donde las reformas suelen ser de mayor entidad: integrales, cocina y baño con acabados de gama alta.',
     icon: TrendingUp,
     municipios: [
       { nombre: 'Pozuelo de Alarcón', slug: 'pozuelo-de-alarcon', hasLanding: true },
@@ -42,7 +42,7 @@ const CAPAS: Capa[] = [
     id: 'volumen',
     titulo: 'Zona metropolitana sur y corredor del Henares',
     descripcion:
-      'Municipios con gran volumen de población donde cubrimos reformas de vivienda, baño, cocina y servicios técnicos con tiempos ágiles.',
+      'Municipios con gran volumen de población donde cubrimos reformas de vivienda, baño, cocina y servicios técnicos.',
     icon: Users,
     municipios: [
       { nombre: 'Móstoles', slug: 'mostoles' },
@@ -54,10 +54,10 @@ const CAPAS: Capa[] = [
     ],
   },
   {
-    id: 'operativa',
-    titulo: 'Núcleo operativo',
+    id: 'base',
+    titulo: 'Nuestra zona de base',
     descripcion:
-      'Zona con una presencia especialmente cercana de nuestra red de profesionales colaboradores.',
+      'El corredor del Henares es la zona más cercana a nuestra base, en el este de la Comunidad de Madrid.',
     icon: Building2,
     municipios: [
       {
@@ -82,7 +82,7 @@ export default function ZonasPage() {
               Zonas de cobertura en Madrid
             </h1>
             <p className="mt-4 text-muted-foreground text-lg">
-              Trabajamos con una red de profesionales validados en Madrid y su
+              Trabajamos con una red de profesionales seleccionados en Madrid y su
               área metropolitana. Conoce las zonas donde tenemos mayor capacidad
               de respuesta y la tipología de proyecto que cubrimos en cada una.
             </p>

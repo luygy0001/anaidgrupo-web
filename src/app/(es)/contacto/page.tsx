@@ -17,7 +17,7 @@ import FormConsulta from '@/components/forms/FormConsulta';
 export const metadata: Metadata = {
   title: 'Contacto',
   description:
-    'Contacta con Construcciones Anaid por teléfono, WhatsApp, email o formulario para tu reforma en la Comunidad de Madrid. Te respondemos en menos de 48 horas laborables.',
+    'Contacta con Construcciones Anaid por teléfono, WhatsApp, correo o formulario. Te respondemos en menos de 48 horas laborables, de lunes a viernes.',
   alternates: { canonical: '/contacto' },
 };
 
@@ -38,7 +38,7 @@ export default function ContactoPage() {
 
           <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
             {/* Contact info */}
-            <div className="space-y-6">
+            <div className="space-y-6 min-w-0">
               <a
                 href={`tel:${PHONE}`}
                 className="flex items-center gap-4 p-4 rounded-xl bg-muted hover:bg-primary/5 transition-colors"
@@ -76,7 +76,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-semibold text-foreground">{EMAIL}</p>
+                  <p className="font-semibold text-foreground break-all">{EMAIL}</p>
                 </div>
               </a>
 
@@ -109,7 +109,7 @@ export default function ContactoPage() {
             </div>
 
             {/* Contact form */}
-            <div>
+            <div className="min-w-0">
               <h2 className="text-xl font-bold mb-4">Envíanos un mensaje</h2>
               <FormConsulta />
             </div>

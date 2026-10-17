@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Climatización en Madrid',
-  description: 'Instalación de aire acondicionado, calefacción y climatización en Madrid. Te asignamos al profesional adecuado.',
+  description: 'Aire acondicionado, calefacción y aerotermia en la Comunidad de Madrid. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/climatizacion-madrid' },
 };
 
@@ -13,7 +13,7 @@ export default function ClimatizacionPage() {
       h1="Climatización en Madrid"
       slug="climatizacion-madrid"
       breadcrumbName="Climatización"
-      description="Servicio de intermediación para climatización en Madrid: aire acondicionado, calefacción, aerotermia y mantenimiento con profesionales validados."
+      description="Servicio de intermediación para climatización en Madrid: aire acondicionado, calefacción, aerotermia y mantenimiento con profesionales de nuestra red."
       intro="Aire acondicionado, calefacción, aerotermia o suelo radiante: Construcciones Anaid analiza tu necesidad y te asigna al profesional de climatización adecuado en Madrid."
       trabajos={[
         'Instalación de aire acondicionado (split, multisplit, conductos)',

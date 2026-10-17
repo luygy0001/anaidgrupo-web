@@ -10,9 +10,9 @@ import JsonLd from '@/components/seo/JsonLd';
 import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, SOCIAL } from '@/lib/constants';
 import { horarioApertura } from '@/lib/seo-schemas';
 
-const TITULO = 'Reformas en Madrid con trato directo | Construcciones Anaid';
+const TITULO = 'Reformas en Madrid con trato directo · Construcciones Anaid';
 const DESCRIPCION =
-  'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid con una red de profesionales coordinada por Construcciones Anaid. Te respondemos en menos de 48 horas laborables.';
+  'Reformas integrales, de cocina y baño en la Comunidad de Madrid con la red de profesionales de Construcciones Anaid. Respuesta en menos de 48 horas laborables.';
 
 export const metadata: Metadata = {
   // absolute: la plantilla de layout.tsx añadiría la marca otra vez
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${SITE_URL}/images/obra-salon.jpg`,
+        url: `${SITE_URL}/images/og-portada.jpg`,
         width: 1200,
-        height: 675,
-        alt: 'Salón abierto de una obra de la red de Construcciones Anaid',
+        height: 630,
+        alt: 'Salón de una obra de la red de Construcciones Anaid, con el logotipo y el titular de la web',
       },
     ],
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: TITULO,
     description: DESCRIPCION,
-    images: [`${SITE_URL}/images/obra-salon.jpg`],
+    images: [`${SITE_URL}/images/og-portada.jpg`],
   },
 };
 

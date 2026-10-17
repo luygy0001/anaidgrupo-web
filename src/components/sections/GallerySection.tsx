@@ -48,7 +48,6 @@ export default function GallerySection() {
           src="/images/salon-doble-altura.jpg"
           alt="Salón de lujo a dos alturas con escalera volada de madera y barandilla acristalada, obra de la red de Construcciones Anaid"
           fill
-          quality={98}
           className="object-cover object-center"
         />
       </div>

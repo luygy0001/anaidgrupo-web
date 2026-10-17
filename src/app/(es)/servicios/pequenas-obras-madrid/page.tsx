@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Pequeñas obras en Madrid',
-  description: 'Pequeñas obras y reparaciones en Madrid: pintura, montajes, arreglos. Te asignamos al profesional adecuado para tu necesidad.',
+  description: 'Pequeñas obras y reparaciones en Madrid: pintura, montajes y arreglos. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/pequenas-obras-madrid' },
 };
 
@@ -13,7 +13,7 @@ export default function PequenasObrasPage() {
       h1="Pequeñas obras en Madrid"
       slug="pequenas-obras-madrid"
       breadcrumbName="Pequeñas obras"
-      description="Servicio de intermediación para pequeñas obras y reparaciones en Madrid: pintura, montajes, albañilería menor y preparación de vivienda con profesionales validados."
+      description="Servicio de intermediación para pequeñas obras y reparaciones en Madrid: pintura, montajes, albañilería menor y preparación de vivienda con profesionales de nuestra red."
       intro="Reparaciones, montajes, pintura y trabajos puntuales: Construcciones Anaid analiza tu solicitud y te conecta con un profesional adecuado para pequeñas obras en Madrid."
       trabajos={[
         'Pintura de interiores y exteriores',

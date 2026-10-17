@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Fontanero en Madrid',
-  description: 'Fontanero en Madrid: reparaciones, instalaciones y mantenimiento. Construcciones Anaid te asigna al profesional adecuado.',
+  description: 'Fontanero en Madrid: fugas, instalaciones, calentadores y mantenimiento. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/fontanero-madrid' },
 };
 
@@ -13,7 +13,7 @@ export default function FontaneroPage() {
       h1="Fontanero en Madrid"
       slug="fontanero-madrid"
       breadcrumbName="Fontanero"
-      description="Servicio de intermediación para trabajos de fontanería en Madrid: fugas, instalaciones, calentadores y mantenimiento con profesionales validados."
+      description="Servicio de intermediación para trabajos de fontanería en Madrid: fugas, instalaciones, calentadores y mantenimiento con profesionales de nuestra red."
       intro="Fugas, atascos, instalaciones nuevas o cambio de calentador: Construcciones Anaid analiza tu solicitud y te conecta con un fontanero profesional en la Comunidad de Madrid."
       trabajos={[
         'Reparación de fugas y averías',

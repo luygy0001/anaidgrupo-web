@@ -23,7 +23,17 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     siteName: SITE_NAME,
+    // Imagen para compartir: la heredan todas las páginas (ninguna define openGraph propio salvo la portada)
+    images: [
+      {
+        url: '/images/og-portada.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Salón de una obra de la red de Construcciones Anaid, con el logotipo y el titular de la web',
+      },
+    ],
   },
+  twitter: { card: 'summary_large_image' },
   robots: {
     index: true,
     follow: true,

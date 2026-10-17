@@ -20,7 +20,6 @@ export const WHATSAPP_NUMBER = '34640962564';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20de%20Madrid.`;
 // Correo público: info@ (decisión 13; Luis lo mantiene el 15-10-2026)
 export const EMAIL = 'info@construccionesanaid.com';
-export const EMAIL_ADMIN = 'admin@construccionesanaid.com';
 
 // Ubicación y cobertura
 // Domicilio: SOLO para aviso legal y privacidad (obligación legal). Nunca en otras páginas ni en schema.
@@ -142,7 +141,7 @@ export const FAQS = [
   {
     question: '¿Cuánto dura una obra?',
     answer:
-      'Depende del tamaño y de la dificultad. El plazo queda fijado en el contrato que firmas con el profesional asignado, antes de empezar. Por experiencia, la mayoría de obras no pasan de 60 días.',
+      'Depende del tamaño. Una reforma habitual, la de una vivienda de unos 80 m² con tres dormitorios, un baño, cocina y salón, no suele pasar de 60 días. Las obras grandes, de 100 a 200 m² o más (chalets, casas y pisos con más estancias y baños, patios o terreno), van de 2 a 4 meses. El plazo concreto queda fijado en el contrato que firmas con el profesional asignado, antes de empezar.',
   },
   {
     question: '¿Quién se encarga de las licencias y permisos?',

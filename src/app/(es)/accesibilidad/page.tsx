@@ -11,7 +11,8 @@ export const metadata: Metadata = {
 };
 
 // Fecha de la última revisión. Actualizarla cada vez que se repita la auditoría.
-const ULTIMA_REVISION = '6 de octubre de 2026';
+const REVISION_INICIAL = '6 de octubre de 2026';
+const ULTIMA_REVISION = '17 de octubre de 2026';
 
 export default function AccesibilidadPage() {
   return (
@@ -36,10 +37,11 @@ export default function AccesibilidadPage() {
           <div>
             <h2 className="text-lg font-semibold text-foreground">2. Cómo lo hemos comprobado</h2>
             <p>
-              Revisión interna del {ULTIMA_REVISION}, sin auditoría externa por el momento:
+              Revisión interna del {REVISION_INICIAL} y comprobación de la web publicada el {ULTIMA_REVISION}, sin auditoría externa por el momento:
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li>Análisis automático de las páginas con la herramienta axe-core (reglas de WCAG 2.2 A y AA).</li>
+              <li>Comprobación de la web publicada con Lighthouse (que incluye axe-core) y con teclado real a 1366, 375 y 320 píxeles de ancho.</li>
               <li>Navegación completa con teclado y comprobación de que el foco se ve en fondos claros y oscuros.</li>
               <li>Contraste de textos y botones.</li>
               <li>Adaptación a pantallas de 320 píxeles de ancho sin desplazamiento horizontal.</li>

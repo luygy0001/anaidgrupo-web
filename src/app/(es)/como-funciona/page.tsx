@@ -91,8 +91,7 @@ export default function ComoFuncionaPage() {
             proyecto y qué tipo de profesional necesitas.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Si has indicado que no sabes qué profesional necesitas, nuestro
-            equipo analiza tu caso y te orienta antes de asignar a nadie.
+            Si has indicado que no sabes qué profesional necesitas, lo analizamos y te orientamos antes de asignar a nadie.
           </p>
         </Container>
       </section>
@@ -111,8 +110,7 @@ export default function ComoFuncionaPage() {
           </p>
           <p className="text-muted-foreground leading-relaxed">
             El cliente final no elige entre una lista de profesionales. Construcciones
-            Anaid centraliza el análisis y la asignación para garantizar que cada
-            proyecto reciba la atención adecuada.
+            Anaid centraliza el análisis y la asignación para que cada proyecto reciba la atención adecuada.
           </p>
         </Container>
       </section>
@@ -160,12 +158,12 @@ export default function ComoFuncionaPage() {
       <section className="section-padding">
         <Container narrow>
           <h2 className="text-2xl font-bold mb-4">
-            Diferencia entre orientación inicial y presupuesto final
+            Diferencia entre nuestra respuesta y el presupuesto final
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-3">
-            La orientación inicial que ofrece Construcciones Anaid es una estimación
-            basada en la información proporcionada. Sirve para que el cliente
-            tenga una referencia, pero no es un presupuesto cerrado ni vinculante.
+            Cuando te contestamos te decimos si tu proyecto encaja, qué tipo de profesional
+            necesita y cuáles son los siguientes pasos. No es un presupuesto ni una cifra
+            orientativa.
           </p>
           <p className="text-muted-foreground leading-relaxed">
             El presupuesto definitivo lo elabora siempre el profesional asignado
