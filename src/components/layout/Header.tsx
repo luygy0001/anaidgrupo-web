@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { NAV_ITEMS, PHONE, PHONE_DISPLAY, WHATSAPP_URL, SITE_NAME, PRESUPUESTO_HREF } from '@/lib/constants';
 import Container from '@/components/ui/Container';
@@ -10,12 +10,17 @@ import WhatsAppIcon from '@/components/shared/WhatsAppIcon';
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  // Para devolver el foco al botón cuando el menú se cierra con Escape (WCAG 2.4.3)
+  const botonMenuRef = useRef<HTMLButtonElement>(null);
 
   // Escape cierra el menú móvil (navegación por teclado)
   useEffect(() => {
     if (!mobileOpen) return;
     const cerrarConEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMobileOpen(false);
+      if (e.key === 'Escape') {
+        setMobileOpen(false);
+        botonMenuRef.current?.focus();
+      }
     };
     document.addEventListener('keydown', cerrarConEscape);
     return () => document.removeEventListener('keydown', cerrarConEscape);
@@ -88,6 +93,7 @@ export default function Header() {
 
             {/* Botón menú móvil */}
             <button
+              ref={botonMenuRef}
               type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
               className="xl:hidden p-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100"

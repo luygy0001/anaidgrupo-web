@@ -120,11 +120,13 @@ export default function FormConsulta({ idPrefijo = 'consulta' }: { idPrefijo?: s
         </span>
       </label>
 
-      {estado === 'error' && (
-        <p role="alert" className="text-sm text-error">
-          {mensajeError}
-        </p>
-      )}
+      {/* Regiones fijas: así el lector de pantalla anuncia el envío y el error aunque el bloque ya existiera */}
+      <p role="status" aria-live="polite" className="sr-only">
+        {estado === 'enviando' ? 'Enviando tu consulta…' : ''}
+      </p>
+      <p role="alert" className={estado === 'error' ? 'text-sm text-error' : 'sr-only'}>
+        {estado === 'error' ? mensajeError : ''}
+      </p>
 
       <Button type="submit" fullWidth disabled={estado === 'enviando'}>
         {estado === 'enviando' ? 'Enviando…' : 'Enviar consulta'}
