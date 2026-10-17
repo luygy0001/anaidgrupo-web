@@ -6,7 +6,7 @@ import { MapPin, TrendingUp, Users, Building2 } from 'lucide-react';
 export const metadata: Metadata = {
   title: 'Zonas de cobertura en Madrid',
   description:
-    'Reformas y servicios en Madrid y su zona metropolitana: Pozuelo, Las Rozas, Majadahonda, Móstoles, Fuenlabrada, Leganés, Getafe, Alcorcón, Torrejón y Alcalá de Henares.',
+    'Reformas en Madrid y su área metropolitana: Pozuelo, Las Rozas, Majadahonda, Móstoles, Fuenlabrada, Leganés, Getafe, Alcorcón, Torrejón y Alcalá de Henares.',
   alternates: { canonical: '/zonas' },
 };
 

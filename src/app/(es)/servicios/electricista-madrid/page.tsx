@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Electricista en Madrid',
-  description: 'Electricista en Madrid. Instalaciones, averías, cuadros eléctricos y certificaciones. Te asignamos al profesional adecuado.',
+  description: 'Electricista en Madrid: instalaciones, averías, cuadros y boletines. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/electricista-madrid' },
 };
 

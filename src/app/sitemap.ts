@@ -23,10 +23,11 @@ const PAGINAS = [
   '/contacto',
 ];
 
+// Sin lastModified: la fecha del build en las 16 URL era una señal falsa para Google. Cuando cada
+// página tenga su fecha real de contenido, se añade aquí.
 export default function sitemap(): MetadataRoute.Sitemap {
   return PAGINAS.map((path) => ({
     url: `${SITE_URL}${path}`,
-    lastModified: new Date(),
     changeFrequency: path === '' ? 'weekly' : 'monthly',
     priority: path === '' ? 1 : path === '/contacto' ? 0.8 : 0.7,
   }));

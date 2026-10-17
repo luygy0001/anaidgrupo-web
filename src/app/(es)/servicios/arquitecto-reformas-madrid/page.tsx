@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Arquitecto para reformas Madrid',
-  description: 'Arquitecto y técnico para reformas en Madrid. Proyectos, licencias y dirección de obra. Te asignamos al profesional adecuado.',
+  description: 'Arquitecto para reformas en Madrid: proyecto, licencias y dirección de obra. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/arquitecto-reformas-madrid' },
 };
 

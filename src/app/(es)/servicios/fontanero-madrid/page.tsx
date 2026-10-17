@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Fontanero en Madrid',
-  description: 'Fontanero en Madrid: reparaciones, instalaciones y mantenimiento. Construcciones Anaid te asigna al profesional adecuado.',
+  description: 'Fontanero en Madrid: fugas, instalaciones, calentadores y mantenimiento. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/fontanero-madrid' },
 };
 

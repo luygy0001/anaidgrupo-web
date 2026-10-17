@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Pequeñas obras en Madrid',
-  description: 'Pequeñas obras y reparaciones en Madrid: pintura, montajes, arreglos. Te asignamos al profesional adecuado para tu necesidad.',
+  description: 'Pequeñas obras y reparaciones en Madrid: pintura, montajes y arreglos. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/pequenas-obras-madrid' },
 };
 

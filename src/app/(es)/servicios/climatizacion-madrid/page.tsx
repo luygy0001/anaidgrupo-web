@@ -3,7 +3,7 @@ import ServiceLanding from '@/components/sections/ServiceLanding';
 
 export const metadata: Metadata = {
   title: 'Climatización en Madrid',
-  description: 'Instalación de aire acondicionado, calefacción y climatización en Madrid. Te asignamos al profesional adecuado.',
+  description: 'Aire acondicionado, calefacción y aerotermia en la Comunidad de Madrid. Te asignamos al profesional adecuado. Respuesta en menos de 48 horas laborables.',
   alternates: { canonical: '/servicios/climatizacion-madrid' },
 };
 
