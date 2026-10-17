@@ -302,3 +302,13 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     partir de la foto real del salón con el logotipo y el titular, declarada en el layout raíz para
     que todas las páginas tengan tarjeta al compartirse por WhatsApp o LinkedIn. Sustituye al JPG
     original de 780 KB que solo tenía la portada.
+
+86. **Registros de IP del servidor: la privacidad se queda como está** (17-10-2026): comprobado en
+    Dokploy (solo lectura) que Traefik no tiene registro de accesos (`traefik.yml` sin `accessLog`)
+    y que la función «Requests» está desactivada; la web solo usa la IP 15 minutos en memoria para
+    frenar envíos repetidos, que es lo que dice la política. Si algún día se activa «Requests»,
+    añadir «registros técnicos del servidor» con su plazo. Cierra el punto L2 de la auditoría del 17-10.
+87. **Informes DMARC a luis@pymexpert.com** (Luis, 17-10-2026): `_dmarc` de construccionesanaid.com
+    pasa a `v=DMARC1; p=none; rua=mailto:luis@pymexpert.com`; en pymexpert.com se añade el TXT
+    `construccionesanaid.com._report._dmarc` = `v=DMARC1` (sin él los informes no llegan a un buzón
+    de otro dominio). Se mantiene `p=none` un mes; con informes limpios, `p=quarantine`. Cierra E1.
