@@ -19,7 +19,7 @@ export default function PiscinasDisenoPage() {
       slug="piscinas-diseno-madrid"
       breadcrumbName="Piscinas de diseño"
       description="Coordinación de piscinas de diseño a medida en la Comunidad de Madrid: diseño, construcción y reforma de piscinas existentes, con spa, cascadas y revestimientos de piedra y gresite. La obra la hace el profesional de la red de Construcciones Anaid asignado a cada proyecto, con quien el cliente firma el contrato."
-      intro="Sales al jardín, subes la escalera de piedra del spa y oyes el agua caer en cascada a la piscina. Eso es una piscina de diseño: pensada a medida para tu casa, nueva o a partir de la que ya tienes. Te asignamos al profesional de nuestra red que la diseña y la construye, y nosotros coordinamos la obra hasta el final."
+      intro="Sales al jardín, subes la escalera de piedra del spa y oyes el agua caer en cascada a la piscina. Eso es una piscina de diseño: pensada a medida para tu casa, nueva o a partir de la que ya tienes. Te asignamos al profesional de nuestra red que la diseña y la construye, y nosotros coordinamos la obra hasta el final. Como cada piscina se hace a medida, hacemos como máximo 10 al año."
       proyecto={{
         titulo: 'Una piscina de diseño terminada: spa de piedra y dos cascadas',
         texto:
@@ -78,6 +78,11 @@ export default function PiscinasDisenoPage() {
           question: '¿Hacéis piscinas estándar o prefabricadas?',
           answer:
             'No. En piscinas solo coordinamos proyectos de diseño: hechos a medida de cada jardín, con la forma, el spa, las cascadas y los revestimientos de piedra o gresite que se elijan para esa casa. Para una piscina estándar o prefabricada hay empresas que se dedican solo a eso. Si ya tienes una y quieres convertirla en una piscina de diseño, en eso sí te ayudamos.',
+        },
+        {
+          question: '¿Cuántas piscinas hacéis al año?',
+          answer:
+            'Como máximo 10. Cada piscina es de diseño y se hace a medida de su jardín, así que limitamos el número para que cada proyecto tenga la atención que necesita. Si quieres la tuya, cuéntanos tu proyecto cuanto antes.',
         },
         {
           question: '¿Podéis convertir mi piscina actual en una piscina de diseño?',

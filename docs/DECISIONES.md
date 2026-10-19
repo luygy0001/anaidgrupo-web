@@ -367,3 +367,8 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     - **Pendiente de Luis:** la web dice dos cosas sobre quién prepara el presupuesto (la FAQ de la
       portada: Construcciones Anaid; «Cómo trabajamos» y la decisión 83: el profesional tras la
       visita). La página de piscinas usa una redacción neutra hasta que se decida.
+93. **Piscinas: máximo 10 al año** (Luis, 19-10-2026). Es un límite real («al ser de diseño, tenemos
+    limitado a 10 piscinas por año»): va en la presentación de la página, en una pregunta frecuente
+    y en `llms.txt`. Es la razón para escribir pronto que pedía el copywriter. Luis confirma también
+    que se construyen piscinas nuevas y se rehabilitan antiguas, pero no se hace obra nueva de
+    viviendas: el nicho son las reformas.
