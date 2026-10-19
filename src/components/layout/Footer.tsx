@@ -173,7 +173,8 @@ export default function Footer() {
 
           {/* Enlace Obligatorio de Autoría PyMExpert */}
           <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300">
-            <span>Web construida por</span>
+            {/* Espacio real además del hueco visual: los lectores de texto no pegan «porPyMExpert» */}
+            <span>Web construida por{' '}</span>
             <a
               href={POWERED_BY.url}
               target="_blank"

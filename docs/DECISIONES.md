@@ -329,3 +329,23 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     en el este de la Comunidad, junto al corredor del Henares. Estas zonas tienen página propia» y
     «Llegamos a toda la Comunidad de Madrid». No se crean páginas de Alcalá ni Torrejón sin datos
     reales de la zona.
+91. **Informe SEO/GEO externo del 19-10-2026: lo que se aplica y lo que no.** Comprobado contra el
+    código y la web publicada:
+    - **Cierto y aplicado:** no había `llms.txt` (404). Se crea `public/llms.txt` solo con datos que
+      ya dice la web (modelo de intermediación, contacto, horario, proceso, 8 servicios, zonas con
+      página y lo que no hacemos). El borrador del informe no se usa: traía el teléfono antiguo y
+      afirmaciones que la web no hace («valoración rápida en menos de 48 h para compradores»,
+      «alcance cerrado antes de comprar», Alcalá con página propia).
+    - **Cierto a medias y aplicado:** la promesa de «mayor capacidad operativa» en el corredor del
+      Henares (decisión 90). Torrejón y Alcalá ya figuran en `/zonas`, sin página propia.
+    - **Opcional y aplicado:** `alternateName: «Construccionesanaid»` en los datos de la portada.
+      La marca de la web es «Construcciones Anaid» en todas partes; no había inconsistencia.
+    - **Cosmético y aplicado:** espacio real en «Web construida por PyMExpert» (el hueco era solo
+      visual). El enlace ya iba a https://www.pymexpert.com.
+    - **Falso:** «no hay enlaces a redes» (el pie enlaza YouTube, LinkedIn y Facebook con
+      `aria-label` y están en `sameAs`); «falta `FAQPage`» (está en la portada, servicios y cómo
+      trabajamos); «el JSON-LD debe ser `HomeAndConstructionBusiness`» (ya lo es); «palabras
+      pegadas» en el teléfono de la cabecera y en el horario (son textos alternativos o líneas en
+      bloque: el teléfono lleva `aria-label` y cada tramo del horario va en su línea).
+    - **No se aplica:** FAQ con precios (decisión 61, la web no publica cifras) e Instagram (no hay
+      cuenta).

@@ -53,6 +53,8 @@ const schemaData = {
       '@type': 'HomeAndConstructionBusiness',
       '@id': `${SITE_URL}/#business`,
       name: 'Construcciones Anaid',
+      // La grafía del dominio, por si alguien busca la marca junta
+      alternateName: 'Construccionesanaid',
       description:
         'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid. Construcciones Anaid te asigna al profesional adecuado de su red de arquitectos y oficios, coordina la obra y te envía fotos del avance casi a diario por WhatsApp.',
       url: SITE_URL,
