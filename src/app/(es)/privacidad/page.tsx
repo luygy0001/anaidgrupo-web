@@ -127,8 +127,8 @@ export default function PrivacidadPage() {
               <li><strong>Teléfono:</strong> <a href={`tel:${PHONE}`} className={ENLACE}>{PHONE_DISPLAY}</a></li>
             </ul>
             <p className="mt-3">
-              {SITE_NAME} no ejecuta obras: estudia tu solicitud, prepara el presupuesto y te pone en
-              contacto con un profesional autónomo, que es quien firma contigo el contrato de obra.
+              {SITE_NAME} no ejecuta obras: estudia tu solicitud y te pone en contacto con un profesional
+              autónomo de su red, que prepara tu presupuesto y es quien firma contigo el contrato de obra.
             </p>
           </div>
 

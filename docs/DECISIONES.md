@@ -372,3 +372,14 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     y en `llms.txt`. Es la razón para escribir pronto que pedía el copywriter. Luis confirma también
     que se construyen piscinas nuevas y se rehabilitan antiguas, pero no se hace obra nueva de
     viviendas: el nicho son las reformas.
+94. **Quién prepara el presupuesto: el profesional asignado** (Luis, 19-10-2026). Lo genera con el
+    programa interno de Construcciones Anaid, lo revisa, da el visto bueno y lo envía. La web decía
+    dos cosas: la FAQ de la portada y la privacidad («Construcciones Anaid prepara el presupuesto»)
+    contra «Cómo trabajamos», servicios y zonas (el profesional). Se unifica: «lo prepara el
+    profesional asignado: lo revisa y te lo envía»; antes de contratar visita la obra y el precio
+    queda cerrado en el contrato.
+    - **No se menciona todavía el programa ni la IA.** La privacidad dice «en esta web no usamos
+      inteligencia artificial con tus datos». Cuando el programa con IA se use con datos de clientes
+      reales hay que actualizar la privacidad (proveedor de IA como encargado, finalidad, revisión
+      humana) y avisar en el presupuesto de que se ha preparado con ayuda de IA y lo ha revisado el
+      profesional. Pendiente de que Luis confirme desde cuándo se usa.

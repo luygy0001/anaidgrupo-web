@@ -97,7 +97,7 @@ export default function PiscinasDisenoPage() {
         {
           question: '¿Cuánto cuesta una piscina de diseño?',
           answer:
-            'Depende de cada proyecto: del tamaño, de la forma y de lo que lleve, como spa, cascadas, piedra o gresite. Por eso no publicamos precios. Antes de contratar, el profesional asignado visita tu casa para ver el jardín y lo que quieres hacer. El precio queda cerrado en el contrato que firmas con él. A tu consulta te respondemos en menos de 48 horas laborables.',
+            'Depende de cada proyecto: del tamaño, de la forma y de lo que lleve, como spa, cascadas, piedra o gresite. Por eso no publicamos precios: el profesional asignado prepara tu presupuesto, lo revisa y te lo envía, y antes de contratar visita tu casa para ver el jardín y lo que quieres hacer. El precio queda cerrado en el contrato que firmas con él. A tu consulta te respondemos en menos de 48 horas laborables.',
         },
       ]}
     />

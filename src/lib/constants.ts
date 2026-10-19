@@ -126,7 +126,7 @@ export const FAQS = [
   {
     question: '¿Quién firma el contrato de obra?',
     answer:
-      'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid prepara el presupuesto, te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros. Si un profesional incumple de forma reiterada nuestros compromisos con los clientes, deja la red.',
+      'Lo firmas directamente con el profesional que hace tu obra, elegido de nuestra red para tu caso. Él hace el trabajo y se compromete por escrito al plazo y al precio, con penalización si no cumple el plazo. Construcciones Anaid te asigna a ese profesional, coordina la obra y te acompaña hasta el final: tu interlocutor siempre somos nosotros. Si un profesional incumple de forma reiterada nuestros compromisos con los clientes, deja la red.',
   },
   {
     question: '¿Cuándo me respondéis?',
@@ -136,7 +136,7 @@ export const FAQS = [
   {
     question: '¿Cómo se prepara el presupuesto?',
     answer:
-      'Con lo que nos cuentas. Antes de contratar, el profesional asignado visita la obra para comprobar el estado real y resolver tus dudas. El precio queda cerrado en el contrato que firmas con él.',
+      'Lo prepara el profesional asignado con lo que nos cuentas: lo revisa y te lo envía. Antes de contratar, visita la obra para comprobar el estado real y resolver tus dudas. El precio queda cerrado en el contrato que firmas con él.',
   },
   {
     question: '¿Cuánto dura una obra?',
