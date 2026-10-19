@@ -166,9 +166,9 @@ export default function ServiceLanding({
         <Container narrow>
           <h2 className="text-2xl font-bold mb-4">Cobertura en la Comunidad de Madrid</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Atendemos este servicio en <strong>Madrid capital y en toda la Comunidad de Madrid</strong>,
-            con mayor capacidad operativa en el área metropolitana y el corredor del Henares. Estas
-            son algunas de las zonas donde tenemos mayor presencia:
+            Atendemos este servicio en <strong>Madrid capital y en toda la Comunidad de Madrid</strong>.
+            Nuestra base está en el este de la Comunidad, junto al corredor del Henares. Estas
+            zonas tienen página propia:
           </p>
 
           <div className="mt-4 grid sm:grid-cols-3 gap-3">

@@ -322,3 +322,10 @@ Luis necesita la web pública ya, mientras se termina la versión completa
 89. **Domicilio: C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)** (Luis, 19-10-2026).
     Solo en el aviso legal y la privacidad, como hasta ahora; fecha de actualización de ambas
     páginas: 19-10-2026.
+90. **Cobertura sin «mayor capacidad operativa»** (Luis, 19-10-2026, tras el informe SEO externo):
+    las páginas de servicio decían «mayor capacidad operativa en el área metropolitana y el
+    corredor del Henares» y enlazaban solo a zonas del noroeste; `/zonas` hablaba de «mayor
+    capacidad de respuesta». Se sigue la decisión 80 (cobertura, no promesas): «Nuestra base está
+    en el este de la Comunidad, junto al corredor del Henares. Estas zonas tienen página propia» y
+    «Llegamos a toda la Comunidad de Madrid». No se crean páginas de Alcalá ni Torrejón sin datos
+    reales de la zona.
