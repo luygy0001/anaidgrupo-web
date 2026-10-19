@@ -16,6 +16,7 @@ import {
   Thermometer,
   Ruler,
   Wrench,
+  Waves,
   ArrowRight,
 } from 'lucide-react';
 
@@ -28,6 +29,7 @@ const iconMap: Record<string, React.ElementType> = {
   Thermometer,
   Ruler,
   Wrench,
+  Waves,
 };
 
 export type ZoneCrossLink = {

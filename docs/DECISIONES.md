@@ -349,3 +349,21 @@ Luis necesita la web pública ya, mientras se termina la versión completa
       bloque: el teléfono lleva `aria-label` y cada tramo del horario va en su línea).
     - **No se aplica:** FAQ con precios (decisión 61, la web no publica cifras) e Instagram (no hay
       cuenta).
+92. **Piscinas de diseño sustituye a Pequeñas obras** (Luis, 19-10-2026), igual que en el Perfil de
+    Empresa de Google. Nueva página `/servicios/piscinas-diseno-madrid`: **solo piscinas de diseño**
+    (no estándar ni prefabricadas), con diseño, construcción y reforma de piscinas existentes, para
+    propietarios de chalet o casa con jardín. Textos del agente copywriter con los datos de Luis.
+    - **Proyecto de ejemplo con 7 fotos reales** (carpeta «PISCINA ZULEMA»): piscina en forma de
+      riñón, spa elevado de piedra para 6 personas, dos cascadas y caseta de piedra con sala de
+      máquinas y baño. Luis tiene permiso del cliente. Pie: «Obra de profesionales que hoy forman
+      parte de nuestra red», **sin año** (las fotos son de 2007), **sin lugar ni nombre del cliente**.
+      Fotos recortadas para quitar la fecha impresa, con contraste, color y nitidez ajustados, a
+      1440 px y sin datos EXIF (no llevaban GPS).
+    - `/servicios/pequenas-obras-madrid` redirige de forma permanente a `/servicios` (no a piscinas:
+      quien buscaba pequeñas obras no encontraría lo que buscaba). Sale del pie, del sitemap y de
+      `llms.txt`; piscinas entra también en el catálogo de servicios de los datos de la portada.
+    - `llms.txt`: «No hacemos obra nueva de viviendas ni edificios» (antes «No hacemos obra nueva:
+      solo reformas», que chocaba con construir piscinas).
+    - **Pendiente de Luis:** la web dice dos cosas sobre quién prepara el presupuesto (la FAQ de la
+      portada: Construcciones Anaid; «Cómo trabajamos» y la decisión 83: el profesional tras la
+      visita). La página de piscinas usa una redacción neutra hasta que se decida.

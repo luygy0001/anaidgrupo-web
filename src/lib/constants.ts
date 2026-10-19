@@ -81,7 +81,7 @@ export const SERVICE_PAGES = [
   { label: 'Electricista', href: '/servicios/electricista-madrid', icon: 'Zap', description: 'Instalaciones, boletines y averías.' },
   { label: 'Fontanero', href: '/servicios/fontanero-madrid', icon: 'Droplets', description: 'Instalaciones, fugas y saneamiento.' },
   { label: 'Climatización', href: '/servicios/climatizacion-madrid', icon: 'Thermometer', description: 'Aire acondicionado, aerotermia y calefacción.' },
-  { label: 'Pequeñas obras', href: '/servicios/pequenas-obras-madrid', icon: 'Wrench', description: 'Arreglos y trabajos puntuales.' },
+  { label: 'Piscinas de diseño', href: '/servicios/piscinas-diseno-madrid', icon: 'Waves', description: 'A medida, con spa y cascadas.' },
 ] as const;
 
 // Servicios especializados (tarjetas de portada). Particulares primero: público principal.

@@ -100,6 +100,15 @@ const schemaData = {
               description: 'Reforma de baño: cambio de bañera por ducha, alicatado, sanitarios y grifería.',
             },
           },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'Piscinas de diseño',
+              description: 'Diseño, construcción y reforma de piscinas de diseño a medida, con spa, cascadas y revestimientos de piedra y gresite.',
+              url: `${SITE_URL}/servicios/piscinas-diseno-madrid`,
+            },
+          },
         ],
       },
     },

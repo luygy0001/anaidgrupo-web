@@ -17,6 +17,17 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        // Servicio retirado el 19-10-2026 (decisión 92): a la lista de servicios, no a una página
+        // de otro servicio que no responde a lo que se buscaba.
+        source: '/servicios/pequenas-obras-madrid',
+        destination: '/servicios',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
