@@ -312,3 +312,40 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     pasa a `v=DMARC1; p=none; rua=mailto:luis@pymexpert.com`; en pymexpert.com se añade el TXT
     `construccionesanaid.com._report._dmarc` = `v=DMARC1` (sin él los informes no llegan a un buzón
     de otro dominio). Se mantiene `p=none` un mes; con informes limpios, `p=quarantine`. Cierra E1.
+
+### Cambios del 19-10-2026
+
+88. **Nuevo móvil: 664 415 523** (Luis, 19-10-2026), para teléfono y WhatsApp. Sustituye al
+    640 962 564 en cabecera, pie, contacto, botón de WhatsApp, páginas legales y datos para Google
+    (el de las zonas estaba escrito a mano; ahora sale de `PHONE`). Fuera de la web hay que
+    cambiarlo también en el Perfil de Empresa de Google, LinkedIn, YouTube, Facebook y las firmas.
+89. **Domicilio: C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)** (Luis, 19-10-2026).
+    Solo en el aviso legal y la privacidad, como hasta ahora; fecha de actualización de ambas
+    páginas: 19-10-2026.
+90. **Cobertura sin «mayor capacidad operativa»** (Luis, 19-10-2026, tras el informe SEO externo):
+    las páginas de servicio decían «mayor capacidad operativa en el área metropolitana y el
+    corredor del Henares» y enlazaban solo a zonas del noroeste; `/zonas` hablaba de «mayor
+    capacidad de respuesta». Se sigue la decisión 80 (cobertura, no promesas): «Nuestra base está
+    en el este de la Comunidad, junto al corredor del Henares. Estas zonas tienen página propia» y
+    «Llegamos a toda la Comunidad de Madrid». No se crean páginas de Alcalá ni Torrejón sin datos
+    reales de la zona.
+91. **Informe SEO/GEO externo del 19-10-2026: lo que se aplica y lo que no.** Comprobado contra el
+    código y la web publicada:
+    - **Cierto y aplicado:** no había `llms.txt` (404). Se crea `public/llms.txt` solo con datos que
+      ya dice la web (modelo de intermediación, contacto, horario, proceso, 8 servicios, zonas con
+      página y lo que no hacemos). El borrador del informe no se usa: traía el teléfono antiguo y
+      afirmaciones que la web no hace («valoración rápida en menos de 48 h para compradores»,
+      «alcance cerrado antes de comprar», Alcalá con página propia).
+    - **Cierto a medias y aplicado:** la promesa de «mayor capacidad operativa» en el corredor del
+      Henares (decisión 90). Torrejón y Alcalá ya figuran en `/zonas`, sin página propia.
+    - **Opcional y aplicado:** `alternateName: «Construccionesanaid»` en los datos de la portada.
+      La marca de la web es «Construcciones Anaid» en todas partes; no había inconsistencia.
+    - **Cosmético y aplicado:** espacio real en «Web construida por PyMExpert» (el hueco era solo
+      visual). El enlace ya iba a https://www.pymexpert.com.
+    - **Falso:** «no hay enlaces a redes» (el pie enlaza YouTube, LinkedIn y Facebook con
+      `aria-label` y están en `sameAs`); «falta `FAQPage`» (está en la portada, servicios y cómo
+      trabajamos); «el JSON-LD debe ser `HomeAndConstructionBusiness`» (ya lo es); «palabras
+      pegadas» en el teléfono de la cabecera y en el horario (son textos alternativos o líneas en
+      bloque: el teléfono lleva `aria-label` y cada tramo del horario va en su línea).
+    - **No se aplica:** FAQ con precios (decisión 61, la web no publica cifras) e Instagram (no hay
+      cuenta).

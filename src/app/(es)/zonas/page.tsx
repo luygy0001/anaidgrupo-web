@@ -82,9 +82,9 @@ export default function ZonasPage() {
               Zonas de cobertura en Madrid
             </h1>
             <p className="mt-4 text-muted-foreground text-lg">
-              Trabajamos con una red de profesionales seleccionados en Madrid y su
-              área metropolitana. Conoce las zonas donde tenemos mayor capacidad
-              de respuesta y la tipología de proyecto que cubrimos en cada una.
+              Trabajamos con una red de profesionales seleccionados en toda la
+              Comunidad de Madrid. Estas son las zonas a las que llegamos y el tipo
+              de obra que cubrimos en cada una.
             </p>
           </div>
         </Container>
@@ -153,10 +153,9 @@ export default function ZonasPage() {
 
           <div className="mt-10 p-4 rounded-xl bg-accent-light/50 border border-accent/20">
             <p className="text-sm text-muted-foreground">
-              <strong>¿Tu municipio no aparece?</strong> Priorizamos estas zonas
-              porque es donde nuestra red tiene mayor capacidad de respuesta.
-              Si tu proyecto está cerca, envíanos tu solicitud con el código
-              postal y valoramos disponibilidad.
+              <strong>¿Tu municipio no aparece?</strong> Llegamos a toda la
+              Comunidad de Madrid: envíanos tu solicitud con el código postal y
+              valoramos disponibilidad.
             </p>
           </div>
 

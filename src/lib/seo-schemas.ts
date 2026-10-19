@@ -128,7 +128,7 @@ export function zoneLocalBusinessSchema({
     name: SITE_NAME,
     url: `${SITE_URL}/zonas/${slug}`,
     description,
-    telephone: '+34640962564',
+    telephone: PHONE,
     image: `${SITE_URL}/images/logo.png`,
     areaServed: {
       '@type': 'City',

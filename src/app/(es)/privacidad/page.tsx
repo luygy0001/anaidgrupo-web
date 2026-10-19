@@ -86,7 +86,7 @@ export default function PrivacidadPage() {
         )}
 
         <div className="text-muted-foreground space-y-8">
-          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 19 de octubre de 2026</p>
 
           <p>
             Aquí te contamos, sin letra pequeña, qué datos tuyos tratamos, para qué, con quién los

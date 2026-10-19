@@ -13,17 +13,17 @@ export const SITE_URL = 'https://www.construccionesanaid.com';
 export const GTM_ID: string = 'GTM-XXXXXXX';
 export const GTM_CONFIGURADO = GTM_ID !== '' && GTM_ID !== 'GTM-XXXXXXX';
 
-// Contacto directo
-export const PHONE = '+34640962564';
-export const PHONE_DISPLAY = '640 962 564';
-export const WHATSAPP_NUMBER = '34640962564';
+// Contacto directo: teléfono y WhatsApp en el mismo móvil (Luis, 19-10-2026; antes 640 962 564)
+export const PHONE = '+34664415523';
+export const PHONE_DISPLAY = '664 415 523';
+export const WHATSAPP_NUMBER = '34664415523';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%2C%20quiero%20pedir%20presupuesto%20para%20una%20reforma%20en%20la%20Comunidad%20de%20Madrid.`;
 // Correo público: info@ (decisión 13; Luis lo mantiene el 15-10-2026)
 export const EMAIL = 'info@construccionesanaid.com';
 
 // Ubicación y cobertura
 // Domicilio: SOLO para aviso legal y privacidad (obligación legal). Nunca en otras páginas ni en schema.
-export const ADDRESS = 'C/ Isaac Peral, 46, Valdeavero (Madrid)';
+export const ADDRESS = 'C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)';
 export const COVERAGE_AREA = 'Toda la Comunidad de Madrid';
 
 // Horario: el mismo que el Perfil de Empresa de Google (Luis, 15-10-2026). Los datos para Google
@@ -173,5 +173,5 @@ export const LEGAL_DRAFT = false;
 export const LEGAL = {
   titular: 'Luis Manuel Vázquez',
   nif: '08984194A',
-  domicilio: 'C/ Isaac Peral, 46, Valdeavero, Madrid',
+  domicilio: 'C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero, Madrid',
 } as const;
