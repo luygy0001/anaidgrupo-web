@@ -14,7 +14,7 @@ const PAGINAS = [
   '/servicios/fontanero-madrid',
   '/servicios/climatizacion-madrid',
   '/servicios/arquitecto-reformas-madrid',
-  '/servicios/pequenas-obras-madrid',
+  '/servicios/piscinas-diseno-madrid',
   '/zonas',
   '/zonas/pozuelo-de-alarcon',
   '/zonas/las-rozas',

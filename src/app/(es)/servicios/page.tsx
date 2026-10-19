@@ -7,7 +7,7 @@ import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaim
 export const metadata: Metadata = {
   title: 'Servicios de reformas en Madrid',
   description:
-    'Reforma integral, baño, cocina, electricista, fontanero, climatización, arquitecto y pequeñas obras en Madrid. Te asignamos al profesional adecuado.',
+    'Reforma integral, baño, cocina, electricista, fontanero, climatización, arquitecto y piscinas de diseño en Madrid. Te asignamos al profesional adecuado.',
   alternates: { canonical: '/servicios' },
 };
 
