@@ -312,3 +312,13 @@ Luis necesita la web pública ya, mientras se termina la versión completa
     pasa a `v=DMARC1; p=none; rua=mailto:luis@pymexpert.com`; en pymexpert.com se añade el TXT
     `construccionesanaid.com._report._dmarc` = `v=DMARC1` (sin él los informes no llegan a un buzón
     de otro dominio). Se mantiene `p=none` un mes; con informes limpios, `p=quarantine`. Cierra E1.
+
+### Cambios del 19-10-2026
+
+88. **Nuevo móvil: 664 415 523** (Luis, 19-10-2026), para teléfono y WhatsApp. Sustituye al
+    640 962 564 en cabecera, pie, contacto, botón de WhatsApp, páginas legales y datos para Google
+    (el de las zonas estaba escrito a mano; ahora sale de `PHONE`). Fuera de la web hay que
+    cambiarlo también en el Perfil de Empresa de Google, LinkedIn, YouTube, Facebook y las firmas.
+89. **Domicilio: C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)** (Luis, 19-10-2026).
+    Solo en el aviso legal y la privacidad, como hasta ahora; fecha de actualización de ambas
+    páginas: 19-10-2026.
