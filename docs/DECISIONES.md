@@ -382,4 +382,6 @@ Luis necesita la web pública ya, mientras se termina la versión completa
       inteligencia artificial con tus datos». Cuando el programa con IA se use con datos de clientes
       reales hay que actualizar la privacidad (proveedor de IA como encargado, finalidad, revisión
       humana) y avisar en el presupuesto de que se ha preparado con ayuda de IA y lo ha revisado el
-      profesional. Pendiente de que Luis confirme desde cuándo se usa.
+      profesional. **Luis confirma (19-10-2026) que el programa con IA empieza con la versión
+      completa**: la provisional no lo usa y su privacidad es correcta. Al publicar la completa,
+      actualizar privacidad y aviso de IA en el presupuesto antes de tratar datos reales con él.
