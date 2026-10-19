@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Container from '@/components/ui/Container';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
@@ -14,6 +15,16 @@ const ZONAS_DESTACADAS = [
   { nombre: 'Majadahonda', slug: 'majadahonda' },
 ];
 
+type FotoProyecto = { src: string; alt: string; pie: string };
+
+// Proyecto de ejemplo con fotos reales (opcional). La primera foto va grande.
+type ProyectoEjemplo = {
+  titulo: string;
+  texto: string;
+  autoria: string;
+  fotos: FotoProyecto[];
+};
+
 interface ServiceLandingProps {
   h1: string;
   intro: string;
@@ -23,6 +34,7 @@ interface ServiceLandingProps {
   trabajos: string[];
   cuando: string;
   faqs: FAQItem[];
+  proyecto?: ProyectoEjemplo;
 }
 
 const pasos = [
@@ -41,6 +53,7 @@ export default function ServiceLanding({
   trabajos,
   cuando,
   faqs,
+  proyecto,
 }: ServiceLandingProps) {
   const breadcrumbs = [
     { name: 'Inicio', url: '/' },
@@ -96,6 +109,44 @@ export default function ServiceLanding({
           </div>
         </Container>
       </section>
+
+      {proyecto && (
+        <section className="section-padding bg-muted" aria-labelledby="proyecto-ejemplo">
+          <Container>
+            <div className="max-w-3xl">
+              <h2 id="proyecto-ejemplo" className="text-2xl font-bold">
+                {proyecto.titulo}
+              </h2>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{proyecto.texto}</p>
+              <p className="mt-2 text-xs font-medium text-primary">{proyecto.autoria}</p>
+            </div>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {proyecto.fotos.map((f, i) => (
+                <figure
+                  key={f.src}
+                  className={i === 0 ? 'sm:col-span-2 lg:col-span-3' : undefined}
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-slate-200">
+                    <Image
+                      src={f.src}
+                      alt={f.alt}
+                      fill
+                      priority={i === 0}
+                      sizes={
+                        i === 0
+                          ? '(min-width: 1280px) 1200px, 100vw'
+                          : '(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw'
+                      }
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="mt-2 text-sm text-muted-foreground">{f.pie}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* Qué tipo de trabajos incluye */}
       <section className="section-padding">
