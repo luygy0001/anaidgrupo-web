@@ -23,7 +23,7 @@ export const EMAIL = 'info@construccionesanaid.com';
 
 // Ubicación y cobertura
 // Domicilio: SOLO para aviso legal y privacidad (obligación legal). Nunca en otras páginas ni en schema.
-export const ADDRESS = 'C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)';
+export const ADDRESS = 'Av. Isaac Peral, 46, oficina 2, 28816 Valdeavero (Madrid)';
 export const COVERAGE_AREA = 'Toda la Comunidad de Madrid';
 
 // Horario: el mismo que el Perfil de Empresa de Google (Luis, 15-10-2026). Los datos para Google
@@ -173,5 +173,5 @@ export const LEGAL_DRAFT = false;
 export const LEGAL = {
   titular: 'Luis Manuel Vázquez',
   nif: '08984194A',
-  domicilio: 'C/ Isaac Peral, 46, oficina 2, 28816 Valdeavero, Madrid',
+  domicilio: 'Av. Isaac Peral, 46, oficina 2, 28816 Valdeavero, Madrid',
 } as const;
