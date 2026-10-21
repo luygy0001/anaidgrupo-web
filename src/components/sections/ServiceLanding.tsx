@@ -25,7 +25,7 @@ type ProyectoEjemplo = {
   fotos: FotoProyecto[];
 };
 
-interface ServiceLandingProps {
+export interface ServiceLandingProps {
   h1: string;
   intro: string;
   slug: string;

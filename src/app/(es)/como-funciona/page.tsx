@@ -4,6 +4,7 @@ import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import IntermediationDisclaimer from '@/components/shared/IntermediationDisclaimer';
 import { FAQS } from '@/lib/constants';
+import { QUE_HACE, QUE_NO_HACE } from '@/content/como-trabajamos';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -12,22 +13,6 @@ export const metadata: Metadata = {
     'Cómo trabaja Construcciones Anaid: estudiamos tu reforma, te asignamos al profesional adecuado de nuestra red en Madrid y coordinamos la obra contigo.',
   alternates: { canonical: '/como-funciona' },
 };
-
-const queHace = [
-  'Recibe y analiza cada solicitud de cliente',
-  'Filtra y clasifica la necesidad según tipo, urgencia y zona',
-  'Asigna al profesional colaborador más adecuado',
-  'Orienta al cliente en los primeros pasos del proyecto',
-  'Facilita la comunicación entre cliente y profesional',
-];
-
-const queNoHace = [
-  'No ejecuta obras ni servicios técnicos',
-  'No factura al cliente final por la ejecución',
-  'No ofrece garantía técnica propia sobre la obra',
-  'No sustituye la valoración profesional en persona',
-  'No fija precios definitivos sin validación del profesional',
-];
 
 export default function ComoFuncionaPage() {
   return (
@@ -54,7 +39,7 @@ export default function ComoFuncionaPage() {
                 Qué hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
-                {queHace.map((item) => (
+                {QUE_HACE.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-foreground">
                     <CheckCircle className="w-4 h-4 text-success mt-0.5 flex-shrink-0" />
                     {item}
@@ -67,7 +52,7 @@ export default function ComoFuncionaPage() {
                 Qué NO hace Construcciones Anaid
               </h2>
               <ul className="space-y-3">
-                {queNoHace.map((item) => (
+                {QUE_NO_HACE.map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-foreground">
                     <XCircle className="w-4 h-4 text-error mt-0.5 flex-shrink-0" />
                     {item}

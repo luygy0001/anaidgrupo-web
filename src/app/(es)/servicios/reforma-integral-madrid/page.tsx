@@ -1,35 +1,15 @@
 import type { Metadata } from 'next';
 import ServiceLanding from '@/components/sections/ServiceLanding';
+import { PAGINAS_SERVICIO } from '@/content/servicios';
+
+const pagina = PAGINAS_SERVICIO['reforma-integral-madrid'];
 
 export const metadata: Metadata = {
-  title: 'Reforma integral en Madrid',
-  description: 'Solicita tu reforma integral en Madrid. Construcciones Anaid analiza tu proyecto y te asigna al profesional adecuado. Colaboradores seleccionados.',
+  title: pagina.titulo,
+  description: pagina.descripcionMeta,
   alternates: { canonical: '/servicios/reforma-integral-madrid' },
 };
 
 export default function ReformaIntegralPage() {
-  return (
-    <ServiceLanding
-      h1="Reforma integral en Madrid"
-      slug="reforma-integral-madrid"
-      breadcrumbName="Reforma integral"
-      description="Servicio de intermediación para reformas integrales de vivienda y local en la Comunidad de Madrid: coordinación, análisis y asignación al profesional adecuado de nuestra red."
-      intro="Si necesitas una renovación completa de tu vivienda o local, Construcciones Anaid analiza tu proyecto y te conecta con el profesional adecuado para llevarlo a cabo en la Comunidad de Madrid."
-      trabajos={[
-        'Renovación completa de viviendas y locales',
-        'Redistribución de espacios y tabiquería',
-        'Cambio completo de instalaciones (electricidad, fontanería, climatización)',
-        'Acabados: suelos, paredes, techos, carpintería',
-        'Coordinación de gremios necesarios',
-        'Proyectos con necesidad de licencia de obra',
-      ]}
-      cuando="Este tipo de reforma suele necesitarse al comprar una vivienda de segunda mano, al renovar un piso antiguo, al cambiar la distribución del hogar o al adaptar un local comercial. También cuando la vivienda necesita una actualización completa de instalaciones."
-      faqs={[
-        { question: '¿Cuánto dura una reforma integral?', answer: 'Depende del tamaño. En una vivienda habitual de unos 80 m², con tres dormitorios, un baño, cocina y salón, la reforma integral no suele pasar de 60 días. En viviendas grandes, de 100 a 200 m² o más (chalets, casas y pisos con más estancias y baños, patios o terreno), hablamos de 2 a 4 meses. El profesional asignado te da el plazo tras ver la obra y queda fijado en el contrato.' },
-        { question: '¿Necesito licencia de obra para una reforma integral?', answer: 'En muchos casos sí, especialmente si se modifican tabiques, instalaciones o elementos estructurales. El profesional o un arquitecto técnico pueden orientarte sobre los permisos necesarios.' },
-        { question: '¿Puedo vivir en casa durante la reforma?', answer: 'Normalmente no es recomendable durante una reforma integral, por seguridad y para no retrasar los trabajos. El profesional te asesorará según tu caso concreto.' },
-        { question: '¿El presupuesto incluye materiales?', answer: 'Depende del acuerdo con el profesional. La mayoría de presupuestos incluyen materiales y mano de obra, pero conviene confirmarlo antes de aceptar.' },
-      ]}
-    />
-  );
+  return <ServiceLanding {...pagina.landing} />;
 }

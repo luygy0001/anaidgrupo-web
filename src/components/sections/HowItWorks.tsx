@@ -1,36 +1,10 @@
 import Container from '@/components/ui/Container';
 import { FileText, Search, UserCheck, HardHat } from 'lucide-react';
+import { PASOS } from '@/content/como-trabajamos';
 
-const steps = [
-  {
-    icon: FileText,
-    number: '01',
-    title: 'Cuéntanos tu proyecto',
-    description:
-      'Escríbenos por el formulario, por WhatsApp o llámanos, y cuéntanos qué necesitas. Si quieres, por WhatsApp puedes mandarnos fotos.',
-  },
-  {
-    icon: Search,
-    number: '02',
-    title: 'Analizamos la necesidad',
-    description:
-      'Una persona estudia cada solicitud para ver el tipo de servicio, la urgencia y la complejidad del proyecto.',
-  },
-  {
-    icon: UserCheck,
-    number: '03',
-    title: 'Asignamos el perfil adecuado',
-    description:
-      'Seleccionamos al colaborador que mejor encaja según especialidad, zona geográfica, disponibilidad y tipo de trabajo.',
-  },
-  {
-    icon: HardHat,
-    number: '04',
-    title: 'El profesional te contacta',
-    description:
-      'El profesional asignado visita tu proyecto, lo valida técnicamente y te entrega un presupuesto definitivo sin compromiso.',
-  },
-];
+// Textos de los pasos en src/content/como-trabajamos.ts; aquí solo el icono de cada uno.
+const iconos = [FileText, Search, UserCheck, HardHat];
+const steps = PASOS.map((paso, i) => ({ ...paso, icon: iconos[i] }));
 
 export default function HowItWorks() {
   return (
