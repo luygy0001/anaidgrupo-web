@@ -11,15 +11,16 @@ export default {
 
   marca: { parte1: 'Construcciones', parte2: 'Anaid' },
 
-  actividad: 'Reformas y coordinación de obra',
-  claim: 'Presupuesto en menos de 24 h',
+  // RESPUESTA_PLAZO de constants.ts: la web provisional NO promete presupuesto en 24 h.
+  actividad: 'Reformas y coordinación de obra en Madrid',
+  claim: 'Respuesta en menos de 48 h laborables',
 
   // LEGAL.titular del aviso legal: persona física, «Construcciones Anaid» es su nombre comercial.
   titular: 'Luis Manuel Vázquez',
 
-  telefono: { texto: '640 962 564', e164: '+34640962564' },
+  telefono: { texto: '664 415 523', e164: '+34664415523' },
   telefono2: null,
-  whatsapp: 'https://wa.me/34640962564',
+  whatsapp: 'https://wa.me/34664415523',
 
   email: 'info@construccionesanaid.com',
   web: 'https://www.construccionesanaid.com/',
@@ -30,7 +31,7 @@ export default {
   direccion: 'Toda la Comunidad de Madrid',
   mapa: null,
 
-  horario: 'L–V 8:30–19:30',
+  horario: 'L–J 8:00–18:00 · V 8:00–15:00',
 
   paginas: {
     servicios: 'https://www.construccionesanaid.com/servicios',
@@ -41,7 +42,7 @@ export default {
   redes: [
     { nombre: 'LinkedIn', icono: 'linkedin', url: 'https://www.linkedin.com/company/construcciones-anaid/' },
     { nombre: 'YouTube', icono: 'youtube', url: 'https://www.youtube.com/@ConstruccionesAnaid' },
-    { nombre: 'Facebook', icono: 'facebook', url: 'https://www.facebook.com/construccionesanaid' },
+    { nombre: 'Facebook', icono: 'facebook', url: 'https://www.facebook.com/Construccionesanaid' },
   ],
 
   imagenesRemotas: 'https://www.construccionesanaid.com/images/firma/',
@@ -72,9 +73,10 @@ export default {
 
   // Obligatorio aquí: el aviso legal dice que Construcciones Anaid no es constructora ni ejecuta
   // obras, y la web lo repite en cada página de servicio. La firma tiene que decir lo mismo.
+  // Texto literal de INTERMEDIATION_DISCLAIMER en constants.ts, para decir lo mismo que la web.
   notaActividad: {
     titulo: 'Cómo trabajamos.',
-    texto: 'Construcciones Anaid prepara el presupuesto, asigna a cada cliente profesionales independientes de su red y coordina la obra. No ejecuta las obras: el contrato de ejecución se firma con el profesional asignado.',
+    texto: 'Construcciones Anaid coordina reformas con una red de arquitectos, autónomos y empresas. El contrato de obra lo firmas con el profesional asignado, que hace la obra y responde de su trabajo.',
   },
 
   // La web es Next.js y se despliega con Dokploy: las imágenes van en el repositorio, no se suben
