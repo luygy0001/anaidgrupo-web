@@ -69,7 +69,7 @@ export default function ZoneLanding({
 
   return (
     <>
-      <JsonLd data={zoneLocalBusinessSchema({ municipio, slug, description })} />
+      <JsonLd data={zoneLocalBusinessSchema({ municipio, description })} />
       <JsonLd data={breadcrumbSchema(breadcrumbs)} />
 
       {/* Breadcrumbs */}

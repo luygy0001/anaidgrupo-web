@@ -22,42 +22,42 @@ export const horarioApertura = [
   },
 ];
 
-export const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': `${SITE_URL}#organization`,
+// El negocio para Google: la misma entidad (mismo @id) en todas las páginas que lo describen, con
+// el nombre, el teléfono y los perfiles de la web y del Perfil de Empresa. Sin dirección: negocio de
+// área de servicio (decisión 9; la sede solo figura en las páginas legales).
+export const NEGOCIO = {
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${SITE_URL}/#business`,
   name: SITE_NAME,
-  url: SITE_URL,
-  logo: `${SITE_URL}/images/logo.png`,
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: PHONE,
-    email: EMAIL,
-    contactType: 'customer service',
-    areaServed: 'ES',
-    availableLanguage: ['Spanish'],
-  },
-  areaServed: {
-    '@type': 'State',
-    name: 'Comunidad de Madrid',
-  },
-  sameAs: [SOCIAL.facebook],
-};
-
-export const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': `${SITE_URL}#localbusiness`,
-  name: SITE_NAME,
+  // La grafía del dominio, por si alguien busca la marca junta
+  alternateName: 'Construccionesanaid',
   url: SITE_URL,
   telephone: PHONE,
   email: EMAIL,
   image: `${SITE_URL}/images/logo.png`,
-  areaServed: {
-    '@type': 'State',
-    name: 'Comunidad de Madrid',
-  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Comunidad de Madrid' },
+    { '@type': 'City', name: 'Madrid' },
+    { '@type': 'City', name: 'Pozuelo de Alarcón' },
+    { '@type': 'City', name: 'Las Rozas de Madrid' },
+    { '@type': 'City', name: 'Majadahonda' },
+  ],
   openingHoursSpecification: horarioApertura,
+  // Solo perfiles del propio negocio (no el personal del titular)
+  sameAs: [SOCIAL.youtube, SOCIAL.linkedinEmpresa, SOCIAL.facebook],
+};
+
+// Referencia al negocio desde otros datos (proveedor de un servicio)
+const refNegocio = {
+  '@type': NEGOCIO['@type'],
+  '@id': NEGOCIO['@id'],
+  name: NEGOCIO.name,
+  url: NEGOCIO.url,
+};
+
+export const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  ...NEGOCIO,
 };
 
 type BreadcrumbItem = { name: string; url: string };
@@ -95,12 +95,7 @@ export function serviceSchema({
     description,
     serviceType: serviceType ?? name,
     url: `${SITE_URL}/servicios/${slug}`,
-    provider: {
-      '@type': 'Organization',
-      '@id': `${SITE_URL}#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-    },
+    provider: refNegocio,
     areaServed: {
       '@type': 'State',
       name: 'Comunidad de Madrid',
@@ -110,31 +105,24 @@ export function serviceSchema({
 
 type ZoneLocalBusinessArgs = {
   municipio: string;
-  slug: string;
   description: string;
 };
 
-// LocalBusiness para landings de zona: areaServed apunta al municipio concreto,
-// contenido en la Comunidad de Madrid. Reutiliza el @id global para agregación.
+// Landings de zona: el mismo negocio, con areaServed en el municipio concreto
+// (contenido en la Comunidad de Madrid).
 export function zoneLocalBusinessSchema({
   municipio,
-  slug,
   description,
 }: ZoneLocalBusinessArgs) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
-    '@id': `${SITE_URL}#localbusiness`,
-    name: SITE_NAME,
-    url: `${SITE_URL}/zonas/${slug}`,
+    ...NEGOCIO,
     description,
-    telephone: PHONE,
-    image: `${SITE_URL}/images/logo.png`,
     areaServed: {
       '@type': 'City',
       name: municipio,
       containedInPlace: {
-        '@type': 'State',
+        '@type': 'AdministrativeArea',
         name: 'Comunidad de Madrid',
       },
     },

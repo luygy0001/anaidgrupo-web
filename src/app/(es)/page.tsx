@@ -7,8 +7,8 @@ import HowItWorks from '@/components/sections/HowItWorks';
 import FAQAccordion from '@/components/sections/FAQAccordion';
 import CTASection from '@/components/sections/CTASection';
 import JsonLd from '@/components/seo/JsonLd';
-import { FAQS, SITE_NAME, SITE_URL, PHONE, EMAIL, SOCIAL } from '@/lib/constants';
-import { horarioApertura } from '@/lib/seo-schemas';
+import { FAQS, SITE_NAME, SITE_URL } from '@/lib/constants';
+import { NEGOCIO } from '@/lib/seo-schemas';
 
 const TITULO = 'Reformas en Madrid con trato directo · Construcciones Anaid';
 const DESCRIPCION =
@@ -50,28 +50,9 @@ const schemaData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'HomeAndConstructionBusiness',
-      '@id': `${SITE_URL}/#business`,
-      name: 'Construcciones Anaid',
-      // La grafía del dominio, por si alguien busca la marca junta
-      alternateName: 'Construccionesanaid',
+      ...NEGOCIO,
       description:
         'Reformas integrales, de cocina y de baño en toda la Comunidad de Madrid. Construcciones Anaid te asigna al profesional adecuado de su red de arquitectos y oficios, coordina la obra y te envía fotos del avance casi a diario por WhatsApp.',
-      url: SITE_URL,
-      telephone: PHONE,
-      email: EMAIL,
-      // Negocio de área de servicio: sin dirección pública (la sede solo figura en las
-      // páginas legales, decisión de Luis del 06-10-2026).
-      areaServed: [
-        { '@type': 'AdministrativeArea', name: 'Comunidad de Madrid' },
-        { '@type': 'City', name: 'Madrid' },
-        { '@type': 'City', name: 'Pozuelo de Alarcón' },
-        { '@type': 'City', name: 'Las Rozas de Madrid' },
-        { '@type': 'City', name: 'Majadahonda' },
-      ],
-      openingHoursSpecification: horarioApertura,
-      // Solo perfiles del propio negocio (no el personal del titular)
-      sameAs: [SOCIAL.youtube, SOCIAL.linkedinEmpresa, SOCIAL.facebook],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Servicios de reforma',
