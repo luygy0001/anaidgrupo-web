@@ -24,7 +24,7 @@ export default function AvisoLegalPage() {
         )}
 
         <div className="prose prose-sm max-w-none text-muted-foreground space-y-6">
-          <p className="text-xs italic">Última actualización: 19 de octubre de 2026</p>
+          <p className="text-xs italic">Última actualización: 21 de octubre de 2026</p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground">1. Datos identificativos del titular</h2>

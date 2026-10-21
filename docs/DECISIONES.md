@@ -414,3 +414,7 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
       decisión de Luis de no mostrar el domicilio en la ficha).
     - FAQPage: portada, «Cómo funciona» y las 8 páginas de servicio, que son las que tienen
       preguntas frecuentes.
+98. **Domicilio: Av. Isaac Peral, no «C/»** (Luis, 21-10-2026). La calle es una avenida, como en la
+    ficha verificada de Mandrinados Anaid en Google; así coincide con lo que Google tiene registrado
+    para la verificación del Perfil de Empresa. Cambia solo en el aviso legal y la privacidad
+    (`ADDRESS` y `LEGAL.domicilio`), con fecha de actualización 21-10-2026. Corrige la decisión 89.
