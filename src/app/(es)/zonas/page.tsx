@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Container from '@/components/ui/Container';
 import CTASection from '@/components/sections/CTASection';
 import { MapPin, TrendingUp, Users, Building2 } from 'lucide-react';
+import { CAPAS_COBERTURA } from '@/content/zonas';
 
 export const metadata: Metadata = {
   title: 'Zonas de cobertura en Madrid',
@@ -10,63 +11,9 @@ export const metadata: Metadata = {
   alternates: { canonical: '/zonas' },
 };
 
-type Municipio = {
-  nombre: string;
-  slug: string;
-  nota?: string;
-  hasLanding?: boolean;
-};
-
-type Capa = {
-  id: string;
-  titulo: string;
-  descripcion: string;
-  icon: typeof TrendingUp;
-  municipios: Municipio[];
-};
-
-const CAPAS: Capa[] = [
-  {
-    id: 'noroeste',
-    titulo: 'Noroeste de Madrid',
-    descripcion:
-      'Municipios donde las reformas suelen ser de mayor entidad: integrales, cocina y baño con acabados de gama alta.',
-    icon: TrendingUp,
-    municipios: [
-      { nombre: 'Pozuelo de Alarcón', slug: 'pozuelo-de-alarcon', hasLanding: true },
-      { nombre: 'Las Rozas de Madrid', slug: 'las-rozas', hasLanding: true },
-      { nombre: 'Majadahonda', slug: 'majadahonda', hasLanding: true },
-    ],
-  },
-  {
-    id: 'volumen',
-    titulo: 'Zona metropolitana sur y corredor del Henares',
-    descripcion:
-      'Municipios con gran volumen de población donde cubrimos reformas de vivienda, baño, cocina y servicios técnicos.',
-    icon: Users,
-    municipios: [
-      { nombre: 'Móstoles', slug: 'mostoles' },
-      { nombre: 'Fuenlabrada', slug: 'fuenlabrada' },
-      { nombre: 'Leganés', slug: 'leganes' },
-      { nombre: 'Getafe', slug: 'getafe' },
-      { nombre: 'Alcorcón', slug: 'alcorcon' },
-      { nombre: 'Torrejón de Ardoz', slug: 'torrejon-de-ardoz' },
-    ],
-  },
-  {
-    id: 'base',
-    titulo: 'Nuestra zona de base',
-    descripcion:
-      'El corredor del Henares es la zona más cercana a nuestra base, en el este de la Comunidad de Madrid.',
-    icon: Building2,
-    municipios: [
-      {
-        nombre: 'Alcalá de Henares',
-        slug: 'alcala-de-henares',
-      },
-    ],
-  },
-];
+// Datos en src/content/zonas.ts; aquí solo el icono de cada capa.
+const ICONOS: Record<string, typeof TrendingUp> = { noroeste: TrendingUp, volumen: Users, base: Building2 };
+const CAPAS = CAPAS_COBERTURA.map((capa) => ({ ...capa, icon: ICONOS[capa.id] ?? MapPin }));
 
 export default function ZonasPage() {
   return (
