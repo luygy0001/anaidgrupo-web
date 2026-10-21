@@ -385,3 +385,32 @@ Luis necesita la web pública ya, mientras se termina la versión completa
       profesional. **Luis confirma (19-10-2026) que el programa con IA empieza con la versión
       completa**: la provisional no lo usa y su privacidad es correcta. Al publicar la completa,
       actualizar privacidad y aviso de IA en el presupuesto antes de tratar datos reales con él.
+
+### Capa de buscadores e IA (21-10-2026)
+
+Réplica en Construcciones Anaid del trabajo SEO/GEO hecho en PyMExpert. Solo la capa de buscadores e
+IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
+
+95. **robots.txt con los rastreadores de IA por nombre** (rama `feat/robots-rastreadores-ia`).
+    Permiso explícito a OAI-SearchBot, ChatGPT-User, GPTBot, Claude-SearchBot, Claude-User,
+    ClaudeBot, PerplexityBot, Perplexity-User, Google-Extended, Bingbot, Applebot,
+    Applebot-Extended, meta-externalagent, Amazonbot y CCBot, más la regla general `*`. Todos sin
+    acceso a `/api/` ni `/admin/`. La línea del sitemap va al final.
+96. **llms.txt y llms-full.txt se generan con el contenido de la web** (rama `feat/llms-generados`).
+    Antes `public/llms.txt` era un texto a mano que se desfasaba (quedó «Pequeñas obras» tras el
+    cambio a piscinas). Ahora los textos de servicios, zonas y «Cómo trabajamos» viven en
+    `src/content/` y los leen las páginas y `src/lib/llms.ts`: un solo sitio para lo que ven las
+    personas, Google y las IA. Formato llmstxt.org, sin precios ni plazos (la web no los publica).
+    Las páginas se ven exactamente igual: comprobado el texto visible, metas y datos estructurados
+    de las 16 páginas contra producción.
+97. **Datos estructurados: una sola ficha del negocio** (rama `fix/datos-estructurados-negocio`).
+    Portada, contacto y zonas describían el negocio con tipos e `@id` distintos (`LocalBusiness`
+    con `#localbusiness` frente a `HomeAndConstructionBusiness` con `/#business`) y solo la portada
+    llevaba los perfiles (`sameAs`). Ahora las tres usan la misma entidad `NEGOCIO`
+    (`HomeAndConstructionBusiness`, subtipo de LocalBusiness y padre de GeneralContractor) con el
+    mismo nombre, teléfono, correo, horario y perfiles de YouTube, LinkedIn y Facebook; los
+    servicios la citan como proveedor. Se borra `organizationSchema`, que no usaba ninguna página.
+    - **Sin dirección**, como en el Perfil de Empresa (negocio de área de servicio, decisión 9 y
+      decisión de Luis de no mostrar el domicilio en la ficha).
+    - FAQPage: portada, «Cómo funciona» y las 8 páginas de servicio, que son las que tienen
+      preguntas frecuentes.
