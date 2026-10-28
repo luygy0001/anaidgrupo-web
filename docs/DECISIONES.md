@@ -443,3 +443,8 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
      - Fechas de partida: portada, contacto y las 8 de servicio, 21-10 (datos estructurados de la
        decisión 97); /servicios, /zonas y «Cómo funciona», 19-10 (Piscinas de diseño, cobertura y
        preguntas frecuentes); las 3 zonas, 28-10 (descripciones más cortas).
+102. **La 404 con cabecera, pie y WhatsApp** (Luis, 28-10-2026, punto 18 de la auditoría). Next.js
+     pinta la 404 fuera del layout de las páginas, así que salía sin logo ni menú. La estructura
+     común (saltar al contenido, aviso de cookies, cabecera, pie y botón de WhatsApp) pasa a
+     `MarcoPagina`, que usan el layout y la 404: quien llega por un enlace roto puede seguir
+     navegando. Sigue siendo un 404 real con «noindex», también en /gracias/<tipo-inexistente>.
