@@ -6,6 +6,8 @@ import { GTM_CONFIGURADO, GTM_ID } from '@/lib/constants';
 // 2. Google Tag Manager (GTM fan-out a GA4 / Meta Pixel / etc.).
 // Importante: los defaults de Consent Mode se emiten ANTES de cargar GTM.
 // El aviso de cookies propio (CookieConsentBanner) actualiza los flags al guardar la elección.
+// Sin GTM configurado no se emite nada: ni siquiera window.dataLayer, que desde fuera parece
+// analítica activa aunque no cargue nada (auditoría del 28-10-2026).
 
 const consentDefaultsSrc = `
   window.dataLayer = window.dataLayer || [];
@@ -31,6 +33,7 @@ function gtmSnippet(id: string): string {
 }
 
 export default function ConsentAndGTM() {
+  if (!GTM_CONFIGURADO) return null;
   return (
     <>
       <Script
@@ -38,13 +41,11 @@ export default function ConsentAndGTM() {
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: consentDefaultsSrc }}
       />
-      {GTM_CONFIGURADO && (
-        <Script
-          id="gtm-loader"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{ __html: gtmSnippet(GTM_ID) }}
-        />
-      )}
+      <Script
+        id="gtm-loader"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: gtmSnippet(GTM_ID) }}
+      />
     </>
   );
 }

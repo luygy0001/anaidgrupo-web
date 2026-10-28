@@ -10,6 +10,9 @@ export const SITE_URL = 'https://www.construccionesanaid.com';
 // Medición de visitas (Google Tag Manager). Mientras el ID sea el de relleno no se carga nada,
 // no se muestra el aviso de cookies (no hay nada que aceptar) y /cookies lo dice. Al poner el ID
 // real, el aviso aparece solo; si se añaden etiquetas en GTM además de GA4, actualizar /cookies.
+// OJO: la CSP de next.config.ts solo permite scripts y conexiones del propio dominio. Antes de
+// poner el ID real hay que abrirla a Google (googletagmanager.com y google-analytics.com en
+// script-src, connect-src e img-src); si no, GTM no carga.
 export const GTM_ID: string = 'GTM-XXXXXXX';
 export const GTM_CONFIGURADO = GTM_ID !== '' && GTM_ID !== 'GTM-XXXXXXX';
 
