@@ -12,6 +12,11 @@ interface CookiePreferences {
 
 const STORAGE_KEY = 'anaid_cookie_consent_v1';
 
+// «Aceptar» y «Rechazar» con el mismo aspecto: rechazar tiene que ser igual de fácil y visible
+// que aceptar (guía de cookies de la AEPD).
+const BOTON_ELECCION =
+  'flex-1 py-1.5 px-3 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-all shadow-sm active:scale-95 text-center cursor-pointer';
+
 // Firma de gtag que usa este aviso (Consent Mode v2)
 type Gtag = (comando: 'consent', accion: 'update', valores: Record<string, 'granted' | 'denied'>) => void;
 
@@ -133,7 +138,7 @@ export default function CookieConsentBanner() {
               <button
                 type="button"
                 onClick={() => saveConsent({ necessary: true, analytics: true, marketing: true })}
-                className="flex-1 py-1.5 px-3 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-all shadow-sm active:scale-95 text-center cursor-pointer"
+                className={BOTON_ELECCION}
               >
                 Aceptar todas
               </button>
@@ -141,7 +146,7 @@ export default function CookieConsentBanner() {
               <button
                 type="button"
                 onClick={() => saveConsent({ necessary: true, analytics: false, marketing: false })}
-                className="flex-1 py-1.5 px-3 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white font-semibold text-xs transition-all active:scale-95 text-center cursor-pointer"
+                className={BOTON_ELECCION}
               >
                 Rechazar
               </button>
