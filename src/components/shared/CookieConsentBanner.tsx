@@ -2,46 +2,28 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ShieldCheck, Cookie, X, Check } from 'lucide-react';
-
-interface CookiePreferences {
-  necessary: boolean;
-  analytics: boolean;
-  marketing: boolean;
-  timestamp: string;
-}
-
-const STORAGE_KEY = 'anaid_cookie_consent_v1';
+import { guardarConsentimiento, leerConsentimiento } from '@/lib/analitica';
 
 // «Aceptar» y «Rechazar» con el mismo aspecto: rechazar tiene que ser igual de fácil y visible
 // que aceptar (guía de cookies de la AEPD).
 const BOTON_ELECCION =
   'flex-1 py-1.5 px-3 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-black text-xs transition-all shadow-sm active:scale-95 text-center cursor-pointer';
 
-// Firma de gtag que usa este aviso (Consent Mode v2)
-type Gtag = (comando: 'consent', accion: 'update', valores: Record<string, 'granted' | 'denied'>) => void;
-
 export default function CookieConsentBanner() {
   const [visible, setVisible] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [analytics, setAnalytics] = useState(false);
-  const [marketing, setMarketing] = useState(false);
   const bannerRef = useRef<HTMLDivElement>(null);
 
   // La elección guardada se lee al montar: en el servidor no existe localStorage, y leerla en el
   // estado inicial haría que el HTML del servidor y el del navegador no coincidieran (hidratación).
   /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        const parsed: CookiePreferences = JSON.parse(stored);
-        setAnalytics(!!parsed.analytics);
-        setMarketing(!!parsed.marketing);
-        setVisible(false);
-      } else {
-        setVisible(true);
-      }
-    } catch {
+    const guardado = leerConsentimiento();
+    if (guardado) {
+      setAnalytics(guardado.analytics);
+      setVisible(false);
+    } else {
       setVisible(true);
     }
 
@@ -78,26 +60,13 @@ export default function CookieConsentBanner() {
     };
   }, [visible, showSettings]);
 
-  const saveConsent = (prefs: { necessary: boolean; analytics: boolean; marketing: boolean }) => {
-    const data: CookiePreferences = {
-      ...prefs,
-      timestamp: new Date().toISOString(),
-    };
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-    } catch {
-      // Ignore storage errors in restricted iframe/private mode
-    }
+  // Guarda la decisión y avisa al cargador de Analytics (src/lib/analitica.ts), que lo activa o
+  // lo desactiva y borra sus cookies.
+  const guardar = (aceptaAnalitica: boolean) => {
+    guardarConsentimiento(aceptaAnalitica);
+    setAnalytics(aceptaAnalitica);
     setVisible(false);
     setShowSettings(false);
-
-    const gtag = typeof window !== 'undefined' ? (window as unknown as { gtag?: Gtag }).gtag : undefined;
-    if (gtag) {
-      gtag('consent', 'update', {
-        analytics_storage: prefs.analytics ? 'granted' : 'denied',
-        ad_storage: prefs.marketing ? 'granted' : 'denied',
-      });
-    }
   };
 
   if (!visible) return null;
@@ -125,7 +94,7 @@ export default function CookieConsentBanner() {
                   Transparencia de cookies (RGPD / AEPD)
                 </p>
                 <p id="cookie-desc" className="text-[11px] text-slate-300 leading-snug">
-                  Usamos cookies técnicas para que la web funcione y analíticas para medir visitas. Puedes aceptarlas, rechazarlas o configurarlas.{' '}
+                  Con tu permiso usamos Google Analytics para contar visitas de forma agregada. Si no lo aceptas, no se carga. Puedes cambiar tu decisión cuando quieras.{' '}
                   <a href="/cookies" className="text-amber-400 hover:underline font-medium">
                     Leer política
                   </a>.
@@ -137,15 +106,15 @@ export default function CookieConsentBanner() {
             <div className="flex items-center gap-2 pt-1">
               <button
                 type="button"
-                onClick={() => saveConsent({ necessary: true, analytics: true, marketing: true })}
+                onClick={() => guardar(true)}
                 className={BOTON_ELECCION}
               >
-                Aceptar todas
+                Aceptar
               </button>
 
               <button
                 type="button"
-                onClick={() => saveConsent({ necessary: true, analytics: false, marketing: false })}
+                onClick={() => guardar(false)}
                 className={BOTON_ELECCION}
               >
                 Rechazar
@@ -185,7 +154,7 @@ export default function CookieConsentBanner() {
               <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
                 <div>
                   <span className="font-bold text-white block">Técnicas</span>
-                  <span className="text-[10px] text-slate-400">Seguridad y funcionamiento básico</span>
+                  <span className="text-[10px] text-slate-400">Solo guardan tu decisión sobre las cookies</span>
                 </div>
                 <span className="text-[10px] font-bold text-amber-400 uppercase">Activas</span>
               </div>
@@ -193,7 +162,7 @@ export default function CookieConsentBanner() {
               <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
                 <div>
                   <span className="font-bold text-white block">Analíticas</span>
-                  <span className="text-[10px] text-slate-400">Estadísticas anónimas de visita</span>
+                  <span className="text-[10px] text-slate-400">Google Analytics: visitas contadas de forma agregada</span>
                 </div>
                 <label className="relative inline-flex items-center cursor-pointer">
                   <input
@@ -208,30 +177,11 @@ export default function CookieConsentBanner() {
                   <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
                 </label>
               </div>
-
-              <div className="p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-between">
-                <div>
-                  <span className="font-bold text-white block">Personalización</span>
-                  <span className="text-[10px] text-slate-400">Recuerda tu tipo de proyecto</span>
-                </div>
-                <label className="relative inline-flex items-center cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={marketing}
-                    onChange={(e) => setMarketing(e.target.checked)}
-                    role="switch"
-                    aria-checked={marketing}
-                    aria-label="Cookies de personalización"
-                    className="sr-only peer"
-                  />
-                  <div className="w-8 h-4 bg-slate-700 rounded-full peer peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white peer-checked:after:translate-x-full peer-checked:bg-amber-400 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
-                </label>
-              </div>
             </div>
 
             <button
               type="button"
-              onClick={() => saveConsent({ necessary: true, analytics, marketing })}
+              onClick={() => guardar(analytics)}
               className="w-full py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs inline-flex items-center justify-center gap-1.5 transition-all shadow-sm cursor-pointer"
             >
               <Check className="w-3.5 h-3.5" />

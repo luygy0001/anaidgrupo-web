@@ -22,7 +22,7 @@ import {
   NAV_ITEMS,
   SERVICE_PAGES,
   PRESUPUESTO_HREF,
-  GTM_CONFIGURADO,
+  ANALITICA_CONFIGURADA,
 } from '@/lib/constants';
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -191,7 +191,7 @@ export default function Footer() {
             <a href="/privacidad" className="hover:underline">Privacidad</a>
             <a href="/cookies" className="hover:underline">Cookies</a>
             <a href="/accesibilidad" className="hover:underline">Accesibilidad</a>
-            {GTM_CONFIGURADO && (
+            {ANALITICA_CONFIGURADA && (
               <CookieSettingsButton className="hover:underline text-slate-400 hover:text-amber-400 transition-colors">
                 Configurar cookies
               </CookieSettingsButton>

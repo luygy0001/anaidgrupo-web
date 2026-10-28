@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
-import { LEGAL, LEGAL_DRAFT, SITE_NAME, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS } from '@/lib/constants';
+import { LEGAL, LEGAL_DRAFT, SITE_NAME, EMAIL, PHONE, PHONE_DISPLAY, ADDRESS, ANALITICA_CONFIGURADA } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Política de privacidad',
@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 // Versión de la web provisional (rama release/web-basica, 15-10-2026): un formulario de consulta
 // que llega por correo a info@ (Hostinger). Sin IA, sin automatizaciones ni Turnstile. Al publicar
 // la versión completa, vuelve la política de la rama fix/contenido-real-y-formularios.
+// Google Analytics (decisión 100) solo aparece si hay ID en constants.ts: finalidad con
+// consentimiento, proveedor, transferencia a EE. UU. y plazo de 14 meses fijado en Analytics.
 
 const ENLACE = 'text-primary underline';
 const CELDA = 'px-3 py-2 align-top';
@@ -50,6 +52,15 @@ const FINALIDADES: { finalidad: string; base: string }[] = [
     finalidad: 'Cumplir obligaciones legales, por ejemplo fiscales o requerimientos de autoridades.',
     base: 'Obligación legal (art. 6.1.c).',
   },
+  ...(ANALITICA_CONFIGURADA
+    ? [
+        {
+          finalidad:
+            'Contar las visitas de forma agregada y saber qué páginas se usan (Google Analytics), solo si lo aceptas.',
+          base: 'Tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras en «Configurar cookies».',
+        },
+      ]
+    : []),
 ];
 
 const PROVEEDORES: { nombre: string; uso: string; lugar: string }[] = [
@@ -58,6 +69,15 @@ const PROVEEDORES: { nombre: string; uso: string; lugar: string }[] = [
     uso: 'Servidor de la web y buzones de correo de @construccionesanaid.com, donde recibimos tu consulta.',
     lugar: 'Servidor de la web en Fráncfort (Alemania).',
   },
+  ...(ANALITICA_CONFIGURADA
+    ? [
+        {
+          nombre: 'Google (Google Analytics)',
+          uso: 'Contar las visitas de forma agregada, solo si aceptas las cookies de análisis.',
+          lugar: 'Google Ireland Limited (Irlanda). Puede tratar datos en Estados Unidos.',
+        },
+      ]
+    : []),
 ];
 
 const PLAZOS: { datos: string; plazo: string }[] = [
@@ -71,6 +91,9 @@ const PLAZOS: { datos: string; plazo: string }[] = [
       'Mientras dure la obra y su seguimiento. Después, bloqueados mientras puedan exigirse responsabilidades (5 años con carácter general) y durante los plazos de la ley fiscal; luego se borran.',
   },
   { datos: 'Dirección IP para limitar envíos repetidos', plazo: '15 minutos, solo en la memoria del servidor.' },
+  ...(ANALITICA_CONFIGURADA
+    ? [{ datos: 'Datos de visitas en Google Analytics', plazo: '14 meses. Después Google los borra.' }]
+    : []),
 ];
 
 export default function PrivacidadPage() {
@@ -86,7 +109,9 @@ export default function PrivacidadPage() {
         )}
 
         <div className="text-muted-foreground space-y-8">
-          <p className="text-xs italic">Última actualización: 21 de octubre de 2026</p>
+          <p className="text-xs italic">
+            Última actualización: {ANALITICA_CONFIGURADA ? '28 de octubre de 2026' : '21 de octubre de 2026'}
+          </p>
 
           <p>
             Aquí te contamos, sin letra pequeña, qué datos tuyos tratamos, para qué, con quién los
@@ -110,6 +135,9 @@ export default function PrivacidadPage() {
                 inteligencia artificial ni decisiones automáticas con tus datos.
               </li>
               <li>No vendemos tus datos ni te enviamos publicidad.</li>
+              {ANALITICA_CONFIGURADA && (
+                <li>Solo si lo aceptas, contamos las visitas a la web con Google Analytics.</li>
+              )}
               <li>
                 Puedes pedir verlos, corregirlos o borrarlos escribiendo a{' '}
                 <a href={`mailto:${EMAIL}`} className={ENLACE}>{EMAIL}</a>.
@@ -144,6 +172,16 @@ export default function PrivacidadPage() {
             <p>Lo que nos cuentes y las fotos que nos envíes.</p>
             <h3 className="text-base font-semibold text-foreground">Datos técnicos</h3>
             <p>Tu dirección IP, solo para limitar los envíos repetidos del formulario.</p>
+            {ANALITICA_CONFIGURADA && (
+              <>
+                <h3 className="text-base font-semibold text-foreground">Visitas a la web (solo si lo aceptas)</h3>
+                <p>
+                  Google Analytics registra las páginas que ves, cuánto tiempo, el tipo de dispositivo y
+                  navegador, y la ciudad aproximada. Google no guarda tu dirección IP. Si no aceptas las
+                  cookies de análisis, Google Analytics no se carga.
+                </p>
+              </>
+            )}
             <p>
               No necesitamos datos de salud ni otros datos especialmente protegidos: por favor, no los
               incluyas en el mensaje.
@@ -227,6 +265,8 @@ export default function PrivacidadPage() {
             <h2 className="text-lg font-semibold text-foreground mb-2">6. Transferencias fuera de la Unión Europea</h2>
             <p>
               Si usas WhatsApp, Meta es un grupo con sede en Estados Unidos y puede tratar datos allí.
+              {ANALITICA_CONFIGURADA &&
+                ' Si aceptas Google Analytics, Google también puede tratar en Estados Unidos los datos de tus visitas.'}{' '}
               Esas transferencias se amparan en el Marco de Privacidad de Datos UE-EE. UU. y en las
               cláusulas contractuales tipo aprobadas por la Comisión Europea. Si quieres más
               información, escríbenos a{' '}

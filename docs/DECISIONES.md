@@ -422,3 +422,14 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
     día). Anunciaba sin fecha la versión completa («muy pronto podrás pedir tu presupuesto online…»)
     y en móvil ocupaba espacio encima de la cabecera. Se borra el componente `AvisoMejoras`; si
     algún día hace falta un aviso, se escribe con lo que sea cierto en ese momento.
+100. **Google Analytics 4, solo con consentimiento previo** (Luis, 28-10-2026). Propiedad en la
+     cuenta de empresa **luis@pymexpert.com**. Analytics **directo** (gtag.js), sin Tag Manager: una
+     pieza menos. **Nada de Google se carga hasta que el visitante pulsa «Aceptar»**: no hay script de
+     Consent Mode por adelantado ni avisos sin cookies; solo cuenta a quien acepta. Si después
+     rechaza, se desactiva en esa visita y se borran las cookies `_ga`.
+     - El aviso tiene «Aceptar» y «Rechazar» iguales y el panel solo dos grupos: técnicas (la
+       elección guardada) y analíticas. Fuera «Personalización», que no correspondía a nada real.
+     - En Analytics: conservación de datos 14 meses, Google Signals desactivado y anuncios
+       personalizados desactivados también en el código.
+     - La CSP se abre a Google solo con ID. /cookies y /privacidad añaden Google Analytics
+       (finalidad con consentimiento, proveedor, transferencia a EE. UU. y plazo) solo con ID.

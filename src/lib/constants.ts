@@ -7,14 +7,12 @@ export const SITE_NAME_FULL = 'Construcciones Anaid — Reformas & Inversión In
 
 export const SITE_URL = 'https://www.construccionesanaid.com';
 
-// Medición de visitas (Google Tag Manager). Mientras el ID sea el de relleno no se carga nada,
-// no se muestra el aviso de cookies (no hay nada que aceptar) y /cookies lo dice. Al poner el ID
-// real, el aviso aparece solo; si se añaden etiquetas en GTM además de GA4, actualizar /cookies.
-// OJO: la CSP de next.config.ts solo permite scripts y conexiones del propio dominio. Antes de
-// poner el ID real hay que abrirla a Google (googletagmanager.com y google-analytics.com en
-// script-src, connect-src e img-src); si no, GTM no carga.
-export const GTM_ID: string = 'GTM-XXXXXXX';
-export const GTM_CONFIGURADO = GTM_ID !== '' && GTM_ID !== 'GTM-XXXXXXX';
+// Medición de visitas: Google Analytics 4 directo, sin Tag Manager (decisión 100). Mientras el ID
+// esté vacío no se carga nada, no hay aviso de cookies (no hay nada que aceptar) y /cookies lo dice.
+// Con el ID puesto: aparece el aviso, Analytics solo se carga tras «Aceptar» (src/lib/analitica.ts),
+// la CSP de next.config.ts se abre a Google y /cookies y /privacidad lo explican.
+export const GA_ID: string = '';
+export const ANALITICA_CONFIGURADA = /^G-[A-Z0-9]+$/.test(GA_ID);
 
 // Contacto directo: teléfono y WhatsApp en el mismo móvil (Luis, 19-10-2026; antes 640 962 564)
 export const PHONE = '+34664415523';

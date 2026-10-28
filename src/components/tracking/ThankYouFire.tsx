@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackEvent } from '@/lib/tracking';
+import { trackEvent } from '@/lib/analitica';
 
 // Dispara `conversion_thank_you` al montar la página de gracias.
 // Los formularios navegan aquí tras éxito, de modo que este evento representa
