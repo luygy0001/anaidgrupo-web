@@ -11,7 +11,7 @@ export const SITE_URL = 'https://www.construccionesanaid.com';
 // esté vacío no se carga nada, no hay aviso de cookies (no hay nada que aceptar) y /cookies lo dice.
 // Con el ID puesto: aparece el aviso, Analytics solo se carga tras «Aceptar» (src/lib/analitica.ts),
 // la CSP de next.config.ts se abre a Google y /cookies y /privacidad lo explican.
-export const GA_ID: string = '';
+export const GA_ID: string = 'G-266X2GF9R8';
 export const ANALITICA_CONFIGURADA = /^G-[A-Z0-9]+$/.test(GA_ID);
 
 // Contacto directo: teléfono y WhatsApp en el mismo móvil (Luis, 19-10-2026; antes 640 962 564)
