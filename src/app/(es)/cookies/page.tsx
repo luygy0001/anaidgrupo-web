@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Container from '@/components/ui/Container';
 import CookieSettingsButton from '@/components/layout/CookieSettingsButton';
-import { EMAIL, GTM_CONFIGURADO, LEGAL_DRAFT } from '@/lib/constants';
+import { EMAIL, ANALITICA_CONFIGURADA, LEGAL_DRAFT } from '@/lib/constants';
 
 export const metadata: Metadata = {
   title: 'Política de cookies',
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
-// Lo que muestra esta página depende de GTM_CONFIGURADO (constants.ts): sin medición configurada
-// no hay cookies que necesiten permiso. Si se añaden etiquetas en GTM además de GA4, añadirlas aquí.
+// Lo que muestra esta página depende de ANALITICA_CONFIGURADA (constants.ts): sin medición configurada
+// no hay cookies que necesiten permiso. Con Google Analytics, solo se instalan tras «Aceptar».
 
 const ENLACE = 'text-primary underline';
 const CELDA = 'px-3 py-2 align-top';
@@ -27,7 +27,7 @@ interface Elemento {
 
 // Web provisional: sin comprobación antirrobots (Turnstile) ni otras cookies técnicas. Solo
 // existe el almacenamiento de la elección de cookies si se configura la medición (GTM).
-const NECESARIAS: Elemento[] = GTM_CONFIGURADO
+const NECESARIAS: Elemento[] = ANALITICA_CONFIGURADA
   ? [
       {
         nombre: 'anaid_cookie_consent_v1 (almacenamiento local)',
@@ -38,13 +38,14 @@ const NECESARIAS: Elemento[] = GTM_CONFIGURADO
     ]
   : [];
 
-const ANALITICAS: Elemento[] = GTM_CONFIGURADO
+const ANALITICAS: Elemento[] = ANALITICA_CONFIGURADA
   ? [
       {
-        nombre: '_ga y _ga_*',
-        titular: 'Google (Google Analytics 4, a través de Google Tag Manager)',
-        finalidad: 'Contar visitas y saber qué páginas se usan, de forma agregada. Solo si las aceptas.',
-        duracion: 'Hasta 2 años.',
+        nombre: '_ga y _ga_<código de la web>',
+        titular: 'Google (Google Analytics 4)',
+        finalidad:
+          'Distinguir visitas para contarlas y saber qué páginas se usan, de forma agregada. Solo se instalan si las aceptas y se borran si después las rechazas.',
+        duracion: '2 años.',
       },
     ]
   : [];
@@ -91,7 +92,9 @@ export default function CookiesPage() {
         )}
 
         <div className="text-muted-foreground space-y-8">
-          <p className="text-xs italic">Última actualización: 15 de octubre de 2026</p>
+          <p className="text-xs italic">
+            Última actualización: {ANALITICA_CONFIGURADA ? '28 de octubre de 2026' : '15 de octubre de 2026'}
+          </p>
 
           <div>
             <h2 className="text-lg font-semibold text-foreground mb-2">1. Qué son las cookies</h2>
@@ -127,7 +130,7 @@ export default function CookiesPage() {
 
           <div className="space-y-3">
             <h2 className="text-lg font-semibold text-foreground">3. Cómo gestionarlas</h2>
-            {GTM_CONFIGURADO && (
+            {ANALITICA_CONFIGURADA && (
               <>
                 <p>
                   La primera vez que entras verás un aviso para aceptar o rechazar las cookies de
@@ -146,7 +149,7 @@ export default function CookiesPage() {
             </p>
           </div>
 
-          {GTM_CONFIGURADO && (
+          {ANALITICA_CONFIGURADA && (
             <div>
               <h2 className="text-lg font-semibold text-foreground mb-2">4. Transferencias fuera de la Unión Europea</h2>
               <p>
@@ -158,7 +161,7 @@ export default function CookiesPage() {
           )}
 
           <div>
-            <h2 className="text-lg font-semibold text-foreground mb-2">{GTM_CONFIGURADO ? '5' : '4'}. Más información</h2>
+            <h2 className="text-lg font-semibold text-foreground mb-2">{ANALITICA_CONFIGURADA ? '5' : '4'}. Más información</h2>
             <p>
               Lo demás sobre tus datos está en la{' '}
               <Link href="/privacidad" className={ENLACE}>política de privacidad</Link>. Si tienes

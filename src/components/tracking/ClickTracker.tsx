@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackEvent } from '@/lib/tracking';
+import { trackEvent } from '@/lib/analitica';
 
 // Delegación global: captura clicks en enlaces tel:, mailto: y de WhatsApp
 // sin necesidad de envolver cada componente. Se monta una sola vez en el
@@ -32,18 +32,12 @@ export default function ClickTracker() {
       const lower = href.toLowerCase();
 
       if (lower.startsWith('tel:')) {
-        trackEvent('click_telefono', {
-          number: href.replace(/^tel:/i, ''),
-          link_location: linkLocation(anchor),
-        });
+        trackEvent('click_telefono', { link_location: linkLocation(anchor) });
         return;
       }
 
       if (lower.startsWith('mailto:')) {
-        trackEvent('click_email', {
-          email: href.replace(/^mailto:/i, '').split('?')[0],
-          link_location: linkLocation(anchor),
-        });
+        trackEvent('click_email', { link_location: linkLocation(anchor) });
         return;
       }
 

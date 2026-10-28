@@ -2,8 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
 import './globals.css';
 import { SITE_NAME, SITE_URL } from '@/lib/constants';
-import ConsentAndGTM from '@/components/tracking/ConsentAndGTM';
-import GTMNoScript from '@/components/tracking/GTMNoScript';
+import Analitica from '@/components/tracking/Analitica';
 import ClickTracker from '@/components/tracking/ClickTracker';
 
 // Fuentes servidas desde la propia web: next/font las descarga al compilar y el navegador no
@@ -47,11 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${inter.variable} ${manrope.variable} h-full antialiased`}>
-      <head>
-        <ConsentAndGTM />
-      </head>
       <body className="min-h-full flex flex-col">
-        <GTMNoScript />
+        <Analitica />
         <ClickTracker />
         {children}
       </body>

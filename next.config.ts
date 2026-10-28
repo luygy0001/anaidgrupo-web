@@ -1,9 +1,17 @@
 import type { NextConfig } from 'next';
+import { ANALITICA_CONFIGURADA } from './src/lib/constants';
+
+// Google Analytics (decisión 100): solo si hay ID se abre la CSP a Google. Aun así, nada de Google
+// se carga hasta que el visitante acepta (src/lib/analitica.ts).
+const GOOGLE_SCRIPT = ANALITICA_CONFIGURADA ? ' https://www.googletagmanager.com' : '';
+const GOOGLE_CONNECT = ANALITICA_CONFIGURADA
+  ? ' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com'
+  : '';
 
 const scriptSrc =
   process.env.NODE_ENV === 'production'
-    ? "script-src 'self' 'unsafe-inline'"
-    : "script-src 'self' 'unsafe-inline' 'unsafe-eval'";
+    ? `script-src 'self' 'unsafe-inline'${GOOGLE_SCRIPT}`
+    : `script-src 'self' 'unsafe-inline' 'unsafe-eval'${GOOGLE_SCRIPT}`;
 
 const nextConfig: NextConfig = {
   output: 'standalone',
@@ -70,7 +78,7 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "font-src 'self' data:",
               "img-src 'self' data: blob: https:",
-              "connect-src 'self' https://*.construccionesanaid.com",
+              `connect-src 'self' https://*.construccionesanaid.com${GOOGLE_CONNECT}`,
               "form-action 'self'",
               "frame-ancestors 'none'",
               "base-uri 'self'",
