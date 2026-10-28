@@ -418,3 +418,7 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
     ficha verificada de Mandrinados Anaid en Google; así coincide con lo que Google tiene registrado
     para la verificación del Perfil de Empresa. Cambia solo en el aviso legal y la privacidad
     (`ADDRESS` y `LEGAL.domicilio`), con fecha de actualización 21-10-2026. Corrige la decisión 89.
+99. **Fuera el aviso «Estamos mejorando esta web»** (Luis, 28-10-2026, tras la auditoría del mismo
+    día). Anunciaba sin fecha la versión completa («muy pronto podrás pedir tu presupuesto online…»)
+    y en móvil ocupaba espacio encima de la cabecera. Se borra el componente `AvisoMejoras`; si
+    algún día hace falta un aviso, se escribe con lo que sea cierto en ese momento.
