@@ -56,7 +56,12 @@ export default function Hero() {
           src="/images/chalet-moderno-noche.jpg"
           alt="Chalet moderno con piscina iluminada al anochecer"
           fill
-          priority
+          // Es el elemento más grande de la portada (LCP): se pide desde el HTML, sin esperar, y
+          // con prioridad alta. Next.js 16 recomienda esto en vez de `priority`, que solo añadía
+          // una precarga con prioridad normal.
+          loading="eager"
+          fetchPriority="high"
+          quality={60}
           className="object-cover object-center lg:object-[center_35%] -scale-x-100"
         />
 
@@ -173,6 +178,9 @@ export default function Hero() {
                   src={active.image}
                   alt={active.title}
                   fill
+                  // En escritorio la tarjeta ocupa unas 5/12 partes del ancho: sin esto se
+                  // descargaba la foto al ancho de toda la pantalla.
+                  sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover transition-transform duration-700 hover:scale-105"
                 />
                 <div className="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md text-slate-200 text-[11px] font-semibold px-2.5 py-1 rounded-md border border-white/15">

@@ -460,3 +460,15 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
        caducadas) y solo acepta IP válidas en `X-Forwarded-For`.
      - La política de privacidad no cambia: la IP sigue usándose solo 15 minutos en memoria y el
        tope global no guarda IP, solo la hora de cada envío.
+104. **La foto de la portada sale antes en el móvil** (Luis, 28-10-2026, punto 15 de la auditoría).
+     PageSpeed móvil antes del cambio: 96, con el elemento principal (la foto del chalet) en 2,8 s.
+     Lighthouse pedía prioridad alta para esa foto y menos peso (40 KB en móvil).
+     - **Prioridad alta:** la foto se pide con `loading="eager"` y `fetchPriority="high"` en vez de
+       `priority`, que Next.js 16 da por obsoleto y solo añadía una precarga con prioridad normal.
+     - **AVIF y calidad 60 solo en esa foto:** `formats` AVIF y WebP, y `qualities` [60, 75]. En
+       móvil pasa de 40 KB (WebP 75) a 20 KB (AVIF 60), sin diferencia a simple vista bajo el
+       degradado (comparativa en docs/capturas). Sin AVIF se sirve WebP o JPEG de unos 34 KB.
+     - La foto de la tarjeta de obras lleva `sizes`: en escritorio se descargaba al ancho de toda
+       la pantalla.
+     - La primera petición de cada tamaño en AVIF tarda algo más en generarse y cada despliegue
+       vacía la caché de imágenes del contenedor: lo nota solo la primera visita.

@@ -18,6 +18,12 @@ const nextConfig: NextConfig = {
   // Sin la cabecera «X-Powered-By: Next.js»: no dar pistas de la tecnología del servidor.
   poweredByHeader: false,
   images: {
+    // AVIF primero (pesa en torno a un 20 % menos que WebP) y WebP para los navegadores sin AVIF.
+    // La primera vez que se pide cada tamaño tarda algo más en generarse; después sale de la caché.
+    formats: ['image/avif', 'image/webp'],
+    // 75 es la calidad por defecto; 60 solo para la foto de la portada, que va bajo un degradado
+    // oscuro: en AVIF pesa la mitad (20 KB en móvil frente a 40 KB) sin diferencia a simple vista.
+    qualities: [60, 75],
     remotePatterns: [
       {
         protocol: 'https',
