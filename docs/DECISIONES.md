@@ -433,3 +433,13 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
        personalizados desactivados también en el código.
      - La CSP se abre a Google solo con ID. /cookies y /privacidad añaden Google Analytics
        (finalidad con consentimiento, proveedor, transferencia a EE. UU. y plazo) solo con ID.
+101. **Sitemap con la fecha real de cada página** (Luis, 28-10-2026, punto 6 de la auditoría del
+     mismo día). Cada URL lleva su `<lastmod>`: la fecha del último cambio importante de esa página,
+     sacada del historial de git. Cuenta el texto visible, el título o la descripción, los enlaces y
+     los datos estructurados; no cuentan la cabecera, el pie, el aviso de cookies ni los cambios de
+     código que dejan la página igual. Las fechas se escriben a mano en `src/app/sitemap.ts`, porque
+     la imagen de Docker no lleva `.git` y la fecha de compilación sería falsa (por eso se quitó el
+     21-10). Al cambiar una página, se actualiza su fecha.
+     - Fechas de partida: portada, contacto y las 8 de servicio, 21-10 (datos estructurados de la
+       decisión 97); /servicios, /zonas y «Cómo funciona», 19-10 (Piscinas de diseño, cobertura y
+       preguntas frecuentes); las 3 zonas, 28-10 (descripciones más cortas).
