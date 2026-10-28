@@ -448,3 +448,15 @@ IA: ni diseño ni textos comerciales. Tres ramas, cada una con su PR.
      común (saltar al contenido, aviso de cookies, cabecera, pie y botón de WhatsApp) pasa a
      `MarcoPagina`, que usan el layout y la 404: quien llega por un enlace roto puede seguir
      navegando. Sigue siendo un 404 real con «noindex», también en /gracias/<tipo-inexistente>.
+103. **Más protección en el formulario** (Luis, 28-10-2026, punto 14 de la auditoría). Lo mismo que
+     ya tiene pymexpert.com, sin dependencias nuevas, en `/api/contacto`:
+     - **Solo JSON** (415 para texto, multipart o sin tipo), que es lo que envía el formulario.
+     - **Cuerpo de 16 KB como mucho** (413), contando los bytes al leer (`src/lib/peticion.ts`) y no
+       fiándose de `content-length`, que el cliente puede omitir o falsear.
+     - **Tope global de 30 consultas por hora** entre todas las IP (429 con teléfono y WhatsApp).
+       Solo cuenta las consultas válidas que van a salir por correo: las peticiones basura no
+       gastan el cupo de la gente real. Se queda en memoria (un solo contenedor).
+     - El contador por IP (5 cada 15 minutos) ya no crece sin límite (máximo 10.000 IP, borra las
+       caducadas) y solo acepta IP válidas en `X-Forwarded-For`.
+     - La política de privacidad no cambia: la IP sigue usándose solo 15 minutos en memoria y el
+       tope global no guarda IP, solo la hora de cada envío.
