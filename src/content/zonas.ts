@@ -11,7 +11,7 @@ export type PaginaZona = {
 export const PAGINAS_ZONA: Record<string, PaginaZona> = {
   'pozuelo-de-alarcon': {
     titulo: 'Reformas en Pozuelo de Alarcón',
-    descripcionMeta: 'Reformas y servicios técnicos en Pozuelo de Alarcón. Construcciones Anaid asigna al profesional de su red más adecuado para tu proyecto en la Comunidad de Madrid.',
+    descripcionMeta: 'Reformas y servicios técnicos en Pozuelo de Alarcón. Construcciones Anaid te asigna al profesional de su red más adecuado para tu proyecto.',
     landing: {
       municipio: 'Pozuelo de Alarcón',
       slug: 'pozuelo-de-alarcon',
@@ -35,7 +35,7 @@ export const PAGINAS_ZONA: Record<string, PaginaZona> = {
   },
   'las-rozas': {
     titulo: 'Reformas en Las Rozas de Madrid',
-    descripcionMeta: 'Reformas y servicios técnicos en Las Rozas de Madrid. Construcciones Anaid asigna al profesional de su red más adecuado para tu proyecto en la Comunidad de Madrid.',
+    descripcionMeta: 'Reformas y servicios técnicos en Las Rozas de Madrid. Construcciones Anaid te asigna al profesional de su red más adecuado para tu proyecto.',
     landing: {
       municipio: 'Las Rozas de Madrid',
       slug: 'las-rozas',
@@ -59,7 +59,7 @@ export const PAGINAS_ZONA: Record<string, PaginaZona> = {
   },
   'majadahonda': {
     titulo: 'Reformas en Majadahonda',
-    descripcionMeta: 'Reformas y servicios técnicos en Majadahonda. Construcciones Anaid asigna al profesional de su red más adecuado para tu proyecto en la Comunidad de Madrid.',
+    descripcionMeta: 'Reformas y servicios técnicos en Majadahonda. Construcciones Anaid te asigna al profesional de su red más adecuado para tu proyecto.',
     landing: {
       municipio: 'Majadahonda',
       slug: 'majadahonda',
